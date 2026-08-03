@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Nunito:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+  body { font-family:'Nunito','SF Pro Text',system-ui,sans-serif; background:#141414; }
+  a { color:#C6F53C; text-decoration:none; } a:hover { color:#b0e02a; }
+  .blk { font-family:'Archivo Black','Nunito',sans-serif; letter-spacing:.5px; }
+  .ns::-webkit-scrollbar{ display:none; } .ns{ -ms-overflow-style:none; scrollbar-width:none; }
+  .sc { width:375px; height:812px; position:relative; overflow:hidden; flex-shrink:0; background:#1A1B1D; }
+  .row { display:flex; gap:26px; padding:6px 2px 26px; align-items:flex-start; width:max-content; }
+  .ann { background:#0e2a12; border:1px solid #1d4522; border-radius:12px; padding:11px 13px; width:375px; }
+  .ann b { color:#C6F53C; font-weight:800; font-size:13.5px; }
+  .ann p { color:#a9c79e; font-size:12px; line-height:1.55; margin-top:4px; }
+  .ann i { color:#7f9a76; font-size:11.5px; font-style:normal; margin-top:4px; display:block; }
+  .sec { width:100%; color:#C6F53C; font-size:17px; font-weight:800; border-left:3px solid #C6F53C; padding-left:12px; margin:18px 0 4px; }
+  .board { width:375px; display:flex; flex-direction:column; gap:10px; cursor:pointer; }
+  .stat { height:48px; display:flex; align-items:center; justify-content:space-between; padding:0 24px 0 28px; flex-shrink:0; }
+  .stat .t { font-size:15px; font-weight:800; color:#fff; }
+  .tabbar { position:absolute; left:12px; right:12px; bottom:14px; height:66px; background:#0E0F10; border-radius:24px; display:flex; align-items:center; padding:0 10px; }
+  .tab { flex:1; display:flex; align-items:center; justify-content:center; }
+  .field { height:54px; border-radius:15px; background:#26282B; display:flex; align-items:center; padding:0 16px; color:#fff; font-size:15px; }
+</style>
+</helmet>
+
+<div style="min-height:100vh; background:#141414; padding:34px 44px 120px;">
+
+  <div style="display:flex; align-items:center; gap:14px; margin-bottom:8px;">
+    <div style="width:46px; height:46px; border-radius:14px; background:#C6F53C; display:flex; align-items:center; justify-content:center; font-size:24px;"><svg viewBox="0 0 24 24" style="width:1em;height:1em;vertical-align:-0.14em" fill="#1a1b1d"><circle cx="5" cy="11" r="1.9"></circle><circle cx="9.4" cy="6.6" r="1.9"></circle><circle cx="14.6" cy="6.6" r="1.9"></circle><circle cx="19" cy="11" r="1.9"></circle><path d="M12 12.2c-2.4 0-4.3 2-4.3 3.8 0 1.5 1.2 2.4 2.6 2.4.9 0 1.2-.4 1.7-.4s.8.4 1.7.4c1.4 0 2.6-.9 2.6-2.4 0-1.8-1.9-3.8-4.3-3.8Z"></path></svg></div>
+    <div>
+      <div class="blk" style="color:#C6F53C; font-size:24px;">PET DAILY VLOG <span style="color:#7f9a76; font-weight:600; font-size:14px; font-family:Nunito;">· 宠物日常 Vlog 社区</span></div>
+      <div style="color:#7f9a76; font-size:13px; margin-top:2px; font-family:Nunito;">深色活力风 · 层叠卡片 · 全 34 页 · 平铺 · 375×812 · 每页中文标注 · 可点击跳转</div>
+    </div>
+  </div>
+  <div style="color:#6f7a68; font-size:12.5px; max-width:900px; line-height:1.6; margin-bottom:6px;">核心付费逻辑：图文动态免费发布；视频 Vlog 每次消耗 20 金币。图文标 Photo、视频标 Video。点击页面内按钮平滑滚动到目标画板。</div>
+
+  <div style="display:flex; flex-direction:column; gap:2px;">
+
+    <div class="sec">A · 登录注册流程</div>
+    <div class="row">
+
+    <!-- 1 SPLASH -->
+    <div id="b-splash" onClick="{{ go.login }}" class="board">
+      <div class="ann"><b>1 · Splash 启动页</b><p>展示 Logo、App 名与标语，短暂停留后进入登录。</p><i>交互：点击 → 2 登录</i></div>
+      <div class="sc" style="background:radial-gradient(120% 70% at 50% 34%,#2a3410,#141414 70%); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px;">
+        <div style="width:120px; height:120px; border-radius:36px; background:#C6F53C; display:flex; align-items:center; justify-content:center; font-size:64px; box-shadow:0 20px 50px rgba(198,245,60,.3);"><svg viewBox="0 0 24 24" style="width:1em;height:1em;vertical-align:-0.14em" fill="#1a1b1d"><circle cx="5" cy="11" r="1.9"></circle><circle cx="9.4" cy="6.6" r="1.9"></circle><circle cx="14.6" cy="6.6" r="1.9"></circle><circle cx="19" cy="11" r="1.9"></circle><path d="M12 12.2c-2.4 0-4.3 2-4.3 3.8 0 1.5 1.2 2.4 2.6 2.4.9 0 1.2-.4 1.7-.4s.8.4 1.7.4c1.4 0 2.6-.9 2.6-2.4 0-1.8-1.9-3.8-4.3-3.8Z"></path></svg></div>
+        <div class="blk" style="font-size:30px; color:#fff; text-align:center; line-height:1.1;">PET DAILY<br>VLOG</div>
+        <div style="color:#9aa694; font-size:15px; font-weight:600;">Capture every pet moment</div>
+      </div>
+    </div>
+
+    <!-- 2 LOGIN -->
+    <div id="b-login" onClick="{{ go.home }}" class="board">
+      <div class="ann"><b>2 · Login 登录页</b><p>邮箱 + 密码登录，支持 Apple 登录，底部协议入口。</p><i>交互：Log In → 5 首页；Create Account → 3；Terms/Privacy → 32/33</i></div>
+      <div class="sc" style="padding:0 26px;">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="width:62px; height:62px; border-radius:18px; background:#C6F53C; display:flex; align-items:center; justify-content:center; font-size:32px; margin:40px 0 22px;"><svg viewBox="0 0 24 24" style="width:1em;height:1em;vertical-align:-0.14em" fill="#1a1b1d"><circle cx="5" cy="11" r="1.9"></circle><circle cx="9.4" cy="6.6" r="1.9"></circle><circle cx="14.6" cy="6.6" r="1.9"></circle><circle cx="19" cy="11" r="1.9"></circle><path d="M12 12.2c-2.4 0-4.3 2-4.3 3.8 0 1.5 1.2 2.4 2.6 2.4.9 0 1.2-.4 1.7-.4s.8.4 1.7.4c1.4 0 2.6-.9 2.6-2.4 0-1.8-1.9-3.8-4.3-3.8Z"></path></svg></div>
+        <div class="blk" style="font-size:30px; color:#fff; margin-bottom:8px;">WELCOME BACK</div>
+        <div style="font-size:15px; color:#8a8d86; margin-bottom:30px;">Log in to keep your pet's daily story.</div>
+        <div style="font-size:14px; font-weight:700; color:#9aa694; margin-bottom:8px;">Email</div>
+        <div class="field" style="margin-bottom:16px;">amy@pet.com</div>
+        <div style="font-size:14px; font-weight:700; color:#9aa694; margin-bottom:8px;">Password</div>
+        <div class="field" style="font-size:20px; letter-spacing:3px; margin-bottom:28px;">••••••••</div>
+        <div style="height:56px; border-radius:16px; background:#C6F53C; color:#1a1b1d; font-size:17px; font-weight:800; display:flex; align-items:center; justify-content:center; margin-bottom:14px;">Log In</div>
+        <div style="height:56px; border-radius:16px; background:#26282B; color:#fff; font-size:16px; font-weight:700; display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:22px;"><svg width="17" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M16.365 1.43c0 1.14-.42 2.2-1.12 2.98-.83.93-2.2 1.65-3.35 1.56-.14-1.12.42-2.3 1.1-3.02.77-.83 2.14-1.46 3.37-1.52zm4.575 15.59c-.6 1.38-.88 1.99-1.65 3.2-1.07 1.7-2.58 3.82-4.45 3.83-1.66.02-2.09-1.08-4.35-1.07-2.26.01-2.73 1.09-4.39 1.07-1.87-.02-3.3-1.93-4.37-3.63-2.99-4.73-3.3-10.28-1.45-13.23 1.31-2.09 3.38-3.31 5.33-3.31 1.99 0 3.24 1.09 4.88 1.09 1.59 0 2.56-1.09 4.86-1.09 1.74 0 3.58.95 4.9 2.58-4.3 2.36-3.6 8.5.14 10.86z"></path></svg>Continue with Apple</div>
+        <div style="text-align:center; color:#8a8d86; font-size:14px;">No account? <span onClick="{{ go.signup }}" style="color:#C6F53C; font-weight:800;">Create Account</span></div>
+        <div style="text-align:center; color:#5f6a58; font-size:12px; margin-top:22px;">Terms of Service · Privacy Policy</div>
+      </div>
+    </div>
+
+    <!-- 3 SIGN UP -->
+    <div id="b-signup" onClick="{{ go.perm }}" class="board">
+      <div class="ann"><b>3 · Sign Up 注册页</b><p>填写邮箱、密码、昵称创建账号。</p><i>交互：Sign Up → 4 权限说明</i></div>
+      <div class="sc" style="padding:0 26px;">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div onClick="{{ go.login }}" style="font-size:28px; color:#fff; margin:6px 0 16px;">‹</div>
+        <div class="blk" style="font-size:28px; color:#fff; margin-bottom:8px;">CREATE ACCOUNT</div>
+        <div style="font-size:15px; color:#8a8d86; margin-bottom:28px;">Start your pet's daily diary.</div>
+        <div style="font-size:14px; font-weight:700; color:#9aa694; margin-bottom:8px;">Email</div>
+        <div class="field" style="color:#6f7a68; margin-bottom:16px;">you@example.com</div>
+        <div style="font-size:14px; font-weight:700; color:#9aa694; margin-bottom:8px;">Password</div>
+        <div class="field" style="color:#6f7a68; margin-bottom:16px;">At least 8 characters</div>
+        <div style="font-size:14px; font-weight:700; color:#9aa694; margin-bottom:8px;">Nickname</div>
+        <div class="field" style="color:#6f7a68; margin-bottom:26px;">Your pet parent name</div>
+        <div style="height:56px; border-radius:16px; background:#C6F53C; color:#1a1b1d; font-size:17px; font-weight:800; display:flex; align-items:center; justify-content:center;">Sign Up</div>
+      </div>
+    </div>
+
+    <!-- 4 PERMISSION -->
+    <div id="b-perm" onClick="{{ go.home }}" class="board">
+      <div class="ann"><b>4 · Permission 权限说明</b><p>相机（拍摄照片/视频）、相册（选择照片/视频）、麦克风（录制 Vlog 声音）。拒绝仅提示。</p><i>交互：Allow / Not Now → 5 首页</i></div>
+      <div class="sc" style="display:flex; flex-direction:column;">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="flex:1; display:flex; flex-direction:column; justify-content:center; padding:0 28px;">
+          <div style="width:88px; height:88px; border-radius:26px; background:#C6F53C; display:flex; align-items:center; justify-content:center; margin-bottom:24px;"><svg width="42" height="42" viewBox="0 0 16 16" fill="#1a1b1d"><path d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2z"></path></svg></div>
+          <div class="blk" style="font-size:26px; color:#fff; margin-bottom:24px;">ENABLE ACCESS</div>
+          <sc-for list="{{ perms }}" as="p" hint-placeholder-count="3"><div style="display:flex; gap:14px; align-items:center; margin-bottom:18px;"><div style="width:46px; height:46px; border-radius:14px; background:#26282B; display:flex; align-items:center; justify-content:center; flex-shrink:0;">{{ p.iconEl }}</div><div><div style="font-size:16px; font-weight:800; color:#fff;">{{ p.title }}</div><div style="font-size:13.5px; color:#8a8d86; line-height:1.4;">{{ p.desc }}</div></div></div></sc-for>
+          <div style="height:56px; border-radius:16px; background:#C6F53C; color:#1a1b1d; font-size:17px; font-weight:800; display:flex; align-items:center; justify-content:center; margin:14px 0 12px;">Allow Access</div>
+          <div style="height:50px; color:#8a8d86; font-size:15px; font-weight:700; display:flex; align-items:center; justify-content:center;">Not Now</div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+    <div class="sec">B · 首页与发布流程（图文免费 / 视频 20 金币）</div>
+    <div class="row">
+
+    <!-- 5 HOME -->
+    <div id="b-home" onClick="{{ go.postdetail }}" class="board">
+      <div class="ann"><b>5 · Home 首页</b><p>FAVORITE 行李牌徽章 + 亮绿主卡（作者名 + 爱心）+ 后方蓝/紫层叠卡片露出；下方 Games list 白色圆角行（深色 + 按钮）。底部胶囊 Tab。</p><i>交互：大卡 → 14 详情；＋ → 6 发布；行 → 14；Tab 跳转</i></div>
+      <div class="sc" style="height:auto; min-height:812px; background:#1A1B1D;">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="padding:6px 20px 100px;">
+          <!-- hero stack -->
+          <div style="position:relative; height:468px; margin-bottom:6px;">
+            <!-- sparkles -->
+            <div style="position:absolute; top:104px; right:14px; z-index:7; color:#7FE6D6; font-size:15px;">✦</div>
+            <div style="position:absolute; top:126px; right:40px; z-index:7; color:#C9C97A; font-size:10px;">✦</div>
+            <!-- FAVORITE ribbon -->
+            <div style="position:absolute; top:6px; left:-2px; z-index:60;">
+              <svg style="position:absolute; top:-16px; left:12px; z-index:1;" width="46" height="46" viewBox="0 0 46 46" fill="none" stroke="#6FE0D0" stroke-width="2.6" stroke-linecap="round"><path d="M24 40C9 36 8 12 30 9"></path></svg>
+              <div class="blk" style="position:relative; z-index:2; display:inline-block; background:linear-gradient(104deg,#5FA347 0%,#9AD65A 33%,#CFF75C 70%,#AFE24E 100%); color:#151515; font-size:40px; letter-spacing:.5px; padding:18px 46px 20px 62px; border-radius:34px; transform:rotate(-5deg); box-shadow:inset 0 2px 0 rgba(255,255,255,.5), 0 18px 34px rgba(0,0,0,.5); border:1.5px solid rgba(255,255,255,.4);">PAWSOME<div style="position:absolute; top:26px; left:22px; width:24px; height:24px; border-radius:50%; border:3.5px solid #5FD9C8; background:#17181A; box-shadow:inset 0 2px 4px rgba(0,0,0,.6);"></div></div>
+            </div>
+            <!-- stacked featured deck (whole stack slides) -->
+            <div style="position:absolute; top:132px; left:0; width:250px; height:300px; z-index:3;">
+              <sc-for list="{{ heroItems }}" as="c" hint-placeholder-count="3"><div onPointerDown="{{ heroDown }}" onPointerMove="{{ heroMove }}" onPointerUp="{{ heroUp }}" onPointerCancel="{{ heroUp }}" style="{{ c.cardStyle }}">
+                <div style="position:relative; width:100%; height:100%; border-radius:30px; background:#C4F03A; padding:8px; box-shadow:0 0 26px rgba(198,245,60,.22), 0 22px 46px rgba(0,0,0,.45);">
+                  <div style="position:relative; height:100%; border-radius:23px; overflow:hidden;"><img src="{{ c.src }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""><div style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.74)); pointer-events:none;"></div><div onClick="{{ rep }}" style="position:absolute; top:11px; left:11px; z-index:5; width:34px; height:34px; border-radius:50%; background:rgba(20,20,20,.66); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; box-shadow:0 3px 8px rgba(0,0,0,.3);"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="5" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="12" cy="19" r="2"></circle></svg></div><div style="position:absolute; left:16px; bottom:18px; right:64px; pointer-events:none;"><div class="blk" style="color:#fff; font-size:23px; letter-spacing:.2px;">{{ c.title }}</div><div style="color:rgba(255,255,255,.8); font-size:13.5px; margin-top:2px;">{{ c.sub }}</div></div>
+                    <div style="position:absolute; top:11px; right:11px; z-index:4; display:flex; align-items:center; gap:5px; background:rgba(20,20,20,.66); color:#fff; font-size:12px; font-weight:800; padding:5px 11px 5px 9px; border-radius:999px; backdrop-filter:blur(6px); box-shadow:0 3px 8px rgba(0,0,0,.3); pointer-events:none;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C6F53C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="15" rx="3"></rect><circle cx="12" cy="12.5" r="3.4"></circle><path d="M8 5l1.5-2h5L16 5"></path></svg>Photo</div>
+                    <div onClick="{{ rep }}" style="position:absolute; right:14px; bottom:16px; z-index:4; width:50px; height:50px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 16px rgba(0,0,0,.35);"><svg width="21" height="21" viewBox="0 0 24 24" fill="#1a1b1d"><path d="M12 21s-7-4.5-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9Z"></path></svg></div>
+                    <div style="{{ c.tintStyle }}"></div>
+                  </div>
+                </div>
+              </div></sc-for>
+            </div>
+            <!-- carousel dots -->
+            <div style="position:absolute; top:444px; left:0; width:250px; display:flex; justify-content:center; align-items:center; gap:6px;"><sc-for list="{{ heroDots }}" as="d" hint-placeholder-count="3"><div style="{{ d.style }}"></div></sc-for></div>
+          </div>
+          <!-- games list -->
+          <div style="color:#8a8d86; font-size:16px; font-weight:700; margin:20px 0 14px;">Games list</div>
+          <div style="display:flex; flex-direction:column; gap:12px;"><sc-for list="{{ recentRows }}" as="r" hint-placeholder-count="3"><div onClick="{{ go.profile }}" style="display:flex; align-items:center; gap:14px; background:#fff; border-radius:22px; padding:13px 15px;"><div style="width:52px; height:52px; border-radius:16px; overflow:hidden; flex-shrink:0;"><img src="{{ r.src }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div><div style="flex:1; min-width:0;"><div style="color:#1a1b1d; font-size:16px; font-weight:800; line-height:1.2;">{{ r.title }}</div><div style="color:#9a9a9a; font-size:13px; margin-top:3px;">{{ r.meta }}</div></div><div onClick="{{ go.create }}" style="width:44px; height:44px; border-radius:50%; background:#141414; display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#C6F53C" stroke-width="2.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></div></div></sc-for></div>
+        </div>
+        <div class="tabbar"><div class="tab" style="flex-direction:column; gap:5px;">{{ tabHome }}<div style="width:5px; height:5px; border-radius:50%; background:#C6F53C;"></div></div><div onClick="{{ go.square }}" class="tab" style="flex-direction:column; gap:5px;">{{ tabSquare }}<div style="width:5px; height:5px; border-radius:50%; background:transparent;"></div></div><div onClick="{{ go.create }}" class="tab"><div style="width:48px; height:48px; border-radius:50%; background:#C6F53C; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 18px rgba(198,245,60,.4);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a1b1d" stroke-width="2.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></div></div><div onClick="{{ go.myalbum }}" class="tab" style="flex-direction:column; gap:5px;">{{ tabAlbum }}<div style="width:5px; height:5px; border-radius:50%; background:transparent;"></div></div><div onClick="{{ go.my }}" class="tab" style="flex-direction:column; gap:5px;">{{ tabMy }}<div style="width:5px; height:5px; border-radius:50%; background:transparent;"></div></div></div>
+      </div>
+    </div>
+
+    <!-- 6 CREATE -->
+    <div id="b-create" onClick="{{ go.photopost }}" class="board">
+      <div class="ann"><b>6 · Create 发布类型选择</b><p>免费入口 Photo Post、付费入口 Video Vlog（20 金币），底部说明。</p><i>交互：Photo Post → 7；Video Vlog → 8</i></div>
+      <div class="sc">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="padding:8px 24px;"><div onClick="{{ go.home }}" style="font-size:28px; color:#fff; margin-bottom:10px;">‹</div><div class="blk" style="font-size:26px; color:#fff;">CREATE MOMENT</div></div>
+        <div style="padding:24px 24px 0; display:flex; flex-direction:column; gap:16px;">
+          <div onClick="{{ go.photopost }}" style="border-radius:24px; background:#C6F53C; padding:22px; position:relative;"><div style="width:54px; height:54px; border-radius:16px; background:#1a1b1d; display:flex; align-items:center; justify-content:center; font-size:28px; margin-bottom:14px;"><svg viewBox="0 0 24 24" style="width:1em;height:1em;vertical-align:-0.14em" fill="none" stroke="#7FD08A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"></rect><circle cx="8.5" cy="9" r="1.7"></circle><path d="m4 18 5-4 4 3 3-2 4 3"></path></svg></div><div class="blk" style="font-size:22px; color:#1a1b1d;">Photo Post</div><div style="color:#3f5410; font-size:14px; font-weight:700; margin-top:4px;">Post photos for free</div><div style="position:absolute; top:22px; right:22px; background:#1a1b1d; color:#C6F53C; font-size:12px; font-weight:800; padding:5px 12px; border-radius:999px;">Free</div></div>
+          <div onClick="{{ go.videovlog }}" style="border-radius:24px; background:#C9B8E8; padding:22px; position:relative;"><div style="width:54px; height:54px; border-radius:16px; background:#1a1b1d; display:flex; align-items:center; justify-content:center; font-size:28px; margin-bottom:14px;"><svg viewBox="0 0 24 24" style="width:1em;height:1em;vertical-align:-0.14em" fill="none" stroke="#C9B8E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2.5"></rect><path d="M16 10l5-3v10l-5-3z"></path></svg></div><div class="blk" style="font-size:22px; color:#1a1b1d;">Video Vlog</div><div style="color:#4a3a68; font-size:14px; font-weight:700; margin-top:4px;">Post video with 20 coins</div><div style="position:absolute; top:22px; right:22px; background:#1a1b1d; color:#fff; font-size:12px; font-weight:800; padding:5px 12px; border-radius:999px;"><img src="assets/coin-sm.png" style="width:1.2em;height:1.2em;vertical-align:-0.26em;object-fit:contain;"> 20</div></div>
+        </div>
+        <div style="position:absolute; left:24px; right:24px; bottom:40px; background:#26282B; border-radius:16px; padding:14px 16px; text-align:center; color:#9aa694; font-size:13px; font-weight:700;">Photo posts are free. Video posts cost 20 coins.</div>
+      </div>
+    </div>
+
+    <!-- 7 PHOTO POST -->
+    <div id="b-photopost" onClick="{{ go.photook }}" class="board">
+      <div class="ann"><b>7 · Photo Post Editor 图文发布</b><p>添加照片、写文字、选宠物状态，免费发布。</p><i>交互：Publish Free → 10 成功；添加照片需相册/相机权限</i></div>
+      <div class="sc">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="display:flex; align-items:center; padding:6px 18px 14px;"><div onClick="{{ go.create }}" style="font-size:28px; color:#fff; width:40px;">‹</div><div class="blk" style="flex:1; text-align:center; font-size:17px; color:#fff;">PHOTO POST</div><div style="width:40px;"></div></div>
+        <div style="padding:0 20px;">
+          <div style="height:180px; border-radius:20px; background:#26282B; border:1.5px dashed #3d4044; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; margin-bottom:18px;"><div style="width:52px; height:52px; border-radius:50%; background:#C6F53C; display:flex; align-items:center; justify-content:center; font-size:24px;">＋</div><div style="color:#8a8d86; font-size:14px; font-weight:700;">Add photos</div></div>
+          <div style="min-height:90px; border-radius:16px; background:#26282B; padding:14px 16px; color:#6f7a68; font-size:15px; margin-bottom:18px;">Write something about today…</div>
+          <div style="color:#9aa694; font-size:13px; font-weight:700; margin-bottom:12px;">Pet status</div>
+          <div style="display:flex; flex-wrap:wrap; gap:10px;"><sc-for list="{{ photoStatus }}" as="t" hint-placeholder-count="6"><div style="{{ t.style }}">{{ t.label }}</div></sc-for></div>
+        </div>
+        <div style="position:absolute; left:20px; right:20px; bottom:34px;"><div onClick="{{ go.photook }}" style="height:56px; border-radius:16px; background:#C6F53C; color:#1a1b1d; font-size:17px; font-weight:800; display:flex; align-items:center; justify-content:center; gap:8px;">Publish Free</div><div style="text-align:center; color:#7FD08A; font-size:12.5px; font-weight:700; margin-top:10px;">Photo posts are free</div></div>
+      </div>
+    </div>
+
+    <!-- 8 VIDEO VLOG -->
+    <div id="b-videovlog" onClick="{{ go.coindialog }}" class="board">
+      <div class="ann"><b>8 · Video Vlog Editor 视频发布</b><p>添加视频、写文字、选状态，发布消耗 20 金币。</p><i>交互：Publish with 20 Coins → 9 付费弹窗；需相机/麦克风权限</i></div>
+      <div class="sc">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="display:flex; align-items:center; padding:6px 18px 14px;"><div onClick="{{ go.create }}" style="font-size:28px; color:#fff; width:40px;">‹</div><div class="blk" style="flex:1; text-align:center; font-size:17px; color:#fff;">PET VLOG</div><div style="width:40px;"></div></div>
+        <div style="padding:0 20px;">
+          <div style="height:200px; border-radius:20px; background:#26282B; border:1.5px dashed #3d4044; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; margin-bottom:18px; position:relative;"><div style="width:56px; height:56px; border-radius:50%; background:#C9B8E8; display:flex; align-items:center; justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="#1a1b1d"><path d="M6 4l14 8-14 8z"></path></svg></div><div style="color:#8a8d86; font-size:14px; font-weight:700;">Add video</div></div>
+          <div style="min-height:80px; border-radius:16px; background:#26282B; padding:14px 16px; color:#6f7a68; font-size:15px; margin-bottom:18px;">Write a short vlog note…</div>
+          <div style="color:#9aa694; font-size:13px; font-weight:700; margin-bottom:12px;">Pet status</div>
+          <div style="display:flex; flex-wrap:wrap; gap:10px;"><sc-for list="{{ videoStatus }}" as="t" hint-placeholder-count="6"><div style="{{ t.style }}">{{ t.label }}</div></sc-for></div>
+        </div>
+        <div style="position:absolute; left:20px; right:20px; bottom:34px;"><div onClick="{{ go.coindialog }}" style="height:56px; border-radius:16px; background:#C9B8E8; color:#1a1b1d; font-size:17px; font-weight:800; display:flex; align-items:center; justify-content:center; gap:8px;"><img src="assets/coin-sm.png" style="width:1.2em;height:1.2em;vertical-align:-0.26em;object-fit:contain;"> Publish with 20 Coins</div><div style="text-align:center; color:#b7a6d6; font-size:12.5px; font-weight:700; margin-top:10px;">Video posts cost 20 coins each</div></div>
+      </div>
+    </div>
+
+    <!-- 9 COIN DIALOG -->
+    <div id="b-coindialog" onClick="{{ go.videook }}" class="board">
+      <div class="ann"><b>9 · Video Coin Dialog 付费确认</b><p>发布视频消耗 20 金币，显示余额，可用金币/去购买/取消。（付费点）</p><i>交互：Use 20 Coins → 11 成功；Buy Coins → 26；余额不足 → 12</i></div>
+      <div class="sc" style="display:flex; align-items:center; justify-content:center; padding:0 30px;">
+        <div style="position:absolute; inset:0; background:rgba(0,0,0,.6);"></div>
+        <div style="position:relative; background:#26282B; border-radius:24px; padding:28px 22px; width:100%; text-align:center;"><div style="width:70px; height:70px; border-radius:20px; background:#3a2f14; display:flex; align-items:center; justify-content:center; font-size:34px; margin:0 auto 16px;"><img src="assets/coin-sm.png" style="width:1.2em;height:1.2em;vertical-align:-0.26em;object-fit:contain;"></div><div class="blk" style="font-size:20px; color:#fff; margin-bottom:8px;">POST PET VIDEO</div><div style="font-size:14.5px; color:#8a8d86; line-height:1.5; margin-bottom:18px;">Posting a video costs 20 coins.</div><div style="display:flex; align-items:center; justify-content:space-between; background:#1a1b1d; border-radius:14px; padding:14px 16px; margin-bottom:10px;"><span style="color:#8a8d86; font-size:14px; font-weight:700;">Your Balance</span><span style="color:#fff; font-size:15px; font-weight:800;"><img src="assets/coin-sm.png" style="width:1.2em;height:1.2em;vertical-align:-0.26em;object-fit:contain;"> 120</span></div><div style="display:flex; align-items:center; justify-content:space-between; background:#1a1b1d; border-radius:14px; padding:14px 16px; margin-bottom:20px;"><span style="color:#8a8d86; font-size:14px; font-weight:700;">Cost</span><span style="color:#F2C94C; font-size:15px; font-weight:800;">20 Coins</span></div><div onClick="{{ go.videook }}" style="height:52px; border-radius:15px; background:#C6F53C; color:#1a1b1d; font-size:16px; font-weight:800; display:flex; align-items:center; justify-content:center; margin-bottom:10px;">Use 20 Coins</div><div onClick="{{ go.store }}" style="height:50px; border-radius:15px; background:#3a3d40; color:#fff; font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center; margin-bottom:8px;">Buy Coins</div><div onClick="{{ go.videovlog }}" style="height:44px; color:#8a8d86; font-size:15px; font-weight:700; display:flex; align-items:center; justify-content:center;">Cancel</div><div onClick="{{ go.nocoins }}" style="text-align:center; color:#5f6a58; font-size:12px; font-weight:700; margin-top:2px;">Low balance scenario →</div></div>
+      </div>
+    </div>
+
+    <!-- 10 PHOTO SUCCESS -->
+    <div id="b-photook" onClick="{{ go.postdetail }}" class="board">
+      <div class="ann"><b>10 · Photo Publish Success 图文成功</b><p>免费图文发布成功提示。</p><i>交互：View Post → 14；Back Home → 5</i></div>
+      <div class="sc" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:0 34px; text-align:center;"><div style="width:100px; height:100px; border-radius:50%; background:#1d3a22; display:flex; align-items:center; justify-content:center; font-size:52px; margin-bottom:24px;"><svg viewBox="0 0 24 24" style="width:1em;height:1em;vertical-align:-0.14em" fill="none" stroke="#7FD08A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.2l2.6 2.6L16 9.4"></path></svg></div><div class="blk" style="font-size:24px; color:#fff; margin-bottom:10px;">PUBLISHED</div><div style="font-size:15px; color:#8a8d86; line-height:1.5; margin-bottom:34px;">Your photo post is now in Pet Daily Square.</div><div onClick="{{ go.postdetail }}" style="width:100%; height:54px; border-radius:16px; background:#C6F53C; color:#1a1b1d; font-size:16px; font-weight:800; display:flex; align-items:center; justify-content:center; margin-bottom:12px;">View Post</div><div onClick="{{ go.home }}" style="width:100%; height:52px; color:#8a8d86; font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center;">Back Home</div></div>
+    </div>
+
+    <!-- 11 VIDEO SUCCESS -->
+    <div id="b-videook" onClick="{{ go.videodetail }}" class="board">
+      <div class="ann"><b>11 · Video Publish Success 视频成功</b><p>扣除 20 金币后视频发布成功提示。</p><i>交互：View Vlog → 15；Back Home → 5</i></div>
+      <div class="sc" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:0 34px; text-align:center;"><div style="width:100px; height:100px; border-radius:50%; background:#2e2748; display:flex; align-items:center; justify-content:center; font-size:52px; margin-bottom:24px;"><svg viewBox="0 0 24 24" style="width:1em;height:1em;vertical-align:-0.14em" fill="none" stroke="#C9B8E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2.5"></rect><path d="M16 10l5-3v10l-5-3z"></path></svg></div><div class="blk" style="font-size:24px; color:#fff; margin-bottom:10px;">VLOG PUBLISHED</div><div style="font-size:15px; color:#8a8d86; line-height:1.5; margin-bottom:34px;">Your pet vlog is now in Pet Daily Square.</div><div onClick="{{ go.videodetail }}" style="width:100%; height:54px; border-radius:16px; background:#C9B8E8; color:#1a1b1d; font-size:16px; font-weight:800; display:flex; align-items:center; justify-content:center; margin-bottom:12px;">View Vlog</div><div onClick="{{ go.home }}" style="width:100%; height:52px; color:#8a8d86; font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center;">Back Home</div></div>
+    </div>
+
+    <!-- 12 NOT ENOUGH COINS -->
+    <div id="b-nocoins" onClick="{{ go.store }}" class="board">
+      <div class="ann"><b>12 · Not Enough Coins 金币不足</b><p>金币不足以发布视频，引导去购买金币。</p><i>交互：Buy Coins → 26 金币商店；Back → 8</i></div>
+      <div class="sc" style="display:flex; align-items:center; justify-content:center; padding:0 30px;">
+        <div style="position:absolute; inset:0; background:rgba(0,0,0,.6);"></div>
+        <div style="position:relative; background:#26282B; border-radius:24px; padding:30px 24px; width:100%; text-align:center;"><div style="width:74px; height:74px; border-radius:20px; background:#3a2f14; display:flex; align-items:center; justify-content:center; font-size:36px; margin:0 auto 16px;"><img src="assets/coin-sm.png" style="width:1.2em;height:1.2em;vertical-align:-0.26em;object-fit:contain;"></div><div class="blk" style="font-size:21px; color:#fff; margin-bottom:10px;">NOT ENOUGH COINS</div><div style="font-size:14.5px; color:#8a8d86; line-height:1.6; margin-bottom:24px;">You need 20 coins to post this video.</div><div onClick="{{ go.store }}" style="height:52px; border-radius:15px; background:#C6F53C; color:#1a1b1d; font-size:16px; font-weight:800; display:flex; align-items:center; justify-content:center; margin-bottom:10px;">Buy Coins</div><div onClick="{{ go.videovlog }}" style="height:48px; color:#8a8d86; font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center;">Back</div></div>
+      </div>
+    </div>
+
+    </div>
+
+    <div class="sec">C · 广场 / 详情 / 搜索 / 资料 / 举报拉黑</div>
+    <div class="row">
+
+    <!-- 13 SQUARE -->
+    <div id="b-square" onClick="{{ go.postdetail }}" class="board">
+      <div class="ann"><b>13 · Square 宠物日常广场</b><p>搜索框 + 分类（All/Photos/Videos/状态）+ 内容流；图文标 Photo、视频标 Video（带播放角标）。底部 Tab。</p><i>交互：搜索 → 16；图文 → 14；视频 → 15</i></div>
+      <div class="sc" style="height:auto; min-height:812px;">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="padding:6px 20px 100px;">
+          <div class="blk" style="font-size:24px; color:#fff; margin-bottom:14px;">PET DAILY SQUARE</div>
+          <div onClick="{{ go.search }}" style="height:48px; border-radius:14px; background:#26282B; display:flex; align-items:center; gap:10px; padding:0 16px; margin-bottom:16px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6f7a68" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5" stroke-linecap="round"></path></svg><span style="color:#6f7a68; font-size:15px;">Search pet moments</span></div>
+          <div class="ns" style="display:flex; gap:9px; overflow-x:auto; margin-bottom:18px;"><sc-for list="{{ squareCats }}" as="c" hint-placeholder-count="7"><div style="{{ c.style }}">{{ c.label }}</div></sc-for></div>
+          <div style="column-count:2; column-gap:12px;"><sc-for list="{{ squareCards }}" as="c" hint-placeholder-count="6"><div onClick="{{ c.onClick }}" style="break-inside:avoid; margin-bottom:12px; position:relative; border-radius:20px; overflow:hidden; height:{{ c.h }};"><img src="{{ c.src }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""><div style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.62)); pointer-events:none;"></div><div style="{{ c.badge }}">{{ c.kind }}</div><div onClick="{{ rep }}" style="position:absolute; top:10px; right:10px; z-index:6; width:28px; height:28px; border-radius:50%; background:rgba(0,0,0,.45); backdrop-filter:blur(4px); display:flex; align-items:center; justify-content:center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="5" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="12" cy="19" r="2"></circle></svg></div><sc-if value="{{ c.isVideo }}" hint-placeholder-val="{{ false }}"><div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:44px; height:44px; border-radius:50%; background:rgba(0,0,0,.5); backdrop-filter:blur(4px); display:flex; align-items:center; justify-content:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z"></path></svg></div></sc-if><div style="position:absolute; left:11px; right:11px; bottom:11px;"><div style="color:#fff; font-size:13.5px; font-weight:800; line-height:1.3;">{{ c.text }}</div><div style="display:flex; align-items:center; gap:6px; margin-top:6px;"><div style="width:20px; height:20px; border-radius:50%; overflow:hidden;"><img src="{{ c.av }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div><span style="color:rgba(255,255,255,.85); font-size:11.5px; flex:1;">{{ c.user }}</span><span style="color:#fff; font-size:11.5px; font-weight:700;">♥ {{ c.likes }}</span></div></div></div></sc-for></div>
+        </div>
+        <div class="tabbar"><div onClick="{{ go.home }}" class="tab" style="flex-direction:column; gap:5px;">{{ tabHomeOff }}<div style="width:5px; height:5px; border-radius:50%; background:transparent;"></div></div><div class="tab" style="flex-direction:column; gap:5px;">{{ tabSquareOn }}<div style="width:5px; height:5px; border-radius:50%; background:#C6F53C;"></div></div><div onClick="{{ go.create }}" class="tab"><div style="width:48px; height:48px; border-radius:50%; background:#C6F53C; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 18px rgba(198,245,60,.4);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a1b1d" stroke-width="2.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></div></div><div onClick="{{ go.myalbum }}" class="tab" style="flex-direction:column; gap:5px;">{{ tabAlbum }}<div style="width:5px; height:5px; border-radius:50%; background:transparent;"></div></div><div onClick="{{ go.my }}" class="tab" style="flex-direction:column; gap:5px;">{{ tabMy }}<div style="width:5px; height:5px; border-radius:50%; background:transparent;"></div></div></div>
+      </div>
+    </div>
+
+    <!-- 14 POST DETAIL -->
+    <div id="b-postdetail" onClick="{{ go.profile }}" class="board">
+      <div class="ann"><b>14 · Post Detail 图文详情</b><p>照片、状态标签、文字、作者、时间；操作 Like/Save/Share/Report/Block。</p><i>交互：作者 → 17；Report → 18；Block → 20</i></div>
+      <div class="sc" style="height:auto; min-height:812px;">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="padding-bottom:30px;">
+          <div style="display:flex; align-items:center; gap:11px; padding:6px 18px 12px;"><div onClick="{{ go.square }}" style="font-size:28px; color:#fff;">‹</div><div onClick="{{ go.profile }}" style="width:38px; height:38px; border-radius:50%; overflow:hidden;"><img src="{{ S.pdAv }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div><div onClick="{{ go.profile }}" style="flex:1;"><div style="color:#fff; font-size:15px; font-weight:800;">Luna's Mom</div><div style="color:#8a8d86; font-size:12px;">2 hours ago</div></div><div onClick="{{ go.report }}" style="padding:6px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="5" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="12" cy="19" r="2"></circle></svg></div></div>
+          <div style="height:430px; margin:0 18px; border-radius:24px; overflow:hidden; position:relative;"><img src="{{ S.pd }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""><div style="position:absolute; top:12px; left:12px; background:rgba(0,0,0,.5); backdrop-filter:blur(6px); color:#C6F53C; font-size:11px; font-weight:800; padding:4px 11px; border-radius:999px;"><svg viewBox="0 0 24 24" style="width:1em;height:1em;vertical-align:-0.14em" fill="none" stroke="#C6F53C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="3"></rect><circle cx="12" cy="13.5" r="3.4"></circle><path d="M8 7l1.5-2.5h5L16 7"></path></svg> Photo</div></div>
+          <div style="padding:16px 20px 0;"><div style="display:flex; gap:8px; margin-bottom:14px;"><span style="background:#1d3a22; color:#7FD08A; font-size:12px; font-weight:800; padding:5px 12px; border-radius:999px;"><svg viewBox="0 0 24 24" style="width:1em;height:1em;vertical-align:-0.14em" fill="#7FD08A"><circle cx="5" cy="11" r="1.9"></circle><circle cx="9.4" cy="6.6" r="1.9"></circle><circle cx="14.6" cy="6.6" r="1.9"></circle><circle cx="19" cy="11" r="1.9"></circle><path d="M12 12.2c-2.4 0-4.3 2-4.3 3.8 0 1.5 1.2 2.4 2.6 2.4.9 0 1.2-.4 1.7-.4s.8.4 1.7.4c1.4 0 2.6-.9 2.6-2.4 0-1.8-1.9-3.8-4.3-3.8Z"></path></svg> Sleeping</span><span style="background:#2e2748; color:#b7a6d6; font-size:12px; font-weight:800; padding:5px 12px; border-radius:999px;">😴 Sleepy</span></div><div style="color:#e8e9e4; font-size:16px; line-height:1.55;">Took a long nap after lunch. The comfiest spot in the whole house. 🐶</div></div>
+          <div style="display:flex; gap:10px; padding:20px 20px 0;"><div onClick="{{ toggleLike }}" style="{{ likeStyle }}">{{ likeInner }}</div><div onClick="{{ toggleSave }}" style="{{ saveStyle }}">{{ saveInner }}</div></div>
+          <div style="display:flex; gap:18px; align-items:center; padding:16px 20px 0;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 15 VIDEO DETAIL -->
+    <div id="b-videodetail" onClick="{{ go.profile }}" class="board">
+      <div class="ann"><b>15 · Video Detail 视频播放详情</b><p>视频播放器、状态标签、Vlog 文字、作者；Like/Save/Report/Block。</p><i>交互：作者 → 17；Report → 18；Block → 20</i></div>
+      <div class="sc" style="background:#0E0F10;">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="display:flex; align-items:center; gap:11px; padding:6px 18px 12px;"><div onClick="{{ go.square }}" style="font-size:28px; color:#fff;">‹</div><div style="flex:1; color:#fff; font-size:15px; font-weight:800;">Pet Vlog</div><div onClick="{{ go.report }}" style="padding:6px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="5" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="12" cy="19" r="2"></circle></svg></div></div>
+        <div style="height:420px; margin:0 0 0; position:relative;"><img src="{{ S.vd }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""><div style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,0) 30%,rgba(0,0,0,.5)); pointer-events:none;"></div><div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:64px; height:64px; border-radius:50%; background:rgba(0,0,0,.5); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z"></path></svg></div><div style="position:absolute; top:14px; left:14px; background:rgba(0,0,0,.5); backdrop-filter:blur(6px); color:#C9B8E8; font-size:11px; font-weight:800; padding:4px 11px; border-radius:999px;"><svg viewBox="0 0 24 24" style="width:1em;height:1em;vertical-align:-0.14em" fill="none" stroke="#C9B8E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2.5"></rect><path d="M16 10l5-3v10l-5-3z"></path></svg> Video</div><div style="position:absolute; left:14px; right:14px; bottom:14px; height:4px; border-radius:2px; background:rgba(255,255,255,.3);"><div style="width:38%; height:100%; border-radius:2px; background:#C6F53C;"></div></div></div>
+        <div style="padding:16px 20px 0;"><div style="display:flex; align-items:center; gap:11px; margin-bottom:14px;"><div onClick="{{ go.profile }}" style="width:40px; height:40px; border-radius:50%; overflow:hidden;"><img src="{{ S.vdAv }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div><div style="flex:1;"><div style="color:#fff; font-size:15px; font-weight:800;">Coco Dad</div><div style="color:#8a8d86; font-size:12px;">Playing · 5h ago</div></div><div style="height:36px; padding:0 18px; border-radius:999px; background:#C6F53C; color:#1a1b1d; font-size:13px; font-weight:800; display:flex; align-items:center;">Follow</div></div><div style="color:#e8e9e4; font-size:15.5px; line-height:1.55;">Zoomies in the park! Turn the sound on for the happy little barks. 🐕</div>
+          <div style="display:flex; gap:10px; padding:18px 0 0;"><div style="flex:1; height:48px; border-radius:14px; background:#C6F53C; color:#1a1b1d; font-size:14px; font-weight:800; display:flex; align-items:center; justify-content:center;">♥ 512</div><div style="flex:1; height:48px; border-radius:14px; background:#26282B; color:#fff; font-size:14px; font-weight:800; display:flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" style="width:1em;height:1em;vertical-align:-0.14em;margin-right:5px" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12v16l-6-4-6 4z"></path></svg>Save</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 16 SEARCH -->
+    <div id="b-search" onClick="{{ go.postdetail }}" class="board">
+      <div class="ann"><b>16 · Search 搜索</b><p>搜索框 + 热门搜索词 + 结果列表。</p><i>交互：结果 → 14 详情；返回 → 13</i></div>
+      <div class="sc">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="display:flex; align-items:center; gap:10px; padding:6px 18px 16px;"><div onClick="{{ go.square }}" style="font-size:28px; color:#fff;">‹</div><div style="flex:1; height:44px; border-radius:12px; background:#26282B; display:flex; align-items:center; gap:9px; padding:0 14px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#6f7a68" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5" stroke-linecap="round"></path></svg><span style="color:#fff; font-size:14px;">cute dog</span></div></div>
+        <div style="padding:0 20px;"><div style="color:#8a8d86; font-size:13px; font-weight:700; margin-bottom:12px;">Popular</div><div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:24px;"><sc-for list="{{ hotSearch }}" as="h" hint-placeholder-count="5"><div style="padding:9px 16px; border-radius:999px; background:#26282B; color:#9aa694; font-size:14px; font-weight:600;">{{ h }}</div></sc-for></div>
+          <div style="color:#8a8d86; font-size:13px; font-weight:700; margin-bottom:12px;">Results</div><div style="display:flex; flex-direction:column; gap:12px;"><sc-for list="{{ searchResults }}" as="r" hint-placeholder-count="3"><div onClick="{{ go.postdetail }}" style="display:flex; gap:12px; align-items:center;"><div style="width:64px; height:64px; border-radius:14px; overflow:hidden; flex-shrink:0; position:relative;"><img src="{{ r.src }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""><div style="{{ r.badge }}">{{ r.kind }}</div></div><div style="flex:1;"><div style="color:#fff; font-size:15px; font-weight:700;">{{ r.text }}</div><div style="color:#8a8d86; font-size:13px; margin-top:3px;">{{ r.user }} · ♥ {{ r.likes }}</div></div></div></sc-for></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 17 USER PROFILE -->
+    <div id="b-profile" onClick="{{ go.postdetail }}" class="board">
+      <div class="ann"><b>17 · User Profile 他人主页（未互关）</b><p>头像、昵称、简介、内容网格（每张带举报三点）。未关注状态：点 Follow 进入等待互关；Message 锁定（需互关）。举报走右上角三点，可拉黑。</p><i>交互：Follow → 35 等待互关；Message → 39 私信限制；举报 → 右上三点；粉丝/关注 → 37/38</i></div>
+      <div class="sc" style="height:auto; min-height:812px;">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:6px 18px 4px;"><div onClick="{{ go.square }}" style="font-size:28px; color:#fff;">‹</div><div onClick="{{ go.report }}" style="padding:6px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="5" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="12" cy="19" r="2"></circle></svg></div></div>
+        <div style="display:flex; flex-direction:column; align-items:center; padding:6px 20px 0;"><div style="width:88px; height:88px; border-radius:50%; overflow:hidden; margin-bottom:12px;"><img src="{{ S.profAv }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div><div class="blk" style="font-size:22px; color:#fff;">Luna's Mom</div><div style="color:#8a8d86; font-size:14px; margin:4px 0 14px; text-align:center;">Golden retriever + one sleepy cat <svg viewBox="0 0 24 24" style="width:1em;height:1em;vertical-align:-0.14em" fill="#7FD08A"><circle cx="5" cy="11" r="1.9"></circle><circle cx="9.4" cy="6.6" r="1.9"></circle><circle cx="14.6" cy="6.6" r="1.9"></circle><circle cx="19" cy="11" r="1.9"></circle><path d="M12 12.2c-2.4 0-4.3 2-4.3 3.8 0 1.5 1.2 2.4 2.6 2.4.9 0 1.2-.4 1.7-.4s.8.4 1.7.4c1.4 0 2.6-.9 2.6-2.4 0-1.8-1.9-3.8-4.3-3.8Z"></path></svg></div><div style="display:flex; align-items:center; gap:22px; width:100%; margin-bottom:14px; padding-left:2px;"><div onClick="{{ go.followers }}" style="display:flex; align-items:baseline; gap:5px;"><span class="blk" style="color:#fff; font-size:16px;">1.2k</span><span style="color:#8a8d86; font-size:13px;">Followers</span></div><div onClick="{{ go.following }}" style="display:flex; align-items:baseline; gap:5px;"><span class="blk" style="color:#fff; font-size:16px;">340</span><span style="color:#8a8d86; font-size:13px;">Following</span></div></div><div style="display:flex; gap:12px; width:100%; margin-bottom:20px;"><div onClick="{{ go.profilepending }}" style="flex:1; height:48px; border-radius:14px; background:#C6F53C; color:#1a1b1d; font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center;">Follow</div><div onClick="{{ go.chatlocked }}" style="flex:1; height:48px; border-radius:14px; background:#26282B; color:#6f7a68; font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center; gap:7px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6f7a68" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>Message</div></div></div>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:4px; padding:0 6px;"><sc-for list="{{ profileGrid }}" as="g" hint-placeholder-count="6"><div onClick="{{ g.onClick }}" style="aspect-ratio:.8; border-radius:12px; overflow:hidden; position:relative;"><img src="{{ g.src }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""><div style="{{ g.badge }}">{{ g.kind }}</div><div onClick="{{ rep }}" style="position:absolute; top:6px; right:6px; z-index:5; width:24px; height:24px; border-radius:50%; background:rgba(0,0,0,.5); backdrop-filter:blur(4px); display:flex; align-items:center; justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="5" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="12" cy="19" r="2"></circle></svg></div></div></sc-for></div>
+      </div>
+    </div>
+
+    <!-- 18 REPORT -->
+    <div id="b-report" onClick="{{ go.reportok }}" class="board">
+      <div class="ann"><b>18 · Report 举报页</b><p>选择举报原因 + 说明输入框，提交。</p><i>交互：Submit → 19；Cancel → 14</i></div>
+      <div class="sc">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="display:flex; align-items:center; padding:6px 18px 14px;"><div onClick="{{ go.postdetail }}" style="font-size:28px; color:#fff; width:40px;">‹</div><div class="blk" style="flex:1; text-align:center; font-size:17px; color:#fff;">REPORT</div><div style="width:40px;"></div></div>
+        <div style="padding:0 20px;"><div style="color:#8a8d86; font-size:13px; font-weight:700; margin-bottom:12px;">Reason</div><div style="display:flex; flex-direction:column; gap:10px; margin-bottom:20px;"><sc-for list="{{ reportReasons }}" as="r" hint-placeholder-count="5"><div style="display:flex; align-items:center; justify-content:space-between; background:#26282B; border-radius:13px; padding:15px 16px;"><span style="color:#fff; font-size:15px;">{{ r }}</span><span style="width:20px; height:20px; border-radius:50%; border:2px solid #4a4d48;"></span></div></sc-for></div>
+          <div style="min-height:90px; border-radius:14px; background:#26282B; padding:14px 16px; color:#6f7a68; font-size:14px;">Add details (optional)…</div>
+          <div onClick="{{ go.block }}" style="display:flex; align-items:center; justify-content:center; gap:8px; margin-top:16px; height:52px; border-radius:14px; background:#3a2020; color:#E8654E; font-size:15px; font-weight:800;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8654E" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M5.6 5.6l12.8 12.8"></path></svg>Block This User</div>
+        </div>
+        <div style="position:absolute; left:20px; right:20px; bottom:34px; display:flex; gap:12px;"><div onClick="{{ go.postdetail }}" style="flex:1; height:54px; border-radius:16px; background:#26282B; color:#fff; font-size:16px; font-weight:800; display:flex; align-items:center; justify-content:center;">Cancel</div><div onClick="{{ go.reportok }}" style="flex:1.4; height:54px; border-radius:16px; background:#C6F53C; color:#1a1b1d; font-size:16px; font-weight:800; display:flex; align-items:center; justify-content:center;">Submit</div></div>
+      </div>
+    </div>
+
+    <!-- 19 REPORT SUCCESS -->
+    <div id="b-reportok" onClick="{{ go.square }}" class="board">
+      <div class="ann"><b>19 · Report Success 举报成功</b><p>感谢提示。</p><i>交互：Done → 13 广场</i></div>
+      <div class="sc" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:0 34px; text-align:center;"><div style="width:100px; height:100px; border-radius:50%; background:#1d3a22; display:flex; align-items:center; justify-content:center; font-size:52px; margin-bottom:24px;"><svg viewBox="0 0 24 24" style="width:1em;height:1em;vertical-align:-0.14em" fill="none" stroke="#7FD08A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.2l2.6 2.6L16 9.4"></path></svg></div><div class="blk" style="font-size:22px; color:#fff; margin-bottom:10px;">REPORT SUBMITTED</div><div style="font-size:15px; color:#8a8d86; line-height:1.5; margin-bottom:34px;">Thanks for helping keep the community safe.</div><div onClick="{{ go.square }}" style="width:100%; height:54px; border-radius:16px; background:#C6F53C; color:#1a1b1d; font-size:16px; font-weight:800; display:flex; align-items:center; justify-content:center;">Done</div></div>
+    </div>
+
+    <!-- 20 BLOCK -->
+    <div id="b-block" onClick="{{ go.square }}" class="board">
+      <div class="ann"><b>20 · Block Dialog 拉黑确认</b><p>确认拉黑，之后不再看到该用户内容。</p><i>交互：Block → 13 广场；Cancel → 14</i></div>
+      <div class="sc" style="display:flex; align-items:center; justify-content:center; padding:0 30px;">
+        <div style="position:absolute; inset:0; background:rgba(0,0,0,.6);"></div>
+        <div style="position:relative; background:#26282B; border-radius:24px; padding:30px 24px; width:100%; text-align:center;"><div style="width:70px; height:70px; border-radius:50%; background:#3a2020; display:flex; align-items:center; justify-content:center; font-size:34px; margin:0 auto 16px;"><svg viewBox="0 0 24 24" style="width:1em;height:1em;vertical-align:-0.14em" fill="none" stroke="#E8654E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M5.6 5.6l12.8 12.8"></path></svg></div><div class="blk" style="font-size:20px; color:#fff; margin-bottom:10px;">BLOCK THIS USER?</div><div style="font-size:14.5px; color:#8a8d86; line-height:1.6; margin-bottom:24px;">You will no longer see this user's posts.</div><div onClick="{{ go.square }}" style="height:52px; border-radius:15px; background:#E8654E; color:#fff; font-size:16px; font-weight:800; display:flex; align-items:center; justify-content:center; margin-bottom:10px;">Block</div><div onClick="{{ go.postdetail }}" style="height:50px; color:#8a8d86; font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center;">Cancel</div></div>
+      </div>
+    </div>
+
+    </div>
+
+    <div class="sec">D · 我的记录与个人中心</div>
+    <div class="row">
+
+    <!-- 21 MY ALBUM -->
+    <div id="b-myalbum" onClick="{{ go.mypostdetail }}" class="board">
+      <div class="ann"><b>21 · My Pet Album 我的记录</b><p>分类（All/Photo Posts/Video Vlogs/Saved）+ 记录网格；含空状态说明。底部 Tab。</p><i>交互：内容 → 22 我的详情</i></div>
+      <div class="sc" style="height:auto; min-height:812px;">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="padding:6px 20px 100px;">
+          <div class="blk" style="font-size:24px; color:#fff; margin-bottom:14px;">MY PET ALBUM</div>
+          <div class="ns" style="display:flex; gap:9px; overflow-x:auto; margin-bottom:18px;"><sc-for list="{{ albumCats }}" as="c" hint-placeholder-count="4"><div style="{{ c.style }}">{{ c.label }}</div></sc-for></div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;"><sc-for list="{{ albumCards }}" as="c" hint-placeholder-count="6"><div onClick="{{ go.mypostdetail }}" style="position:relative; border-radius:18px; overflow:hidden; height:150px;"><img src="{{ c.src }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""><div style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.55)); pointer-events:none;"></div><div style="{{ c.badge }}">{{ c.kind }}</div><div onClick="{{ del }}" style="position:absolute; top:8px; right:8px; z-index:6; width:30px; height:30px; border-radius:50%; background:rgba(0,0,0,.55); backdrop-filter:blur(4px); display:flex; align-items:center; justify-content:center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V5h6v2M6.5 7l1 13h9l1-13"></path></svg></div><div style="position:absolute; left:10px; right:10px; bottom:9px; color:#fff; font-size:12.5px; font-weight:800;">{{ c.text }}</div></div></sc-for></div>
+        </div>
+        <div class="tabbar"><div onClick="{{ go.home }}" class="tab" style="flex-direction:column; gap:5px;">{{ tabHomeOff }}<div style="width:5px; height:5px; border-radius:50%; background:transparent;"></div></div><div onClick="{{ go.square }}" class="tab" style="flex-direction:column; gap:5px;">{{ tabSquare }}<div style="width:5px; height:5px; border-radius:50%; background:transparent;"></div></div><div onClick="{{ go.create }}" class="tab"><div style="width:48px; height:48px; border-radius:50%; background:#C6F53C; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 18px rgba(198,245,60,.4);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a1b1d" stroke-width="2.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></div></div><div class="tab" style="flex-direction:column; gap:5px;">{{ tabAlbumOn }}<div style="width:5px; height:5px; border-radius:50%; background:#C6F53C;"></div></div><div onClick="{{ go.my }}" class="tab" style="flex-direction:column; gap:5px;">{{ tabMy }}<div style="width:5px; height:5px; border-radius:50%; background:transparent;"></div></div></div>
+      </div>
+    </div>
+
+    <!-- 22 MY POST DETAIL -->
+    <div id="b-mypostdetail" onClick="{{ go.editpost }}" class="board">
+      <div class="ann"><b>22 · My Post Detail 我的动态详情</b><p>我的图文/视频内容、状态、文字、时间；操作 Edit/Delete/Share。</p><i>交互：Edit → 23；Delete → 24</i></div>
+      <div class="sc" style="height:auto; min-height:812px;">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="display:flex; align-items:center; padding:6px 18px 12px;"><div onClick="{{ go.myalbum }}" style="font-size:28px; color:#fff; width:40px;">‹</div><div class="blk" style="flex:1; text-align:center; font-size:17px; color:#fff;">MY POST</div><div style="width:40px;"></div></div>
+        <div style="height:400px; margin:0 18px; border-radius:24px; overflow:hidden; position:relative;"><img src="{{ S.myp }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""><div style="position:absolute; top:12px; left:12px; background:rgba(0,0,0,.5); backdrop-filter:blur(6px); color:#C6F53C; font-size:11px; font-weight:800; padding:4px 11px; border-radius:999px;"><svg viewBox="0 0 24 24" style="width:1em;height:1em;vertical-align:-0.14em" fill="none" stroke="#C6F53C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="3"></rect><circle cx="12" cy="13.5" r="3.4"></circle><path d="M8 7l1.5-2.5h5L16 7"></path></svg> Photo</div></div>
+        <div style="padding:16px 20px 0;"><div style="display:flex; gap:8px; margin-bottom:12px;"><span style="background:#1d3a22; color:#7FD08A; font-size:12px; font-weight:800; padding:5px 12px; border-radius:999px;"><svg viewBox="0 0 24 24" style="width:1em;height:1em;vertical-align:-0.14em" fill="#7FD08A"><circle cx="5" cy="11" r="1.9"></circle><circle cx="9.4" cy="6.6" r="1.9"></circle><circle cx="14.6" cy="6.6" r="1.9"></circle><circle cx="19" cy="11" r="1.9"></circle><path d="M12 12.2c-2.4 0-4.3 2-4.3 3.8 0 1.5 1.2 2.4 2.6 2.4.9 0 1.2-.4 1.7-.4s.8.4 1.7.4c1.4 0 2.6-.9 2.6-2.4 0-1.8-1.9-3.8-4.3-3.8Z"></path></svg> Walking</span></div><div style="color:#e8e9e4; font-size:16px; line-height:1.55;">Sunny walk in the park 🌿</div><div style="color:#6f7a68; font-size:13px; margin-top:10px;">March 12, 2026</div></div>
+        <div style="display:flex; gap:10px; padding:22px 20px 30px;"><div onClick="{{ go.editpost }}" style="flex:1; height:50px; border-radius:14px; background:#C6F53C; color:#1a1b1d; font-size:14px; font-weight:800; display:flex; align-items:center; justify-content:center;">Edit</div><div onClick="{{ go.deletedialog }}" style="flex:1; height:50px; border-radius:14px; background:#3a2020; color:#E8654E; font-size:14px; font-weight:800; display:flex; align-items:center; justify-content:center;">Delete</div></div>
+      </div>
+    </div>
+
+    <!-- 23 EDIT POST -->
+    <div id="b-editpost" onClick="{{ go.mypostdetail }}" class="board">
+      <div class="ann"><b>23 · Edit Post 编辑动态</b><p>编辑文字、宠物状态。</p><i>交互：Save Changes / Cancel → 22</i></div>
+      <div class="sc">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="display:flex; align-items:center; padding:6px 18px 14px;"><div onClick="{{ go.mypostdetail }}" style="font-size:28px; color:#fff; width:40px;">‹</div><div class="blk" style="flex:1; text-align:center; font-size:17px; color:#fff;">EDIT POST</div><div style="width:40px;"></div></div>
+        <div style="padding:0 20px;"><div style="color:#8a8d86; font-size:13px; font-weight:700; margin-bottom:10px;">Note</div><div style="min-height:100px; border-radius:16px; background:#26282B; padding:14px 16px; color:#e8e9e4; font-size:15px; line-height:1.5; margin-bottom:20px;">Sunny walk in the park 🌿</div><div style="color:#8a8d86; font-size:13px; font-weight:700; margin-bottom:12px;">Pet status</div><div style="display:flex; flex-wrap:wrap; gap:10px;"><span style="padding:10px 17px; border-radius:999px; background:#C6F53C; color:#1a1b1d; font-size:14px; font-weight:800;">Walking</span><span style="padding:10px 17px; border-radius:999px; background:#26282B; color:#9aa694; font-size:14px; font-weight:700;">Playing</span><span style="padding:10px 17px; border-radius:999px; background:#26282B; color:#9aa694; font-size:14px; font-weight:700;">Eating</span></div></div>
+        <div style="position:absolute; left:20px; right:20px; bottom:34px; display:flex; gap:12px;"><div onClick="{{ go.mypostdetail }}" style="flex:1; height:54px; border-radius:16px; background:#26282B; color:#fff; font-size:16px; font-weight:800; display:flex; align-items:center; justify-content:center;">Cancel</div><div onClick="{{ go.mypostdetail }}" style="flex:1.4; height:54px; border-radius:16px; background:#C6F53C; color:#1a1b1d; font-size:16px; font-weight:800; display:flex; align-items:center; justify-content:center;">Save Changes</div></div>
+      </div>
+    </div>
+
+    <!-- 24 DELETE DIALOG -->
+    <div id="b-deletedialog" onClick="{{ go.myalbum }}" class="board">
+      <div class="ann"><b>24 · Delete Dialog 删除确认</b><p>删除动态二次确认，不可恢复。</p><i>交互：Delete → 21 相册；Cancel → 22</i></div>
+      <div class="sc" style="display:flex; align-items:center; justify-content:center; padding:0 30px;">
+        <div style="position:absolute; inset:0; background:rgba(0,0,0,.6);"></div>
+        <div style="position:relative; background:#26282B; border-radius:24px; padding:30px 24px; width:100%; text-align:center;"><div style="width:70px; height:70px; border-radius:50%; background:#3a2020; display:flex; align-items:center; justify-content:center; font-size:34px; margin:0 auto 16px;"><svg viewBox="0 0 24 24" style="width:1em;height:1em;vertical-align:-0.14em" fill="none" stroke="#E8654E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V5h6v2M6.5 7l1 13h9l1-13"></path></svg></div><div class="blk" style="font-size:20px; color:#fff; margin-bottom:10px;">DELETE THIS POST?</div><div style="font-size:14.5px; color:#8a8d86; line-height:1.6; margin-bottom:24px;">This action cannot be undone.</div><div onClick="{{ go.myalbum }}" style="height:52px; border-radius:15px; background:#E8654E; color:#fff; font-size:16px; font-weight:800; display:flex; align-items:center; justify-content:center; margin-bottom:10px;">Delete</div><div onClick="{{ go.mypostdetail }}" style="height:50px; color:#8a8d86; font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center;">Cancel</div></div>
+      </div>
+    </div>
+
+    <!-- 25 MY -->
+    <div id="b-my" onClick="{{ go.settings }}" class="board">
+      <div class="ann"><b>25 · My 个人中心</b><p>头像、昵称、简介、金币余额、发布数、收藏数；入口 相册/金币商店/金币记录/设置。底部 Tab。</p><i>交互：Album → 21；Coin Store → 26；Coin History → 28；Settings → 29</i></div>
+      <div class="sc" style="height:auto; min-height:812px;">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="padding:6px 20px 100px;">
+          <div style="display:flex; align-items:center; gap:14px; margin-bottom:20px;"><div style="width:74px; height:74px; border-radius:50%; overflow:hidden;"><img src="{{ S.myAv }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div><div style="flex:1;"><div class="blk" style="font-size:20px; color:#fff;">Amy Parker</div><div style="color:#8a8d86; font-size:13px; margin-top:3px;">Mochi's mom · joined 2024</div></div><div onClick="{{ go.editprofile }}" style="flex-shrink:0; display:flex; align-items:center; gap:6px; padding:9px 15px; border-radius:999px; background:#26282B; color:#fff; font-size:13px; font-weight:800;"><svg width="14" height="14" viewBox="0 0 16 16" fill="#C6F53C"><path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z"></path></svg>Edit</div></div>
+          <div style="display:flex; background:#26282B; border-radius:18px; padding:16px 0; margin-bottom:22px;"><div onClick="{{ go.myalbum }}" style="flex:1; text-align:center; border-right:1px solid #33363a;"><div class="blk" style="font-size:20px; color:#fff;">48</div><div style="font-size:12px; color:#8a8d86; margin-top:2px;">Posts</div></div><div style="flex:1; text-align:center; border-right:1px solid #33363a;"><div class="blk" style="font-size:20px; color:#fff;">126</div><div style="font-size:12px; color:#8a8d86; margin-top:2px;">Saved</div></div><div onClick="{{ go.store }}" style="flex:1; text-align:center;"><div class="blk" style="font-size:20px; color:#F2C94C; display:flex; align-items:center; justify-content:center; gap:5px;"><img src="assets/coin-sm.png" style="width:22px;height:22px;object-fit:contain;">120</div><div style="font-size:12px; color:#8a8d86; margin-top:2px;">Coins</div></div></div>
+          <div style="display:flex; flex-direction:column; gap:12px;"><sc-for list="{{ myEntries }}" as="e" hint-placeholder-count="4"><div onClick="{{ e.onClick }}" style="display:flex; align-items:center; gap:14px; background:#26282B; border-radius:16px; padding:16px;"><div style="width:40px; height:40px; border-radius:12px; background:#1a1b1d; display:flex; align-items:center; justify-content:center;">{{ e.iconEl }}</div><div style="flex:1; color:#fff; font-size:15px; font-weight:700;">{{ e.label }}</div><span style="color:#6a6d68; font-size:18px;">›</span></div></sc-for></div>
+        </div>
+        <div class="tabbar"><div onClick="{{ go.home }}" class="tab" style="flex-direction:column; gap:5px;">{{ tabHomeOff }}<div style="width:5px; height:5px; border-radius:50%; background:transparent;"></div></div><div onClick="{{ go.square }}" class="tab" style="flex-direction:column; gap:5px;">{{ tabSquare }}<div style="width:5px; height:5px; border-radius:50%; background:transparent;"></div></div><div onClick="{{ go.create }}" class="tab"><div style="width:48px; height:48px; border-radius:50%; background:#C6F53C; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 18px rgba(198,245,60,.4);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a1b1d" stroke-width="2.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></div></div><div onClick="{{ go.myalbum }}" class="tab" style="flex-direction:column; gap:5px;">{{ tabAlbum }}<div style="width:5px; height:5px; border-radius:50%; background:transparent;"></div></div><div class="tab" style="flex-direction:column; gap:5px;">{{ tabMyOn }}<div style="width:5px; height:5px; border-radius:50%; background:#C6F53C;"></div></div></div>
+      </div>
+    </div>
+
+    </div>
+
+    <div class="sec">E · 金币内购</div>
+    <div class="row">
+
+    <!-- 26 COIN STORE -->
+    <div id="b-store" onClick="{{ go.purchaseok }}" class="board">
+      <div class="ann"><b>26 · Coin Store 金币商店</b><p>金币余额 + 套餐（$0.99 = 400 金币 … $99.99 = 63,700 金币，按规范兑换比例）；金币只用于发布视频，每条 20 金币。（付费点）</p><i>交互：套餐 → 27 购买成功</i></div>
+      <div class="sc" style="height:auto; min-height:812px;">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="display:flex; align-items:center; padding:6px 18px 6px;"><div onClick="{{ go.my }}" style="font-size:28px; color:#fff; width:40px;">‹</div><div class="blk" style="flex:1; text-align:center; font-size:17px; color:#fff;">BUY COINS</div><div style="width:40px;"></div></div>
+        <div style="text-align:center; padding:14px 0 22px;"><div style="font-size:52px;"><img src="assets/coin-sm.png" style="width:1.2em;height:1.2em;vertical-align:-0.26em;object-fit:contain;"></div><div class="blk" style="font-size:34px; color:#fff; margin-top:4px;">120</div><div style="font-size:13.5px; color:#8a8d86;">Current balance</div></div>
+        <div style="padding:0 20px; display:flex; flex-direction:column; gap:12px;"><sc-for list="{{ coinPacks }}" as="p" hint-placeholder-count="4"><div onClick="{{ go.purchaseok }}" style="display:flex; align-items:center; justify-content:space-between; background:#26282B; border-radius:16px; padding:16px 18px;"><div style="display:flex; align-items:center; gap:12px;"><span style="font-size:24px;"><img src="assets/coin-sm.png" style="width:1.2em;height:1.2em;vertical-align:-0.26em;object-fit:contain;"></span><span class="blk" style="font-size:18px; color:#fff;">{{ p.coins }}</span></div><div style="height:40px; padding:0 22px; border-radius:12px; background:#C6F53C; color:#1a1b1d; font-size:15px; font-weight:800; display:flex; align-items:center;">{{ p.price }}</div></div></sc-for></div>
+        <div style="text-align:center; color:#6a6d68; font-size:12px; margin-top:16px; padding:0 30px; line-height:1.5;">Coins are used to post pet videos. Each video post costs 20 coins.</div>
+      </div>
+    </div>
+
+    <!-- 27 PURCHASE SUCCESS -->
+    <div id="b-purchaseok" onClick="{{ go.videook }}" class="board">
+      <div class="ann"><b>27 · Purchase Success 购买成功</b><p>金币到账提示。</p><i>交互：Continue Posting → 11；Back Home → 5</i></div>
+      <div class="sc" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:0 34px; text-align:center;"><div style="width:100px; height:100px; border-radius:50%; background:#3a2f14; display:flex; align-items:center; justify-content:center; font-size:52px; margin-bottom:24px;"><img src="assets/coin-sm.png" style="width:1.2em;height:1.2em;vertical-align:-0.26em;object-fit:contain;"></div><div class="blk" style="font-size:22px; color:#fff; margin-bottom:10px;">PURCHASE SUCCESSFUL</div><div style="font-size:15px; color:#8a8d86; line-height:1.5; margin-bottom:34px;">Coins have been added to your account.</div><div onClick="{{ go.videook }}" style="width:100%; height:54px; border-radius:16px; background:#C6F53C; color:#1a1b1d; font-size:16px; font-weight:800; display:flex; align-items:center; justify-content:center; margin-bottom:12px;">Continue Posting</div><div onClick="{{ go.home }}" style="width:100%; height:52px; color:#8a8d86; font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center;">Back Home</div></div>
+    </div>
+
+    <!-- 28 COIN HISTORY -->
+    <div id="b-coinhistory" onClick="{{ go.my }}" class="board">
+      <div class="ann"><b>28 · Coin History 金币记录</b><p>金币收支流水（购买 +/ 发布视频 -20），含时间与状态。</p><i>交互：返回 → 25 个人中心</i></div>
+      <div class="sc">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="display:flex; align-items:center; padding:6px 18px 14px;"><div onClick="{{ go.my }}" style="font-size:28px; color:#fff; width:40px;">‹</div><div class="blk" style="flex:1; text-align:center; font-size:17px; color:#fff;">COIN HISTORY</div><div style="width:40px;"></div></div>
+        <div style="padding:0 20px;"><sc-for list="{{ coinHistory }}" as="h" hint-placeholder-count="5"><div style="display:flex; align-items:center; gap:14px; padding:16px 0; border-bottom:1px solid #26282B;"><div style="width:42px; height:42px; border-radius:12px; background:{{ h.bg }}; display:flex; align-items:center; justify-content:center; font-size:18px;">{{ h.icon }}</div><div style="flex:1;"><div style="color:#fff; font-size:15px; font-weight:700;">{{ h.label }}</div><div style="color:#6a6d68; font-size:12.5px; margin-top:2px;">{{ h.time }}</div></div><div style="{{ h.amtStyle }}">{{ h.amt }}</div></div></sc-for></div>
+      </div>
+    </div>
+
+    </div>
+
+    <div class="sec">F · 设置与合规</div>
+    <div class="row">
+
+    <!-- 29 SETTINGS -->
+    <div id="b-settings" onClick="{{ go.editprofile }}" class="board">
+      <div class="ann"><b>29 · Settings 设置</b><p>账号、隐私、黑名单、用户协议、隐私政策、关于、退出登录。</p><i>交互：Account → 30；Blocked → 31；Terms → 32；Privacy → 33；About → 34；Log Out → 2</i></div>
+      <div class="sc">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="display:flex; align-items:center; padding:6px 18px 14px;"><div onClick="{{ go.my }}" style="font-size:28px; color:#fff; width:40px;">‹</div><div class="blk" style="flex:1; text-align:center; font-size:17px; color:#fff;">SETTINGS</div><div style="width:40px;"></div></div>
+        <div style="padding:0 18px; display:flex; flex-direction:column; gap:10px;"><sc-for list="{{ settingsRows }}" as="r" hint-placeholder-count="6"><div onClick="{{ r.onClick }}" style="display:flex; align-items:center; justify-content:space-between; background:#26282B; border-radius:14px; padding:16px;"><span style="color:#fff; font-size:15px; font-weight:700;">{{ r.label }}</span><span style="color:#6a6d68; font-size:18px;">›</span></div></sc-for></div>
+        <div style="position:absolute; left:18px; right:18px; bottom:34px;"><div onClick="{{ go.login }}" style="height:54px; border-radius:16px; background:#3a2020; color:#E8654E; font-size:16px; font-weight:800; display:flex; align-items:center; justify-content:center;">Log Out</div></div>
+      </div>
+    </div>
+
+    <!-- 30 EDIT PROFILE -->
+    <div id="b-editprofile" onClick="{{ go.settings }}" class="board">
+      <div class="ann"><b>30 · Edit Profile 编辑资料</b><p>修改头像、昵称、简介。</p><i>交互：Save → 29 设置</i></div>
+      <div class="sc">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="display:flex; align-items:center; padding:6px 18px 14px;"><div onClick="{{ go.settings }}" style="font-size:28px; color:#fff; width:40px;">‹</div><div class="blk" style="flex:1; text-align:center; font-size:17px; color:#fff;">EDIT PROFILE</div><div style="width:40px;"></div></div>
+        <div style="display:flex; flex-direction:column; align-items:center; padding:10px 24px 0;"><div style="position:relative; width:100px; height:100px; margin-bottom:8px;"><div style="width:100px; height:100px; border-radius:50%; overflow:hidden;"><img src="{{ S.epAv }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div><div style="position:absolute; right:0; bottom:0; width:32px; height:32px; border-radius:50%; background:#C6F53C; border:3px solid #1A1B1D; display:flex; align-items:center; justify-content:center; color:#1a1b1d; font-size:15px;"><svg viewBox="0 0 24 24" style="width:1em;height:1em;vertical-align:-0.14em" fill="none" stroke="#1a1b1d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L18 10l-4-4L4 16v4Z"></path><path d="m14 6 4 4"></path></svg></div></div><div style="color:#C6F53C; font-size:14px; font-weight:700; margin-bottom:26px;">Change photo</div></div>
+        <div style="padding:0 24px;"><div style="color:#8a8d86; font-size:13px; font-weight:700; margin-bottom:8px;">Nickname</div><div class="field" style="margin-bottom:18px;">Amy Parker</div><div style="color:#8a8d86; font-size:13px; font-weight:700; margin-bottom:8px;">Bio</div><div style="min-height:80px; border-radius:15px; background:#26282B; padding:14px 16px; color:#e8e9e4; font-size:15px; line-height:1.5;">Mochi's mom 🐶 sharing our little daily moments.</div></div>
+        <div style="position:absolute; left:24px; right:24px; bottom:34px;"><div onClick="{{ go.settings }}" style="height:54px; border-radius:16px; background:#C6F53C; color:#1a1b1d; font-size:16px; font-weight:800; display:flex; align-items:center; justify-content:center;">Save</div></div>
+      </div>
+    </div>
+
+    <!-- 31 BLOCKED -->
+    <div id="b-blocked" onClick="{{ go.settings }}" class="board">
+      <div class="ann"><b>31 · Blocked Users 黑名单</b><p>已拉黑用户列表，可解除拉黑。</p><i>交互：Unblock 移除；返回 → 29</i></div>
+      <div class="sc">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="display:flex; align-items:center; padding:6px 18px 14px;"><div onClick="{{ go.settings }}" style="font-size:28px; color:#fff; width:40px;">‹</div><div class="blk" style="flex:1; text-align:center; font-size:17px; color:#fff;">BLOCKED USERS</div><div style="width:40px;"></div></div>
+        <div style="padding:0 18px; display:flex; flex-direction:column; gap:12px;"><sc-for list="{{ blockedUsers }}" as="u" hint-placeholder-count="3"><div style="display:flex; align-items:center; gap:12px; padding:8px 0;"><div style="width:50px; height:50px; border-radius:50%; overflow:hidden; flex-shrink:0;"><img src="{{ u.av }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div><div style="flex:1;"><div style="color:#fff; font-size:15px; font-weight:700;">{{ u.name }}</div><div style="color:#6a6d68; font-size:12.5px;">{{ u.handle }}</div></div><div style="height:38px; padding:0 20px; border-radius:999px; border:1.5px solid #3d4044; color:#9aa694; font-size:14px; font-weight:700; display:flex; align-items:center;">Unblock</div></div></sc-for></div>
+      </div>
+    </div>
+
+    <!-- 32 TERMS -->
+    <div id="b-terms" onClick="{{ go.settings }}" class="board">
+      <div class="ann"><b>32 · Terms of Service 用户协议</b><p>协议长文，可滚动。</p><i>交互：返回 → 29 设置</i></div>
+      <div class="sc" style="height:auto; min-height:812px;">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="display:flex; align-items:center; padding:6px 18px 14px;"><div onClick="{{ go.settings }}" style="font-size:28px; color:#fff; width:40px;">‹</div><div class="blk" style="flex:1; text-align:center; font-size:17px; color:#fff;">TERMS OF SERVICE</div><div style="width:40px;"></div></div>
+        <div style="padding:0 22px 40px; color:#9aa694; font-size:13.5px; line-height:1.75;">Last updated: June 2026<br><br><b style="color:#fff;">1. Acceptance</b><br>By using Pet Daily Vlog you agree to these terms. If you do not agree, please do not use the app.<br><br><b style="color:#fff;">2. Your Content</b><br>You own the pet photos and videos you create. By publishing to Pet Daily Square you grant us a license to display them in the app.<br><br><b style="color:#fff;">3. Community</b><br>Be kind. No inappropriate, spam, or copyright-infringing content. Violations may be removed.<br><br><b style="color:#fff;">4. Coins</b><br>Coins are a virtual item used only to post pet videos (20 coins each), are non-refundable, and have no cash value.<br><br><b style="color:#fff;">5. Termination</b><br>You may stop using the app at any time. We may suspend accounts that break these terms.</div>
+      </div>
+    </div>
+
+    <!-- 33 PRIVACY -->
+    <div id="b-privacy" onClick="{{ go.settings }}" class="board">
+      <div class="ann"><b>33 · Privacy Policy 隐私政策</b><p>隐私政策长文，说明数据收集与使用。</p><i>交互：返回 → 29 设置</i></div>
+      <div class="sc" style="height:auto; min-height:812px;">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="display:flex; align-items:center; padding:6px 18px 14px;"><div onClick="{{ go.settings }}" style="font-size:28px; color:#fff; width:40px;">‹</div><div class="blk" style="flex:1; text-align:center; font-size:17px; color:#fff;">PRIVACY POLICY</div><div style="width:40px;"></div></div>
+        <div style="padding:0 22px 40px; color:#9aa694; font-size:13.5px; line-height:1.75;">Last updated: June 2026<br><br><b style="color:#fff;">1. What We Collect</b><br>Your email, nickname, the content you create, and basic usage data to run the service.<br><br><b style="color:#fff;">2. Photos, Camera &amp; Mic</b><br>Media stays on your device unless you publish. Camera, library and microphone access are used only while creating content.<br><br><b style="color:#fff;">3. How We Use It</b><br>To power your album, the Square feed, coin purchases, and to review reported content.<br><br><b style="color:#fff;">4. Sharing</b><br>We do not sell your data. Payment is handled by the App Store; we never see your card details.<br><br><b style="color:#fff;">5. Your Choices</b><br>You can block users and delete posts at any time. Contact privacy@petdailyvlog.app.</div>
+      </div>
+    </div>
+
+    <!-- 34 ABOUT -->
+    <div id="b-about" onClick="{{ go.settings }}" class="board">
+      <div class="ann"><b>34 · About 关于</b><p>App Logo、名称、版本、简介。</p><i>交互：返回 → 29 设置</i></div>
+      <div class="sc" style="display:flex; flex-direction:column;">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="display:flex; align-items:center; padding:6px 18px 14px;"><div onClick="{{ go.settings }}" style="font-size:28px; color:#fff; width:40px;">‹</div><div class="blk" style="flex:1; text-align:center; font-size:17px; color:#fff;">ABOUT</div><div style="width:40px;"></div></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:0 34px; text-align:center; margin-top:-40px;"><div style="width:104px; height:104px; border-radius:32px; background:#C6F53C; display:flex; align-items:center; justify-content:center; font-size:56px; margin-bottom:22px;"><svg viewBox="0 0 24 24" style="width:1em;height:1em;vertical-align:-0.14em" fill="#1a1b1d"><circle cx="5" cy="11" r="1.9"></circle><circle cx="9.4" cy="6.6" r="1.9"></circle><circle cx="14.6" cy="6.6" r="1.9"></circle><circle cx="19" cy="11" r="1.9"></circle><path d="M12 12.2c-2.4 0-4.3 2-4.3 3.8 0 1.5 1.2 2.4 2.6 2.4.9 0 1.2-.4 1.7-.4s.8.4 1.7.4c1.4 0 2.6-.9 2.6-2.4 0-1.8-1.9-3.8-4.3-3.8Z"></path></svg></div><div class="blk" style="font-size:24px; color:#fff;">PET DAILY VLOG</div><div style="color:#8a8d86; font-size:14px; margin:6px 0 20px;">Version 1.0.0</div><div style="color:#9aa694; font-size:14.5px; line-height:1.6;">A warm little place to record your pet's everyday moments — photos free, vlogs with coins. 🐶🐱</div></div>
+      </div>
+    </div>
+
+    </div>
+    
+    <div class="sec">G · 互关机制 · 关注 / 粉丝 / 私信</div>
+    <div class="row">
+
+    <!-- 35 PROFILE · 等待互关 -->
+    <div id="b-profilepending" class="board">
+      <div class="ann"><b>35 · User Profile · 等待互关</b><p>已关注对方，等待对方回关。此状态下 Message 仍锁定，点击提示需互相关注。举报走右上角三点。</p><i>交互：Message → 39 私信限制；Requested → 取消关注；对方回关后 → 36 已互关</i></div>
+      <div class="sc" style="height:auto; min-height:812px;">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:6px 18px 4px;"><div onClick="{{ go.square }}" style="font-size:28px; color:#fff;">‹</div><div onClick="{{ go.report }}" style="padding:6px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="5" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="12" cy="19" r="2"></circle></svg></div></div>
+        <div style="display:flex; flex-direction:column; align-items:center; padding:6px 20px 0;">
+          <div style="width:88px; height:88px; border-radius:50%; overflow:hidden; margin-bottom:12px;"><img src="{{ S.profAv }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div>
+          <div class="blk" style="font-size:22px; color:#fff;">Luna's Mom</div>
+          <div style="color:#8a8d86; font-size:14px; margin:4px 0 14px; text-align:center;">Golden retriever + one sleepy cat <svg viewBox="0 0 24 24" style="width:1em;height:1em;vertical-align:-0.14em" fill="#8a8d86"><circle cx="5" cy="11" r="1.9"></circle><circle cx="9.4" cy="6.6" r="1.9"></circle><circle cx="14.6" cy="6.6" r="1.9"></circle><circle cx="19" cy="11" r="1.9"></circle><path d="M12 12.2c-2.4 0-4.3 2-4.3 3.8 0 1.5 1.2 2.4 2.6 2.4.9 0 1.2-.4 1.7-.4s.8.4 1.7.4c1.4 0 2.6-.9 2.6-2.4 0-1.8-1.9-3.8-4.3-3.8Z"></path></svg></div>
+          <div style="display:flex; align-items:center; gap:22px; width:100%; margin-bottom:16px; padding-left:2px;"><div onClick="{{ go.followers }}" style="display:flex; align-items:baseline; gap:5px;"><span class="blk" style="color:#fff; font-size:16px;">1.2k</span><span style="color:#8a8d86; font-size:13px;">Followers</span></div><div onClick="{{ go.following }}" style="display:flex; align-items:baseline; gap:5px;"><span class="blk" style="color:#fff; font-size:16px;">340</span><span style="color:#8a8d86; font-size:13px;">Following</span></div></div>
+          <div style="width:100%; background:#2a2718; border:1px solid #4a3f1a; border-radius:14px; padding:12px 14px; display:flex; align-items:center; gap:10px; margin-bottom:14px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#E0C878" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><span style="color:#E0C878; font-size:12.5px; font-weight:700; line-height:1.4;">Waiting for Luna's Mom to follow back — you can message once you follow each other.</span></div>
+          <div style="display:flex; gap:12px; width:100%; margin-bottom:22px;"><div onClick="{{ go.profilemutual }}" style="flex:1; height:48px; border-radius:14px; background:#26282B; border:1.5px solid #3d4044; color:#9aa694; font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center; gap:7px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9aa694" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>Requested</div><div onClick="{{ go.chatlocked }}" style="flex:1; height:48px; border-radius:14px; background:#26282B; color:#6f7a68; font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center; gap:7px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6f7a68" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>Message</div></div>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:4px; padding:0 6px;"><sc-for list="{{ profileGridB }}" as="g" hint-placeholder-count="6"><div style="aspect-ratio:.8; border-radius:12px; overflow:hidden; position:relative;"><img src="{{ g.src }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""><div onClick="{{ rep }}" style="position:absolute; top:6px; right:6px; z-index:5; width:24px; height:24px; border-radius:50%; background:rgba(0,0,0,.5); backdrop-filter:blur(4px); display:flex; align-items:center; justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="5" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="12" cy="19" r="2"></circle></svg></div></div></sc-for></div>
+      </div>
+    </div>
+
+    <!-- 36 PROFILE · 已互关 -->
+    <div id="b-profilemutual" class="board">
+      <div class="ann"><b>36 · User Profile · 已互关</b><p>双方互相关注。Message 解锁，可进入私信。绿色 Friends 标识。举报走右上角三点。</p><i>交互：Message → 41 私信详情；Friends → 取消互关；举报 → 右上三点</i></div>
+      <div class="sc" style="height:auto; min-height:812px;">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:6px 18px 4px;"><div onClick="{{ go.square }}" style="font-size:28px; color:#fff;">‹</div><div onClick="{{ go.report }}" style="padding:6px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="5" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="12" cy="19" r="2"></circle></svg></div></div>
+        <div style="display:flex; flex-direction:column; align-items:center; padding:6px 20px 0;">
+          <div style="width:88px; height:88px; border-radius:50%; overflow:hidden; margin-bottom:12px;"><img src="{{ S.profAv }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div>
+          <div style="display:flex; align-items:center; gap:8px;"><div class="blk" style="font-size:22px; color:#fff;">Luna's Mom</div><span style="display:flex; align-items:center; gap:4px; background:#1d3a22; color:#7FD08A; font-size:11px; font-weight:800; padding:4px 10px; border-radius:999px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7FD08A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> Friends</span></div>
+          <div style="color:#8a8d86; font-size:14px; margin:4px 0 14px; text-align:center;">Golden retriever + one sleepy cat <svg viewBox="0 0 24 24" style="width:1em;height:1em;vertical-align:-0.14em" fill="#8a8d86"><circle cx="5" cy="11" r="1.9"></circle><circle cx="9.4" cy="6.6" r="1.9"></circle><circle cx="14.6" cy="6.6" r="1.9"></circle><circle cx="19" cy="11" r="1.9"></circle><path d="M12 12.2c-2.4 0-4.3 2-4.3 3.8 0 1.5 1.2 2.4 2.6 2.4.9 0 1.2-.4 1.7-.4s.8.4 1.7.4c1.4 0 2.6-.9 2.6-2.4 0-1.8-1.9-3.8-4.3-3.8Z"></path></svg></div>
+          <div style="display:flex; align-items:center; gap:22px; width:100%; margin-bottom:16px; padding-left:2px;"><div onClick="{{ go.followers }}" style="display:flex; align-items:baseline; gap:5px;"><span class="blk" style="color:#fff; font-size:16px;">1.2k</span><span style="color:#8a8d86; font-size:13px;">Followers</span></div><div onClick="{{ go.following }}" style="display:flex; align-items:baseline; gap:5px;"><span class="blk" style="color:#fff; font-size:16px;">340</span><span style="color:#8a8d86; font-size:13px;">Following</span></div></div>
+          <div style="width:100%; background:#14261a; border:1px solid #1d4522; border-radius:14px; padding:12px 14px; display:flex; align-items:center; gap:10px; margin-bottom:14px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7FD08A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span style="color:#7FD08A; font-size:12.5px; font-weight:700; line-height:1.4;">You follow each other — you can now send private messages.</span></div>
+          <div style="display:flex; gap:12px; width:100%; margin-bottom:22px;"><div style="flex:1; height:48px; border-radius:14px; background:#26282B; border:1.5px solid #3d4044; color:#9aa694; font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center; gap:7px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9aa694" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>Friends</div><div onClick="{{ go.chatdetail }}" style="flex:1.3; height:48px; border-radius:14px; background:#C6F53C; color:#1a1b1d; font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center; gap:7px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1a1b1d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4z"></path></svg>Message</div></div>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:4px; padding:0 6px;"><sc-for list="{{ profileGridC }}" as="g" hint-placeholder-count="6"><div style="aspect-ratio:.8; border-radius:12px; overflow:hidden; position:relative;"><img src="{{ g.src }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""><div onClick="{{ rep }}" style="position:absolute; top:6px; right:6px; z-index:5; width:24px; height:24px; border-radius:50%; background:rgba(0,0,0,.5); backdrop-filter:blur(4px); display:flex; align-items:center; justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="5" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="12" cy="19" r="2"></circle></svg></div></div></sc-for></div>
+      </div>
+    </div>
+
+    <!-- 37 FOLLOWERS -->
+    <div id="b-followers" class="board">
+      <div class="ann"><b>37 · Followers 粉丝</b><p>关注当前用户的人。互关的显示 Friends 可直接私信；未回关的显示 Follow back 回关后互关。顶部可切换关注/粉丝。</p><i>交互：Follow back → 36 已互关；Friends → 41 私信；行 → 用户主页</i></div>
+      <div class="sc" style="height:auto; min-height:812px;">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="display:flex; align-items:center; padding:6px 18px 14px;"><div onClick="{{ go.profilemutual }}" style="font-size:28px; color:#fff; width:40px;">‹</div><div class="blk" style="flex:1; text-align:center; font-size:17px; color:#fff;">CONNECTIONS</div><div style="width:40px;"></div></div>
+        <div style="display:flex; gap:8px; padding:0 20px 18px;"><div style="flex:1; height:40px; border-radius:12px; background:#C6F53C; color:#1a1b1d; font-size:14px; font-weight:800; display:flex; align-items:center; justify-content:center;">Followers · 1.2k</div><div onClick="{{ go.following }}" style="flex:1; height:40px; border-radius:12px; background:#26282B; color:#9aa694; font-size:14px; font-weight:700; display:flex; align-items:center; justify-content:center;">Following · 340</div></div>
+        <div style="padding:0 20px; display:flex; flex-direction:column; gap:4px;"><sc-for list="{{ followers }}" as="u" hint-placeholder-count="5"><div onClick="{{ go.profilemutual }}" style="display:flex; align-items:center; gap:12px; padding:9px 0;"><div style="width:50px; height:50px; border-radius:50%; overflow:hidden; flex-shrink:0;"><img src="{{ u.av }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div><div style="flex:1; min-width:0;"><div style="color:#fff; font-size:15px; font-weight:800;">{{ u.name }}</div><div style="color:#6a6d68; font-size:12.5px;">{{ u.handle }}</div></div><div onClick="{{ u.onBtn }}" style="{{ u.btnStyle }}">{{ u.btn }}</div></div></sc-for></div>
+      </div>
+    </div>
+
+    <!-- 38 FOLLOWING -->
+    <div id="b-following" class="board">
+      <div class="ann"><b>38 · Following 关注</b><p>当前用户关注的人。互关的可 Message 私信；单向关注显示 Requested 等待回关。顶部可切换。</p><i>交互：Message → 41 私信；Requested → 35 等待互关；行 → 用户主页</i></div>
+      <div class="sc" style="height:auto; min-height:812px;">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="display:flex; align-items:center; padding:6px 18px 14px;"><div onClick="{{ go.profilemutual }}" style="font-size:28px; color:#fff; width:40px;">‹</div><div class="blk" style="flex:1; text-align:center; font-size:17px; color:#fff;">CONNECTIONS</div><div style="width:40px;"></div></div>
+        <div style="display:flex; gap:8px; padding:0 20px 18px;"><div onClick="{{ go.followers }}" style="flex:1; height:40px; border-radius:12px; background:#26282B; color:#9aa694; font-size:14px; font-weight:700; display:flex; align-items:center; justify-content:center;">Followers · 1.2k</div><div style="flex:1; height:40px; border-radius:12px; background:#C6F53C; color:#1a1b1d; font-size:14px; font-weight:800; display:flex; align-items:center; justify-content:center;">Following · 340</div></div>
+        <div style="padding:0 20px; display:flex; flex-direction:column; gap:4px;"><sc-for list="{{ following }}" as="u" hint-placeholder-count="4"><div onClick="{{ go.profilemutual }}" style="display:flex; align-items:center; gap:12px; padding:9px 0;"><div style="width:50px; height:50px; border-radius:50%; overflow:hidden; flex-shrink:0;"><img src="{{ u.av }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div><div style="flex:1; min-width:0;"><div style="color:#fff; font-size:15px; font-weight:800;">{{ u.name }}</div><div style="color:#6a6d68; font-size:12.5px;">{{ u.handle }}</div></div><div onClick="{{ u.onBtn }}" style="{{ u.btnStyle }}">{{ u.btn }}</div></div></sc-for></div>
+      </div>
+    </div>
+
+    <!-- 39 CHAT LOCKED -->
+    <div id="b-chatlocked" class="board">
+      <div class="ann"><b>39 · Chat Locked 私信限制</b><p>未互关时点击 Message 出现的限制页：需互相关注后才可私信。不做陌生人匹配。</p><i>交互：Follow → 35 等待互关；Back → 17 主页</i></div>
+      <div class="sc" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:0 34px; text-align:center;">
+        <div style="width:104px; height:104px; border-radius:50%; background:#26282B; display:flex; align-items:center; justify-content:center; margin-bottom:24px;"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#6f7a68" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></div>
+        <div class="blk" style="font-size:22px; color:#fff; margin-bottom:12px;">MESSAGES LOCKED</div>
+        <div style="font-size:15px; color:#8a8d86; line-height:1.6; margin-bottom:34px;">You can message this user after you follow each other.</div>
+        <div onClick="{{ go.profilepending }}" style="width:100%; height:54px; border-radius:16px; background:#C6F53C; color:#1a1b1d; font-size:16px; font-weight:800; display:flex; align-items:center; justify-content:center; margin-bottom:12px;">Follow to Connect</div>
+        <div onClick="{{ go.profile }}" style="width:100%; height:52px; color:#8a8d86; font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center;">Back</div>
+      </div>
+    </div>
+
+    <!-- 40 CHAT LIST -->
+    <div id="b-chatlist" class="board">
+      <div class="ann"><b>40 · Chat List 私信列表</b><p>只有互相关注的好友会出现在这里。点击进入私信详情。</p><i>交互：会话 → 41 私信详情；返回 → 25 个人中心</i></div>
+      <div class="sc" style="height:auto; min-height:812px;">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="display:flex; align-items:center; padding:6px 18px 10px;"><div onClick="{{ go.my }}" style="font-size:28px; color:#fff; width:40px;">‹</div><div class="blk" style="flex:1; text-align:center; font-size:17px; color:#fff;">MESSAGES</div><div style="width:40px;"></div></div>
+        <div style="padding:0 20px 10px; display:flex; align-items:center; gap:7px; color:#6a6d68; font-size:12px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6f7a68" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg><span>Only mutual followers can message you.</span></div>
+        <div style="padding:0 20px; display:flex; flex-direction:column;"><sc-for list="{{ chatThreads }}" as="t" hint-placeholder-count="3"><div onClick="{{ go.chatdetail }}" style="display:flex; align-items:center; gap:13px; padding:14px 0; border-bottom:1px solid #26282B;"><div style="width:54px; height:54px; border-radius:50%; overflow:hidden; flex-shrink:0;"><img src="{{ t.av }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div><div style="flex:1; min-width:0;"><div style="color:#fff; font-size:15px; font-weight:800;">{{ t.name }}</div><div style="color:#8a8d86; font-size:13px; margin-top:2px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{ t.last }}</div></div><div style="display:flex; flex-direction:column; align-items:flex-end; gap:6px; flex-shrink:0;"><span style="color:#6a6d68; font-size:12px;">{{ t.time }}</span><sc-if value="{{ t.hasUnread }}" hint-placeholder-val="{{ false }}"><span style="min-width:20px; height:20px; padding:0 6px; border-radius:999px; background:#C6F53C; color:#1a1b1d; font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center;">{{ t.unread }}</span></sc-if></div></div></sc-for></div>
+      </div>
+    </div>
+
+    <!-- 41 CHAT DETAIL -->
+    <div id="b-chatdetail" class="board">
+      <div class="ann"><b>41 · Chat Detail 私信详情</b><p>互关好友的一对一私信。顶部有视频通话图标（进入视频通话页）和举报三点。底部输入栏。</p><i>交互：视频图标 → 42 视频通话；三点 → 18 举报；返回 → 40 列表</i></div>
+      <div class="sc" style="display:flex; flex-direction:column;">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="display:flex; align-items:center; gap:11px; padding:6px 16px 12px; border-bottom:1px solid #26282B;"><div onClick="{{ go.chatlist }}" style="font-size:28px; color:#fff;">‹</div><div onClick="{{ go.profilemutual }}" style="width:40px; height:40px; border-radius:50%; overflow:hidden;"><img src="{{ S.profAv }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div><div onClick="{{ go.profilemutual }}" style="flex:1;"><div style="color:#fff; font-size:15px; font-weight:800;">Luna's Mom</div><div style="color:#7FD08A; font-size:12px;">● Mutual follow</div></div><div onClick="{{ go.videocall }}" style="width:42px; height:42px; border-radius:50%; background:#1d3a22; display:flex; align-items:center; justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C6F53C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2.5"></rect><path d="M16 10l5-3v10l-5-3z"></path></svg></div><div onClick="{{ go.report }}" style="padding:6px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="5" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="12" cy="19" r="2"></circle></svg></div></div>
+        <div class="ns" style="flex:1; overflow-y:auto; padding:18px 16px;"><div style="text-align:center; color:#6a6d68; font-size:12px; margin-bottom:16px;">You became mutual followers · Today</div><sc-for list="{{ chatMsgs }}" as="m" hint-placeholder-count="4"><div style="{{ m.rowStyle }}"><div style="{{ m.bubStyle }}">{{ m.t }}</div></div></sc-for></div>
+        <div style="display:flex; align-items:center; gap:10px; padding:12px 16px 22px; border-top:1px solid #26282B;"><div onClick="{{ go.videocall }}" style="width:44px; height:44px; border-radius:50%; background:#26282B; display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C6F53C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2.5"></rect><path d="M16 10l5-3v10l-5-3z"></path></svg></div><div style="flex:1; height:44px; border-radius:999px; background:#26282B; display:flex; align-items:center; padding:0 18px; color:#6f7a68; font-size:14.5px;">Message…</div><div style="width:44px; height:44px; border-radius:50%; background:#C6F53C; display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="#1a1b1d"><path d="M3.4 20.4 21 12 3.4 3.6 3 10l12 2-12 2z"></path></svg></div></div>
+      </div>
+    </div>
+
+    <!-- 42 VIDEO CALL -->
+    <div id="b-videocall" class="board">
+      <div class="ann"><b>42 · Video Call 视频通话</b><p>互关好友之间的视频通话页：大画面为对方，右上角小窗为自己，底部静音 / 翻转 / 挂断。</p><i>交互：挂断 / 返回 → 41 私信详情</i></div>
+      <div class="sc" style="background:#0E0F10; position:relative;">
+        <div style="position:absolute; inset:0;"><img src="{{ S.vd }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""><div style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,0) 26%,rgba(0,0,0,0) 62%,rgba(0,0,0,.72));"></div></div>
+        <div class="stat" style="position:relative;"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="position:relative; display:flex; align-items:center; gap:12px; padding:4px 18px;"><div onClick="{{ go.chatdetail }}" style="font-size:28px; color:#fff;">‹</div><div style="flex:1;"><div style="color:#fff; font-size:16px; font-weight:800;">Luna's Mom</div><div style="color:rgba(255,255,255,.75); font-size:12.5px;">00:42 · Connected</div></div></div>
+        <div style="position:absolute; top:96px; right:16px; width:104px; height:150px; border-radius:18px; overflow:hidden; border:2px solid rgba(255,255,255,.25); box-shadow:0 10px 24px rgba(0,0,0,.5);"><img src="{{ S.myAv }}" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div>
+        <div style="position:absolute; left:0; right:0; bottom:44px; display:flex; align-items:center; justify-content:center; gap:22px;">
+          <div style="width:60px; height:60px; border-radius:50%; background:rgba(255,255,255,.16); backdrop-filter:blur(8px); display:flex; align-items:center; justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a3 3 0 0 1 3 3v6a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3z"></path><path d="M6 11a6 6 0 0 0 12 0M12 19v3"></path></svg></div>
+          <div onClick="{{ go.chatdetail }}" style="width:72px; height:72px; border-radius:50%; background:#E8654E; display:flex; align-items:center; justify-content:center; box-shadow:0 12px 28px rgba(232,101,78,.5);"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M21 15.5c-1.2 0-2.4-.2-3.5-.6a1 1 0 0 0-1 .24l-1.5 1.5a15 15 0 0 1-6.6-6.6l1.5-1.5a1 1 0 0 0 .24-1C9.7 6.4 9.5 5.2 9.5 4a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1 17 17 0 0 0 17 17 1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z" transform="rotate(135 12 12)"></path></svg></div>
+          <div style="width:60px; height:60px; border-radius:50%; background:rgba(255,255,255,.16); backdrop-filter:blur(8px); display:flex; align-items:center; justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 8a5 5 0 0 1 0 8M4 9v6h4l5 4V5L8 9H4z"></path></svg></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 43 TAG LIBRARY -->
+    <div id="b-taglibrary" class="board">
+      <div class="ann"><b>43 · Tag Library 标签总览</b><p>详情页会出现的全部标签：绿色爪印为宠物状态，紫色 emoji 为心情标签，统一集中展示。</p><i>展示用板块</i></div>
+      <div class="sc" style="display:flex; flex-direction:column;">
+        <div class="stat"><span class="t">9:41</span>{{ statW }}</div>
+        <div style="display:flex; align-items:center; padding:6px 18px 14px;"><div onClick="{{ go.square }}" style="font-size:28px; color:#fff; width:40px;">‹</div><div class="blk" style="flex:1; text-align:center; font-size:18px; color:#fff;">Tags</div><div style="width:40px;"></div></div>
+        <div style="flex:1; overflow-y:auto; padding:4px 22px 40px;">
+          <div style="color:#9aa694; font-size:13px; font-weight:800; letter-spacing:.3px; margin-bottom:14px;">PET STATUS · 宠物状态</div>
+          <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:32px;"><sc-for list="{{ statusTags }}" as="t" hint-placeholder-count="8"><span style="display:inline-flex; align-items:center; gap:6px; background:#1d3a22; color:#7FD08A; font-size:13px; font-weight:800; padding:7px 14px; border-radius:999px;"><svg viewBox="0 0 24 24" style="width:15px;height:15px;" fill="#7FD08A"><circle cx="5" cy="11" r="1.9"></circle><circle cx="9.4" cy="6.6" r="1.9"></circle><circle cx="14.6" cy="6.6" r="1.9"></circle><circle cx="19" cy="11" r="1.9"></circle><path d="M12 12.2c-2.4 0-4.3 2-4.3 3.8 0 1.5 1.2 2.4 2.6 2.4.9 0 1.2-.4 1.7-.4s.8.4 1.7.4c1.4 0 2.6-.9 2.6-2.4 0-1.8-1.9-3.8-4.3-3.8Z"></path></svg>{{ t }}</span></sc-for></div>
+          <div style="color:#9aa694; font-size:13px; font-weight:800; letter-spacing:.3px; margin-bottom:14px;">MOOD · 心情</div>
+          <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:32px;"><sc-for list="{{ moodTags }}" as="m" hint-placeholder-count="6"><span style="display:inline-flex; align-items:center; gap:5px; background:#2e2748; color:#b7a6d6; font-size:13px; font-weight:800; padding:7px 14px; border-radius:999px;">{{ m.e }} {{ m.l }}</span></sc-for></div>
+          <div style="color:#9aa694; font-size:13px; font-weight:800; letter-spacing:.3px; margin-bottom:14px;">CONTENT TYPE · 内容类型</div>
+          <div style="display:flex; flex-wrap:wrap; gap:10px;"><span style="display:inline-flex; align-items:center; gap:5px; background:#E7F3D8; color:#4f8a2e; font-size:12px; font-weight:800; padding:5px 12px; border-radius:999px;">Photo · Free</span><span style="display:inline-flex; align-items:center; gap:5px; background:#EDE6F7; color:#7A5CC4; font-size:12px; font-weight:800; padding:5px 12px; border-radius:999px;">Video · 20 Coins</span></div>
+        </div>
+      </div>
+    </div>
+    <!--NEXT-->
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1300,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { heroIndex:0, heroDrag:0, heroDragging:false };
+  IMG(n){ return 'assets/img/pet-'+n+'.png'; }
+  bi(paths,color){ return React.createElement('svg',{width:22,height:22,viewBox:'0 0 16 16',fill:color||'#fff'},paths.map((d,i)=>React.createElement('path',{key:i,d:d}))); }
+  AVA(n){ return 'assets/img/avatar-'+n+'.png'; }
+  nav(id){ const el=document.getElementById(id); if(!el) return; const r=el.getBoundingClientRect(); window.scrollTo({top:window.scrollY+r.top-70,left:window.scrollX+r.left-40,behavior:'smooth'}); }
+  componentDidMount(){ if(this._auto)clearInterval(this._auto); this._auto=setInterval(()=>{ if(this._hx!=null||this.state.dragging) return; this.setState(s=>({heroIndex:(((s.heroIndex||0)+1)%5), heroDrag:0, dragging:false})); }, 3600); }
+  componentWillUnmount(){ if(this._auto) clearInterval(this._auto); }
+  renderVals(){
+    const K=['splash','login','signup','perm','home','create','photopost','videovlog','coindialog','photook','videook','nocoins','square','postdetail','videodetail','search','profile','report','reportok','block','myalbum','mypostdetail','editpost','deletedialog','my','store','purchaseok','coinhistory','settings','editprofile','blocked','terms','privacy','about','followers','following','profilepending','profilemutual','chatlocked','chatlist','chatdetail','videocall'];
+    const go={}; K.forEach(k=>{ go[k]=(e)=>{ if(e&&e.stopPropagation)e.stopPropagation(); this.nav('b-'+k); }; });
+    const rep=(e)=>{ if(e&&e.stopPropagation)e.stopPropagation(); this.nav('b-report'); };
+    const del=(e)=>{ if(e&&e.stopPropagation)e.stopPropagation(); this.nav('b-deletedialog'); };
+    const liked=!!this.state.liked, saved=!!this.state.saved;
+    const toggleLike=(e)=>{ if(e&&e.stopPropagation)e.stopPropagation(); this.setState(s=>({liked:!s.liked})); };
+    const toggleSave=(e)=>{ if(e&&e.stopPropagation)e.stopPropagation(); this.setState(s=>({saved:!s.saved})); };
+    const likeStyle='flex:1; height:48px; border-radius:14px; background:'+(liked?'#C6F53C':'#26282B')+'; color:'+(liked?'#1a1b1d':'#fff')+'; font-size:14px; font-weight:800; display:flex; align-items:center; justify-content:center; gap:7px; transition:background .18s ease, color .18s ease;';
+    const likeInner=React.createElement(React.Fragment,null,React.createElement('svg',{width:17,height:17,viewBox:'0 0 24 24',fill:liked?'#1a1b1d':'none',stroke:liked?'#1a1b1d':'#fff',strokeWidth:2,strokeLinecap:'round',strokeLinejoin:'round'},React.createElement('path',{d:'M12 21s-7-4.5-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9Z'})),React.createElement('span',null,liked?329:328));
+    const saveStyle='flex:1; height:48px; border-radius:14px; background:'+(saved?'#C6F53C':'#26282B')+'; color:'+(saved?'#1a1b1d':'#fff')+'; font-size:14px; font-weight:800; display:flex; align-items:center; justify-content:center; gap:6px; transition:background .18s ease, color .18s ease;';
+    const saveInner=React.createElement(React.Fragment,null,React.createElement('svg',{width:16,height:16,viewBox:'0 0 24 24',fill:saved?'#1a1b1d':'none',stroke:saved?'#1a1b1d':'#fff',strokeWidth:2,strokeLinecap:'round',strokeLinejoin:'round'},React.createElement('path',{d:'M6 4h12v16l-6-4-6 4z'})),React.createElement('span',null,saved?'Saved':'Save'));
+    const N=5;
+    const hi=this.state.heroIndex||0, drag=this.state.heroDrag||0, dragging=this.state.dragging;
+    const items=[
+      {img:1,title:'Jerome Bell',sub:'Cameron Williamson'},
+      {img:8,title:'Guy Hawkins',sub:'Robert Fox'},
+      {img:9,title:'Jane Cooper',sub:'Esther Howard'},
+      {img:2,title:'Wade Warren',sub:'Brooklyn Simmons'},
+      {img:5,title:'Devon Lane',sub:'Kristin Watson'}
+    ].map((h,i)=>({ slot:(i===0?'pdv_home_feat':'pdv_home_feat_'+i), src:this.IMG(h.img), title:h.title, sub:h.sub }));
+    const t = dragging ? Math.max(-1, Math.min(1, -drag/250)) : 0;
+    const backTints=['transparent','linear-gradient(158deg,#99D3EF,#6BB4E4)','linear-gradient(158deg,#CBB6EE,#AC90DD)','linear-gradient(158deg,#CBB6EE,#AC90DD)'];
+    if(!this._prevPe)this._prevPe={};
+    const heroItems=items.map((c,i)=>{
+      const np=((i-hi+2)%N+N)%N-2;
+      const pe=np-t;
+      const prev=this._prevPe[i]; this._prevPe[i]=pe;
+      const jump = prev!=null && Math.abs(pe-prev)>2.2;
+      let x,rot,sc,op,z;
+      if(pe>=0){ x=pe*26; rot=pe*3.4; sc=1-pe*0.03; op=pe>2.5?0:1; z=Math.round(50-pe*10); }
+      else { x=pe*360; rot=pe*10; sc=1; op=Math.max(0,1+pe/0.85); z=55; }
+      const trans=(dragging||jump) ? 'none' : 'transform .5s cubic-bezier(.22,.61,.36,1), opacity .5s ease';
+      const cardStyle='position:absolute; top:0; left:0; width:100%; height:100%; transform-origin:50% 60%; will-change:transform; touch-action:pan-y; cursor:grab; transform:translateX('+x.toFixed(1)+'px) rotate('+rot.toFixed(2)+'deg) scale('+sc.toFixed(3)+'); opacity:'+op.toFixed(2)+'; z-index:'+z+'; transition:'+trans+';';
+      const tintPos=Math.max(0,Math.min(3,Math.round(pe)));
+      const tintOp=Math.min(Math.max(pe,0),1.4)*0.42;
+      const tintStyle='position:absolute; inset:0; border-radius:23px; pointer-events:none; background:'+backTints[tintPos]+'; opacity:'+tintOp.toFixed(2)+'; transition:'+((dragging||jump)?'none':'opacity .5s ease')+';';
+      return Object.assign({},c,{cardStyle,tintStyle});
+    });
+    const heroDown=(e)=>{ if(e&&e.stopPropagation)e.stopPropagation(); try{e.currentTarget.setPointerCapture(e.pointerId);}catch(_){} this._hx=e.clientX; this._hdx=0; this._hmoved=0; this.setState({dragging:true}); };
+    const heroMove=(e)=>{ if(this._hx==null)return; const dx=e.clientX-this._hx; this._hdx=dx; this._hmoved=Math.abs(dx); this.setState({heroDrag:dx}); };
+    const heroUp=(e)=>{ if(e&&e.stopPropagation)e.stopPropagation(); if(this._hx==null)return; const dx=this._hdx||0; this._hx=null; if(dx<-55){ this.setState(s=>({heroIndex:(((s.heroIndex||0)+1)%N),heroDrag:0,dragging:false})); } else if(dx>55){ this.setState(s=>({heroIndex:(((s.heroIndex||0)-1)%N+N)%N,heroDrag:0,dragging:false})); } else { this.setState({heroDrag:0,dragging:false}); if((this._hmoved||0)<8)this.nav('b-postdetail'); } };
+    const heroDots=items.map((_,i)=>({ style: i===hi ? 'width:22px; height:6px; border-radius:3px; background:#C6F53C; transition:all .3s;' : 'width:6px; height:6px; border-radius:50%; background:#3a3c3e; transition:all .3s;' }));
+    const mkStat=(c)=>React.createElement('div',{style:{display:'flex',alignItems:'center',gap:'7px'}},
+      React.createElement('svg',{width:17,height:11,viewBox:'0 0 18 12',fill:c},React.createElement('rect',{x:0,y:7,width:3,height:5,rx:1}),React.createElement('rect',{x:5,y:4.5,width:3,height:7.5,rx:1}),React.createElement('rect',{x:10,y:2,width:3,height:10,rx:1}),React.createElement('rect',{x:15,y:0,width:3,height:12,rx:1})),
+      React.createElement('svg',{width:24,height:12,viewBox:'0 0 26 13',fill:'none'},React.createElement('rect',{x:0.5,y:0.5,width:22,height:12,rx:3,stroke:c,opacity:.4}),React.createElement('rect',{x:2,y:2,width:18.5,height:9,rx:1.5,fill:c})));
+    const tab=(active,paths)=>React.createElement('svg',{width:24,height:24,viewBox:'0 0 24 24',fill:'none',stroke:active?'#C6F53C':'#6a6d68',strokeWidth:1.9,strokeLinecap:'round',strokeLinejoin:'round'},...paths.map((d,i)=>React.createElement('path',{key:i,d})));
+    const rec=(active)=>React.createElement('div',{style:{display:'flex',flexDirection:'column',alignItems:'center',gap:'3px'}});
+    const chip=(on,onColor)=> on
+      ? 'padding:10px 17px; border-radius:999px; background:'+onColor+'; color:#1a1b1d; font-size:14px; font-weight:800; white-space:nowrap; flex-shrink:0;'
+      : 'padding:10px 17px; border-radius:999px; background:#26282B; color:#9aa694; font-size:14px; font-weight:700; white-space:nowrap; flex-shrink:0;';
+    return { go, rep, del, toggleLike, toggleSave, likeStyle, likeInner, saveStyle, saveInner, heroItems, heroDots, heroDown, heroMove, heroUp, statW:mkStat('#fff'), S:{ homeFeat:this.IMG(1), pd:this.IMG(8), vd:this.IMG(9), myp:this.IMG(2), homeAv:this.AVA(29), myAv:this.AVA(29), epAv:this.AVA(29), pdAv:this.AVA(18), vdAv:this.AVA(19), profAv:this.AVA(18) },
+      perms:[{iconEl:this.bi(['M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0','M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0'],'#C6F53C'),title:'Camera',desc:'Take pet photos and videos.'},{iconEl:this.bi(['M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0','M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1z'],'#C9B8E8'),title:'Photo Library',desc:'Choose pet photos and videos.'},{iconEl:this.bi(['M5 3a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0z','M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5'],'#6BB4E4'),title:'Microphone',desc:'Record sound for pet vlogs.'}],
+      tabHome:tab(true,['M3 11 12 3l9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z']),
+      tabSquare:tab(false,['M4 5h6v6H4zM14 5h6v6h-6zM4 15h6v6H4zM14 15h6v6h-6z']),
+      tabAlbum:tab(false,['M3 5h18v15H3z','m3 16 5-4 4 3 3-2 6 5','M8.5 10a1.4 1.4 0 1 0 0-2.8']),
+      tabMy:tab(false,['M12 8a3.6 3.6 0 1 0 0-0.1','M5 20a7 7 0 0 1 14 0']),
+      recentRows:[
+        {src:2,title:'Biffco Enterp rises Ltd',meta:'Wade Warren',kind:'Photo',free:true},
+        {src:3,title:'Brooklyn Simmons',meta:'Kristin Watson',kind:'Photo',free:true},
+        {src:5,title:'Dianne Russell',meta:'Cody Fisher',kind:'Photo',free:true}
+      ].map((r,i)=>({ src:this.IMG(r.src), slot:'pdv_rec_'+i, title:r.title, meta:r.meta, kind:r.kind, isVideo:(r.kind==='Video'),
+        badge: r.free ? 'background:#E7F3D8; color:#4f8a2e; font-size:10.5px; font-weight:800; padding:3px 9px; border-radius:999px; flex-shrink:0;' : 'background:#EDE6F7; color:#7A5CC4; font-size:10.5px; font-weight:800; padding:3px 9px; border-radius:999px; flex-shrink:0;' })),
+      photoStatus:['Sleeping','Playing','Walking','Eating','Growing','Cute'].map((label,i)=>({label,style:chip(i===0,'#C6F53C')})),
+      videoStatus:['Playing','Walking','Eating','Training','Funny','Growing'].map((label,i)=>({label,style:chip(i===0,'#C9B8E8')})),
+      squareCats:['All','Photos','Videos','Sleeping','Playing','Walking','Eating'].map((label,i)=>({label,style:chip(i===0,'#C6F53C')})),
+      squareCards:[
+        {src:9,av:17,h:'180px',video:false,text:'Comfiest nap spot',user:"Luna's Mom",likes:'328'},
+        {src:10,av:18,h:'220px',video:true,text:'New toy zoomies',user:'Coco Dad',likes:'512'},
+        {src:11,av:19,h:'150px',video:false,text:'Morning park loop',user:'Benji',likes:'204'},
+        {src:12,av:20,h:'200px',video:true,text:'Dinner mukbang',user:'Miso',likes:'176'},
+        {src:13,av:21,h:'170px',video:false,text:'6 months today 🎉',user:'Yuki',likes:'640'},
+        {src:14,av:22,h:'200px',video:true,text:'Bath time chaos',user:'Peanut',likes:'288'}
+      ].map((c,i)=>({ src:this.IMG(c.src), av:this.AVA(c.av), slot:'pdv_sq_'+i, avSlot:'pdv_sqav_'+i, h:c.h, isVideo:c.video, text:c.text, user:c.user, likes:c.likes, kind:c.video?'Video':'Photo', onClick:c.video?(()=>this.nav('b-videodetail')):(()=>this.nav('b-postdetail')),
+        badge: c.video ? 'position:absolute; top:10px; left:10px; background:rgba(0,0,0,.5); backdrop-filter:blur(6px); color:#C9B8E8; font-size:10.5px; font-weight:800; padding:3px 9px; border-radius:999px;' : 'position:absolute; top:10px; left:10px; background:rgba(0,0,0,.5); backdrop-filter:blur(6px); color:#C6F53C; font-size:10.5px; font-weight:800; padding:3px 9px; border-radius:999px;' })),
+      hotSearch:['cute dog','cat vlog','puppy walk','pet meal','sleeping cat'],
+      searchResults:[
+        {src:9,video:false,text:'Comfiest nap spot',user:"Luna's Mom",likes:'328'},
+        {src:10,video:true,text:'New toy zoomies',user:'Coco Dad',likes:'512'},
+        {src:11,video:false,text:'Morning park loop',user:'Benji',likes:'204'}
+      ].map((r,i)=>({ src:this.IMG(r.src), slot:'pdv_sr_'+i, text:r.text, user:r.user, likes:r.likes, kind:r.video?'Video':'Photo',
+        badge:'position:absolute; bottom:4px; left:4px; background:rgba(0,0,0,.55); color:#fff; font-size:9px; font-weight:800; padding:2px 6px; border-radius:6px;' })),
+      profileGrid:[{n:8,v:false},{n:9,v:true},{n:10,v:false},{n:11,v:true},{n:12,v:false},{n:13,v:false}].map((g,i)=>({ src:this.IMG(g.n), slot:'pdv_pg_'+i, kind:g.v?'Video':'Photo', onClick:g.v?(()=>this.nav('b-videodetail')):(()=>this.nav('b-postdetail')),
+        badge:'position:absolute; top:7px; left:7px; background:rgba(0,0,0,.55); backdrop-filter:blur(4px); color:#fff; font-size:9px; font-weight:800; padding:2px 6px; border-radius:6px;' })),
+      reportReasons:['Inappropriate Content','Spam','Copyright Issue','Fake Content','Other'],
+      albumCats:['All','Photo Posts','Video Vlogs','Saved'].map((label,i)=>({label,style:chip(i===0,'#C6F53C')})),
+      albumCards:[{n:1,v:false,t:'Sunny walk'},{n:2,v:true,t:'New toy'},{n:3,v:false,t:'Dinner'},{n:4,v:true,t:'Bath time'},{n:5,v:false,t:'6 months'},{n:6,v:false,t:'Lazy day'}].map((c,i)=>({ src:this.IMG(c.n), slot:'pdv_al_'+i, text:c.t, kind:c.v?'Video':'Photo',
+        badge: c.v ? 'position:absolute; top:9px; left:9px; background:rgba(0,0,0,.5); backdrop-filter:blur(6px); color:#C9B8E8; font-size:10px; font-weight:800; padding:3px 8px; border-radius:999px;' : 'position:absolute; top:9px; left:9px; background:rgba(0,0,0,.5); backdrop-filter:blur(6px); color:#C6F53C; font-size:10px; font-weight:800; padding:3px 8px; border-radius:999px;' })),
+      myEntries:[{iconEl:this.bi(['M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9 9 0 0 0 8 15'],'#C6F53C'),label:'Messages',onClick:()=>this.nav('b-chatlist')},{iconEl:this.bi(['M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6','M5.216 14A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5'],'#C9B8E8'),label:'Followers & Following',onClick:()=>this.nav('b-followers')},{iconEl:this.bi(['M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a2 2 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3m-8.322.12q.322-.119.684-.12h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981z'],'#6BB4E4'),label:'My Pet Album',onClick:()=>this.nav('b-myalbum')},{iconEl:React.createElement('img',{src:'assets/coin-sm.png',style:{width:'26px',height:'26px',objectFit:'contain'}}),label:'Coin Store',onClick:()=>this.nav('b-store')},{iconEl:this.bi(['M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.5.5 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3z','M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5z'],'#EA9F57'),label:'Coin History',onClick:()=>this.nav('b-coinhistory')},{iconEl:this.bi(['M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0','M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.87.87 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.87.87 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.87.87 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.87.87 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.87.87 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.87.87 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.87.87 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.87.87 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.87 1.87 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.87 1.87 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.87 1.87 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.87 1.87 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.87 1.87 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.87 1.87 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.87 1.87 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.87 1.87 0 0 0 2.692-1.115z'],'#9aa694'),label:'Settings',onClick:()=>this.nav('b-settings')}],
+      coinPacks:[{coins:'400',price:'$0.99'},{coins:'800',price:'$1.99'},{coins:'2,450',price:'$4.99'},{coins:'5,150',price:'$9.99'},{coins:'10,800',price:'$19.99'},{coins:'29,400',price:'$49.99'},{coins:'63,700',price:'$99.99'}],
+      coinHistory:[
+        {icon:'＋',bg:'#1d3a22',label:'Purchase',time:'Mar 12, 2026 · 14:20',amt:'+100',amtStyle:'color:#7FD08A; font-size:16px; font-weight:800;'},
+        {icon:'🎬',bg:'#2e2748',label:'Post Video',time:'Mar 11, 2026 · 09:03',amt:'-20',amtStyle:'color:#E8654E; font-size:16px; font-weight:800;'},
+        {icon:'＋',bg:'#1d3a22',label:'Purchase',time:'Mar 8, 2026 · 20:41',amt:'+350',amtStyle:'color:#7FD08A; font-size:16px; font-weight:800;'},
+        {icon:'🎬',bg:'#2e2748',label:'Post Video',time:'Mar 5, 2026 · 18:12',amt:'-20',amtStyle:'color:#E8654E; font-size:16px; font-weight:800;'}
+      ],
+      settingsRows:[{label:'Account',onClick:()=>this.nav('b-editprofile')},{label:'Privacy',onClick:()=>this.nav('b-privacy')},{label:'Blocked Users',onClick:()=>this.nav('b-blocked')},{label:'Terms of Service',onClick:()=>this.nav('b-terms')},{label:'Privacy Policy',onClick:()=>this.nav('b-privacy')},{label:'About',onClick:()=>this.nav('b-about')},{label:'Tag Library',onClick:()=>this.nav('b-taglibrary')}],
+      blockedUsers:[{name:'user_9284',handle:'@spam.deals',av:23},{name:'promo_bot',handle:'@promo.bot',av:24},{name:'fake_pets',handle:'@not.real',av:25}].map((u,i)=>({ name:u.name, handle:u.handle, av:this.AVA(u.av), slot:'pdv_bl_'+i })),
+      followers:[{name:'Coco Dad',handle:'@coco.daily',av:18,mut:false},{name:'Benji',handle:'@benji.walks',av:19,mut:true},{name:'Miso',handle:'@miso.eats',av:20,mut:false},{name:'Yuki',handle:'@yuki6m',av:21,mut:true},{name:'Peanut',handle:'@peanut.bath',av:22,mut:false}].map((u,i)=>({ name:u.name, handle:u.handle, av:this.AVA(u.av), slot:'pdv_fo_'+i, btn:u.mut?'Friends':'Follow back', btnStyle:u.mut?'height:36px; padding:0 16px; border-radius:999px; border:1.5px solid #3d4044; color:#9aa694; font-size:13px; font-weight:700; display:flex; align-items:center; flex-shrink:0;':'height:36px; padding:0 18px; border-radius:999px; background:#C6F53C; color:#1a1b1d; font-size:13px; font-weight:800; display:flex; align-items:center; flex-shrink:0;', onBtn:u.mut?go.chatdetail:go.profilemutual })),
+      following:[{name:'Coco Dad',handle:'@coco.daily',av:18,mut:false},{name:'Benji',handle:'@benji.walks',av:19,mut:true},{name:"Luna's Mom",handle:'@luna.mom',av:17,mut:true},{name:'Yuki',handle:'@yuki6m',av:21,mut:false}].map((u,i)=>({ name:u.name, handle:u.handle, av:this.AVA(u.av), slot:'pdv_fi_'+i, btn:u.mut?'Message':'Requested', btnStyle:u.mut?'height:36px; padding:0 18px; border-radius:999px; background:#C6F53C; color:#1a1b1d; font-size:13px; font-weight:800; display:flex; align-items:center; flex-shrink:0;':'height:36px; padding:0 16px; border-radius:999px; background:#26282B; color:#8a8d86; font-size:13px; font-weight:700; display:flex; align-items:center; flex-shrink:0;', onBtn:u.mut?go.chatdetail:go.profilepending })),
+      chatThreads:[{name:'Benji',av:19,last:'Haha the zoomies again!',time:'2m',unread:2},{name:"Luna's Mom",av:17,last:'Luna says hi to Mochi!',time:'1h',unread:0},{name:'Yuki',av:21,last:'6-month photos are so cute',time:'3h',unread:0}].map((u,i)=>({ name:u.name, av:this.AVA(u.av), last:u.last, time:u.time, unread:u.unread, hasUnread:u.unread>0, slot:'pdv_ct_'+i })),
+      chatMsgs:[{me:false,t:'Hi! Mochi looked adorable on the walk today'},{me:true,t:'Thank you! The Benji zoomies video made my day'},{me:false,t:'Haha he never stops. Want to video call so they can meet?'},{me:true,t:'Yes! Tap the video icon at the top'}].map(m=>({ t:m.t, rowStyle:m.me?'display:flex; justify-content:flex-end; margin-bottom:10px;':'display:flex; justify-content:flex-start; margin-bottom:10px;', bubStyle:m.me?'max-width:74%; background:#C6F53C; color:#1a1b1d; font-size:14.5px; line-height:1.45; padding:11px 14px; border-radius:18px 18px 4px 18px;':'max-width:74%; background:#26282B; color:#e8e9e4; font-size:14.5px; line-height:1.45; padding:11px 14px; border-radius:18px 18px 18px 4px;' })),
+      profileGridB:[8,9,10,11,12,13].map((n,i)=>({ src:this.IMG(n), slot:'pdv_pgb_'+i })),
+      profileGridC:[8,9,10,11,12,13].map((n,i)=>({ src:this.IMG(n), slot:'pdv_pgc_'+i })),
+      tabAlbumOn:tab(true,['M3 5h18v15H3z','m3 16 5-4 4 3 3-2 6 5','M8.5 10a1.4 1.4 0 1 0 0-2.8']),
+      tabMyOn:tab(true,['M12 8a3.6 3.6 0 1 0 0-0.1','M5 20a7 7 0 0 1 14 0']),
+      tabHomeOff:tab(false,['M3 11 12 3l9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z']),
+      tabSquareOn:tab(true,['M4 5h6v6H4zM14 5h6v6h-6zM4 15h6v6H4zM14 15h6v6h-6z']),
+      IMG:(n)=>this.IMG(n), AVA:(n)=>this.AVA(n),
+      statusTags:['Sleeping','Playing','Walking','Eating','Growing','Cute','Training','Funny'],
+      moodTags:[{e:'😴',l:'Sleepy'},{e:'😊',l:'Happy'},{e:'🥰',l:'Loved'},{e:'😋',l:'Hungry'},{e:'⚡',l:'Energetic'},{e:'😌',l:'Chill'}] };
+  }
+}
+</script>
+</body>
+</html>
