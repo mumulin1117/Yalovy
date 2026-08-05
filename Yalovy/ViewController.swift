@@ -11,7 +11,6 @@ class ViewController: UIViewController, WKScriptMessageHandler {
 
     private lazy var webView: WKWebView = {
         let configuration = WKWebViewConfiguration()
-        configuration.userContentController.addUserScript(Self.storageRepairScript)
         configuration.userContentController.addUserScript(Self.coinPackageBootstrapScript)
         configuration.userContentController.addUserScript(Self.diagnosticsScript)
         configuration.preferences.javaScriptCanOpenWindowsAutomatically = true
@@ -81,9 +80,6 @@ class ViewController: UIViewController, WKScriptMessageHandler {
                 return
             }
 
-            let detail = diagnostics?["message"] as? String
-                ?? "The web application could not start."
-            showWebError(detail)
             return
         }
 
@@ -125,20 +121,6 @@ class ViewController: UIViewController, WKScriptMessageHandler {
         }
     }
 
-    private func showWebError(_ detail: String) {
-        guard !isDisplayingWebError else { return }
-        isDisplayingWebError = true
-        loadingOverlay.removeFromSuperview()
-        let escapedDetail = detail
-            .replacingOccurrences(of: "&", with: "&amp;")
-            .replacingOccurrences(of: "<", with: "&lt;")
-            .replacingOccurrences(of: ">", with: "&gt;")
-
-        webView.loadHTMLString(
-            Self.webErrorHTML.replacingOccurrences(of: "{{DETAIL}}", with: escapedDetail),
-            baseURL: nil
-        )
-    }
 
     @MainActor
     private func purchase(
@@ -317,7 +299,6 @@ class ViewController: UIViewController, WKScriptMessageHandler {
 
     private func loadBundledApp() {
         guard let htmlURL = Bundle.main.url(forResource: "index", withExtension: "html") else {
-//            webView.loadHTMLString(Self.missingFileHTML, baseURL: nil)
             return
         }
 
@@ -328,44 +309,6 @@ class ViewController: UIViewController, WKScriptMessageHandler {
         webView.loadFileURL(appURL, allowingReadAccessTo: Bundle.main.bundleURL)
     }
 
-//    private static let missingFileHTML = """
-//    <!doctype html>
-//    <html>
-//    <body style="margin:0;background:#1a1b1d;color:#fff;font:-apple-system-body;padding:24px">
-//      <h2>Yalovy app file missing</h2>
-//      <p>Expected Bundle resource: index.html</p>
-//    </body>
-//    </html>
-//    """
-
-    private static let webErrorHTML = """
-    <!doctype html>
-    <html>
-    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-    <body style="margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#1a1b1d;color:#fff;font-family:-apple-system;padding:28px;box-sizing:border-box;text-align:center">
-      <div>
-        <div style="font-size:22px;font-weight:800;margin-bottom:10px">Yalovy couldn't open</div>
-        <div style="color:#9aa694;font-size:14px;line-height:1.5">{{DETAIL}}</div>
-      </div>
-    </body>
-    </html>
-    """
-
-    private static let storageRepairScript = WKUserScript(
-        source: """
-        (function() {
-          try {
-            var repairKey = 'yalovy_native_storage_repaired_v3';
-            if (window.localStorage && !window.localStorage.getItem(repairKey)) {
-              window.localStorage.removeItem('pet_one_state');
-              window.localStorage.setItem(repairKey, '1');
-            }
-          } catch (error) {}
-        })();
-        """,
-        injectionTime: .atDocumentStart,
-        forMainFrameOnly: true
-    )
 
     private static let coinPackageBootstrapScript: WKUserScript = {
         guard let url = Bundle.main.url(
