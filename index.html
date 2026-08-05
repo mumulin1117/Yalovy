@@ -8,6 +8,40 @@
     <link rel="stylesheet" href="./assets/style-DyF8mFxk.css">
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div id="native-web-fallback" role="status" aria-live="polite">
+        <div class="native-web-fallback__logo">Y</div>
+        <div class="native-web-fallback__title">YALOVY</div>
+        <div class="native-web-fallback__text">Loading your pet moments…</div>
+      </div>
+    </div>
+    <style>
+      #native-web-fallback {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 12px;
+        background: radial-gradient(120% 70% at 50% 34%, #2a3410, #141414 70%);
+        color: #fff;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      .native-web-fallback__logo {
+        display: flex;
+        width: 72px;
+        height: 72px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        background: linear-gradient(145deg, #dfff45, #21d9c0);
+        color: #17191a;
+        font-size: 38px;
+        font-weight: 900;
+      }
+      .native-web-fallback__title { font-size: 26px; font-weight: 900; letter-spacing: 1px; }
+      .native-web-fallback__text { color: #9aa694; font-size: 14px; font-weight: 600; }
+    </style>
   </body>
 </html>

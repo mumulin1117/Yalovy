@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> UISceneConfiguration {
         let configuration = UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
         configuration.delegateClass = SceneDelegate.self
-        configuration.storyboard = UIStoryboard(name: "Main", bundle: nil)
         return configuration
     }
 }
