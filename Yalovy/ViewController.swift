@@ -12,6 +12,7 @@ class ViewController: UIViewController, WKScriptMessageHandler {
     private lazy var webView: WKWebView = {
         let configuration = WKWebViewConfiguration()
         configuration.userContentController.addUserScript(Self.storageRepairScript)
+        configuration.userContentController.addUserScript(Self.coinPackageBootstrapScript)
         configuration.userContentController.addUserScript(Self.diagnosticsScript)
         configuration.preferences.javaScriptCanOpenWindowsAutomatically = true
         configuration.allowsInlineMediaPlayback = true
@@ -365,6 +366,52 @@ class ViewController: UIViewController, WKScriptMessageHandler {
         injectionTime: .atDocumentStart,
         forMainFrameOnly: true
     )
+
+    private static let coinPackageBootstrapScript: WKUserScript = {
+        guard let url = Bundle.main.url(
+            forResource: "coin-packages",
+            withExtension: "json",
+            subdirectory: "static/common.config"
+        ),
+        let data = try? Data(contentsOf: url),
+        let configurationJSON = String(data: data, encoding: .utf8) else {
+            return WKUserScript(
+                source: "",
+                injectionTime: .atDocumentStart,
+                forMainFrameOnly: true
+            )
+        }
+
+        return WKUserScript(
+            source: """
+            (function() {
+              var coinPackageConfiguration = \(configurationJSON);
+              var originalFetch = window.fetch ? window.fetch.bind(window) : null;
+
+              window.fetch = function(input, init) {
+                var requestURL = typeof input === 'string'
+                  ? input
+                  : (input && input.url ? input.url : '');
+
+                if (requestURL.indexOf('static/common.config/coin-packages.json') !== -1) {
+                  return Promise.resolve(new Response(
+                    JSON.stringify(coinPackageConfiguration),
+                    {
+                      status: 200,
+                      headers: { 'Content-Type': 'application/json' }
+                    }
+                  ));
+                }
+
+                if (originalFetch) return originalFetch(input, init);
+                return Promise.reject(new Error('Fetch is unavailable.'));
+              };
+            })();
+            """,
+            injectionTime: .atDocumentStart,
+            forMainFrameOnly: true
+        )
+    }()
 
     private static let diagnosticsScript = WKUserScript(
         source: """
