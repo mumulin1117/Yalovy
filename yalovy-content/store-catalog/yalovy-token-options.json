@@ -1,68 +1,68 @@
 {
-  "version": 1,
-  "token_options": [
+  "catalog_revision": 1,
+  "yalovy_keepsake_sets": [
     {
-      "option_id": "yalovy_tokens_155",
-      "product_id": "guyvlqqukrzjasta",
-      "title": "155 Tokens",
-      "token_amount": 155,
-      "display_amount": "$0.99",
-      "emblem_path": "./yalovy-content/yalovy-tokens-compact.png",
-      "highlighted": false
+      "keepsake_set_id": "yalovy_keepsake_155",
+      "apple_reference_id": "guyvlqqukrzjasta",
+      "keepsake_label": "155 Tokens",
+      "paw_token_total": 155,
+      "apple_display_text": "$0.99",
+      "token_artwork_source": "./yalovy-content/yalovy-tokens-compact.png",
+      "yalovy_favorite": false
     },
     {
-      "option_id": "yalovy_tokens_355",
-      "product_id": "jfohngwfrsmayvdc",
-      "title": "355 Tokens",
-      "token_amount": 355,
-      "display_amount": "$1.99",
-      "emblem_path": "./yalovy-content/yalovy-tokens-compact.png",
-      "highlighted": false
+      "keepsake_set_id": "yalovy_keepsake_355",
+      "apple_reference_id": "jfohngwfrsmayvdc",
+      "keepsake_label": "355 Tokens",
+      "paw_token_total": 355,
+      "apple_display_text": "$1.99",
+      "token_artwork_source": "./yalovy-content/yalovy-tokens-compact.png",
+      "yalovy_favorite": false
     },
     {
-      "option_id": "yalovy_tokens_755",
-      "product_id": "rzjjmnicvtblzlut",
-      "title": "755 Tokens",
-      "token_amount": 755,
-      "display_amount": "$4.99",
-      "emblem_path": "./yalovy-content/yalovy-tokens-compact.png",
-      "highlighted": true
+      "keepsake_set_id": "yalovy_keepsake_755",
+      "apple_reference_id": "rzjjmnicvtblzlut",
+      "keepsake_label": "755 Tokens",
+      "paw_token_total": 755,
+      "apple_display_text": "$4.99",
+      "token_artwork_source": "./yalovy-content/yalovy-tokens-compact.png",
+      "yalovy_favorite": true
     },
     {
-      "option_id": "yalovy_tokens_1650",
-      "product_id": "eqpifqbjakkfctkr",
-      "title": "1,650 Tokens",
-      "token_amount": 1650,
-      "display_amount": "$9.99",
-      "emblem_path": "./yalovy-content/yalovy-tokens-compact.png",
-      "highlighted": false
+      "keepsake_set_id": "yalovy_keepsake_1650",
+      "apple_reference_id": "eqpifqbjakkfctkr",
+      "keepsake_label": "1,650 Tokens",
+      "paw_token_total": 1650,
+      "apple_display_text": "$9.99",
+      "token_artwork_source": "./yalovy-content/yalovy-tokens-compact.png",
+      "yalovy_favorite": false
     },
     {
-      "option_id": "yalovy_tokens_3550",
-      "product_id": "cngpgiimhkifclya",
-      "title": "3,550 Tokens",
-      "token_amount": 3550,
-      "display_amount": "$19.99",
-      "emblem_path": "./yalovy-content/yalovy-tokens-compact.png",
-      "highlighted": false
+      "keepsake_set_id": "yalovy_keepsake_3550",
+      "apple_reference_id": "cngpgiimhkifclya",
+      "keepsake_label": "3,550 Tokens",
+      "paw_token_total": 3550,
+      "apple_display_text": "$19.99",
+      "token_artwork_source": "./yalovy-content/yalovy-tokens-compact.png",
+      "yalovy_favorite": false
     },
     {
-      "option_id": "yalovy_tokens_7550",
-      "product_id": "wjhncdoescmiyair",
-      "title": "7,550 Tokens",
-      "token_amount": 7550,
-      "display_amount": "$49.99",
-      "emblem_path": "./yalovy-content/yalovy-tokens-compact.png",
-      "highlighted": false
+      "keepsake_set_id": "yalovy_keepsake_7550",
+      "apple_reference_id": "wjhncdoescmiyair",
+      "keepsake_label": "7,550 Tokens",
+      "paw_token_total": 7550,
+      "apple_display_text": "$49.99",
+      "token_artwork_source": "./yalovy-content/yalovy-tokens-compact.png",
+      "yalovy_favorite": false
     },
     {
-      "option_id": "yalovy_tokens_15350",
-      "product_id": "bnihbwbiebyfqjsb",
-      "title": "15,350 Tokens",
-      "token_amount": 15350,
-      "display_amount": "$99.99",
-      "emblem_path": "./yalovy-content/yalovy-tokens-compact.png",
-      "highlighted": false
+      "keepsake_set_id": "yalovy_keepsake_15350",
+      "apple_reference_id": "bnihbwbiebyfqjsb",
+      "keepsake_label": "15,350 Tokens",
+      "paw_token_total": 15350,
+      "apple_display_text": "$99.99",
+      "token_artwork_source": "./yalovy-content/yalovy-tokens-compact.png",
+      "yalovy_favorite": false
     }
   ]
 }

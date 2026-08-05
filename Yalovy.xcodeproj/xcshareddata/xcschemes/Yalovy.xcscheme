@@ -52,7 +52,7 @@
          </BuildableReference>
       </BuildableProductRunnable>
       <StoreKitConfigurationFileReference
-         identifier = "../../Yalovy/rrrrrz.storekit">
+         identifier = "../../Yalovy/rrr.storekit">
       </StoreKitConfigurationFileReference>
    </LaunchAction>
    <ProfileAction

@@ -85,21 +85,21 @@ class ViewController: UIViewController, WKScriptMessageHandler {
 
         guard scriptPacket.name == Self.storeBridgeName,
               let packet = scriptPacket.body as? [String: Any],
-              packet["type"] as? String == "startAcquisition" else {
+              packet["type"] as? String == "beginKeepsakeAcquisition" else {
             return
         }
 
         let data = packet["data"] as? [String: Any]
-        let productID = Self.stringValue(packet["productId"])
-            ?? Self.stringValue(data?["product_id"])
-        let requestID = Self.stringValue(packet["request_id"])
-            ?? Self.stringValue(data?["request_id"])
+        let productID = Self.stringValue(packet["appleReference"])
+            ?? Self.stringValue(data?["apple_reference_id"])
+        let requestID = Self.stringValue(packet["request_trace"])
+            ?? Self.stringValue(data?["request_trace"])
             ?? ""
-        let optionID = Self.stringValue(data?["option_id"])
+        let optionID = Self.stringValue(data?["keepsake_set_id"])
             ?? productID
             ?? ""
-        let userID = Self.stringValue(packet["user_id"])
-            ?? Self.stringValue(data?["user_id"])
+        let userID = Self.stringValue(packet["keeper_reference"])
+            ?? Self.stringValue(data?["keeper_reference"])
             ?? ""
 
         guard let productID, !productID.isEmpty else {
@@ -157,12 +157,12 @@ class ViewController: UIViewController, WKScriptMessageHandler {
 
                 await transaction.finish()
                 sendStoreResult([
-                    "status": "success",
-                    "request_id": requestID,
-                    "option_id": optionID,
-                    "product_id": productID,
-                    "transaction_id": String(transaction.id),
-                    "user_id": userID
+                    "flow_state": "success",
+                    "request_trace": requestID,
+                    "keepsake_set_id": optionID,
+                    "apple_reference_id": productID,
+                    "apple_record_id": String(transaction.id),
+                    "keeper_reference": userID
                 ])
 
             case .pending:
@@ -198,10 +198,10 @@ class ViewController: UIViewController, WKScriptMessageHandler {
     @MainActor
     private func sendStoreFailure(requestID: String, optionID: String, detail: String) {
         sendStoreResult([
-            "status": "failed",
-            "request_id": requestID,
-            "option_id": optionID,
-            "detail": detail
+            "flow_state": "failed",
+            "request_trace": requestID,
+            "keepsake_set_id": optionID,
+            "failure_note": detail
         ])
     }
 
@@ -265,11 +265,11 @@ class ViewController: UIViewController, WKScriptMessageHandler {
         ),
         let data = try? Data(contentsOf: url),
         let root = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
-        let packages = root["token_options"] as? [[String: Any]] else {
+        let packages = root["yalovy_keepsake_sets"] as? [[String: Any]] else {
             return []
         }
 
-        return Set(packages.compactMap { stringValue($0["product_id"]) })
+        return Set(packages.compactMap { stringValue($0["apple_reference_id"]) })
     }()
 
     private enum StoreFlowError: Error {
