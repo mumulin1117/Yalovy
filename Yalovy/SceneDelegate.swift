@@ -10,10 +10,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     ) {
         guard let windowScene = scene as? UIWindowScene else { return }
 
-        let window = UIWindow(windowScene: windowScene)
-        window.backgroundColor = UIColor(red: 0.10, green: 0.11, blue: 0.11, alpha: 1)
-        window.rootViewController = ViewController()
-        self.window = window
-        window.makeKeyAndVisible()
+        let lalovyuwindow = UIWindow(windowScene: windowScene)
+        lalovyuwindow.backgroundColor = UIColor(red: 0.10, green: 0.11, blue: 0.11, alpha: 1)
+        lalovyuwindow.rootViewController = YalovyPetShellController()
+        self.window = lalovyuwindow
+        lalovyuwindow.makeKeyAndVisible()
     }
 }
