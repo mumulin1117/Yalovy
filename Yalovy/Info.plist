@@ -7,7 +7,7 @@
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Yalovy uses the microphone when you choose to add natural sound to a pet moment you create.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Yalovy accesses only the photos you select so you can preserve favorite pet moments and share them with the community.</string>
+	<string>Yalovy accesses only the photos you select so you can preserve favorite pet moments and share them with the pet-circle.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Yalovy saves images only when you choose to keep a pet memory in your photo library.</string>
 	<key>NSAppTransportSecurity</key>

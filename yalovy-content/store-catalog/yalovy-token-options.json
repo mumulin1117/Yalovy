@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "token_options": [
+    {
+      "option_id": "yalovy_tokens_155",
+      "product_id": "guyvlqqukrzjasta",
+      "title": "155 Tokens",
+      "token_amount": 155,
+      "display_amount": "$0.99",
+      "emblem_path": "./yalovy-content/yalovy-tokens-compact.png",
+      "highlighted": false
+    },
+    {
+      "option_id": "yalovy_tokens_355",
+      "product_id": "jfohngwfrsmayvdc",
+      "title": "355 Tokens",
+      "token_amount": 355,
+      "display_amount": "$1.99",
+      "emblem_path": "./yalovy-content/yalovy-tokens-compact.png",
+      "highlighted": false
+    },
+    {
+      "option_id": "yalovy_tokens_755",
+      "product_id": "rzjjmnicvtblzlut",
+      "title": "755 Tokens",
+      "token_amount": 755,
+      "display_amount": "$4.99",
+      "emblem_path": "./yalovy-content/yalovy-tokens-compact.png",
+      "highlighted": true
+    },
+    {
+      "option_id": "yalovy_tokens_1650",
+      "product_id": "eqpifqbjakkfctkr",
+      "title": "1,650 Tokens",
+      "token_amount": 1650,
+      "display_amount": "$9.99",
+      "emblem_path": "./yalovy-content/yalovy-tokens-compact.png",
+      "highlighted": false
+    },
+    {
+      "option_id": "yalovy_tokens_3550",
+      "product_id": "cngpgiimhkifclya",
+      "title": "3,550 Tokens",
+      "token_amount": 3550,
+      "display_amount": "$19.99",
+      "emblem_path": "./yalovy-content/yalovy-tokens-compact.png",
+      "highlighted": false
+    },
+    {
+      "option_id": "yalovy_tokens_7550",
+      "product_id": "wjhncdoescmiyair",
+      "title": "7,550 Tokens",
+      "token_amount": 7550,
+      "display_amount": "$49.99",
+      "emblem_path": "./yalovy-content/yalovy-tokens-compact.png",
+      "highlighted": false
+    },
+    {
+      "option_id": "yalovy_tokens_15350",
+      "product_id": "bnihbwbiebyfqjsb",
+      "title": "15,350 Tokens",
+      "token_amount": 15350,
+      "display_amount": "$99.99",
+      "emblem_path": "./yalovy-content/yalovy-tokens-compact.png",
+      "highlighted": false
+    }
+  ]
+}

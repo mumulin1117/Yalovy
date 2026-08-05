@@ -2,7 +2,7 @@
 
 Last updated: August 3, 2026
 
-These Terms of Service govern your use of Yalovy, a pet-focused community app for saving and sharing pet moments, photos, short notes, routines, grooming, training progress, seasonal looks, community interactions, and selected extended pet videos.
+These Terms of Service govern your use of Yalovy, a pet-focused pet-circle app for saving and sharing pet moments, photos, short notes, routines, grooming, training progress, seasonal looks, pet-circle interactions, and selected extended pet videos.
 
 If you do not agree to these Terms, do not use Yalovy. For questions, contact yalovy@gmail.com.
 
@@ -14,7 +14,7 @@ You are responsible for the accuracy of the information you provide and for acti
 
 You may not create an account using false information, impersonate another person, evade a suspension, or use Yalovy if we previously removed your account for violating these Terms.
 
-## 2. Pet-Focused Community Purpose
+## 2. Pet-Focused Pet Circle Purpose
 
 Yalovy is intended for respectful pet-related sharing. Posts, notes, photos, videos, comments, reactions, and profile content should stay centered on pets, pet routines, pet care, pet stories, pet training, grooming, daily records, and related owner experiences.
 
@@ -35,12 +35,12 @@ You may not upload, publish, send, encourage, or engage in:
 - Content that infringes copyright, trademark, privacy, publicity, or other rights.
 - Doxxing, sharing private information without permission, or encouraging harassment outside the app.
 - Impersonation, misleading account identity, or false claims of affiliation.
-- Attempts to bypass moderation, reporting tools, purchase rules, security controls, or account restrictions.
+- Attempts to bypass moderation, reporting tools, acquisition rules, security controls, or account restrictions.
 - Use of Yalovy for unlawful commercial solicitation or unrelated advertising.
 
 ## 5. Reporting, Blocking, and Moderation
 
-Yalovy provides tools to report inappropriate content or abusive users and to block unwanted interactions. We may review reports, remove content, limit visibility, disable features, suspend accounts, delete accounts, or preserve records when needed to protect users and the community.
+Yalovy provides tools to report inappropriate content or abusive users and to block unwanted interactions. We may review reports, remove content, limit visibility, disable features, suspend accounts, delete accounts, or preserve records when needed to protect users and the pet-circle.
 
 We may take action without prior notice when we believe content or behavior violates these Terms, creates legal risk, harms users, harms animals, disrupts the app, or may cause App Store compliance issues.
 
@@ -48,15 +48,15 @@ We may take action without prior notice when we believe content or behavior viol
 
 You may stop using Yalovy at any time. You may request account deletion through the in-app Delete Account option or by contacting yalovy@gmail.com from the email address associated with your account.
 
-Deleting an account may remove or de-identify your profile and login information and may make your content unavailable in normal app views. Some records may be retained where necessary for legal compliance, purchase history, safety enforcement, fraud prevention, dispute handling, or backup recovery.
+Deleting an account may remove or de-identify your profile and login information and may make your content unavailable in normal app views. Some records may be retained where necessary for legal compliance, acquisition history, safety enforcement, fraud prevention, dispute handling, or backup recovery.
 
 We may suspend, restrict, or terminate your account if you violate these Terms, misuse the app, infringe rights, create safety risk, or attempt to evade enforcement.
 
-## 7. Optional Paid Content, Coins, and App Store Purchases
+## 7. Optional Paid Content, Tokens, and App Store Purchases
 
-Regular photo-and-text sharing remains part of the community experience. Some selected extended pet videos or publishing features may require coins or other optional paid access.
+Regular photo-and-text sharing remains part of the pet-circle experience. Some selected extended pet videos or publishing features may require tokens or other optional paid access.
 
-Coins are virtual items for use only in Yalovy. Coins have no cash value, cannot be sold or transferred outside the app, and may not be exchanged for money or anything outside Yalovy.
+Tokens are virtual items for use only in Yalovy. Tokens have no cash value, cannot be sold or transferred outside the app, and may not be exchanged for money or anything outside Yalovy.
 
 Payments, refunds, family sharing behavior, taxes, and transaction processing are handled through Apple and the App Store where applicable. Apple may apply its own terms. Except where required by law or Apple's rules, virtual items and used digital features are not refundable.
 
@@ -70,7 +70,7 @@ Yalovy, including the app name, interface, software, design, text, icons, brandi
 
 ## 10. Third-Party Services
 
-Yalovy may rely on Apple services, App Store purchase processing, device permissions, and other service providers. Third-party services may have their own terms and privacy policies. We are not responsible for third-party services that we do not control.
+Yalovy may rely on Apple services, App Store acquisition processing, device permissions, and other service providers. Third-party services may have their own terms and privacy policies. We are not responsible for third-party services that we do not control.
 
 ## 11. Disclaimers
 

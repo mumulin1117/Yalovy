@@ -10,8 +10,8 @@
 		1A2B3C4D5E6F700100000001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000011 /* AppDelegate.swift */; };
 		1A2B3C4D5E6F700100000002 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000012 /* SceneDelegate.swift */; };
 		1A2B3C4D5E6F700100000003 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000014 /* index.html */; };
-		1A2B3C4D5E6F700100000004 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000015 /* assets */; };
-		1A2B3C4D5E6F700100000005 /* static in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000016 /* static */; };
+		1A2B3C4D5E6F700100000004 /* yalovy-web-runtime in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000015 /* yalovy-web-runtime */; };
+		1A2B3C4D5E6F700100000005 /* yalovy-content in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000016 /* yalovy-content */; };
 		1A2B3C4D5E6F700100000006 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000017 /* ViewController.swift */; };
 		1A2B3C4D5E6F700100000008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000019 /* Assets.xcassets */; };
 		1A2B3C4D5E6F700100000009 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70010000001A /* LaunchScreen.storyboard */; };
@@ -23,8 +23,8 @@
 		1A2B3C4D5E6F700100000012 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700100000013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700100000014 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = SOURCE_ROOT; };
-		1A2B3C4D5E6F700100000015 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = SOURCE_ROOT; };
-		1A2B3C4D5E6F700100000016 /* static */ = {isa = PBXFileReference; lastKnownFileType = folder; path = static; sourceTree = SOURCE_ROOT; };
+		1A2B3C4D5E6F700100000015 /* yalovy-web-runtime */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "yalovy-web-runtime"; sourceTree = SOURCE_ROOT; };
+		1A2B3C4D5E6F700100000016 /* yalovy-content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "yalovy-content"; sourceTree = SOURCE_ROOT; };
 		1A2B3C4D5E6F700100000017 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700100000019 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A2B3C4D5E6F70010000001A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -46,8 +46,8 @@
 			children = (
 				1A2B3C4D5E6F700100000031 /* Yalovy */,
 				1A2B3C4D5E6F700100000014 /* index.html */,
-				1A2B3C4D5E6F700100000015 /* assets */,
-				1A2B3C4D5E6F700100000016 /* static */,
+				1A2B3C4D5E6F700100000015 /* yalovy-web-runtime */,
+				1A2B3C4D5E6F700100000016 /* yalovy-content */,
 				1A2B3C4D5E6F700100000032 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -132,8 +132,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A2B3C4D5E6F700100000003 /* index.html in Resources */,
-				1A2B3C4D5E6F700100000004 /* assets in Resources */,
-				1A2B3C4D5E6F700100000005 /* static in Resources */,
+				1A2B3C4D5E6F700100000004 /* yalovy-web-runtime in Resources */,
+				1A2B3C4D5E6F700100000005 /* yalovy-content in Resources */,
 				1A2B3C4D5E6F700100000008 /* Assets.xcassets in Resources */,
 				1A2B3C4D5E6F700100000009 /* LaunchScreen.storyboard in Resources */,
 			);

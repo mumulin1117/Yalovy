@@ -3,28 +3,28 @@ import WebKit
 import StoreKit
 
 class ViewController: UIViewController, WKScriptMessageHandler {
-    private static let iapMessageHandlerName = "PoetryIAP"
-    private static let diagnosticsMessageHandlerName = "YalovyDiagnostics"
-    private var isDisplayingWebError = false
+    private static let storeBridgeName = "YalovyCatalogBridge"
+    private static let diagnosticsBridgeName = "YalovyDiagnostics"
+    private var isDisplayingBrowserError = false
     private var hasStartedBundledApp = false
-    private lazy var scriptMessageProxy = WeakScriptMessageHandler(delegate: self)
+    private lazy var scriptBridgeProxy = WeakScriptBridge(delegate: self)
 
-    private lazy var webView: WKWebView = {
+    private lazy var browserSurface: WKWebView = {
         let configuration = WKWebViewConfiguration()
-        configuration.userContentController.addUserScript(Self.coinPackageBootstrapScript)
+        configuration.userContentController.addUserScript(Self.tokenOptionBootstrapScript)
         configuration.userContentController.addUserScript(Self.diagnosticsScript)
         configuration.preferences.javaScriptCanOpenWindowsAutomatically = true
         configuration.allowsInlineMediaPlayback = true
         configuration.mediaTypesRequiringUserActionForPlayback = []
 
-        let webView = WKWebView(frame: .zero, configuration: configuration)
-        webView.translatesAutoresizingMaskIntoConstraints = false
-        webView.isOpaque = false
-        webView.backgroundColor = UIColor(red: 0.10, green: 0.11, blue: 0.11, alpha: 1)
-        webView.scrollView.backgroundColor = webView.backgroundColor
-        webView.scrollView.contentInsetAdjustmentBehavior = .never
-        webView.allowsBackForwardNavigationGestures = true
-        return webView
+        let browserSurface = WKWebView(frame: .zero, configuration: configuration)
+        browserSurface.translatesAutoresizingMaskIntoConstraints = false
+        browserSurface.isOpaque = false
+        browserSurface.backgroundColor = UIColor(red: 0.10, green: 0.11, blue: 0.11, alpha: 1)
+        browserSurface.scrollView.backgroundColor = browserSurface.backgroundColor
+        browserSurface.scrollView.contentInsetAdjustmentBehavior = .never
+        browserSurface.allowsBackForwardNavigationGestures = true
+        return browserSurface
     }()
     private let loadingOverlay: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "LaunchImage"))
@@ -38,8 +38,8 @@ class ViewController: UIViewController, WKScriptMessageHandler {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 0.10, green: 0.11, blue: 0.11, alpha: 1)
-        configureWebViewCallbacks()
-        installWebView()
+        configureBrowserCallbacks()
+        installBrowserSurface()
         installLoadingOverlay()
     }
 
@@ -50,27 +50,27 @@ class ViewController: UIViewController, WKScriptMessageHandler {
         loadBundledApp()
     }
 
-    private func configureWebViewCallbacks() {
-        let contentController = webView.configuration.userContentController
-        contentController.add(scriptMessageProxy, name: Self.iapMessageHandlerName)
-        contentController.add(scriptMessageProxy, name: Self.diagnosticsMessageHandlerName)
+    private func configureBrowserCallbacks() {
+        let contentController = browserSurface.configuration.userContentController
+        contentController.add(scriptBridgeProxy, name: Self.storeBridgeName)
+        contentController.add(scriptBridgeProxy, name: Self.diagnosticsBridgeName)
     }
 
     deinit {
-        webView.configuration.userContentController.removeScriptMessageHandler(
-            forName: Self.iapMessageHandlerName
+        browserSurface.configuration.userContentController.removeScriptMessageHandler(
+            forName: Self.storeBridgeName
         )
-        webView.configuration.userContentController.removeScriptMessageHandler(
-            forName: Self.diagnosticsMessageHandlerName
+        browserSurface.configuration.userContentController.removeScriptMessageHandler(
+            forName: Self.diagnosticsBridgeName
         )
     }
 
     func userContentController(
         _ userContentController: WKUserContentController,
-        didReceive message: WKScriptMessage
+        didReceive scriptPacket: WKScriptMessage
     ) {
-        if message.name == Self.diagnosticsMessageHandlerName {
-            let diagnostics = message.body as? [String: Any]
+        if scriptPacket.name == Self.diagnosticsBridgeName {
+            let diagnostics = scriptPacket.body as? [String: Any]
             if diagnostics?["type"] as? String == "ready" {
                 UIView.animate(withDuration: 0.2, animations: {
                     self.loadingOverlay.alpha = 0
@@ -83,38 +83,38 @@ class ViewController: UIViewController, WKScriptMessageHandler {
             return
         }
 
-        guard message.name == Self.iapMessageHandlerName,
-              let payload = message.body as? [String: Any],
-              payload["type"] as? String == "startPurchase" else {
+        guard scriptPacket.name == Self.storeBridgeName,
+              let packet = scriptPacket.body as? [String: Any],
+              packet["type"] as? String == "startAcquisition" else {
             return
         }
 
-        let data = payload["data"] as? [String: Any]
-        let productID = Self.stringValue(payload["productId"])
+        let data = packet["data"] as? [String: Any]
+        let productID = Self.stringValue(packet["productId"])
             ?? Self.stringValue(data?["product_id"])
-        let requestID = Self.stringValue(payload["request_id"])
+        let requestID = Self.stringValue(packet["request_id"])
             ?? Self.stringValue(data?["request_id"])
             ?? ""
-        let packageID = Self.stringValue(data?["package_id"])
+        let optionID = Self.stringValue(data?["option_id"])
             ?? productID
             ?? ""
-        let userID = Self.stringValue(payload["user_id"])
+        let userID = Self.stringValue(packet["user_id"])
             ?? Self.stringValue(data?["user_id"])
             ?? ""
 
         guard let productID, !productID.isEmpty else {
-            sendPurchaseFailure(
+            sendStoreFailure(
                 requestID: requestID,
-                packageID: packageID,
-                message: "Invalid in-app purchase product."
+                optionID: optionID,
+                detail: "Invalid App Store item."
             )
             return
         }
 
         Task { @MainActor [weak self] in
-            await self?.purchase(
+            await self?.acquire(
                 productID: productID,
-                packageID: packageID,
+                optionID: optionID,
                 requestID: requestID,
                 userID: userID
             )
@@ -123,27 +123,27 @@ class ViewController: UIViewController, WKScriptMessageHandler {
 
 
     @MainActor
-    private func purchase(
+    private func acquire(
         productID: String,
-        packageID: String,
+        optionID: String,
         requestID: String,
         userID: String
     ) async {
-        guard Self.configuredProductIDs.contains(productID) else {
-            sendPurchaseFailure(
+        guard Self.configuredItemIDs.contains(productID) else {
+            sendStoreFailure(
                 requestID: requestID,
-                packageID: packageID,
-                message: "This in-app purchase is not configured."
+                optionID: optionID,
+                detail: "This App Store item is not configured."
             )
             return
         }
 
         do {
             guard let product = try await Product.products(for: [productID]).first else {
-                sendPurchaseFailure(
+                sendStoreFailure(
                     requestID: requestID,
-                    packageID: packageID,
-                    message: "This product is unavailable from the App Store."
+                    optionID: optionID,
+                    detail: "This item is unavailable from the App Store."
                 )
                 return
             }
@@ -152,69 +152,69 @@ class ViewController: UIViewController, WKScriptMessageHandler {
             case .success(let verificationResult):
                 let transaction = try Self.verified(verificationResult)
                 guard transaction.productID == productID else {
-                    throw PurchaseError.productMismatch
+                    throw StoreFlowError.productMismatch
                 }
 
                 await transaction.finish()
-                sendIAPResult([
+                sendStoreResult([
                     "status": "success",
                     "request_id": requestID,
-                    "package_id": packageID,
+                    "option_id": optionID,
                     "product_id": productID,
                     "transaction_id": String(transaction.id),
                     "user_id": userID
                 ])
 
             case .pending:
-                sendPurchaseFailure(
+                sendStoreFailure(
                     requestID: requestID,
-                    packageID: packageID,
-                    message: "Purchase is pending approval."
+                    optionID: optionID,
+                    detail: "The request is pending approval."
                 )
 
             case .userCancelled:
-                sendPurchaseFailure(
+                sendStoreFailure(
                     requestID: requestID,
-                    packageID: packageID,
-                    message: "Purchase cancelled."
+                    optionID: optionID,
+                    detail: "The request was cancelled."
                 )
 
             @unknown default:
-                sendPurchaseFailure(
+                sendStoreFailure(
                     requestID: requestID,
-                    packageID: packageID,
-                    message: "The App Store returned an unknown purchase result."
+                    optionID: optionID,
+                    detail: "The App Store returned an unknown result."
                 )
             }
         } catch {
-            sendPurchaseFailure(
+            sendStoreFailure(
                 requestID: requestID,
-                packageID: packageID,
-                message: Self.purchaseErrorMessage(error)
+                optionID: optionID,
+                detail: Self.storeFlowErrorText(error)
             )
         }
     }
 
     @MainActor
-    private func sendPurchaseFailure(requestID: String, packageID: String, message: String) {
-        sendIAPResult([
+    private func sendStoreFailure(requestID: String, optionID: String, detail: String) {
+        sendStoreResult([
             "status": "failed",
             "request_id": requestID,
-            "package_id": packageID,
-            "message": message
+            "option_id": optionID,
+            "detail": detail
         ])
     }
 
     @MainActor
-    private func sendIAPResult(_ result: [String: Any]) {
+    private func sendStoreResult(_ result: [String: Any]) {
         guard JSONSerialization.isValidJSONObject(result),
               let data = try? JSONSerialization.data(withJSONObject: result),
               let json = String(data: data, encoding: .utf8) else {
             return
         }
 
-        let script = "window.PoetryIAP && window.PoetryIAP.receive(\(json));"
-        webView.evaluateJavaScript(script)
+        let script = "window.YalovyCatalogBridge && window.YalovyCatalogBridge.receive(\(json));"
+        browserSurface.evaluateJavaScript(script)
     }
 
     private static func verified<T>(_ result: VerificationResult<T>) throws -> T {
@@ -222,7 +222,7 @@ class ViewController: UIViewController, WKScriptMessageHandler {
         case .verified(let value):
             return value
         case .unverified:
-            throw PurchaseError.failedVerification
+            throw StoreFlowError.failedVerification
         }
     }
 
@@ -232,9 +232,9 @@ class ViewController: UIViewController, WKScriptMessageHandler {
         return trimmed.isEmpty ? nil : trimmed
     }
 
-    private static func purchaseErrorMessage(_ error: Error) -> String {
-        if error is PurchaseError {
-            return "The App Store transaction could not be verified."
+    private static func storeFlowErrorText(_ error: Error) -> String {
+        if error is StoreFlowError {
+            return "The App Store result could not be verified."
         }
 
         let nsError = error as NSError
@@ -242,9 +242,9 @@ class ViewController: UIViewController, WKScriptMessageHandler {
            let storeError = SKError.Code(rawValue: nsError.code) {
             switch storeError {
             case .paymentNotAllowed:
-                return "In-app purchases are disabled on this device."
+                return "App Store requests are disabled on this device."
             case .storeProductNotAvailable:
-                return "This product is unavailable from the App Store."
+                return "This item is unavailable from the App Store."
             default:
                 break
             }
@@ -257,33 +257,33 @@ class ViewController: UIViewController, WKScriptMessageHandler {
         return error.localizedDescription
     }
 
-    private static let configuredProductIDs: Set<String> = {
+    private static let configuredItemIDs: Set<String> = {
         guard let url = Bundle.main.url(
-            forResource: "coin-packages",
+            forResource: "yalovy-token-options",
             withExtension: "json",
-            subdirectory: "static/common.config"
+            subdirectory: "yalovy-content/store-catalog"
         ),
         let data = try? Data(contentsOf: url),
         let root = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
-        let packages = root["coin_packages"] as? [[String: Any]] else {
+        let packages = root["token_options"] as? [[String: Any]] else {
             return []
         }
 
         return Set(packages.compactMap { stringValue($0["product_id"]) })
     }()
 
-    private enum PurchaseError: Error {
+    private enum StoreFlowError: Error {
         case failedVerification
         case productMismatch
     }
 
-    private func installWebView() {
-        view.addSubview(webView)
+    private func installBrowserSurface() {
+        view.addSubview(browserSurface)
         NSLayoutConstraint.activate([
-            webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            webView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            webView.topAnchor.constraint(equalTo: view.topAnchor),
-            webView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            browserSurface.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            browserSurface.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            browserSurface.topAnchor.constraint(equalTo: view.topAnchor),
+            browserSurface.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 
@@ -302,19 +302,19 @@ class ViewController: UIViewController, WKScriptMessageHandler {
             return
         }
 
-        isDisplayingWebError = false
+        isDisplayingBrowserError = false
         var components = URLComponents(url: htmlURL, resolvingAgainstBaseURL: false)
         components?.fragment = "/"
         let appURL = components?.url ?? htmlURL
-        webView.loadFileURL(appURL, allowingReadAccessTo: Bundle.main.bundleURL)
+        browserSurface.loadFileURL(appURL, allowingReadAccessTo: Bundle.main.bundleURL)
     }
 
 
-    private static let coinPackageBootstrapScript: WKUserScript = {
+    private static let tokenOptionBootstrapScript: WKUserScript = {
         guard let url = Bundle.main.url(
-            forResource: "coin-packages",
+            forResource: "yalovy-token-options",
             withExtension: "json",
-            subdirectory: "static/common.config"
+            subdirectory: "yalovy-content/store-catalog"
         ),
         let data = try? Data(contentsOf: url),
         let configurationJSON = String(data: data, encoding: .utf8) else {
@@ -328,7 +328,7 @@ class ViewController: UIViewController, WKScriptMessageHandler {
         return WKUserScript(
             source: """
             (function() {
-              var coinPackageConfiguration = \(configurationJSON);
+              var tokenOptionConfiguration = \(configurationJSON);
               var originalFetch = window.fetch ? window.fetch.bind(window) : null;
 
               window.fetch = function(input, init) {
@@ -336,9 +336,9 @@ class ViewController: UIViewController, WKScriptMessageHandler {
                   ? input
                   : (input && input.url ? input.url : '');
 
-                if (requestURL.indexOf('static/common.config/coin-packages.json') !== -1) {
+                if (requestURL.indexOf('yalovy-content/store-catalog/yalovy-token-options.json') !== -1) {
                   return Promise.resolve(new Response(
-                    JSON.stringify(coinPackageConfiguration),
+                    JSON.stringify(tokenOptionConfiguration),
                     {
                       status: 200,
                       headers: { 'Content-Type': 'application/json' }
@@ -360,7 +360,7 @@ class ViewController: UIViewController, WKScriptMessageHandler {
         source: """
         (function() {
           function report(message) {
-            if (!document.getElementById('native-web-fallback')) return;
+            if (!document.getElementById('native-browser-fallback')) return;
             try {
               window.webkit.messageHandlers.YalovyDiagnostics.postMessage({
                 type: 'error',
@@ -379,7 +379,7 @@ class ViewController: UIViewController, WKScriptMessageHandler {
             var startedAt = Date.now();
             var readinessTimer = setInterval(function() {
               try {
-                var fallback = document.getElementById('native-web-fallback');
+                var fallback = document.getElementById('native-browser-fallback');
                 if (!fallback) {
                   clearInterval(readinessTimer);
                   setTimeout(function() {
@@ -407,7 +407,7 @@ class ViewController: UIViewController, WKScriptMessageHandler {
     )
 }
 
-private final class WeakScriptMessageHandler: NSObject, WKScriptMessageHandler {
+private final class WeakScriptBridge: NSObject, WKScriptMessageHandler {
     weak var delegate: WKScriptMessageHandler?
 
     init(delegate: WKScriptMessageHandler) {
@@ -417,8 +417,8 @@ private final class WeakScriptMessageHandler: NSObject, WKScriptMessageHandler {
 
     func userContentController(
         _ userContentController: WKUserContentController,
-        didReceive message: WKScriptMessage
+        didReceive scriptPacket: WKScriptMessage
     ) {
-        delegate?.userContentController(userContentController, didReceive: message)
+        delegate?.userContentController(userContentController, didReceive: scriptPacket)
     }
 }
