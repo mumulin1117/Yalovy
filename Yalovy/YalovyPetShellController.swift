@@ -9,52 +9,91 @@ final class YalovyPetShellController: UIViewController, WKScriptMessageHandler {
     private lazy var yalovyScriptRelay = YalovyChannelRelay(yalovyRecipient: self)
 
     private lazy var petJournalCanvas: WKWebView = {
-        let journalSetup = WKWebViewConfiguration()
-        journalSetup.userContentController.addUserScript(Self.keepsakeCatalogBootstrap)
-        journalSetup.userContentController.addUserScript(Self.readinessProbe)
-        journalSetup.preferences.javaScriptCanOpenWindowsAutomatically = true
-        journalSetup.allowsInlineMediaPlayback = true
-        journalSetup.mediaTypesRequiringUserActionForPlayback = []
-
+        let journalSetup = makeJournalSetup()
         let petJournalCanvas = WKWebView(frame: .zero, configuration: journalSetup)
-        petJournalCanvas.translatesAutoresizingMaskIntoConstraints = false
-        petJournalCanvas.isOpaque = false
-        petJournalCanvas.backgroundColor = UIColor(red: 0.10, green: 0.11, blue: 0.11, alpha: 1)
-        petJournalCanvas.scrollView.backgroundColor = petJournalCanvas.backgroundColor
-        petJournalCanvas.scrollView.contentInsetAdjustmentBehavior = .never
-        petJournalCanvas.allowsBackForwardNavigationGestures = true
-        return petJournalCanvas
+        return preparePetJournalCanvas(petJournalCanvas)
     }()
+
     private let openingArtwork: UIImageView = {
         let openingImage = UIImageView(
             image: UIImage(named: unweaveYalovyWhiskerTrail_6F29("LNaGurnNc3hhI9mDapgMe"))
         )
-        openingImage.translatesAutoresizingMaskIntoConstraints = false
-        openingImage.contentMode = .scaleAspectFill
-        openingImage.clipsToBounds = true
-        openingImage.backgroundColor = UIColor(red: 0.08, green: 0.08, blue: 0.08, alpha: 1)
+        let openingAdjustments: [(UIImageView) -> Void] = [
+            { $0.translatesAutoresizingMaskIntoConstraints = false },
+            { $0.contentMode = .scaleAspectFill },
+            { $0.clipsToBounds = true },
+            { $0.backgroundColor = UIColor(red: 0.08, green: 0.08, blue: 0.08, alpha: 1) }
+        ]
+        openingAdjustments.forEach { adjustment in
+            adjustment(openingImage)
+        }
         return openingImage
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 0.10, green: 0.11, blue: 0.11, alpha: 1)
-        connectYalovyChannels()
-        placePetJournalCanvas()
-        placeOpeningArtwork()
+        let openingSequence: [() -> Void] = [
+            connectYalovyChannels,
+            placePetJournalCanvas,
+            placeOpeningArtwork
+        ]
+        openingSequence.forEach { stage in
+            stage()
+        }
     }
 
     override func viewDidAppear(_ transitionWasAnimated: Bool) {
         super.viewDidAppear(transitionWasAnimated)
-        guard !didOpenYalovyJournal else { return }
-        didOpenYalovyJournal = true
+        switch didOpenYalovyJournal {
+        case true:
+            return
+        case false:
+            didOpenYalovyJournal.toggle()
+        }
         openYalovyJournal()
     }
 
     private func connectYalovyChannels() {
         let channelHub = petJournalCanvas.configuration.userContentController
-        channelHub.add(yalovyScriptRelay, name: Self.yalovyCatalogChannel)
-        channelHub.add(yalovyScriptRelay, name: Self.yalovyReadinessChannel)
+        let yalovyChannels = [
+            Self.yalovyCatalogChannel,
+            Self.yalovyReadinessChannel
+        ]
+        yalovyChannels.forEach { channelName in
+            channelHub.add(yalovyScriptRelay, name: channelName)
+        }
+    }
+
+    private func makeJournalSetup() -> WKWebViewConfiguration {
+        let journalSetup = WKWebViewConfiguration()
+        let journalScripts = [
+            Self.keepsakeCatalogBootstrap,
+            Self.readinessProbe
+        ]
+        journalScripts.forEach { journalScript in
+            journalSetup.userContentController.addUserScript(journalScript)
+        }
+        journalSetup.preferences.javaScriptCanOpenWindowsAutomatically = true
+        journalSetup.allowsInlineMediaPlayback = true
+        journalSetup.mediaTypesRequiringUserActionForPlayback = []
+        return journalSetup
+    }
+
+    private func preparePetJournalCanvas(_ petJournalCanvas: WKWebView) -> WKWebView {
+        let journalInk = UIColor(red: 0.10, green: 0.11, blue: 0.11, alpha: 1)
+        let canvasAdjustments: [(WKWebView) -> Void] = [
+            { $0.translatesAutoresizingMaskIntoConstraints = false },
+            { $0.isOpaque = false },
+            { $0.backgroundColor = journalInk },
+            { $0.scrollView.backgroundColor = journalInk },
+            { $0.scrollView.contentInsetAdjustmentBehavior = .never },
+            { $0.allowsBackForwardNavigationGestures = true }
+        ]
+        return canvasAdjustments.reduce(petJournalCanvas) { canvas, adjustment in
+            adjustment(canvas)
+            return canvas
+        }
     }
 
     deinit {

@@ -2,19 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSCameraUsageDescription</key>
-	<string>Yalovy uses the camera so you can capture your pet’s everyday moments and add them to a personal story.</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Yalovy uses the microphone when you choose to add natural sound to a pet moment you create.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Yalovy accesses only the photos you select so you can preserve favorite pet moments and share them with the pet-circle.</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Yalovy saves images only when you choose to keep a pet memory in your photo library.</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -35,6 +22,19 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Yalovy uses the camera so you can capture your pet’s everyday moments and add them to a personal story.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Yalovy uses the microphone when you choose to add natural sound to a pet moment you create.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Yalovy saves images only when you choose to keep a pet memory in your photo library.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Yalovy accesses only the photos you select so you can preserve favorite pet moments and share them with the pet-circle.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
