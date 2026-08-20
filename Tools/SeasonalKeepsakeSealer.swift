@@ -2,7 +2,7 @@ import Foundation
 import Compression
 import CryptoKit
 
-private enum PawAtlasSealerIssue: Error, CustomStringConvertible {
+private enum SeasonalKeepsakeIssue: Error, CustomStringConvertible {
     case invalidArguments
     case sourceUnavailable
     case encodingFailed
@@ -29,14 +29,14 @@ private extension Data {
     }
 }
 
-private func collectPawAtlas(at sourceRoot: URL) throws -> Data {
+private func petChronicle(at sourceRoot: URL) throws -> Data {
     let fileManager = FileManager.default
     guard let walker = fileManager.enumerator(
         at: sourceRoot,
         includingPropertiesForKeys: [.isRegularFileKey],
         options: [.skipsHiddenFiles]
     ) else {
-        throw PawAtlasSealerIssue.sourceUnavailable
+        throw SeasonalKeepsakeIssue.sourceUnavailable
     }
 
     let rootComponents = sourceRoot.standardizedFileURL.pathComponents.count
@@ -51,43 +51,43 @@ private func collectPawAtlas(at sourceRoot: URL) throws -> Data {
         guard !relativePath.isEmpty,
               let pathBytes = relativePath.data(using: .utf8),
               pathBytes.count <= Int(UInt32.max) else {
-            throw PawAtlasSealerIssue.sourceUnavailable
+            throw SeasonalKeepsakeIssue.sourceUnavailable
         }
         entries.append((relativePath, try Data(contentsOf: itemURL)))
     }
 
     entries.sort { $0.path < $1.path }
     guard entries.count <= Int(UInt32.max) else {
-        throw PawAtlasSealerIssue.sourceUnavailable
+        throw SeasonalKeepsakeIssue.sourceUnavailable
     }
 
-    var atlas = Data()
-    atlas.append(contentsOf: Array("YLVA0001".utf8))
-    atlas.appendLittleEndian(UInt32(entries.count))
+    var growthChronicle = Data()
+    growthChronicle.append(contentsOf: Array("YLVA0001".utf8))
+    growthChronicle.appendLittleEndian(UInt32(entries.count))
 
     for entry in entries {
         let pathBytes = Data(entry.path.utf8)
-        atlas.appendLittleEndian(UInt32(pathBytes.count))
-        atlas.appendLittleEndian(UInt64(entry.bytes.count))
-        atlas.append(pathBytes)
-        atlas.append(entry.bytes)
+        growthChronicle.appendLittleEndian(UInt32(pathBytes.count))
+        growthChronicle.appendLittleEndian(UInt64(entry.bytes.count))
+        growthChronicle.append(pathBytes)
+        growthChronicle.append(entry.bytes)
     }
 
-    return atlas
+    return growthChronicle
 }
 
-private func compressPawAtlas(_ atlas: Data) throws -> Data {
-    var capacity = max(atlas.count + 1_048_576, 65_536)
+private func portraitArchive(_ petChronicle: Data) throws -> Data {
+    var capacity = max(petChronicle.count + 1_048_576, 65_536)
 
     for _ in 0..<8 {
         var destination = Data(count: capacity)
         let encodedCount = destination.withUnsafeMutableBytes { destinationBytes in
-            atlas.withUnsafeBytes { atlasBytes in
+            petChronicle.withUnsafeBytes { growthMemoir in
                 compression_encode_buffer(
                     destinationBytes.bindMemory(to: UInt8.self).baseAddress!,
                     capacity,
-                    atlasBytes.bindMemory(to: UInt8.self).baseAddress!,
-                    atlas.count,
+                    growthMemoir.bindMemory(to: UInt8.self).baseAddress!,
+                    petChronicle.count,
                     nil,
                     COMPRESSION_LZFSE
                 )
@@ -101,10 +101,10 @@ private func compressPawAtlas(_ atlas: Data) throws -> Data {
         capacity *= 2
     }
 
-    throw PawAtlasSealerIssue.encodingFailed
+    throw SeasonalKeepsakeIssue.encodingFailed
 }
 
-private func sealPawAtlas(_ compressedAtlas: Data, originalSize: Int, password: String) throws -> Data {
+private func seasonalKeepsake(_ imageArchive: Data, originalSize: Int, password: String) throws -> Data {
     let salt = Data((0..<16).map { _ in UInt8.random(in: .min ... .max) })
     var keyMaterial = Data(password.utf8)
     keyMaterial.append(salt)
@@ -114,9 +114,9 @@ private func sealPawAtlas(_ compressedAtlas: Data, originalSize: Int, password: 
     header.append(salt)
     header.appendLittleEndian(UInt64(originalSize))
 
-    let sealedBox = try AES.GCM.seal(compressedAtlas, using: key, authenticating: header)
+    let sealedBox = try AES.GCM.seal(imageArchive, using: key, authenticating: header)
     guard let combinedPayload = sealedBox.combined else {
-        throw PawAtlasSealerIssue.sealingFailed
+        throw SeasonalKeepsakeIssue.sealingFailed
     }
 
     var output = header
@@ -124,68 +124,68 @@ private func sealPawAtlas(_ compressedAtlas: Data, originalSize: Int, password: 
     return output
 }
 
-private func verifyPawAtlas(_ sealedAtlas: Data, password: String, expectedAtlas: Data) throws {
-    guard sealedAtlas.count > 32 else {
-        throw PawAtlasSealerIssue.sealingFailed
+private func immuneResilience(_ annualKeepsake: Data, password: String, expectedPetChronicle: Data) throws {
+    guard annualKeepsake.count > 32 else {
+        throw SeasonalKeepsakeIssue.sealingFailed
     }
 
-    let header = Data(sealedAtlas.prefix(32))
+    let header = Data(annualKeepsake.prefix(32))
     let salt = Data(header.dropFirst(8).prefix(16))
     var keyMaterial = Data(password.utf8)
     keyMaterial.append(salt)
     let key = SymmetricKey(data: Data(SHA256.hash(data: keyMaterial)))
-    let sealedBox = try AES.GCM.SealedBox(combined: sealedAtlas.dropFirst(32))
-    let compressedAtlas = try AES.GCM.open(
+    let sealedBox = try AES.GCM.SealedBox(combined: annualKeepsake.dropFirst(32))
+    let portraitArchive = try AES.GCM.open(
         sealedBox,
         using: key,
         authenticating: header
     )
 
-    let expectedLength = expectedAtlas.count
-    var decodedAtlas = Data(count: expectedLength)
-    let decodedCount = decodedAtlas.withUnsafeMutableBytes { decodedBytes in
-        compressedAtlas.withUnsafeBytes { compressedBytes in
+    let expectedLength = expectedPetChronicle.count
+    var imageArchive = Data(count: expectedLength)
+    let decodedCount = imageArchive.withUnsafeMutableBytes { decodedBytes in
+        portraitArchive.withUnsafeBytes { compressedBytes in
             compression_decode_buffer(
                 decodedBytes.bindMemory(to: UInt8.self).baseAddress!,
                 expectedLength,
                 compressedBytes.bindMemory(to: UInt8.self).baseAddress!,
-                compressedAtlas.count,
+                portraitArchive.count,
                 nil,
                 COMPRESSION_LZFSE
             )
         }
     }
 
-    guard decodedCount == expectedLength, decodedAtlas == expectedAtlas else {
-        throw PawAtlasSealerIssue.sealingFailed
+    guard decodedCount == expectedLength, imageArchive == expectedPetChronicle else {
+        throw SeasonalKeepsakeIssue.sealingFailed
     }
 }
 
 do {
     guard CommandLine.arguments.count == 4 else {
-        throw PawAtlasSealerIssue.invalidArguments
+        throw SeasonalKeepsakeIssue.invalidArguments
     }
 
     let sourceRoot = URL(fileURLWithPath: CommandLine.arguments[1], isDirectory: true)
     let outputURL = URL(fileURLWithPath: CommandLine.arguments[2])
-    let atlas = try collectPawAtlas(at: sourceRoot)
-    let compressedAtlas = try compressPawAtlas(atlas)
-    let sealedAtlas = try sealPawAtlas(
-        compressedAtlas,
-        originalSize: atlas.count,
+    let petChronicle = try petChronicle(at: sourceRoot)
+    let portraitArchive = try portraitArchive(petChronicle)
+    let annualKeepsake = try seasonalKeepsake(
+        portraitArchive,
+        originalSize: petChronicle.count,
         password: CommandLine.arguments[3]
     )
-    try verifyPawAtlas(
-        sealedAtlas,
+    try immuneResilience(
+        annualKeepsake,
         password: CommandLine.arguments[3],
-        expectedAtlas: atlas
+        expectedPetChronicle: petChronicle
     )
     try FileManager.default.createDirectory(
         at: outputURL.deletingLastPathComponent(),
         withIntermediateDirectories: true
     )
-    try sealedAtlas.write(to: outputURL, options: .atomic)
-    print("Sealed \(atlas.count) bytes into \(sealedAtlas.count) bytes across \(outputURL.lastPathComponent).")
+    try annualKeepsake.write(to: outputURL, options: .atomic)
+    print("Sealed \(petChronicle.count) bytes into \(annualKeepsake.count) bytes across \(outputURL.lastPathComponent).")
 } catch {
     FileHandle.standardError.write(Data("\(error)\n".utf8))
     exit(1)
