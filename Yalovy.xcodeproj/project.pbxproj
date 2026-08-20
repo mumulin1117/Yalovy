@@ -14,6 +14,14 @@
 		1A2B3C4D5E6F700100000007 /* YearlyGrowthMosaic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000018 /* YearlyGrowthMosaic.swift */; };
 		1A2B3C4D5E6F700100000008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000019 /* Assets.xcassets */; };
 		1A2B3C4D5E6F700100000009 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70010000001A /* LaunchScreen.storyboard */; };
+		1A2B3C4D5E6F70010000000A /* GrowthYearbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F70010000001B /* GrowthYearbook.swift */; };
+		2B3C4D5E6F70010000000101 /* OntogenyCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C4D5E6F70010000000201 /* OntogenyCurve.swift */; };
+		2B3C4D5E6F70010000000102 /* SkeletalMilestone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C4D5E6F70010000000202 /* SkeletalMilestone.swift */; };
+		2B3C4D5E6F70010000000103 /* FirstWalkChronicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C4D5E6F70010000000203 /* FirstWalkChronicle.swift */; };
+		2B3C4D5E6F70010000000104 /* BodyMassCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C4D5E6F70010000000204 /* BodyMassCurve.swift */; };
+		2B3C4D5E6F70010000000105 /* HabitTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C4D5E6F70010000000205 /* HabitTransition.swift */; };
+		2B3C4D5E6F70010000000106 /* AnnualRetrospective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C4D5E6F70010000000206 /* AnnualRetrospective.swift */; };
+		2B3C4D5E6F70010000000107 /* BackdropHarmony.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C4D5E6F70010000000207 /* BackdropHarmony.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +34,14 @@
 		1A2B3C4D5E6F700100000018 /* YearlyGrowthMosaic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearlyGrowthMosaic.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700100000019 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A2B3C4D5E6F70010000001A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1A2B3C4D5E6F70010000001B /* GrowthYearbook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthYearbook.swift; sourceTree = "<group>"; };
+		2B3C4D5E6F70010000000201 /* OntogenyCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OntogenyCurve.swift; sourceTree = "<group>"; };
+		2B3C4D5E6F70010000000202 /* SkeletalMilestone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletalMilestone.swift; sourceTree = "<group>"; };
+		2B3C4D5E6F70010000000203 /* FirstWalkChronicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstWalkChronicle.swift; sourceTree = "<group>"; };
+		2B3C4D5E6F70010000000204 /* BodyMassCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMassCurve.swift; sourceTree = "<group>"; };
+		2B3C4D5E6F70010000000205 /* HabitTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTransition.swift; sourceTree = "<group>"; };
+		2B3C4D5E6F70010000000206 /* AnnualRetrospective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnualRetrospective.swift; sourceTree = "<group>"; };
+		2B3C4D5E6F70010000000207 /* BackdropHarmony.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackdropHarmony.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +73,14 @@
 				1A2B3C4D5E6F700100000018 /* YearlyGrowthMosaic.swift */,
 				1A2B3C4D5E6F700100000019 /* Assets.xcassets */,
 				1A2B3C4D5E6F70010000001A /* LaunchScreen.storyboard */,
+				1A2B3C4D5E6F70010000001B /* GrowthYearbook.swift */,
+				2B3C4D5E6F70010000000201 /* OntogenyCurve.swift */,
+				2B3C4D5E6F70010000000202 /* SkeletalMilestone.swift */,
+				2B3C4D5E6F70010000000203 /* FirstWalkChronicle.swift */,
+				2B3C4D5E6F70010000000204 /* BodyMassCurve.swift */,
+				2B3C4D5E6F70010000000205 /* HabitTransition.swift */,
+				2B3C4D5E6F70010000000206 /* AnnualRetrospective.swift */,
+				2B3C4D5E6F70010000000207 /* BackdropHarmony.swift */,
 				1A2B3C4D5E6F700100000013 /* Info.plist */,
 			);
 			path = Yalovy;
@@ -145,6 +169,14 @@
 				1A2B3C4D5E6F700100000002 /* SceneDelegate.swift in Sources */,
 				1A2B3C4D5E6F700100000006 /* GrowthJournal.swift in Sources */,
 				1A2B3C4D5E6F700100000007 /* YearlyGrowthMosaic.swift in Sources */,
+				1A2B3C4D5E6F70010000000A /* GrowthYearbook.swift in Sources */,
+				2B3C4D5E6F70010000000101 /* OntogenyCurve.swift in Sources */,
+				2B3C4D5E6F70010000000102 /* SkeletalMilestone.swift in Sources */,
+				2B3C4D5E6F70010000000103 /* FirstWalkChronicle.swift in Sources */,
+				2B3C4D5E6F70010000000104 /* BodyMassCurve.swift in Sources */,
+				2B3C4D5E6F70010000000105 /* HabitTransition.swift in Sources */,
+				2B3C4D5E6F70010000000106 /* AnnualRetrospective.swift in Sources */,
+				2B3C4D5E6F70010000000107 /* BackdropHarmony.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +308,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Yalovy/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Yalovy;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -305,6 +338,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Yalovy/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Yalovy;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
