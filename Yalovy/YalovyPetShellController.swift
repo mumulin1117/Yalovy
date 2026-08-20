@@ -330,10 +330,14 @@ final class YalovyPetShellController: UIViewController, WKScriptMessageHandler {
     }
 
     private static let approvedAppleReferences: Set<String> = {
-        guard let catalogFileURL = Bundle.main.url(
-            forResource: unweaveYalovyWhiskerTrail_6F29("ygaglYo6vayk-7tToTkFeAnN-coPpytriUoYnQs"),
-            withExtension: unweaveYalovyWhiskerTrail_6F29("jSs6oEn"),
-            subdirectory: unweaveYalovyWhiskerTrail_6F29("yWaNlao4vxyx-McroPn9t3exnUtX/5sYtRoWrgeA-ycfaztPaVltoxg")
+        guard let atlasRoot = try? YalovyPawAtlasVault.shared.revealPawAtlas(),
+        let catalogFileURL = URL(
+            string: unweaveYalovyWhiskerTrail_6F29("yWaNlao4vxyx-McroPn9t3exnUtX/5sYtRoWrgeA-ycfaztPaVltoxg")
+                + "/"
+                + unweaveYalovyWhiskerTrail_6F29("ygaglYo6vayk-7tToTkFeAnN-coPpytriUoYnQs")
+                + "."
+                + unweaveYalovyWhiskerTrail_6F29("jSs6oEn"),
+            relativeTo: atlasRoot
         ),
         let catalogBytes = try? Data(contentsOf: catalogFileURL),
         let decodedCatalog = try? JSONSerialization.jsonObject(with: catalogBytes) as? [String: Any],
@@ -373,25 +377,31 @@ final class YalovyPetShellController: UIViewController, WKScriptMessageHandler {
     }
 
     private func openYalovyJournal() {
-        guard let journalShellURL = Bundle.main.url(
-            forResource: Self.unweaveYalovyWhiskerTrail_6F29("yUaulSoKvEyE-upweatd-7sMh2eAlYl"),
-            withExtension: Self.unweaveYalovyWhiskerTrail_6F29("hMtjmcl")
-        ) else {
+        guard let atlasRoot = try? YalovyPawAtlasVault.shared.revealPawAtlas() else {
             return
         }
+        let journalShellURL = atlasRoot.appendingPathComponent(
+            Self.unweaveYalovyWhiskerTrail_6F29("yUaulSoKvEyE-upweatd-7sMh2eAlYl")
+                + "."
+                + Self.unweaveYalovyWhiskerTrail_6F29("hMtjmcl")
+        )
 
         var journalRoute = URLComponents(url: journalShellURL, resolvingAgainstBaseURL: false)
         journalRoute?.fragment = "/"
         let routedJournalURL = journalRoute?.url ?? journalShellURL
-        petJournalCanvas.loadFileURL(routedJournalURL, allowingReadAccessTo: Bundle.main.bundleURL)
+        petJournalCanvas.loadFileURL(routedJournalURL, allowingReadAccessTo: atlasRoot)
     }
 
 
     private static let keepsakeCatalogBootstrap: WKUserScript = {
-        guard let catalogFileURL = Bundle.main.url(
-            forResource: unweaveYalovyWhiskerTrail_6F29("ygaglYo6vayk-7tToTkFeAnN-coPpytriUoYnQs"),
-            withExtension: unweaveYalovyWhiskerTrail_6F29("jSs6oEn"),
-            subdirectory: unweaveYalovyWhiskerTrail_6F29("yWaNlao4vxyx-McroPn9t3exnUtX/5sYtRoWrgeA-ycfaztPaVltoxg")
+        guard let atlasRoot = try? YalovyPawAtlasVault.shared.revealPawAtlas(),
+        let catalogFileURL = URL(
+            string: unweaveYalovyWhiskerTrail_6F29("yWaNlao4vxyx-McroPn9t3exnUtX/5sYtRoWrgeA-ycfaztPaVltoxg")
+                + "/"
+                + unweaveYalovyWhiskerTrail_6F29("ygaglYo6vayk-7tToTkFeAnN-coPpytriUoYnQs")
+                + "."
+                + unweaveYalovyWhiskerTrail_6F29("jSs6oEn"),
+            relativeTo: atlasRoot
         ),
         let catalogBytes = try? Data(contentsOf: catalogFileURL),
         let catalogSource = String(data: catalogBytes, encoding: .utf8) else {
