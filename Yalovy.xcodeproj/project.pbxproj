@@ -32,7 +32,7 @@
 		1A2B3C4D5E6F700100000012 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700100000013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700100000014 /* yalovy-pet-shell.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "yalovy-pet-shell.html"; sourceTree = SOURCE_ROOT; };
-		1A2B3C4D5E6F700100000015 /* yalovycheukids */ = {isa = PBXFileReference; lastKnownFileType = folder; path = yalovycheukids; sourceTree = SOURCE_ROOT; };
+		1A2B3C4D5E6F700100000015 /* yalovycheukids */ = {isa = PBXFileReference; lastKnownFileType = folder; name = yalovycheukids; path = Yalovy/yalovycheukids; sourceTree = SOURCE_ROOT; };
 		1A2B3C4D5E6F700100000016 /* yalovy-content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "yalovy-content"; sourceTree = SOURCE_ROOT; };
 		1A2B3C4D5E6F700100000017 /* GrowthJournalPigMastication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthJournalPigMastication.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700100000018 /* YearlyGrowthMosaic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearlyGrowthMosaic.swift; sourceTree = "<group>"; };
@@ -64,7 +64,6 @@
 			children = (
 				1A2B3C4D5E6F700100000031 /* Yalovy */,
 				1A2B3C4D5E6F700100000014 /* yalovy-pet-shell.html */,
-				1A2B3C4D5E6F700100000015 /* yalovycheukids */,
 				1A2B3C4D5E6F700100000016 /* yalovy-content */,
 				1A2B3C4D5E6F700100000032 /* Products */,
 			);
@@ -73,6 +72,7 @@
 		1A2B3C4D5E6F700100000031 /* Yalovy */ = {
 			isa = PBXGroup;
 			children = (
+				1A2B3C4D5E6F700100000015 /* yalovycheukids */,
 				1A2B3C4D5E6F700100000011 /* AppDelegate.swift */,
 				1A2B3C4D5E6F700100000012 /* SceneDelegate.swift */,
 				1A2B3C4D5E6F700100000017 /* GrowthJournalPigMastication.swift */,
