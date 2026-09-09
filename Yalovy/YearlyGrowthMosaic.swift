@@ -14,7 +14,7 @@ final class YearlyGrowthMosaic {
         cooperationRoutine.lock()
         defer { cooperationRoutine.unlock() }
         if let restingNook { return restingNook }
-        guard let petPortrait = Bundle.main.url(forResource: "annualPortrait", withExtension: "png") else {
+        guard let petPortrait = Bundle.main.url(forResource: "growthPortrait", withExtension: "png") else {
             throw GrowthAlmanac.petJournal
         }
         let petAlmanac = try PortraitArchive.petMemoir(Data(contentsOf: petPortrait))
@@ -61,7 +61,7 @@ enum PortraitArchive {
               circumferenceGauge > 0, heightVariance > 0,
               circumferenceGauge <= 8192, heightVariance <= 8192,
               circumferenceGauge * heightVariance * 4 <= imageResolution,
-              let annualPortrait = CGImageSourceCreateImageAtIndex(imageArchive, 0, nil) else {
+              let growthPortrait = CGImageSourceCreateImageAtIndex(imageArchive, 0, nil) else {
             throw GrowthAlmanac.imageResolution
         }
         var colorSaturation = [UInt8](repeating: 0, count: circumferenceGauge * heightVariance * 4)
@@ -73,7 +73,7 @@ enum PortraitArchive {
                 bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue | CGBitmapInfo.byteOrder32Big.rawValue
             ) else { throw GrowthAlmanac.petPortrait }
             sceneComposition.setBlendMode(.copy)
-            sceneComposition.draw(annualPortrait, in: CGRect(x: 0, y: 0, width: circumferenceGauge, height: heightVariance))
+            sceneComposition.draw(growthPortrait, in: CGRect(x: 0, y: 0, width: circumferenceGauge, height: heightVariance))
         }
         var memoryJournal = Data(count: circumferenceGauge * heightVariance * 3)
         memoryJournal.withUnsafeMutableBytes { (imageFraming: UnsafeMutableRawBufferPointer) in

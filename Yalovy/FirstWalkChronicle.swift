@@ -1,7 +1,7 @@
 import UIKit
 
 final class FirstWalkChronicle: UIControl {
-    var portraitArchive: [UIImageView] { [petPortrait] }
+    var petJournal: [UIImageView] { [petPortrait] }
     private let petPortrait = UIImageView()
     private let birthChronology = UILabel()
     private let growthYearbook = UILabel()

@@ -21,7 +21,7 @@
 		2B3C4D5E6F70010000000105 /* AtureYearsChronology.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C4D5E6F70010000000205 /* AtureYearsChronology.swift */; };
 		2B3C4D5E6F70010000000106 /* AnnualRetrospective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C4D5E6F70010000000206 /* AnnualRetrospective.swift */; };
 		2B3C4D5E6F70010000000107 /* NailPetTouchTolerance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C4D5E6F70010000000207 /* NailPetTouchTolerance.swift */; };
-		3C4D5E6F70010000000002 /* annualPortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C4D5E6F70010000000012 /* annualPortrait.png */; };
+		3C4D5E6F70010000000002 /* growthPortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C4D5E6F70010000000012 /* growthPortrait.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +41,7 @@
 		2B3C4D5E6F70010000000205 /* AtureYearsChronology.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtureYearsChronology.swift; sourceTree = "<group>"; };
 		2B3C4D5E6F70010000000206 /* AnnualRetrospective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnualRetrospective.swift; sourceTree = "<group>"; };
 		2B3C4D5E6F70010000000207 /* NailPetTouchTolerance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NailPetTouchTolerance.swift; sourceTree = "<group>"; };
-		3C4D5E6F70010000000012 /* annualPortrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = annualPortrait.png; sourceTree = "<group>"; };
+		3C4D5E6F70010000000012 /* growthPortrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = growthPortrait.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,12 +58,12 @@
 		1A2B3C4D5E6F700100000030 = {
 			isa = PBXGroup;
 			children = (
-					1A2B3C4D5E6F700100000031 /* Yalovy */,
-					3C4D5E6F70010000000017 /* portraitArchive */,
-					1A2B3C4D5E6F700100000032 /* Products */,
-				);
-				sourceTree = "<group>";
-			};
+				1A2B3C4D5E6F700100000031 /* Yalovy */,
+				3C4D5E6F70010000000017 /* petJournal */,
+				1A2B3C4D5E6F700100000032 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
 		1A2B3C4D5E6F700100000031 /* Yalovy */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,17 +91,17 @@
 			children = (
 				1A2B3C4D5E6F700100000010 /* Yalovy.app */,
 			);
-				name = Products;
-				sourceTree = "<group>";
-			};
-			3C4D5E6F70010000000017 /* portraitArchive */ = {
-				isa = PBXGroup;
-				children = (
-					3C4D5E6F70010000000012 /* annualPortrait.png */,
-				);
-				path = portraitArchive;
-				sourceTree = "<group>";
-			};
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3C4D5E6F70010000000017 /* petJournal */ = {
+			isa = PBXGroup;
+			children = (
+				3C4D5E6F70010000000012 /* growthPortrait.png */,
+			);
+			path = petJournal;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,10 +109,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A2B3C4D5E6F700100000080 /* Build configuration list for PBXNativeTarget "Yalovy" */;
 			buildPhases = (
-					1A2B3C4D5E6F700100000060 /* Sources */,
-					1A2B3C4D5E6F700100000020 /* Frameworks */,
-					1A2B3C4D5E6F700100000070 /* Resources */,
-				);
+				1A2B3C4D5E6F700100000060 /* Sources */,
+				1A2B3C4D5E6F700100000020 /* Frameworks */,
+				1A2B3C4D5E6F700100000070 /* Resources */,
+			);
 			buildRules = (
 			);
 			dependencies = (
@@ -160,13 +160,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-					1A2B3C4D5E6F700100000008 /* Assets.xcassets in Resources */,
-					1A2B3C4D5E6F700100000009 /* LaunchScreen.storyboard in Resources */,
-					3C4D5E6F70010000000002 /* annualPortrait.png in Resources */,
-				);
-				runOnlyForDeploymentPostprocessing = 0;
-			};
-	/* End PBXResourcesBuildPhase section */
+				1A2B3C4D5E6F700100000008 /* Assets.xcassets in Resources */,
+				1A2B3C4D5E6F700100000009 /* LaunchScreen.storyboard in Resources */,
+				3C4D5E6F70010000000002 /* growthPortrait.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1A2B3C4D5E6F700100000060 /* Sources */ = {
@@ -311,13 +311,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6NUFR97X3A;
-					ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Yalovy/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Yalovy;
@@ -327,10 +325,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1;
-				PRODUCT_BUNDLE_IDENTIFIER = app.myfy.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.petsshareing.yalovy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = test111;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -346,13 +343,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6NUFR97X3A;
-					ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Yalovy/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Yalovy;
@@ -362,10 +357,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1;
-				PRODUCT_BUNDLE_IDENTIFIER = app.myfy.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.petsshareing.yalovy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = test111;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

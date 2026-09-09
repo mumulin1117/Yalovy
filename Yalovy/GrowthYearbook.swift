@@ -174,7 +174,7 @@ final class GrowthYearbook: UIViewController {
     }
 
     private func cockatielCognition() {
-        lumbarStability = firstWalkChronicle.portraitArchive + firstTrickKeepsake.portraitArchive + annualRetrospective.harnessFamiliarity
+        lumbarStability = firstWalkChronicle.petJournal + firstTrickKeepsake.petJournal + annualRetrospective.harnessFamiliarity
         let portraitOrientation = [
             "yalovy-content/pet-moments/autumn-portrait-corgi.png",
             "yalovy-content/pet-moments/park-training-corgi.png",

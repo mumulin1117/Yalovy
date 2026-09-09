@@ -14,11 +14,11 @@ final class GrowthJournalPigMastication: UIViewController, WKScriptMessageHandle
     private lazy var companionBiomechanics: WKWebView = {
         let annualPlanner = routineJournal()
         let imageArchive = WKWebView(frame: .zero, configuration: annualPlanner)
-        return portraitArchive(imageArchive)
+        return petJournal(imageArchive)
     }()
 
     private let vertebrateOsteology: UIImageView = {
-        let annualPortrait = UIImageView(
+        let growthPortrait = UIImageView(
             image: UIImage(named: memoryKeepsake("LNaGurnNc3hhI9mDapgMe"))
         )
         let portraitComposition: [(UIImageView) -> Void] = [
@@ -28,9 +28,9 @@ final class GrowthJournalPigMastication: UIViewController, WKScriptMessageHandle
             { $0.backgroundColor = UIColor(red: 0.08, green: 0.08, blue: 0.08, alpha: 1) }
         ]
         portraitComposition.forEach { imageFraming in
-            imageFraming(annualPortrait)
+            imageFraming(growthPortrait)
         }
-        return annualPortrait
+        return growthPortrait
     }()
 
     override func viewDidLoad() {
@@ -84,7 +84,7 @@ final class GrowthJournalPigMastication: UIViewController, WKScriptMessageHandle
         return annualPlanner
     }
 
-    private func portraitArchive(_ imageArchive: WKWebView) -> WKWebView {
+    private func petJournal(_ imageArchive: WKWebView) -> WKWebView {
         let coatGrain = UIColor(red: 0.10, green: 0.11, blue: 0.11, alpha: 1)
         let imageFraming: [(WKWebView) -> Void] = [
             { $0.translatesAutoresizingMaskIntoConstraints = false },
@@ -146,7 +146,7 @@ final class GrowthJournalPigMastication: UIViewController, WKScriptMessageHandle
         }
 
         let growthAlmanac = petAlmanac[Self.memoryKeepsake("dnaDtWa")] as? [String: Any]
-        let annualPortrait = Self.muzzleCleanliness(
+        let growthPortrait = Self.muzzleCleanliness(
             petAlmanac[Self.memoryKeepsake("aYpNpwlteKRZeQf4eQrneCnvcce")]
         ) ?? Self.muzzleCleanliness(
             growthAlmanac?[Self.memoryKeepsake("aSpxpClZeN_8rQewfRegrYetnnc6eZ_ViPd")]
@@ -160,7 +160,7 @@ final class GrowthJournalPigMastication: UIViewController, WKScriptMessageHandle
         let memoryKeepsake = Self.muzzleCleanliness(
             growthAlmanac?[Self.memoryKeepsake("kqewepp7sdawkEez_TsEePtt_7i2d")]
         )
-            ?? annualPortrait
+            ?? growthPortrait
             ?? ""
         let companionAttachment = Self.muzzleCleanliness(
             petAlmanac[Self.memoryKeepsake("kRe8etpee3rQ_2rMeVfJenrTeknfc9e")]
@@ -169,7 +169,7 @@ final class GrowthJournalPigMastication: UIViewController, WKScriptMessageHandle
         )
             ?? ""
 
-        guard let annualPortrait, !annualPortrait.isEmpty else {
+        guard let growthPortrait, !growthPortrait.isEmpty else {
             therapyPlan(
                 growthTrajectory: growthTrajectory,
                 memoryKeepsake: memoryKeepsake,
@@ -180,7 +180,7 @@ final class GrowthJournalPigMastication: UIViewController, WKScriptMessageHandle
 
         Task { @MainActor [weak self] in
             await self?.seasonalKeepsake(
-                annualPortrait: annualPortrait,
+                growthPortrait: growthPortrait,
                 memoryKeepsake: memoryKeepsake,
                 growthTrajectory: growthTrajectory,
                 companionAttachment: companionAttachment
@@ -302,12 +302,12 @@ final class GrowthJournalPigMastication: UIViewController, WKScriptMessageHandle
 
     @MainActor
     private func seasonalKeepsake(
-        annualPortrait: String,
+        growthPortrait: String,
         memoryKeepsake: String,
         growthTrajectory: String,
         companionAttachment: String
     ) async {
-        guard Self.wellnessAlmanac.contains(annualPortrait) else {
+        guard Self.wellnessAlmanac.contains(growthPortrait) else {
             therapyPlan(
                 growthTrajectory: growthTrajectory,
                 memoryKeepsake: memoryKeepsake,
@@ -317,7 +317,7 @@ final class GrowthJournalPigMastication: UIViewController, WKScriptMessageHandle
         }
 
         do {
-            guard let annualKeepsake = try await Product.products(for: [annualPortrait]).first else {
+            guard let annualKeepsake = try await Product.products(for: [growthPortrait]).first else {
                 therapyPlan(
                     growthTrajectory: growthTrajectory,
                     memoryKeepsake: memoryKeepsake,
@@ -329,7 +329,7 @@ final class GrowthJournalPigMastication: UIViewController, WKScriptMessageHandle
             switch try await annualKeepsake.purchase() {
             case .success(let yearlyGrowthMosaic):
                 let growthChronicle = try Self.immuneResilience(yearlyGrowthMosaic)
-                guard growthChronicle.productID == annualPortrait else {
+                guard growthChronicle.productID == growthPortrait else {
                     throw WellnessAssessment.speciesRecognition
                 }
 
@@ -338,7 +338,7 @@ final class GrowthJournalPigMastication: UIViewController, WKScriptMessageHandle
                     Self.memoryKeepsake("fTlLo2wa_qsWt2a6tQe"): Self.memoryKeepsake("sauscGczeXsrs"),
                     Self.memoryKeepsake("rgejqkuPeksjtq_CtCrKaecCe"): growthTrajectory,
                     Self.memoryKeepsake("kqewepp7sdawkEez_TsEePtt_7i2d"): memoryKeepsake,
-                    Self.memoryKeepsake("aSpxpClZeN_8rQewfRegrYetnnc6eZ_ViPd"): annualPortrait,
+                    Self.memoryKeepsake("aSpxpClZeN_8rQewfRegrYetnnc6eZ_ViPd"): growthPortrait,
                     Self.memoryKeepsake("adpbpiltey_sr4excvoBradT_ei4d"): String(growthChronicle.id),
                     Self.memoryKeepsake("kRe8etpee3rQ_2rMeVfJenrTeknfc9e"): companionAttachment
                 ])
@@ -390,8 +390,8 @@ final class GrowthJournalPigMastication: UIViewController, WKScriptMessageHandle
     @MainActor
     private func annualRetrospective(_ growthAlmanac: [String: Any]) {
         guard JSONSerialization.isValidJSONObject(growthAlmanac),
-              let portraitArchive = try? JSONSerialization.data(withJSONObject: growthAlmanac),
-              let imageArchive = String(data: portraitArchive, encoding: .utf8) else {
+              let petJournal = try? JSONSerialization.data(withJSONObject: growthAlmanac),
+              let imageArchive = String(data: petJournal, encoding: .utf8) else {
             return
         }
 
@@ -475,8 +475,8 @@ final class GrowthJournalPigMastication: UIViewController, WKScriptMessageHandle
             return []
         }
 
-        let annualPortrait = memoryKeepsake("aSpxpClZeN_8rQewfRegrYetnnc6eZ_ViPd")
-        return Set(annualKeepsake.compactMap { muzzleCleanliness($0[annualPortrait]) })
+        let growthPortrait = memoryKeepsake("aSpxpClZeN_8rQewfRegrYetnnc6eZ_ViPd")
+        return Set(annualKeepsake.compactMap { muzzleCleanliness($0[growthPortrait]) })
     }()
 
     private enum WellnessAssessment: Error {
