@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		1A2B3C4D5E6F700100000001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000011 /* AppDelegate.swift */; };
 		1A2B3C4D5E6F700100000002 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000012 /* SceneDelegate.swift */; };
-		1A2B3C4D5E6F700100000003 /* yalovy-pet-shell.html in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000014 /* yalovy-pet-shell.html */; };
-		1A2B3C4D5E6F700100000004 /* yalovycheukids in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000015 /* yalovycheukids */; };
-		1A2B3C4D5E6F700100000005 /* yalovy-content in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000016 /* yalovy-content */; };
 		1A2B3C4D5E6F700100000006 /* GrowthJournalPigMastication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000017 /* GrowthJournalPigMastication.swift */; };
 		1A2B3C4D5E6F700100000007 /* YearlyGrowthMosaic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000018 /* YearlyGrowthMosaic.swift */; };
 		1A2B3C4D5E6F700100000008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000019 /* Assets.xcassets */; };
@@ -24,6 +21,7 @@
 		2B3C4D5E6F70010000000105 /* AtureYearsChronology.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C4D5E6F70010000000205 /* AtureYearsChronology.swift */; };
 		2B3C4D5E6F70010000000106 /* AnnualRetrospective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C4D5E6F70010000000206 /* AnnualRetrospective.swift */; };
 		2B3C4D5E6F70010000000107 /* NailPetTouchTolerance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C4D5E6F70010000000207 /* NailPetTouchTolerance.swift */; };
+		3C4D5E6F70010000000002 /* annualPortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C4D5E6F70010000000012 /* annualPortrait.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,8 +29,6 @@
 		1A2B3C4D5E6F700100000011 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700100000012 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700100000013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1A2B3C4D5E6F700100000014 /* yalovy-pet-shell.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "yalovy-pet-shell.html"; sourceTree = SOURCE_ROOT; };
-		1A2B3C4D5E6F700100000015 /* yalovycheukids */ = {isa = PBXFileReference; lastKnownFileType = folder; name = yalovycheukids; path = Yalovy/yalovycheukids; sourceTree = SOURCE_ROOT; };
 		1A2B3C4D5E6F700100000016 /* yalovy-content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "yalovy-content"; sourceTree = SOURCE_ROOT; };
 		1A2B3C4D5E6F700100000017 /* GrowthJournalPigMastication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthJournalPigMastication.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700100000018 /* YearlyGrowthMosaic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearlyGrowthMosaic.swift; sourceTree = "<group>"; };
@@ -46,6 +42,13 @@
 		2B3C4D5E6F70010000000205 /* AtureYearsChronology.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtureYearsChronology.swift; sourceTree = "<group>"; };
 		2B3C4D5E6F70010000000206 /* AnnualRetrospective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnualRetrospective.swift; sourceTree = "<group>"; };
 		2B3C4D5E6F70010000000207 /* NailPetTouchTolerance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NailPetTouchTolerance.swift; sourceTree = "<group>"; };
+		3C4D5E6F70010000000010 /* AnnualPortrait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnualPortrait.swift; sourceTree = "<group>"; };
+		3C4D5E6F70010000000011 /* WellnessAssessment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellnessAssessment.swift; sourceTree = "<group>"; };
+		3C4D5E6F70010000000012 /* annualPortrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = annualPortrait.png; sourceTree = "<group>"; };
+		3C4D5E6F70010000000013 /* annualPlanner.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = annualPlanner.sh; sourceTree = "<group>"; };
+		3C4D5E6F70010000000014 /* annualPlanner.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text; path = annualPlanner.xcfilelist; sourceTree = "<group>"; };
+		3C4D5E6F70010000000015 /* annualRetrospective.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = annualRetrospective.sh; sourceTree = "<group>"; };
+		3C4D5E6F70010000000016 /* petJournal.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = petJournal.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,17 +65,16 @@
 		1A2B3C4D5E6F700100000030 = {
 			isa = PBXGroup;
 			children = (
-				1A2B3C4D5E6F700100000031 /* Yalovy */,
-				1A2B3C4D5E6F700100000014 /* yalovy-pet-shell.html */,
-				1A2B3C4D5E6F700100000016 /* yalovy-content */,
-				1A2B3C4D5E6F700100000032 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
+					1A2B3C4D5E6F700100000031 /* Yalovy */,
+					1A2B3C4D5E6F700100000016 /* yalovy-content */,
+					3C4D5E6F70010000000017 /* portraitArchive */,
+					1A2B3C4D5E6F700100000032 /* Products */,
+				);
+				sourceTree = "<group>";
+			};
 		1A2B3C4D5E6F700100000031 /* Yalovy */ = {
 			isa = PBXGroup;
 			children = (
-				1A2B3C4D5E6F700100000015 /* yalovycheukids */,
 				1A2B3C4D5E6F700100000011 /* AppDelegate.swift */,
 				1A2B3C4D5E6F700100000012 /* SceneDelegate.swift */,
 				1A2B3C4D5E6F700100000017 /* GrowthJournalPigMastication.swift */,
@@ -97,9 +99,23 @@
 			children = (
 				1A2B3C4D5E6F700100000010 /* Yalovy.app */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
+				name = Products;
+				sourceTree = "<group>";
+			};
+			3C4D5E6F70010000000017 /* portraitArchive */ = {
+				isa = PBXGroup;
+				children = (
+					3C4D5E6F70010000000012 /* annualPortrait.png */,
+					3C4D5E6F70010000000010 /* AnnualPortrait.swift */,
+					3C4D5E6F70010000000011 /* WellnessAssessment.swift */,
+					3C4D5E6F70010000000013 /* annualPlanner.sh */,
+					3C4D5E6F70010000000014 /* annualPlanner.xcfilelist */,
+					3C4D5E6F70010000000015 /* annualRetrospective.sh */,
+					3C4D5E6F70010000000016 /* petJournal.md */,
+				);
+				path = portraitArchive;
+				sourceTree = "<group>";
+			};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -107,10 +123,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A2B3C4D5E6F700100000080 /* Build configuration list for PBXNativeTarget "Yalovy" */;
 			buildPhases = (
-				1A2B3C4D5E6F700100000060 /* Sources */,
-				1A2B3C4D5E6F700100000020 /* Frameworks */,
-				1A2B3C4D5E6F700100000070 /* Resources */,
-			);
+					1A2B3C4D5E6F700100000060 /* Sources */,
+					1A2B3C4D5E6F700100000020 /* Frameworks */,
+					1A2B3C4D5E6F700100000070 /* Resources */,
+				);
 			buildRules = (
 			);
 			dependencies = (
@@ -158,15 +174,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A2B3C4D5E6F700100000003 /* yalovy-pet-shell.html in Resources */,
-				1A2B3C4D5E6F700100000004 /* yalovycheukids in Resources */,
-				1A2B3C4D5E6F700100000005 /* yalovy-content in Resources */,
-				1A2B3C4D5E6F700100000008 /* Assets.xcassets in Resources */,
-				1A2B3C4D5E6F700100000009 /* LaunchScreen.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
+					1A2B3C4D5E6F700100000008 /* Assets.xcassets in Resources */,
+					1A2B3C4D5E6F700100000009 /* LaunchScreen.storyboard in Resources */,
+					3C4D5E6F70010000000002 /* annualPortrait.png in Resources */,
+				);
+				runOnlyForDeploymentPostprocessing = 0;
+			};
+	/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1A2B3C4D5E6F700100000060 /* Sources */ = {
@@ -317,6 +331,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6NUFR97X3A;
+					ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Yalovy/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Yalovy;
@@ -351,6 +366,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6NUFR97X3A;
+					ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Yalovy/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Yalovy;
