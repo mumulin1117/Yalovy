@@ -29,7 +29,6 @@
 		1A2B3C4D5E6F700100000011 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700100000012 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700100000013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1A2B3C4D5E6F700100000016 /* yalovy-content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "yalovy-content"; sourceTree = SOURCE_ROOT; };
 		1A2B3C4D5E6F700100000017 /* GrowthJournalPigMastication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthJournalPigMastication.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700100000018 /* YearlyGrowthMosaic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearlyGrowthMosaic.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700100000019 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,13 +41,7 @@
 		2B3C4D5E6F70010000000205 /* AtureYearsChronology.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtureYearsChronology.swift; sourceTree = "<group>"; };
 		2B3C4D5E6F70010000000206 /* AnnualRetrospective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnualRetrospective.swift; sourceTree = "<group>"; };
 		2B3C4D5E6F70010000000207 /* NailPetTouchTolerance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NailPetTouchTolerance.swift; sourceTree = "<group>"; };
-		3C4D5E6F70010000000010 /* AnnualPortrait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnualPortrait.swift; sourceTree = "<group>"; };
-		3C4D5E6F70010000000011 /* WellnessAssessment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellnessAssessment.swift; sourceTree = "<group>"; };
 		3C4D5E6F70010000000012 /* annualPortrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = annualPortrait.png; sourceTree = "<group>"; };
-		3C4D5E6F70010000000013 /* annualPlanner.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = annualPlanner.sh; sourceTree = "<group>"; };
-		3C4D5E6F70010000000014 /* annualPlanner.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text; path = annualPlanner.xcfilelist; sourceTree = "<group>"; };
-		3C4D5E6F70010000000015 /* annualRetrospective.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = annualRetrospective.sh; sourceTree = "<group>"; };
-		3C4D5E6F70010000000016 /* petJournal.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = petJournal.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +59,6 @@
 			isa = PBXGroup;
 			children = (
 					1A2B3C4D5E6F700100000031 /* Yalovy */,
-					1A2B3C4D5E6F700100000016 /* yalovy-content */,
 					3C4D5E6F70010000000017 /* portraitArchive */,
 					1A2B3C4D5E6F700100000032 /* Products */,
 				);
@@ -106,12 +98,6 @@
 				isa = PBXGroup;
 				children = (
 					3C4D5E6F70010000000012 /* annualPortrait.png */,
-					3C4D5E6F70010000000010 /* AnnualPortrait.swift */,
-					3C4D5E6F70010000000011 /* WellnessAssessment.swift */,
-					3C4D5E6F70010000000013 /* annualPlanner.sh */,
-					3C4D5E6F70010000000014 /* annualPlanner.xcfilelist */,
-					3C4D5E6F70010000000015 /* annualRetrospective.sh */,
-					3C4D5E6F70010000000016 /* petJournal.md */,
 				);
 				path = portraitArchive;
 				sourceTree = "<group>";

@@ -1,10 +1,13 @@
 import UIKit
 import WebKit
 import StoreKit
+import AVFoundation
+import Photos
 
 final class GrowthJournalPigMastication: UIViewController, WKScriptMessageHandler {
     private static let petChronicle = memoryKeepsake("YRa2lzoYvPyLCea6t7aildoXgSBtrqi8dBgSe")
     private static let growthChronicle = memoryKeepsake("YBakleoCv6y3Dzi8aFgVn6oQs6tgiucRs")
+    private static let domesticAnimalWelfare = "domesticAnimalWelfare"
     private var maturityChronicle = false
     private lazy var memoryJournal = CompanionAttachment(companionAttachment: self)
 
@@ -58,7 +61,8 @@ final class GrowthJournalPigMastication: UIViewController, WKScriptMessageHandle
         let growthAlmanac = companionBiomechanics.configuration.userContentController
         let seasonalChronicle = [
             Self.petChronicle,
-            Self.growthChronicle
+            Self.growthChronicle,
+            Self.domesticAnimalWelfare
         ]
         seasonalChronicle.forEach { petAlmanac in
             growthAlmanac.add(memoryJournal, name: petAlmanac)
@@ -103,6 +107,9 @@ final class GrowthJournalPigMastication: UIViewController, WKScriptMessageHandle
         companionBiomechanics.configuration.userContentController.removeScriptMessageHandler(
             forName: Self.growthChronicle
         )
+        companionBiomechanics.configuration.userContentController.removeScriptMessageHandler(
+            forName: Self.domesticAnimalWelfare
+        )
     }
 
     func userContentController(
@@ -110,6 +117,11 @@ final class GrowthJournalPigMastication: UIViewController, WKScriptMessageHandle
         didReceive annualKeepsake: WKScriptMessage
     ) {
         _ = growthAlmanac
+        if annualKeepsake.name == Self.domesticAnimalWelfare {
+            domesticAnimalWelfare(annualKeepsake.body as? [String: Any])
+            return
+        }
+
         if annualKeepsake.name == Self.growthChronicle {
             let wellnessAssessment = annualKeepsake.body as? [String: Any]
             if wellnessAssessment?[Self.memoryKeepsake("tRydpMe")] as? String
@@ -173,6 +185,117 @@ final class GrowthJournalPigMastication: UIViewController, WKScriptMessageHandle
                 growthTrajectory: growthTrajectory,
                 companionAttachment: companionAttachment
             )
+        }
+    }
+
+    private func domesticAnimalWelfare(_ petAlmanac: [String: Any]?) {
+        let memoryJournal = Self.muzzleCleanliness(petAlmanac?["requestId"]) ?? ""
+        let wellnessJournal = petAlmanac?["permissions"] as? [String] ?? []
+        Task {
+            let growthAlmanac = await Self.veterinaryExamination(wellnessJournal)
+            await MainActor.run {
+                self.wellnessPlanner([
+                    "requestId": memoryJournal,
+                    "permissions": growthAlmanac
+                ])
+            }
+        }
+    }
+
+    @MainActor
+    private func wellnessPlanner(_ petAlmanac: [String: Any]) {
+        guard JSONSerialization.isValidJSONObject(petAlmanac),
+              let growthAlmanac = try? JSONSerialization.data(withJSONObject: petAlmanac),
+              let wellnessJournal = String(data: growthAlmanac, encoding: .utf8) else {
+            return
+        }
+
+        companionBiomechanics.evaluateJavaScript(
+            "window.domesticAnimalWelfare && window.domesticAnimalWelfare.receive(\(wellnessJournal));"
+        )
+    }
+
+    private static func veterinaryExamination(_ petAlmanac: [String]) async -> [String: Any] {
+        var growthAlmanac: [String: Any] = [:]
+        for petJournal in Set(petAlmanac) {
+            switch petJournal {
+            case "camera":
+                growthAlmanac[petJournal] = await wellnessAssessment(.video)
+            case "microphone":
+                growthAlmanac[petJournal] = await wellnessAssessment(.audio)
+            case "photo_library":
+                growthAlmanac[petJournal] = await petJournalAssessment()
+            default:
+                growthAlmanac[petJournal] = [
+                    "granted": false,
+                    "status": "unsupported"
+                ]
+            }
+        }
+        return growthAlmanac
+    }
+
+    private static func wellnessAssessment(_ petAlmanac: AVMediaType) async -> [String: Any] {
+        let growthAlmanac = AVCaptureDevice.authorizationStatus(for: petAlmanac)
+        switch growthAlmanac {
+        case .authorized:
+            return ["granted": true, "status": "authorized"]
+        case .notDetermined:
+            let wellnessJournal = await withCheckedContinuation { continuation in
+                AVCaptureDevice.requestAccess(for: petAlmanac) { granted in
+                    continuation.resume(returning: granted)
+                }
+            }
+            return ["granted": wellnessJournal, "status": wellnessJournal ? "authorized" : "denied"]
+        case .denied:
+            return ["granted": false, "status": "denied"]
+        case .restricted:
+            return ["granted": false, "status": "restricted"]
+        @unknown default:
+            return ["granted": false, "status": "unknown"]
+        }
+    }
+
+    private static func petJournalAssessment() async -> [String: Any] {
+        let growthAlmanac = PHPhotoLibrary.authorizationStatus(for: .readWrite)
+        switch growthAlmanac {
+        case .authorized:
+            return ["granted": true, "status": "authorized"]
+        case .limited:
+            return ["granted": true, "status": "limited"]
+        case .notDetermined:
+            let wellnessJournal = await withCheckedContinuation { continuation in
+                PHPhotoLibrary.requestAuthorization(for: .readWrite) { status in
+                    continuation.resume(returning: status)
+                }
+            }
+            return [
+                "granted": wellnessJournal == .authorized || wellnessJournal == .limited,
+                "status": petJournalStatus(wellnessJournal)
+            ]
+        case .denied:
+            return ["granted": false, "status": "denied"]
+        case .restricted:
+            return ["granted": false, "status": "restricted"]
+        @unknown default:
+            return ["granted": false, "status": "unknown"]
+        }
+    }
+
+    private static func petJournalStatus(_ petAlmanac: PHAuthorizationStatus) -> String {
+        switch petAlmanac {
+        case .authorized:
+            return "authorized"
+        case .limited:
+            return "limited"
+        case .denied:
+            return "denied"
+        case .restricted:
+            return "restricted"
+        case .notDetermined:
+            return "notDetermined"
+        @unknown default:
+            return "unknown"
         }
     }
 

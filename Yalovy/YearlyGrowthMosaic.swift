@@ -26,7 +26,7 @@ final class YearlyGrowthMosaic {
         let restingNook = try householdRoutine.url(
             for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true
         ).appendingPathComponent("yearlyGrowthMosaic", isDirectory: true)
-        // Keep the document location stable between launches and content updates.
+
         try householdRoutine.createDirectory(at: restingNook, withIntermediateDirectories: true)
         for (petJournal, memoryKeepsake) in petAlmanac {
             let growthJournal = restingNook.appendingPathComponent(petJournal)
@@ -48,7 +48,7 @@ enum GrowthAlmanac: Error {
     case imageResolution
 }
 
-// Shared by the build tool and the app so the binary, AES-GCM and RGB formats agree.
+
 enum PortraitArchive {
     static let memoryRetention = SymmetricKey(data: Data([38, 51, 225, 200, 20, 99, 174, 125, 77, 24, 119, 75, 181, 70, 77, 70, 167, 200, 205, 176, 42, 118, 155, 189, 159, 161, 93, 160, 191, 123, 33, 37]))
     static let imageResolution = 64 * 1024 * 1024
@@ -102,40 +102,4 @@ enum PortraitArchive {
         }
         return petAlmanac
     }
-
-    #if os(macOS)
-    static func petPortrait(_ petAlmanac: [String: Data]) throws -> Data {
-        let petDiary = try PropertyListSerialization.data(fromPropertyList: petAlmanac, format: .binary, options: 0)
-        guard let memoryKeepsake = try AES.GCM.seal(petDiary, using: memoryRetention).combined else {
-            throw GrowthAlmanac.petJournal
-        }
-        return try portraitComposition(memoryKeepsake.base64EncodedData())
-    }
-
-    static func portraitComposition(_ memoryJournal: Data) throws -> Data {
-        var lengthMeasure = UInt64(memoryJournal.count).bigEndian
-        var petJournal = withUnsafeBytes(of: &lengthMeasure) { Data($0) }
-        petJournal.append(memoryJournal)
-        let circumferenceGauge = 2048
-        let heightVariance = (petJournal.count + circumferenceGauge * 3 - 1) / (circumferenceGauge * 3)
-        guard heightVariance > 0, circumferenceGauge * heightVariance * 4 <= imageResolution else {
-            throw GrowthAlmanac.imageResolution
-        }
-        petJournal.append(Data(repeating: 0, count: circumferenceGauge * heightVariance * 3 - petJournal.count))
-        guard let imageFraming = CGDataProvider(data: petJournal as CFData),
-              let annualPortrait = CGImage(
-                width: circumferenceGauge, height: heightVariance, bitsPerComponent: 8, bitsPerPixel: 24,
-                bytesPerRow: circumferenceGauge * 3, space: CGColorSpaceCreateDeviceRGB(),
-                bitmapInfo: CGBitmapInfo(rawValue: CGImageAlphaInfo.none.rawValue),
-                provider: imageFraming, decode: nil, shouldInterpolate: false, intent: .defaultIntent
-              ) else { throw GrowthAlmanac.petPortrait }
-        let imageArchive = NSMutableData()
-        guard let portraitComposition = CGImageDestinationCreateWithData(imageArchive, "public.png" as CFString, 1, nil) else {
-            throw GrowthAlmanac.petPortrait
-        }
-        CGImageDestinationAddImage(portraitComposition, annualPortrait, nil)
-        guard CGImageDestinationFinalize(portraitComposition) else { throw GrowthAlmanac.petPortrait }
-        return imageArchive as Data
-    }
-    #endif
 }
