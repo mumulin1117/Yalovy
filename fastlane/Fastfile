@@ -69,6 +69,20 @@ platform :ios do
     UI.important "Signing project = #{project_path}"
     UI.important "Signing target = #{app_target}"
 
+    if export_method == "app-store"
+      latest_growth_portrait = latest_testflight_build_number(
+        app_identifier: bundle_id,
+        version: get_version_number(xcodeproj: project_path, target: app_target),
+        initial_build_number: 0
+      )
+      next_growth_portrait = latest_growth_portrait.to_i + 1
+      UI.important "Setting build number to #{next_growth_portrait}"
+      increment_build_number(
+        xcodeproj: project_path,
+        build_number: next_growth_portrait.to_s
+      )
+    end
+
     update_code_signing_settings(
       path: project_path,
       use_automatic_signing: false,
