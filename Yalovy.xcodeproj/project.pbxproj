@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		1A2B3C4D5E6F700100000001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000011 /* AppDelegate.swift */; };
 		1A2B3C4D5E6F700100000002 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000012 /* SceneDelegate.swift */; };
-		1A2B3C4D5E6F700100000003 /* yalovy-paw-atlas.yseal in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000014 /* yalovy-paw-atlas.yseal */; };
+		1A2B3C4D5E6F700100000003 /* yalovy-pet-shell.html in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000014 /* yalovy-pet-shell.html */; };
+		1A2B3C4D5E6F700100000004 /* yalovycheukids in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000015 /* yalovycheukids */; };
+		1A2B3C4D5E6F700100000005 /* yalovy-content in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000016 /* yalovy-content */; };
 		1A2B3C4D5E6F700100000006 /* GrowthJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000017 /* GrowthJournal.swift */; };
 		1A2B3C4D5E6F700100000007 /* YearlyGrowthMosaic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000018 /* YearlyGrowthMosaic.swift */; };
 		1A2B3C4D5E6F700100000008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000019 /* Assets.xcassets */; };
@@ -29,7 +31,9 @@
 		1A2B3C4D5E6F700100000011 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700100000012 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700100000013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1A2B3C4D5E6F700100000014 /* yalovy-paw-atlas.yseal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "yalovy-paw-atlas.yseal"; sourceTree = "<group>"; };
+		1A2B3C4D5E6F700100000014 /* yalovy-pet-shell.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "yalovy-pet-shell.html"; sourceTree = SOURCE_ROOT; };
+		1A2B3C4D5E6F700100000015 /* yalovycheukids */ = {isa = PBXFileReference; lastKnownFileType = folder; path = yalovycheukids; sourceTree = SOURCE_ROOT; };
+		1A2B3C4D5E6F700100000016 /* yalovy-content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "yalovy-content"; sourceTree = SOURCE_ROOT; };
 		1A2B3C4D5E6F700100000017 /* GrowthJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthJournal.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700100000018 /* YearlyGrowthMosaic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearlyGrowthMosaic.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700100000019 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,6 +63,9 @@
 			isa = PBXGroup;
 			children = (
 				1A2B3C4D5E6F700100000031 /* Yalovy */,
+				1A2B3C4D5E6F700100000014 /* yalovy-pet-shell.html */,
+				1A2B3C4D5E6F700100000015 /* yalovycheukids */,
+				1A2B3C4D5E6F700100000016 /* yalovy-content */,
 				1A2B3C4D5E6F700100000032 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,7 +73,6 @@
 		1A2B3C4D5E6F700100000031 /* Yalovy */ = {
 			isa = PBXGroup;
 			children = (
-				1A2B3C4D5E6F700100000014 /* yalovy-paw-atlas.yseal */,
 				1A2B3C4D5E6F700100000011 /* AppDelegate.swift */,
 				1A2B3C4D5E6F700100000012 /* SceneDelegate.swift */,
 				1A2B3C4D5E6F700100000017 /* GrowthJournal.swift */,
@@ -152,7 +158,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A2B3C4D5E6F700100000003 /* yalovy-paw-atlas.yseal in Resources */,
+				1A2B3C4D5E6F700100000003 /* yalovy-pet-shell.html in Resources */,
+				1A2B3C4D5E6F700100000004 /* yalovycheukids in Resources */,
+				1A2B3C4D5E6F700100000005 /* yalovy-content in Resources */,
 				1A2B3C4D5E6F700100000008 /* Assets.xcassets in Resources */,
 				1A2B3C4D5E6F700100000009 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -302,10 +310,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6NUFR97X3A;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Yalovy/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Yalovy;
@@ -315,9 +326,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.petsshareing.yalovy;
+				PRODUCT_BUNDLE_IDENTIFIER = app.myfy.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = test111;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -332,10 +344,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6NUFR97X3A;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Yalovy/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Yalovy;
@@ -345,9 +360,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.petsshareing.yalovy;
+				PRODUCT_BUNDLE_IDENTIFIER = app.myfy.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = test111;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
