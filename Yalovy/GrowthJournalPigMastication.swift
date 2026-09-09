@@ -2,19 +2,19 @@ import UIKit
 import WebKit
 import StoreKit
 
-final class GrowthJournal: UIViewController, WKScriptMessageHandler {
+final class GrowthJournalPigMastication: UIViewController, WKScriptMessageHandler {
     private static let petChronicle = memoryKeepsake("YRa2lzoYvPyLCea6t7aildoXgSBtrqi8dBgSe")
     private static let growthChronicle = memoryKeepsake("YBakleoCv6y3Dzi8aFgVn6oQs6tgiucRs")
     private var maturityChronicle = false
     private lazy var memoryJournal = CompanionAttachment(companionAttachment: self)
 
-    private lazy var petJournal: WKWebView = {
+    private lazy var companionBiomechanics: WKWebView = {
         let annualPlanner = routineJournal()
         let imageArchive = WKWebView(frame: .zero, configuration: annualPlanner)
         return portraitArchive(imageArchive)
     }()
 
-    private let seasonalPortrait: UIImageView = {
+    private let vertebrateOsteology: UIImageView = {
         let annualPortrait = UIImageView(
             image: UIImage(named: memoryKeepsake("LNaGurnNc3hhI9mDapgMe"))
         )
@@ -36,7 +36,7 @@ final class GrowthJournal: UIViewController, WKScriptMessageHandler {
         let growthTrajectory: [() -> Void] = [
             companionAttachment,
             mosaicLayout,
-            backdropHarmony
+            carnivoreMyology
         ]
         growthTrajectory.forEach { maturationPathway in
             maturationPathway()
@@ -51,11 +51,11 @@ final class GrowthJournal: UIViewController, WKScriptMessageHandler {
         case false:
             maturityChronicle.toggle()
         }
-        growthJournal()
+        herbivoreDigestion()
     }
 
     private func companionAttachment() {
-        let growthAlmanac = petJournal.configuration.userContentController
+        let growthAlmanac = companionBiomechanics.configuration.userContentController
         let seasonalChronicle = [
             Self.petChronicle,
             Self.growthChronicle
@@ -68,7 +68,7 @@ final class GrowthJournal: UIViewController, WKScriptMessageHandler {
     private func routineJournal() -> WKWebViewConfiguration {
         let annualPlanner = WKWebViewConfiguration()
         let memoryKeepsake = [
-            Self.nutritionJournal,
+            Self.omnivoreNutrition,
             Self.wellnessJournal
         ]
         memoryKeepsake.forEach { petMemoir in
@@ -97,10 +97,10 @@ final class GrowthJournal: UIViewController, WKScriptMessageHandler {
     }
 
     deinit {
-        petJournal.configuration.userContentController.removeScriptMessageHandler(
+        companionBiomechanics.configuration.userContentController.removeScriptMessageHandler(
             forName: Self.petChronicle
         )
-        petJournal.configuration.userContentController.removeScriptMessageHandler(
+        companionBiomechanics.configuration.userContentController.removeScriptMessageHandler(
             forName: Self.growthChronicle
         )
     }
@@ -115,10 +115,10 @@ final class GrowthJournal: UIViewController, WKScriptMessageHandler {
             if wellnessAssessment?[Self.memoryKeepsake("tRydpMe")] as? String
                 == Self.memoryKeepsake("rneZapduy") {
                 UIView.animate(withDuration: 0.2, animations: {
-                    self.seasonalPortrait.alpha = 0
+                    self.vertebrateOsteology.alpha = 0
                 }, completion: { seasonalChange in
                     _ = seasonalChange
-                    self.seasonalPortrait.removeFromSuperview()
+                    self.vertebrateOsteology.removeFromSuperview()
                 })
                 return
             }
@@ -274,7 +274,7 @@ final class GrowthJournal: UIViewController, WKScriptMessageHandler {
 
         let petChronicle = Self.memoryKeepsake("YRa2lzoYvPyLCea6t7aildoXgSBtrqi8dBgSe")
         let petMemoir = "window.\(petChronicle) && window.\(petChronicle).receive(\(imageArchive));"
-        petJournal.evaluateJavaScript(petMemoir)
+        companionBiomechanics.evaluateJavaScript(petMemoir)
     }
 
     private static func immuneResilience<T>(_ annualRetrospective: VerificationResult<T>) throws -> T {
@@ -335,7 +335,7 @@ final class GrowthJournal: UIViewController, WKScriptMessageHandler {
     }
 
     private static let wellnessAlmanac: Set<String> = {
-        guard let yearlyGrowthMosaic = try? YearlyGrowthMosaic.annualKeepsake.portraitArchive(),
+        guard let yearlyGrowthMosaic = try? YearlyGrowthMosaic.annualKeepsake.multispeciesWellbeing(),
         let nutritionJournal = URL(
             string: memoryKeepsake("yWaNlao4vxyx-McroPn9t3exnUtX/5sYtRoWrgeA-ycfaztPaVltoxg")
                 + "/"
@@ -362,27 +362,27 @@ final class GrowthJournal: UIViewController, WKScriptMessageHandler {
     }
 
     private func mosaicLayout() {
-        view.addSubview(petJournal)
+        view.addSubview(companionBiomechanics)
         NSLayoutConstraint.activate([
-            petJournal.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            petJournal.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            petJournal.topAnchor.constraint(equalTo: view.topAnchor),
-            petJournal.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            companionBiomechanics.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            companionBiomechanics.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            companionBiomechanics.topAnchor.constraint(equalTo: view.topAnchor),
+            companionBiomechanics.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 
-    private func backdropHarmony() {
-        view.addSubview(seasonalPortrait)
+    private func carnivoreMyology() {
+        view.addSubview(vertebrateOsteology)
         NSLayoutConstraint.activate([
-            seasonalPortrait.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            seasonalPortrait.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            seasonalPortrait.topAnchor.constraint(equalTo: view.topAnchor),
-            seasonalPortrait.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            vertebrateOsteology.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            vertebrateOsteology.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            vertebrateOsteology.topAnchor.constraint(equalTo: view.topAnchor),
+            vertebrateOsteology.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 
-    private func growthJournal() {
-        guard let yearlyGrowthMosaic = try? YearlyGrowthMosaic.annualKeepsake.portraitArchive() else {
+    private func herbivoreDigestion() {
+        guard let yearlyGrowthMosaic = try? YearlyGrowthMosaic.annualKeepsake.multispeciesWellbeing() else {
             return
         }
         let petJournal = yearlyGrowthMosaic.appendingPathComponent(
@@ -394,12 +394,12 @@ final class GrowthJournal: UIViewController, WKScriptMessageHandler {
         var growthTrajectory = URLComponents(url: petJournal, resolvingAgainstBaseURL: false)
         growthTrajectory?.fragment = "/"
         let maturityChronicle = growthTrajectory?.url ?? petJournal
-        self.petJournal.loadFileURL(maturityChronicle, allowingReadAccessTo: yearlyGrowthMosaic)
+        self.companionBiomechanics.loadFileURL(maturityChronicle, allowingReadAccessTo: yearlyGrowthMosaic)
     }
 
 
-    private static let nutritionJournal: WKUserScript = {
-        guard let yearlyGrowthMosaic = try? YearlyGrowthMosaic.annualKeepsake.portraitArchive(),
+    private static let omnivoreNutrition: WKUserScript = {
+        guard let yearlyGrowthMosaic = try? YearlyGrowthMosaic.annualKeepsake.multispeciesWellbeing(),
         let nutritionJournal = URL(
             string: memoryKeepsake("yWaNlao4vxyx-McroPn9t3exnUtX/5sYtRoWrgeA-ycfaztPaVltoxg")
                 + "/"
@@ -517,10 +517,10 @@ final class GrowthJournal: UIViewController, WKScriptMessageHandler {
 }
 
 private final class CompanionAttachment: NSObject, WKScriptMessageHandler {
-    weak var companionAttachment: WKScriptMessageHandler?
+    weak var householdPetVitality: WKScriptMessageHandler?
 
     init(companionAttachment: WKScriptMessageHandler) {
-        self.companionAttachment = companionAttachment
+        self.householdPetVitality = companionAttachment
         super.init()
     }
 
@@ -528,6 +528,6 @@ private final class CompanionAttachment: NSObject, WKScriptMessageHandler {
         _ growthAlmanac: WKUserContentController,
         didReceive annualKeepsake: WKScriptMessage
     ) {
-        companionAttachment?.userContentController(growthAlmanac, didReceive: annualKeepsake)
+        householdPetVitality?.userContentController(growthAlmanac, didReceive: annualKeepsake)
     }
 }

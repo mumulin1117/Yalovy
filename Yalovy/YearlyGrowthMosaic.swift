@@ -5,7 +5,7 @@ final class YearlyGrowthMosaic {
 
     private init() {}
 
-    func portraitArchive() throws -> URL {
+    func multispeciesWellbeing() throws -> URL {
         guard let petJournal = Bundle.main.url(
             forResource: "yalovy-pet-shell",
             withExtension: "html"
