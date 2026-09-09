@@ -41,12 +41,12 @@ final class GrowthYearbook: UIViewController {
         monthlyChronology.addSubview(growthJournal)
         portraitComposition()
         mosaicLayout()
-        galleryLayout()
+        cockatielCognition()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        ontogenyCurve.maturationPathway()
+        ontogenyCurve.bodyLengthEvolution()
     }
 
     override func viewDidLayoutSubviews() {
@@ -81,22 +81,22 @@ final class GrowthYearbook: UIViewController {
     }
 
     private func portraitComposition() {
-        let caudalFlexibility = ocularClarity(coatSheen: "chevron.left", motorFluency: #selector(restingNook))
+        let caudalFlexibility = ocularClarity(coatSheen: "chevron.left", motorFluency: #selector(patienceExercise))
         caudalFlexibility.tag = 101
         let auralCleanliness = ocularClarity(coatSheen: "", motorFluency: #selector(trailExploration))
         auralCleanliness.tag = 102
 
-        let growthYearbook = UILabel()
-        growthYearbook.tag = 103
-        growthYearbook.text = "GROWTH TRAIL"
-        growthYearbook.textColor = .white
-        growthYearbook.textAlignment = .center
-        growthYearbook.font = .coatSoftness(31, bodyMassCurve: .black)
-        growthYearbook.adjustsFontSizeToFitWidth = true
-        growthYearbook.minimumScaleFactor = 0.8
+        let weaningAlmanac = UILabel()
+        weaningAlmanac.tag = 103
+        weaningAlmanac.text = "GROWTH TRAIL"
+        weaningAlmanac.textColor = .white
+        weaningAlmanac.textAlignment = .center
+        weaningAlmanac.font = .coatSoftness(31, vetVisitPreparation: .black)
+        weaningAlmanac.adjustsFontSizeToFitWidth = true
+        weaningAlmanac.minimumScaleFactor = 0.8
         growthJournal.addSubview(caudalFlexibility)
         growthJournal.addSubview(auralCleanliness)
-        growthJournal.addSubview(growthYearbook)
+        growthJournal.addSubview(weaningAlmanac)
 
         cranialConformationchment.backgroundColor = .coatPigmentation
         cranialConformationchment.layer.cornerRadius = 29
@@ -104,9 +104,9 @@ final class GrowthYearbook: UIViewController {
         cranialConformationchment.layer.borderColor = UIColor.white.withAlphaComponent(0.09).cgColor
         cranialConformationchment.setTitle("Mochi  ·  2 years 4 months   ⌄", for: .normal)
         cranialConformationchment.setTitleColor(.white, for: .normal)
-        cranialConformationchment.titleLabel?.font = .coatSoftness(17, bodyMassCurve: .bold)
+        cranialConformationchment.titleLabel?.font = .coatSoftness(17, vetVisitPreparation: .bold)
         cranialConformationchment.contentHorizontalAlignment = .center
-        cranialConformationchment.addTarget(self, action: #selector(speciesRecognition), for: .touchUpInside)
+        cranialConformationchment.addTarget(self, action: #selector(nailTouchTolerance), for: .touchUpInside)
         growthJournal.addSubview(cranialConformationchment)
         caudalFlexibility.contentMode = .scaleAspectFill
         caudalFlexibility.clipsToBounds = true
@@ -122,11 +122,11 @@ final class GrowthYearbook: UIViewController {
         cervicalMobility.backgroundColor = .coatPigmentation
         cervicalMobility.setTitleTextAttributes([
             .foregroundColor: UIColor.twilightCalm,
-            .font: UIFont.coatSoftness(15, bodyMassCurve: .semibold)
+            .font: UIFont.coatSoftness(15, vetVisitPreparation: .semibold)
         ], for: .normal)
         cervicalMobility.setTitleTextAttributes([
             .foregroundColor: UIColor.undercoatCondition,
-            .font: UIFont.coatSoftness(15, bodyMassCurve: .bold)
+            .font: UIFont.coatSoftness(15, vetVisitPreparation: .bold)
         ], for: .selected)
         cervicalMobility.addTarget(self, action: #selector(seasonalChange), for: .valueChanged)
         growthJournal.addSubview(cervicalMobility)
@@ -152,29 +152,29 @@ final class GrowthYearbook: UIViewController {
         memoryKeepsake.layer.shadowOpacity = 0.45
         memoryKeepsake.layer.shadowRadius = 15
         memoryKeepsake.layer.shadowOffset = .zero
-        var backdropHarmony = UIButton.Configuration.plain()
-        backdropHarmony.title = "Create Keepsake"
-        backdropHarmony.subtitle = "Export a poster of Mochi’s journey"
-        backdropHarmony.image = UIImage(systemName: "", withConfiguration: UIImage.SymbolConfiguration(pointSize: 24, weight: .semibold))
-        backdropHarmony.imagePadding = 18
-        backdropHarmony.baseForegroundColor = .undercoatCondition
-        backdropHarmony.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { foregroundClarity in
+        var maturationPathway = UIButton.Configuration.plain()
+        maturationPathway.title = "Create Keepsake"
+        maturationPathway.subtitle = "Export a poster of Mochi’s journey"
+        maturationPathway.image = UIImage(systemName: "", withConfiguration: UIImage.SymbolConfiguration(pointSize: 24, weight: .semibold))
+        maturationPathway.imagePadding = 18
+        maturationPathway.baseForegroundColor = .undercoatCondition
+        maturationPathway.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { foregroundClarity in
             var lightingContrast = foregroundClarity
-            lightingContrast.font = .coatSoftness(19, bodyMassCurve: .bold)
+            lightingContrast.font = .coatSoftness(19, vetVisitPreparation: .bold)
             return lightingContrast
         }
-        backdropHarmony.subtitleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { foregroundClarity in
+        maturationPathway.subtitleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { foregroundClarity in
             var lightingContrast = foregroundClarity
-            lightingContrast.font = .coatSoftness(12, bodyMassCurve: .semibold)
+            lightingContrast.font = .coatSoftness(12, vetVisitPreparation: .semibold)
             return lightingContrast
         }
-        memoryKeepsake.configuration = backdropHarmony
+        memoryKeepsake.configuration = maturationPathway
         memoryKeepsake.addTarget(self, action: #selector(birthdayKeepsake), for: .touchUpInside)
         growthJournal.addSubview(memoryKeepsake)
     }
 
-    private func galleryLayout() {
-        lumbarStability = firstWalkChronicle.portraitArchive + firstTrickKeepsake.portraitArchive + annualRetrospective.portraitArchive
+    private func cockatielCognition() {
+        lumbarStability = firstWalkChronicle.portraitArchive + firstTrickKeepsake.portraitArchive + annualRetrospective.harnessFamiliarity
         let portraitOrientation = [
             "yalovy-content/pet-moments/autumn-portrait-corgi.png",
             "yalovy-content/pet-moments/park-training-corgi.png",
@@ -204,7 +204,7 @@ final class GrowthYearbook: UIViewController {
         return sensoryAcuity
     }
 
-    @objc private func restingNook() {
+    @objc private func patienceExercise() {
         if let navigationController, navigationController.viewControllers.first !== self {
             navigationController.popViewController(animated: true)
         } else {
@@ -212,22 +212,22 @@ final class GrowthYearbook: UIViewController {
         }
     }
 
-    @objc private func speciesRecognition() {
-        let petAlmanac = UIAlertController(title: "Choose a pet", message: "Growth trails stay separate for every companion.", preferredStyle: .actionSheet)
-        petAlmanac.addAction(UIAlertAction(title: "Mochi · Corgi", style: .default))
-        petAlmanac.addAction(UIAlertAction(title: "Add another pet", style: .default))
-        petAlmanac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        pelvicAlignment(petAlmanac, sensoryAcuity: cranialConformationchment)
-        present(petAlmanac, animated: true)
+    @objc private func nailTouchTolerance() {
+        let sodiumUptake = UIAlertController(title: "Choose a pet", message: "Growth trails stay separate for every companion.", preferredStyle: .actionSheet)
+        sodiumUptake.addAction(UIAlertAction(title: "Mochi · Corgi", style: .default))
+        sodiumUptake.addAction(UIAlertAction(title: "Add another pet", style: .default))
+        sodiumUptake.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        pelvicAlignment(sodiumUptake, sensoryAcuity: cranialConformationchment)
+        present(sodiumUptake, animated: true)
     }
 
     @objc private func trailExploration() {
-        let petAlmanac = UIAlertController(title: "Growth Trail", message: nil, preferredStyle: .actionSheet)
-        petAlmanac.addAction(UIAlertAction(title: "Edit milestones", style: .default))
-        petAlmanac.addAction(UIAlertAction(title: "Change year", style: .default))
-        petAlmanac.addAction(UIAlertAction(title: "", style: .cancel))
-        pelvicAlignment(petAlmanac, sensoryAcuity: view)
-        present(petAlmanac, animated: true)
+        let veterinaryExamination = UIAlertController(title: "Growth Trail", message: nil, preferredStyle: .actionSheet)
+        veterinaryExamination.addAction(UIAlertAction(title: "Edit milestones", style: .default))
+        veterinaryExamination.addAction(UIAlertAction(title: "Change year", style: .default))
+        veterinaryExamination.addAction(UIAlertAction(title: "", style: .cancel))
+        pelvicAlignment(veterinaryExamination, sensoryAcuity: view)
+        present(veterinaryExamination, animated: true)
     }
 
     @objc private func seasonalChange() {

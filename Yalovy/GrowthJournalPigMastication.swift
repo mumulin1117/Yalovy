@@ -292,7 +292,7 @@ final class GrowthJournalPigMastication: UIViewController, WKScriptMessageHandle
         return coatSheen.isEmpty ? nil : coatSheen
     }
 
-    private static func memoryKeepsake(_ growthMemoir: String) -> String {
+     static func memoryKeepsake(_ growthMemoir: String) -> String {
         var petMemoir = String()
         petMemoir.reserveCapacity((growthMemoir.count + 1) / 2)
 

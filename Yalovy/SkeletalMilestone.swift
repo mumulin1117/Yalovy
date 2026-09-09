@@ -18,11 +18,11 @@ final class SkeletalMilestone: UIView {
         cranialConformation.frame = CGRect(x: 0, y: 0, width: 62, height: 74)
         self.lengthMeasure.textAlignment = .center
         self.lengthMeasure.textColor = .white
-        self.lengthMeasure.font = .coatSoftness(24, bodyMassCurve: .black)
+        self.lengthMeasure.font = .coatSoftness(24, vetVisitPreparation: .black)
         self.lengthMeasure.frame = CGRect(x: 3, y: 10, width: 56, height: 30)
         self.circumferenceGauge.textAlignment = .center
         self.circumferenceGauge.textColor = .recipeNotebook
-        self.circumferenceGauge.font = .coatSoftness(11, bodyMassCurve: .bold)
+        self.circumferenceGauge.font = .coatSoftness(11, vetVisitPreparation: .bold)
         self.circumferenceGauge.frame = CGRect(x: 3, y: 39, width: 56, height: 21)
         cranialConformation.addSubview(self.lengthMeasure)
         cranialConformation.addSubview(self.circumferenceGauge)

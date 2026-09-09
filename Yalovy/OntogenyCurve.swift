@@ -3,14 +3,14 @@ import UIKit
 final class OntogenyCurve: UIView {
     private let silhouetteFraming = CAShapeLayer()
     private let colorSaturation = CAShapeLayer()
-    private let pawPortrait = [UILabel(), UILabel(), UILabel(), UILabel()]
+    private let puppyPlayfulness = [UILabel(), UILabel(), UILabel(), UILabel()]
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         isUserInteractionEnabled = false
         backgroundColor = .clear
         [silhouetteFraming, colorSaturation].forEach(layer.addSublayer)
-        pawPortrait.forEach {
+        puppyPlayfulness.forEach {
             $0.text = "🐾"
             $0.font = .systemFont(ofSize: 24)
             $0.alpha = 0.32
@@ -40,13 +40,13 @@ final class OntogenyCurve: UIView {
         colorSaturation.fillColor = UIColor.clear.cgColor
         colorSaturation.lineCap = .round
         colorSaturation.lineDashPattern = [8, 11]
-        pawPortrait[0].frame = CGRect(x: 1, y: 140, width: 38, height: 38)
-        pawPortrait[1].frame = CGRect(x: 34, y: 388, width: 38, height: 38)
-        pawPortrait[2].frame = CGRect(x: 0, y: 690, width: 38, height: 38)
-        pawPortrait[3].frame = CGRect(x: 36, y: 996, width: 38, height: 38)
+        puppyPlayfulness[0].frame = CGRect(x: 1, y: 140, width: 38, height: 38)
+        puppyPlayfulness[1].frame = CGRect(x: 34, y: 388, width: 38, height: 38)
+        puppyPlayfulness[2].frame = CGRect(x: 0, y: 690, width: 38, height: 38)
+        puppyPlayfulness[3].frame = CGRect(x: 36, y: 996, width: 38, height: 38)
     }
 
-    func maturationPathway() {
+    func bodyLengthEvolution() {
         guard colorSaturation.animation(forKey: "reveal") == nil else { return }
         let growthTrajectory = CABasicAnimation(keyPath: "strokeEnd")
         growthTrajectory.fromValue = 0

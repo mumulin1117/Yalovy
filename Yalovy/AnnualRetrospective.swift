@@ -1,8 +1,8 @@
 import UIKit
 
 final class AnnualRetrospective: UIControl {
-    var portraitArchive: [UIImageView] { seasonalPortrait }
-    private let seasonalPortrait = [UIImageView(), UIImageView(), UIImageView(), UIImageView()]
+    var harnessFamiliarity: [UIImageView] { inhibitionPractice }
+    private let inhibitionPractice = [UIImageView(), UIImageView(), UIImageView(), UIImageView()]
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -17,29 +17,29 @@ final class AnnualRetrospective: UIControl {
         let seniorYearbook = UILabel(frame: CGRect(x: 22, y: 26, width: 130, height: 50))
         seniorYearbook.text = "2026"
         seniorYearbook.textColor = .undercoatCondition
-        seniorYearbook.font = .coatSoftness(38, bodyMassCurve: .black)
+        seniorYearbook.font = .coatSoftness(38, vetVisitPreparation: .black)
         addSubview(seniorYearbook)
-        let growthYearbook = UILabel(frame: CGRect(x: 22, y: 74, width: 165, height: 31))
-        growthYearbook.text = "YEAR IN PAWS"
-        growthYearbook.textColor = .undercoatCondition
-        growthYearbook.font = .coatSoftness(17, bodyMassCurve: .black)
-        addSubview(growthYearbook)
-        let petMemoir = UILabel(frame: CGRect(x: 22, y: 117, width: 150, height: 76))
-        petMemoir.text = "A whole year of love,\ngrowth & unforgettable\nmemories."
-        petMemoir.numberOfLines = 3
-        petMemoir.textColor = .undercoatCondition
-        petMemoir.font = .coatSoftness(12, bodyMassCurve: .semibold)
-        addSubview(petMemoir)
+        let attentionSpan = UILabel(frame: CGRect(x: 22, y: 74, width: 165, height: 31))
+        attentionSpan.text = "YEAR IN PAWS"
+        attentionSpan.textColor = .undercoatCondition
+        attentionSpan.font = .coatSoftness(17, vetVisitPreparation: .black)
+        addSubview(attentionSpan)
+        let skillTempo = UILabel(frame: CGRect(x: 22, y: 117, width: 150, height: 76))
+        skillTempo.text = "A whole year of love,\ngrowth & unforgettable\nmemories."
+        skillTempo.numberOfLines = 3
+        skillTempo.textColor = .undercoatCondition
+        skillTempo.font = .coatSoftness(12, vetVisitPreparation: .semibold)
+        addSubview(skillTempo)
         let birthdayKeepsake = UILabel(frame: CGRect(x: 22, y: 218, width: 116, height: 42))
         birthdayKeepsake.text = "See Recap   ›"
         birthdayKeepsake.textAlignment = .center
         birthdayKeepsake.textColor = .undercoatCondition
-        birthdayKeepsake.font = .coatSoftness(12, bodyMassCurve: .bold)
+        birthdayKeepsake.font = .coatSoftness(12, vetVisitPreparation: .bold)
         birthdayKeepsake.layer.cornerRadius = 21
         birthdayKeepsake.layer.borderWidth = 1.5
         birthdayKeepsake.layer.borderColor = UIColor.undercoatCondition.cgColor
         addSubview(birthdayKeepsake)
-        seasonalPortrait.forEach {
+        inhibitionPractice.forEach {
             $0.contentMode = .scaleAspectFill
             $0.clipsToBounds = true
             $0.backgroundColor = .mountainHiking
@@ -56,16 +56,16 @@ final class AnnualRetrospective: UIControl {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        let lensDepth = bounds.width * 0.49
-        let imageResolution = (bounds.width - lensDepth - 13) * 0.56
+        let shapingSequence = bounds.width * 0.49
+        let imageResolution = (bounds.width - shapingSequence - 13) * 0.56
         let heightVariance: CGFloat = 116
-        seasonalPortrait[0].frame = CGRect(x: lensDepth, y: 18, width: imageResolution, height: heightVariance)
-        seasonalPortrait[1].frame = CGRect(x: lensDepth + imageResolution - 3, y: 26, width: imageResolution, height: heightVariance)
-        seasonalPortrait[2].frame = CGRect(x: lensDepth + 3, y: 132, width: imageResolution, height: heightVariance)
-        seasonalPortrait[3].frame = CGRect(x: lensDepth + imageResolution, y: 139, width: imageResolution, height: heightVariance)
-        seasonalPortrait[0].transform = CGAffineTransform(rotationAngle: -0.035)
-        seasonalPortrait[1].transform = CGAffineTransform(rotationAngle: 0.055)
-        seasonalPortrait[2].transform = CGAffineTransform(rotationAngle: 0.03)
-        seasonalPortrait[3].transform = CGAffineTransform(rotationAngle: -0.04)
+        inhibitionPractice[0].frame = CGRect(x: shapingSequence, y: 18, width: imageResolution, height: heightVariance)
+        inhibitionPractice[1].frame = CGRect(x: shapingSequence + imageResolution - 3, y: 26, width: imageResolution, height: heightVariance)
+        inhibitionPractice[2].frame = CGRect(x: shapingSequence + 3, y: 132, width: imageResolution, height: heightVariance)
+        inhibitionPractice[3].frame = CGRect(x: shapingSequence + imageResolution, y: 139, width: imageResolution, height: heightVariance)
+        inhibitionPractice[0].transform = CGAffineTransform(rotationAngle: -0.035)
+        inhibitionPractice[1].transform = CGAffineTransform(rotationAngle: 0.055)
+        inhibitionPractice[2].transform = CGAffineTransform(rotationAngle: 0.03)
+        inhibitionPractice[3].transform = CGAffineTransform(rotationAngle: -0.04)
     }
 }

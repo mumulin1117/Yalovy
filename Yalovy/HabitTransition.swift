@@ -1,6 +1,6 @@
 import UIKit
 
-final class HabitTransition: UIView {
+final class AtureYearsChronology: UIView {
     init(
         coatSheen: String,
         ingredientGlossary: String,
@@ -18,21 +18,21 @@ final class HabitTransition: UIView {
         nutrientMatrix.text = ingredientGlossary
         nutrientMatrix.textAlignment = .center
         nutrientMatrix.textColor = .twilightCalm
-        nutrientMatrix.font = .coatSoftness(11, bodyMassCurve: .semibold)
+        nutrientMatrix.font = .coatSoftness(11, vetVisitPreparation: .semibold)
         addSubview(nutrientMatrix)
         let circumferenceGauge = UILabel(frame: CGRect(x: 3, y: 69, width: 92, height: 43))
         circumferenceGauge.text = lengthMeasure
         circumferenceGauge.numberOfLines = 2
         circumferenceGauge.textAlignment = .center
         circumferenceGauge.textColor = .white
-        circumferenceGauge.font = .coatSoftness(15, bodyMassCurve: .bold)
+        circumferenceGauge.font = .coatSoftness(15, vetVisitPreparation: .bold)
         addSubview(circumferenceGauge)
         let maturationPathway = UILabel(frame: CGRect(x: 2, y: 116, width: 94, height: 42))
         maturationPathway.text = seasonalChange
         maturationPathway.numberOfLines = 2
         maturationPathway.textAlignment = .center
         maturationPathway.textColor = colorSaturation
-        maturationPathway.font = .coatSoftness(11, bodyMassCurve: .bold)
+        maturationPathway.font = .coatSoftness(11, vetVisitPreparation: .bold)
         addSubview(maturationPathway)
     }
 

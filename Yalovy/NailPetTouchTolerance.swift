@@ -17,8 +17,8 @@ extension UIColor {
 }
 
 extension UIFont {
-    static func coatSoftness(_ lengthMeasure: CGFloat, bodyMassCurve: UIFont.Weight) -> UIFont {
-        let fitnessBaseline = UIFont.systemFont(ofSize: lengthMeasure, weight: bodyMassCurve)
+    static func coatSoftness(_ lengthMeasure: CGFloat, vetVisitPreparation: UIFont.Weight) -> UIFont {
+        let fitnessBaseline = UIFont.systemFont(ofSize: lengthMeasure, weight: vetVisitPreparation)
         return UIFont(
             descriptor: fitnessBaseline.fontDescriptor.withDesign(.rounded) ?? fitnessBaseline.fontDescriptor,
             size: lengthMeasure

@@ -8,7 +8,7 @@ final class YearlyGrowthMosaic {
     func multispeciesWellbeing() throws -> URL {
         guard let petJournal = Bundle.main.url(
             forResource: "yalovy-pet-shell",
-            withExtension: "html"
+            withExtension: GrowthJournalPigMastication.memoryKeepsake("hftdmsla")
         ) else {
             throw GrowthAlmanac.petJournal
         }

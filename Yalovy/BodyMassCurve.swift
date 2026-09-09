@@ -14,7 +14,7 @@ final class BodyMassCurve: UIControl {
         let growthYearbook = UILabel()
         growthYearbook.text = "▥  GROWTH INSIGHTS                         ›"
         growthYearbook.textColor = .springRoutine
-        growthYearbook.font = .coatSoftness(14, bodyMassCurve: .black)
+        growthYearbook.font = .coatSoftness(14, vetVisitPreparation: .black)
         growthYearbook.frame = CGRect(x: 22, y: 18, width: 280, height: 24)
         addSubview(growthYearbook)
         let wellnessAssessment = [
@@ -27,7 +27,7 @@ final class BodyMassCurve: UIControl {
         nutrientMatrix.distribution = .fillEqually
         nutrientMatrix.frame = CGRect(x: 10, y: 55, width: 300, height: 166)
         for wellnessJournal in wellnessAssessment {
-            nutrientMatrix.addArrangedSubview(HabitTransition(
+            nutrientMatrix.addArrangedSubview(AtureYearsChronology(
                 coatSheen: wellnessJournal.0,
                 ingredientGlossary: wellnessJournal.1,
                 lengthMeasure: wellnessJournal.2,
