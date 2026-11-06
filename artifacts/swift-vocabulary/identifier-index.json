@@ -1,0 +1,5229 @@
+{
+  "metadata": {
+    "project": "Yalovy",
+    "root": "/Users/linqian/Documents/Yalovy",
+    "date": "2026-11-06",
+    "swiftFileCount": 13,
+    "swiftLines": 1549,
+    "swiftIdentifierCount": 161,
+    "javascriptIdentifierCount": 14,
+    "allIdentifierCount": 175,
+    "allWordCount": 227,
+    "swiftWordCount": 206,
+    "swiftDeclarationCount": 361,
+    "javascriptDeclarationCount": 15,
+    "scope": "SwiftParser/SwiftSyntax 语法提取项目自声明标识符；保留泛型 T、模板类名与原始拼写；系统回调及约定参数单列。内嵌 JavaScript 的函数、变量、参数按声明提取并逐项核对。字符串文案、资源路径、字符串键、编码字符串、注释、SDK 引用及隐式 $0/$1 不作为自定义标识符。",
+    "counting": "完整命名按大小写敏感去重；方法重载、同名属性和局部变量合并；单词按驼峰/大写缩略词/数字拆分后转小写去重，保留单字母泛型 t。不包含文件名专用名称。"
+  },
+  "identifiers": [
+    {
+      "name": "anniversaryMemoir",
+      "language": "Swift",
+      "words": [
+        "anniversary",
+        "memoir"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/FirstWalkChronicle.swift",
+          "line": 10,
+          "column": 17,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "announceReadinessIssue",
+      "language": "JavaScript",
+      "words": [
+        "announce",
+        "readiness",
+        "issue"
+      ],
+      "kinds": [
+        "JS 函数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 593,
+          "column": 20,
+          "kind": "js_function"
+        }
+      ]
+    },
+    {
+      "name": "annualKeepsake",
+      "language": "Swift",
+      "words": [
+        "annual",
+        "keepsake"
+      ],
+      "kinds": [
+        "参数",
+        "属性/常量",
+        "条件/模式绑定"
+      ],
+      "declarationCount": 7,
+      "declarations": [
+        {
+          "file": "Yalovy/AppDelegate.swift",
+          "line": 33,
+          "column": 16,
+          "kind": "property"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 117,
+          "column": 20,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 320,
+          "column": 23,
+          "kind": "pattern_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 472,
+          "column": 13,
+          "kind": "pattern_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 652,
+          "column": 20,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 13,
+          "column": 17,
+          "kind": "property"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 7,
+          "column": 16,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "annualPlanner",
+      "language": "Swift",
+      "words": [
+        "annual",
+        "planner"
+      ],
+      "kinds": [
+        "局部变量/常量"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 15,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 73,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "AnnualRetrospective",
+      "language": "Swift",
+      "words": [
+        "annual",
+        "retrospective"
+      ],
+      "kinds": [
+        "类"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/AnnualRetrospective.swift",
+          "line": 3,
+          "column": 13,
+          "kind": "class"
+        }
+      ]
+    },
+    {
+      "name": "annualRetrospective",
+      "language": "Swift",
+      "words": [
+        "annual",
+        "retrospective"
+      ],
+      "kinds": [
+        "参数",
+        "属性/常量",
+        "循环变量",
+        "方法/函数"
+      ],
+      "declarationCount": 5,
+      "declarations": [
+        {
+          "file": "Yalovy/AppDelegate.swift",
+          "line": 8,
+          "column": 39,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/AppDelegate.swift",
+          "line": 43,
+          "column": 23,
+          "kind": "loop_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 391,
+          "column": 18,
+          "kind": "function"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 403,
+          "column": 47,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 29,
+          "column": 17,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "AppDelegate",
+      "language": "Swift",
+      "words": [
+        "app",
+        "delegate"
+      ],
+      "kinds": [
+        "类"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/AppDelegate.swift",
+          "line": 5,
+          "column": 7,
+          "kind": "class"
+        }
+      ]
+    },
+    {
+      "name": "aquariumClarity",
+      "language": "Swift",
+      "words": [
+        "aquarium",
+        "clarity"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/NailPetTouchTolerance.swift",
+          "line": 9,
+          "column": 16,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "assimilationRate",
+      "language": "Swift",
+      "words": [
+        "assimilation",
+        "rate"
+      ],
+      "kinds": [
+        "方法/函数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/SkeletalMilestone.swift",
+          "line": 47,
+          "column": 10,
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "attentionSpan",
+      "language": "Swift",
+      "words": [
+        "attention",
+        "span"
+      ],
+      "kinds": [
+        "局部变量/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/AnnualRetrospective.swift",
+          "line": 22,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "AtureYearsChronology",
+      "language": "Swift",
+      "words": [
+        "ature",
+        "years",
+        "chronology"
+      ],
+      "kinds": [
+        "类"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/AtureYearsChronology.swift",
+          "line": 3,
+          "column": 13,
+          "kind": "class"
+        },
+        {
+          "file": "Yalovy/HabitTransition.swift",
+          "line": 3,
+          "column": 13,
+          "kind": "class"
+        }
+      ]
+    },
+    {
+      "name": "auralCleanliness",
+      "language": "Swift",
+      "words": [
+        "aural",
+        "cleanliness"
+      ],
+      "kinds": [
+        "局部变量/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 86,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "birthChronology",
+      "language": "Swift",
+      "words": [
+        "birth",
+        "chronology"
+      ],
+      "kinds": [
+        "参数",
+        "属性/常量"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/FirstWalkChronicle.swift",
+          "line": 6,
+          "column": 17,
+          "kind": "property"
+        },
+        {
+          "file": "Yalovy/FirstWalkChronicle.swift",
+          "line": 13,
+          "column": 9,
+          "kind": "parameter"
+        }
+      ]
+    },
+    {
+      "name": "birthdayKeepsake",
+      "language": "Swift",
+      "words": [
+        "birthday",
+        "keepsake"
+      ],
+      "kinds": [
+        "局部变量/常量",
+        "方法/函数"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/AnnualRetrospective.swift",
+          "line": 33,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 271,
+          "column": 24,
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "blanketWarmth",
+      "language": "Swift",
+      "words": [
+        "blanket",
+        "warmth"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/NailPetTouchTolerance.swift",
+          "line": 16,
+          "column": 16,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "bodyLengthEvolution",
+      "language": "Swift",
+      "words": [
+        "body",
+        "length",
+        "evolution"
+      ],
+      "kinds": [
+        "方法/函数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/OntogenyCurve.swift",
+          "line": 49,
+          "column": 10,
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "BodyMassCurve",
+      "language": "Swift",
+      "words": [
+        "body",
+        "mass",
+        "curve"
+      ],
+      "kinds": [
+        "类"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/BodyMassCurve.swift",
+          "line": 3,
+          "column": 13,
+          "kind": "class"
+        }
+      ]
+    },
+    {
+      "name": "browserEvent",
+      "language": "JavaScript",
+      "words": [
+        "browser",
+        "event"
+      ],
+      "kinds": [
+        "JS 参数"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 602,
+          "column": 53,
+          "kind": "js_parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 605,
+          "column": 66,
+          "kind": "js_parameter"
+        }
+      ]
+    },
+    {
+      "name": "bundledFetch",
+      "language": "JavaScript",
+      "words": [
+        "bundled",
+        "fetch"
+      ],
+      "kinds": [
+        "JS 变量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 553,
+          "column": 19,
+          "kind": "js_variable"
+        }
+      ]
+    },
+    {
+      "name": "carnivoreMyology",
+      "language": "Swift",
+      "words": [
+        "carnivore",
+        "myology"
+      ],
+      "kinds": [
+        "方法/函数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 497,
+          "column": 18,
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "caudalFlexibility",
+      "language": "Swift",
+      "words": [
+        "caudal",
+        "flexibility"
+      ],
+      "kinds": [
+        "局部变量/常量",
+        "属性/常量"
+      ],
+      "declarationCount": 3,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 8,
+          "column": 17,
+          "kind": "property"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 84,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/SkeletalMilestone.swift",
+          "line": 30,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "cervicalMobility",
+      "language": "Swift",
+      "words": [
+        "cervical",
+        "mobility"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 9,
+          "column": 17,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "circumferenceGauge",
+      "language": "Swift",
+      "words": [
+        "circumference",
+        "gauge"
+      ],
+      "kinds": [
+        "参数",
+        "局部变量/常量",
+        "属性/常量",
+        "条件/模式绑定"
+      ],
+      "declarationCount": 7,
+      "declarations": [
+        {
+          "file": "Yalovy/AtureYearsChronology.swift",
+          "line": 23,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 61,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/HabitTransition.swift",
+          "line": 23,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/SkeletalMilestone.swift",
+          "line": 5,
+          "column": 17,
+          "kind": "property"
+        },
+        {
+          "file": "Yalovy/SkeletalMilestone.swift",
+          "line": 9,
+          "column": 33,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/SkeletalMilestone.swift",
+          "line": 47,
+          "column": 50,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 59,
+          "column": 19,
+          "kind": "pattern_binding"
+        }
+      ]
+    },
+    {
+      "name": "coatCondition",
+      "language": "Swift",
+      "words": [
+        "coat",
+        "condition"
+      ],
+      "kinds": [
+        "局部变量/常量"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 423,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 585,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "coatGrain",
+      "language": "Swift",
+      "words": [
+        "coat",
+        "grain"
+      ],
+      "kinds": [
+        "局部变量/常量"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 88,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 583,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "coatLuster",
+      "language": "Swift",
+      "words": [
+        "coat",
+        "luster"
+      ],
+      "kinds": [
+        "参数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 264,
+          "column": 27,
+          "kind": "parameter"
+        }
+      ]
+    },
+    {
+      "name": "coatPigmentation",
+      "language": "Swift",
+      "words": [
+        "coat",
+        "pigmentation"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/NailPetTouchTolerance.swift",
+          "line": 5,
+          "column": 16,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "coatPortrait",
+      "language": "Swift",
+      "words": [
+        "coat",
+        "portrait"
+      ],
+      "kinds": [
+        "闭包参数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 187,
+          "column": 75,
+          "kind": "closure_parameter"
+        }
+      ]
+    },
+    {
+      "name": "coatSheen",
+      "language": "Swift",
+      "words": [
+        "coat",
+        "sheen"
+      ],
+      "kinds": [
+        "参数",
+        "局部变量/常量"
+      ],
+      "declarationCount": 4,
+      "declarations": [
+        {
+          "file": "Yalovy/AtureYearsChronology.swift",
+          "line": 5,
+          "column": 9,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 414,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 197,
+          "column": 32,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/HabitTransition.swift",
+          "line": 5,
+          "column": 9,
+          "kind": "parameter"
+        }
+      ]
+    },
+    {
+      "name": "coatSoftness",
+      "language": "Swift",
+      "words": [
+        "coat",
+        "softness"
+      ],
+      "kinds": [
+        "方法/函数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/NailPetTouchTolerance.swift",
+          "line": 20,
+          "column": 17,
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "cockatielCognition",
+      "language": "Swift",
+      "words": [
+        "cockatiel",
+        "cognition"
+      ],
+      "kinds": [
+        "方法/函数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 176,
+          "column": 18,
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "colorSaturation",
+      "language": "Swift",
+      "words": [
+        "color",
+        "saturation"
+      ],
+      "kinds": [
+        "参数",
+        "局部变量/常量",
+        "属性/常量"
+      ],
+      "declarationCount": 7,
+      "declarations": [
+        {
+          "file": "Yalovy/AtureYearsChronology.swift",
+          "line": 9,
+          "column": 9,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/FirstWalkChronicle.swift",
+          "line": 17,
+          "column": 9,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/HabitTransition.swift",
+          "line": 9,
+          "column": 9,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/OntogenyCurve.swift",
+          "line": 5,
+          "column": 17,
+          "kind": "property"
+        },
+        {
+          "file": "Yalovy/SkeletalMilestone.swift",
+          "line": 7,
+          "column": 17,
+          "kind": "property"
+        },
+        {
+          "file": "Yalovy/SkeletalMilestone.swift",
+          "line": 9,
+          "column": 61,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 67,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "CompanionAttachment",
+      "language": "Swift",
+      "words": [
+        "companion",
+        "attachment"
+      ],
+      "kinds": [
+        "类"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 642,
+          "column": 21,
+          "kind": "class"
+        }
+      ]
+    },
+    {
+      "name": "companionAttachment",
+      "language": "Swift",
+      "words": [
+        "companion",
+        "attachment"
+      ],
+      "kinds": [
+        "参数",
+        "局部变量/常量",
+        "方法/函数"
+      ],
+      "declarationCount": 5,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 60,
+          "column": 18,
+          "kind": "function"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 165,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 308,
+          "column": 9,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 645,
+          "column": 10,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/SceneDelegate.swift",
+          "line": 9,
+          "column": 17,
+          "kind": "parameter"
+        }
+      ]
+    },
+    {
+      "name": "companionBiomechanics",
+      "language": "Swift",
+      "words": [
+        "companion",
+        "biomechanics"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 14,
+          "column": 22,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "continuation",
+      "language": "Swift",
+      "words": [
+        "continuation"
+      ],
+      "kinds": [
+        "闭包参数"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 244,
+          "column": 67,
+          "kind": "closure_parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 267,
+          "column": 67,
+          "kind": "closure_parameter"
+        }
+      ]
+    },
+    {
+      "name": "cooperationRoutine",
+      "language": "Swift",
+      "words": [
+        "cooperation",
+        "routine"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 8,
+          "column": 17,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "cranialClearance",
+      "language": "Swift",
+      "words": [
+        "cranial",
+        "clearance"
+      ],
+      "kinds": [
+        "局部变量/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 55,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "cranialConformation",
+      "language": "Swift",
+      "words": [
+        "cranial",
+        "conformation"
+      ],
+      "kinds": [
+        "局部变量/常量"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 62,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/SkeletalMilestone.swift",
+          "line": 13,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "cranialConformationchment",
+      "language": "Swift",
+      "words": [
+        "cranial",
+        "conformationchment"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 7,
+          "column": 17,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "dawnWalk",
+      "language": "Swift",
+      "words": [
+        "dawn",
+        "walk"
+      ],
+      "kinds": [
+        "方法/函数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 248,
+          "column": 24,
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "depthClarity",
+      "language": "Swift",
+      "words": [
+        "depth",
+        "clarity"
+      ],
+      "kinds": [
+        "局部变量/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/FirstWalkChronicle.swift",
+          "line": 70,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "dermalObservation",
+      "language": "Swift",
+      "words": [
+        "dermal",
+        "observation"
+      ],
+      "kinds": [
+        "局部变量/常量"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 440,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 584,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "domesticAnimalWelfare",
+      "language": "Swift",
+      "words": [
+        "domestic",
+        "animal",
+        "welfare"
+      ],
+      "kinds": [
+        "属性/常量",
+        "方法/函数"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 10,
+          "column": 24,
+          "kind": "property"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 191,
+          "column": 18,
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "fallback",
+      "language": "JavaScript",
+      "words": [
+        "fallback"
+      ],
+      "kinds": [
+        "JS 变量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 613,
+          "column": 21,
+          "kind": "js_variable"
+        }
+      ]
+    },
+    {
+      "name": "fetchTraits",
+      "language": "JavaScript",
+      "words": [
+        "fetch",
+        "traits"
+      ],
+      "kinds": [
+        "JS 参数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 555,
+          "column": 54,
+          "kind": "js_parameter"
+        }
+      ]
+    },
+    {
+      "name": "firstTrickKeepsake",
+      "language": "Swift",
+      "words": [
+        "first",
+        "trick",
+        "keepsake"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 21,
+          "column": 17,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "FirstWalkChronicle",
+      "language": "Swift",
+      "words": [
+        "first",
+        "walk",
+        "chronicle"
+      ],
+      "kinds": [
+        "类"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/FirstWalkChronicle.swift",
+          "line": 3,
+          "column": 13,
+          "kind": "class"
+        }
+      ]
+    },
+    {
+      "name": "firstWalkChronicle",
+      "language": "Swift",
+      "words": [
+        "first",
+        "walk",
+        "chronicle"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 14,
+          "column": 17,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "fitnessBaseline",
+      "language": "Swift",
+      "words": [
+        "fitness",
+        "baseline"
+      ],
+      "kinds": [
+        "局部变量/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/NailPetTouchTolerance.swift",
+          "line": 21,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "foregroundClarity",
+      "language": "Swift",
+      "words": [
+        "foreground",
+        "clarity"
+      ],
+      "kinds": [
+        "闭包参数"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 161,
+          "column": 103,
+          "kind": "closure_parameter"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 166,
+          "column": 106,
+          "kind": "closure_parameter"
+        }
+      ]
+    },
+    {
+      "name": "gardenForaging",
+      "language": "Swift",
+      "words": [
+        "garden",
+        "foraging"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/NailPetTouchTolerance.swift",
+          "line": 12,
+          "column": 16,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "geckoEcdysis",
+      "language": "Swift",
+      "words": [
+        "gecko",
+        "ecdysis"
+      ],
+      "kinds": [
+        "局部变量/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/SceneDelegate.swift",
+          "line": 15,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "granted",
+      "language": "Swift",
+      "words": [
+        "granted"
+      ],
+      "kinds": [
+        "闭包参数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 245,
+          "column": 66,
+          "kind": "closure_parameter"
+        }
+      ]
+    },
+    {
+      "name": "GrowthAlmanac",
+      "language": "Swift",
+      "words": [
+        "growth",
+        "almanac"
+      ],
+      "kinds": [
+        "枚举"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 45,
+          "column": 6,
+          "kind": "enum"
+        }
+      ]
+    },
+    {
+      "name": "growthAlmanac",
+      "language": "Swift",
+      "words": [
+        "growth",
+        "almanac"
+      ],
+      "kinds": [
+        "参数",
+        "局部变量/常量",
+        "条件/模式绑定"
+      ],
+      "declarationCount": 11,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 61,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 116,
+          "column": 11,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 148,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 195,
+          "column": 17,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 208,
+          "column": 19,
+          "kind": "pattern_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 219,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 239,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 260,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 391,
+          "column": 40,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 471,
+          "column": 13,
+          "kind": "pattern_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 651,
+          "column": 11,
+          "kind": "parameter"
+        }
+      ]
+    },
+    {
+      "name": "growthChronicle",
+      "language": "Swift",
+      "words": [
+        "growth",
+        "chronicle"
+      ],
+      "kinds": [
+        "参数",
+        "局部变量/常量",
+        "属性/常量"
+      ],
+      "declarationCount": 4,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 9,
+          "column": 24,
+          "kind": "property"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 331,
+          "column": 21,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 582,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/SceneDelegate.swift",
+          "line": 8,
+          "column": 23,
+          "kind": "parameter"
+        }
+      ]
+    },
+    {
+      "name": "growthJournal",
+      "language": "Swift",
+      "words": [
+        "growth",
+        "journal"
+      ],
+      "kinds": [
+        "局部变量/常量",
+        "属性/常量"
+      ],
+      "declarationCount": 3,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 5,
+          "column": 17,
+          "kind": "property"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 32,
+          "column": 17,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 36,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "GrowthJournalPigMastication",
+      "language": "Swift",
+      "words": [
+        "growth",
+        "journal",
+        "pig",
+        "mastication"
+      ],
+      "kinds": [
+        "类"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 7,
+          "column": 13,
+          "kind": "class"
+        }
+      ]
+    },
+    {
+      "name": "growthMemoir",
+      "language": "Swift",
+      "words": [
+        "growth",
+        "memoir"
+      ],
+      "kinds": [
+        "参数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 418,
+          "column": 35,
+          "kind": "parameter"
+        }
+      ]
+    },
+    {
+      "name": "growthPortrait",
+      "language": "Swift",
+      "words": [
+        "growth",
+        "portrait"
+      ],
+      "kinds": [
+        "参数",
+        "局部变量/常量",
+        "条件/模式绑定"
+      ],
+      "declarationCount": 6,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 21,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 149,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 172,
+          "column": 19,
+          "kind": "pattern_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 305,
+          "column": 9,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 478,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 64,
+          "column": 19,
+          "kind": "pattern_binding"
+        }
+      ]
+    },
+    {
+      "name": "growthTrajectory",
+      "language": "Swift",
+      "words": [
+        "growth",
+        "trajectory"
+      ],
+      "kinds": [
+        "参数",
+        "局部变量/常量",
+        "属性/常量"
+      ],
+      "declarationCount": 9,
+      "declarations": [
+        {
+          "file": "Yalovy/AppDelegate.swift",
+          "line": 35,
+          "column": 17,
+          "kind": "property"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 39,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 154,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 307,
+          "column": 9,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 378,
+          "column": 9,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 517,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 587,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/OntogenyCurve.swift",
+          "line": 26,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/OntogenyCurve.swift",
+          "line": 51,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "GrowthYearbook",
+      "language": "Swift",
+      "words": [
+        "growth",
+        "yearbook"
+      ],
+      "kinds": [
+        "类"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 3,
+          "column": 13,
+          "kind": "class"
+        }
+      ]
+    },
+    {
+      "name": "growthYearbook",
+      "language": "Swift",
+      "words": [
+        "growth",
+        "yearbook"
+      ],
+      "kinds": [
+        "参数",
+        "局部变量/常量",
+        "属性/常量"
+      ],
+      "declarationCount": 3,
+      "declarations": [
+        {
+          "file": "Yalovy/BodyMassCurve.swift",
+          "line": 14,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/FirstWalkChronicle.swift",
+          "line": 7,
+          "column": 17,
+          "kind": "property"
+        },
+        {
+          "file": "Yalovy/FirstWalkChronicle.swift",
+          "line": 14,
+          "column": 9,
+          "kind": "parameter"
+        }
+      ]
+    },
+    {
+      "name": "harnessFamiliarity",
+      "language": "Swift",
+      "words": [
+        "harness",
+        "familiarity"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/AnnualRetrospective.swift",
+          "line": 4,
+          "column": 9,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "heightVariance",
+      "language": "Swift",
+      "words": [
+        "height",
+        "variance"
+      ],
+      "kinds": [
+        "局部变量/常量",
+        "条件/模式绑定"
+      ],
+      "declarationCount": 3,
+      "declarations": [
+        {
+          "file": "Yalovy/AnnualRetrospective.swift",
+          "line": 61,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 56,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 60,
+          "column": 19,
+          "kind": "pattern_binding"
+        }
+      ]
+    },
+    {
+      "name": "herbivoreDigestion",
+      "language": "Swift",
+      "words": [
+        "herbivore",
+        "digestion"
+      ],
+      "kinds": [
+        "方法/函数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 507,
+          "column": 18,
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "householdPetVitality",
+      "language": "Swift",
+      "words": [
+        "household",
+        "pet",
+        "vitality"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 643,
+          "column": 14,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "householdRoutine",
+      "language": "Swift",
+      "words": [
+        "household",
+        "routine"
+      ],
+      "kinds": [
+        "参数",
+        "局部变量/常量"
+      ],
+      "declarationCount": 3,
+      "declarations": [
+        {
+          "file": "Yalovy/AppDelegate.swift",
+          "line": 7,
+          "column": 11,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/AppDelegate.swift",
+          "line": 17,
+          "column": 11,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 25,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "imageArchive",
+      "language": "Swift",
+      "words": [
+        "image",
+        "archive"
+      ],
+      "kinds": [
+        "参数",
+        "局部变量/常量",
+        "条件/模式绑定"
+      ],
+      "declarationCount": 4,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 16,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 87,
+          "column": 31,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 394,
+          "column": 19,
+          "kind": "pattern_binding"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 57,
+          "column": 19,
+          "kind": "pattern_binding"
+        }
+      ]
+    },
+    {
+      "name": "imageFraming",
+      "language": "Swift",
+      "words": [
+        "image",
+        "framing"
+      ],
+      "kinds": [
+        "局部变量/常量",
+        "闭包参数"
+      ],
+      "declarationCount": 5,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 30,
+          "column": 39,
+          "kind": "closure_parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 89,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 187,
+          "column": 61,
+          "kind": "closure_parameter"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 68,
+          "column": 54,
+          "kind": "closure_parameter"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 79,
+          "column": 49,
+          "kind": "closure_parameter"
+        }
+      ]
+    },
+    {
+      "name": "imageResolution",
+      "language": "Swift",
+      "words": [
+        "image",
+        "resolution"
+      ],
+      "kinds": [
+        "局部变量/常量",
+        "属性/常量",
+        "枚举成员"
+      ],
+      "declarationCount": 5,
+      "declarations": [
+        {
+          "file": "Yalovy/AnnualRetrospective.swift",
+          "line": 60,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/FirstWalkChronicle.swift",
+          "line": 66,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 273,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 48,
+          "column": 10,
+          "kind": "enum_case"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 54,
+          "column": 16,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "immuneResilience",
+      "language": "Swift",
+      "words": [
+        "immune",
+        "resilience"
+      ],
+      "kinds": [
+        "方法/函数",
+        "枚举成员"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 403,
+          "column": 25,
+          "kind": "function"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 483,
+          "column": 14,
+          "kind": "enum_case"
+        }
+      ]
+    },
+    {
+      "name": "ingredientGlossary",
+      "language": "Swift",
+      "words": [
+        "ingredient",
+        "glossary"
+      ],
+      "kinds": [
+        "参数"
+      ],
+      "declarationCount": 3,
+      "declarations": [
+        {
+          "file": "Yalovy/AtureYearsChronology.swift",
+          "line": 6,
+          "column": 9,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 412,
+          "column": 45,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/HabitTransition.swift",
+          "line": 6,
+          "column": 9,
+          "kind": "parameter"
+        }
+      ]
+    },
+    {
+      "name": "inhibitionPractice",
+      "language": "Swift",
+      "words": [
+        "inhibition",
+        "practice"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/AnnualRetrospective.swift",
+          "line": 5,
+          "column": 17,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "issueNote",
+      "language": "JavaScript",
+      "words": [
+        "issue",
+        "note"
+      ],
+      "kinds": [
+        "JS 参数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 593,
+          "column": 43,
+          "kind": "js_parameter"
+        }
+      ]
+    },
+    {
+      "name": "lakeExcursion",
+      "language": "Swift",
+      "words": [
+        "lake",
+        "excursion"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/NailPetTouchTolerance.swift",
+          "line": 10,
+          "column": 16,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "lengthMeasure",
+      "language": "Swift",
+      "words": [
+        "length",
+        "measure"
+      ],
+      "kinds": [
+        "参数",
+        "局部变量/常量",
+        "属性/常量"
+      ],
+      "declarationCount": 7,
+      "declarations": [
+        {
+          "file": "Yalovy/AtureYearsChronology.swift",
+          "line": 7,
+          "column": 9,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/HabitTransition.swift",
+          "line": 7,
+          "column": 9,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/NailPetTouchTolerance.swift",
+          "line": 20,
+          "column": 32,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/SkeletalMilestone.swift",
+          "line": 4,
+          "column": 17,
+          "kind": "property"
+        },
+        {
+          "file": "Yalovy/SkeletalMilestone.swift",
+          "line": 9,
+          "column": 10,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/SkeletalMilestone.swift",
+          "line": 47,
+          "column": 27,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 89,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "lensDepth",
+      "language": "Swift",
+      "words": [
+        "lens",
+        "depth"
+      ],
+      "kinds": [
+        "局部变量/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/FirstWalkChronicle.swift",
+          "line": 69,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "lightingContrast",
+      "language": "Swift",
+      "words": [
+        "lighting",
+        "contrast"
+      ],
+      "kinds": [
+        "局部变量/常量"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 162,
+          "column": 17,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 167,
+          "column": 17,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "lumbarStability",
+      "language": "Swift",
+      "words": [
+        "lumbar",
+        "stability"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 31,
+          "column": 17,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "markerFluency",
+      "language": "Swift",
+      "words": [
+        "marker",
+        "fluency"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/SkeletalMilestone.swift",
+          "line": 6,
+          "column": 17,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "maturationPathway",
+      "language": "Swift",
+      "words": [
+        "maturation",
+        "pathway"
+      ],
+      "kinds": [
+        "局部变量/常量",
+        "闭包参数"
+      ],
+      "declarationCount": 7,
+      "declarations": [
+        {
+          "file": "Yalovy/AtureYearsChronology.swift",
+          "line": 30,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 44,
+          "column": 36,
+          "kind": "closure_parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 543,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 588,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 70,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 155,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/HabitTransition.swift",
+          "line": 30,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "maturityChronicle",
+      "language": "Swift",
+      "words": [
+        "maturity",
+        "chronicle"
+      ],
+      "kinds": [
+        "局部变量/常量",
+        "属性/常量",
+        "方法/函数",
+        "闭包参数"
+      ],
+      "declarationCount": 4,
+      "declarations": [
+        {
+          "file": "Yalovy/AppDelegate.swift",
+          "line": 39,
+          "column": 10,
+          "kind": "function"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 11,
+          "column": 17,
+          "kind": "property"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 519,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 242,
+          "column": 82,
+          "kind": "closure_parameter"
+        }
+      ]
+    },
+    {
+      "name": "memoryJournal",
+      "language": "Swift",
+      "words": [
+        "memory",
+        "journal"
+      ],
+      "kinds": [
+        "局部变量/常量",
+        "属性/常量"
+      ],
+      "declarationCount": 3,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 12,
+          "column": 22,
+          "kind": "property"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 192,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 78,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "MemoryKeepsake",
+      "language": "Swift",
+      "words": [
+        "memory",
+        "keepsake"
+      ],
+      "kinds": [
+        "类"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/AppDelegate.swift",
+          "line": 32,
+          "column": 13,
+          "kind": "class"
+        }
+      ]
+    },
+    {
+      "name": "memoryKeepsake",
+      "language": "Swift",
+      "words": [
+        "memory",
+        "keepsake"
+      ],
+      "kinds": [
+        "参数",
+        "局部变量/常量",
+        "属性/常量",
+        "循环变量",
+        "方法/函数",
+        "条件/模式绑定"
+      ],
+      "declarationCount": 10,
+      "declarations": [
+        {
+          "file": "Yalovy/AppDelegate.swift",
+          "line": 44,
+          "column": 42,
+          "kind": "loop_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 74,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 160,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 306,
+          "column": 9,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 379,
+          "column": 9,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 405,
+          "column": 28,
+          "kind": "pattern_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 418,
+          "column": 18,
+          "kind": "function"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 30,
+          "column": 17,
+          "kind": "property"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 31,
+          "column": 26,
+          "kind": "loop_binding"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 91,
+          "column": 19,
+          "kind": "pattern_binding"
+        }
+      ]
+    },
+    {
+      "name": "memoryRetention",
+      "language": "Swift",
+      "words": [
+        "memory",
+        "retention"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 53,
+          "column": 16,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "monthlyChronology",
+      "language": "Swift",
+      "words": [
+        "monthly",
+        "chronology"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 4,
+          "column": 17,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "monthlyPlanner",
+      "language": "Swift",
+      "words": [
+        "monthly",
+        "planner"
+      ],
+      "kinds": [
+        "局部变量/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 234,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "mosaicLayout",
+      "language": "Swift",
+      "words": [
+        "mosaic",
+        "layout"
+      ],
+      "kinds": [
+        "循环变量",
+        "方法/函数"
+      ],
+      "declarationCount": 3,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 487,
+          "column": 18,
+          "kind": "function"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 135,
+          "column": 18,
+          "kind": "function"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 81,
+          "column": 21,
+          "kind": "loop_binding"
+        }
+      ]
+    },
+    {
+      "name": "motorFluency",
+      "language": "Swift",
+      "words": [
+        "motor",
+        "fluency"
+      ],
+      "kinds": [
+        "参数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 197,
+          "column": 51,
+          "kind": "parameter"
+        }
+      ]
+    },
+    {
+      "name": "mountainHiking",
+      "language": "Swift",
+      "words": [
+        "mountain",
+        "hiking"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/NailPetTouchTolerance.swift",
+          "line": 14,
+          "column": 16,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "multispeciesWellbeing",
+      "language": "Swift",
+      "words": [
+        "multispecies",
+        "wellbeing"
+      ],
+      "kinds": [
+        "方法/函数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 13,
+          "column": 10,
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "muscleMassTrend",
+      "language": "Swift",
+      "words": [
+        "muscle",
+        "mass",
+        "trend"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 11,
+          "column": 17,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "muzzleCleanliness",
+      "language": "Swift",
+      "words": [
+        "muzzle",
+        "cleanliness"
+      ],
+      "kinds": [
+        "方法/函数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 412,
+          "column": 25,
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "nailTouchTolerance",
+      "language": "Swift",
+      "words": [
+        "nail",
+        "touch",
+        "tolerance"
+      ],
+      "kinds": [
+        "方法/函数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 215,
+          "column": 24,
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "navigationController",
+      "language": "Swift",
+      "words": [
+        "navigation",
+        "controller"
+      ],
+      "kinds": [
+        "条件/模式绑定"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 208,
+          "column": 16,
+          "kind": "pattern_binding"
+        }
+      ]
+    },
+    {
+      "name": "nocturnalRhythm",
+      "language": "Swift",
+      "words": [
+        "nocturnal",
+        "rhythm"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/NailPetTouchTolerance.swift",
+          "line": 4,
+          "column": 16,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "nutrientMatrix",
+      "language": "Swift",
+      "words": [
+        "nutrient",
+        "matrix"
+      ],
+      "kinds": [
+        "局部变量/常量"
+      ],
+      "declarationCount": 3,
+      "declarations": [
+        {
+          "file": "Yalovy/AtureYearsChronology.swift",
+          "line": 17,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/BodyMassCurve.swift",
+          "line": 25,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/HabitTransition.swift",
+          "line": 17,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "nutritionJournal",
+      "language": "Swift",
+      "words": [
+        "nutrition",
+        "journal"
+      ],
+      "kinds": [
+        "条件/模式绑定"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 462,
+          "column": 13,
+          "kind": "pattern_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 526,
+          "column": 13,
+          "kind": "pattern_binding"
+        }
+      ]
+    },
+    {
+      "name": "ocularClarity",
+      "language": "Swift",
+      "words": [
+        "ocular",
+        "clarity"
+      ],
+      "kinds": [
+        "方法/函数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 197,
+          "column": 18,
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "ocularExamination",
+      "language": "Swift",
+      "words": [
+        "ocular",
+        "examination"
+      ],
+      "kinds": [
+        "条件/模式绑定"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 442,
+          "column": 16,
+          "kind": "pattern_binding"
+        }
+      ]
+    },
+    {
+      "name": "omnivoreNutrition",
+      "language": "Swift",
+      "words": [
+        "omnivore",
+        "nutrition"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 524,
+          "column": 24,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "OntogenyCurve",
+      "language": "Swift",
+      "words": [
+        "ontogeny",
+        "curve"
+      ],
+      "kinds": [
+        "类"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/OntogenyCurve.swift",
+          "line": 3,
+          "column": 13,
+          "kind": "class"
+        }
+      ]
+    },
+    {
+      "name": "ontogenyCurve",
+      "language": "Swift",
+      "words": [
+        "ontogeny",
+        "curve"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 6,
+          "column": 17,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "outdoorEnrichment",
+      "language": "Swift",
+      "words": [
+        "outdoor",
+        "enrichment"
+      ],
+      "kinds": [
+        "局部变量/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 277,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "patienceExercise",
+      "language": "Swift",
+      "words": [
+        "patience",
+        "exercise"
+      ],
+      "kinds": [
+        "方法/函数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 207,
+          "column": 24,
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "pawPortrait",
+      "language": "Swift",
+      "words": [
+        "paw",
+        "portrait"
+      ],
+      "kinds": [
+        "参数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/FirstWalkChronicle.swift",
+          "line": 16,
+          "column": 9,
+          "kind": "parameter"
+        }
+      ]
+    },
+    {
+      "name": "pelvicAlignment",
+      "language": "Swift",
+      "words": [
+        "pelvic",
+        "alignment"
+      ],
+      "kinds": [
+        "方法/函数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 282,
+          "column": 18,
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "petAlmanac",
+      "language": "Swift",
+      "words": [
+        "pet",
+        "almanac"
+      ],
+      "kinds": [
+        "参数",
+        "局部变量/常量",
+        "条件/模式绑定",
+        "闭包参数"
+      ],
+      "declarationCount": 12,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 67,
+          "column": 37,
+          "kind": "closure_parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 142,
+          "column": 19,
+          "kind": "pattern_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 191,
+          "column": 42,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 206,
+          "column": 36,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 218,
+          "column": 49,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 238,
+          "column": 46,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 285,
+          "column": 44,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 470,
+          "column": 13,
+          "kind": "pattern_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 534,
+          "column": 13,
+          "kind": "pattern_binding"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 265,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 20,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 95,
+          "column": 19,
+          "kind": "pattern_binding"
+        }
+      ]
+    },
+    {
+      "name": "petChronicle",
+      "language": "Swift",
+      "words": [
+        "pet",
+        "chronicle"
+      ],
+      "kinds": [
+        "局部变量/常量",
+        "属性/常量"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 8,
+          "column": 24,
+          "kind": "property"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 398,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "petDiary",
+      "language": "Swift",
+      "words": [
+        "pet",
+        "diary"
+      ],
+      "kinds": [
+        "局部变量/常量",
+        "方法/函数"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 264,
+          "column": 18,
+          "kind": "function"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 94,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "petJournal",
+      "language": "Swift",
+      "words": [
+        "pet",
+        "journal"
+      ],
+      "kinds": [
+        "局部变量/常量",
+        "属性/常量",
+        "循环变量",
+        "方法/函数",
+        "条件/模式绑定",
+        "枚举成员"
+      ],
+      "declarationCount": 8,
+      "declarations": [
+        {
+          "file": "Yalovy/FirstWalkChronicle.swift",
+          "line": 4,
+          "column": 9,
+          "kind": "property"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 87,
+          "column": 18,
+          "kind": "function"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 220,
+          "column": 13,
+          "kind": "loop_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 393,
+          "column": 19,
+          "kind": "pattern_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 511,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 31,
+          "column": 14,
+          "kind": "loop_binding"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 46,
+          "column": 10,
+          "kind": "enum_case"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 97,
+          "column": 13,
+          "kind": "loop_binding"
+        }
+      ]
+    },
+    {
+      "name": "petJournalAssessment",
+      "language": "Swift",
+      "words": [
+        "pet",
+        "journal",
+        "assessment"
+      ],
+      "kinds": [
+        "方法/函数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 259,
+          "column": 25,
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "petJournalStatus",
+      "language": "Swift",
+      "words": [
+        "pet",
+        "journal",
+        "status"
+      ],
+      "kinds": [
+        "方法/函数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 285,
+          "column": 25,
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "petMemoir",
+      "language": "Swift",
+      "words": [
+        "pet",
+        "memoir"
+      ],
+      "kinds": [
+        "参数",
+        "局部变量/常量",
+        "属性/常量",
+        "方法/函数",
+        "条件/模式绑定",
+        "闭包参数"
+      ],
+      "declarationCount": 9,
+      "declarations": [
+        {
+          "file": "Yalovy/FirstWalkChronicle.swift",
+          "line": 8,
+          "column": 17,
+          "kind": "property"
+        },
+        {
+          "file": "Yalovy/FirstWalkChronicle.swift",
+          "line": 15,
+          "column": 9,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 78,
+          "column": 34,
+          "kind": "closure_parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 399,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 413,
+          "column": 19,
+          "kind": "pattern_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 419,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 535,
+          "column": 13,
+          "kind": "pattern_binding"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 264,
+          "column": 47,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 56,
+          "column": 17,
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "petPortrait",
+      "language": "Swift",
+      "words": [
+        "pet",
+        "portrait"
+      ],
+      "kinds": [
+        "参数",
+        "属性/常量",
+        "条件/模式绑定",
+        "枚举成员"
+      ],
+      "declarationCount": 4,
+      "declarations": [
+        {
+          "file": "Yalovy/FirstWalkChronicle.swift",
+          "line": 5,
+          "column": 17,
+          "kind": "property"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 17,
+          "column": 19,
+          "kind": "pattern_binding"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 47,
+          "column": 10,
+          "kind": "enum_case"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 56,
+          "column": 29,
+          "kind": "parameter"
+        }
+      ]
+    },
+    {
+      "name": "PortraitArchive",
+      "language": "Swift",
+      "words": [
+        "portrait",
+        "archive"
+      ],
+      "kinds": [
+        "枚举"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 52,
+          "column": 6,
+          "kind": "enum"
+        }
+      ]
+    },
+    {
+      "name": "portraitComposition",
+      "language": "Swift",
+      "words": [
+        "portrait",
+        "composition"
+      ],
+      "kinds": [
+        "局部变量/常量",
+        "方法/函数",
+        "条件/模式绑定",
+        "闭包参数"
+      ],
+      "declarationCount": 4,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 24,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 97,
+          "column": 52,
+          "kind": "closure_parameter"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 83,
+          "column": 18,
+          "kind": "function"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 58,
+          "column": 19,
+          "kind": "pattern_binding"
+        }
+      ]
+    },
+    {
+      "name": "portraitOrientation",
+      "language": "Swift",
+      "words": [
+        "portrait",
+        "orientation"
+      ],
+      "kinds": [
+        "局部变量/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 178,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "probeIssue",
+      "language": "JavaScript",
+      "words": [
+        "probe",
+        "issue"
+      ],
+      "kinds": [
+        "JS 异常变量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 600,
+          "column": 22,
+          "kind": "js_catch"
+        }
+      ]
+    },
+    {
+      "name": "puppyPlayfulness",
+      "language": "Swift",
+      "words": [
+        "puppy",
+        "playfulness"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/OntogenyCurve.swift",
+          "line": 6,
+          "column": 17,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "readinessIssue",
+      "language": "JavaScript",
+      "words": [
+        "readiness",
+        "issue"
+      ],
+      "kinds": [
+        "JS 异常变量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 631,
+          "column": 24,
+          "kind": "js_catch"
+        }
+      ]
+    },
+    {
+      "name": "readinessTimer",
+      "language": "JavaScript",
+      "words": [
+        "readiness",
+        "timer"
+      ],
+      "kinds": [
+        "JS 变量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 611,
+          "column": 17,
+          "kind": "js_variable"
+        }
+      ]
+    },
+    {
+      "name": "recipeNotebook",
+      "language": "Swift",
+      "words": [
+        "recipe",
+        "notebook"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/NailPetTouchTolerance.swift",
+          "line": 15,
+          "column": 16,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "rejectionReason",
+      "language": "JavaScript",
+      "words": [
+        "rejection",
+        "reason"
+      ],
+      "kinds": [
+        "JS 变量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 606,
+          "column": 17,
+          "kind": "js_variable"
+        }
+      ]
+    },
+    {
+      "name": "resourceAddress",
+      "language": "JavaScript",
+      "words": [
+        "resource",
+        "address"
+      ],
+      "kinds": [
+        "JS 变量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 556,
+          "column": 21,
+          "kind": "js_variable"
+        }
+      ]
+    },
+    {
+      "name": "resourceInput",
+      "language": "JavaScript",
+      "words": [
+        "resource",
+        "input"
+      ],
+      "kinds": [
+        "JS 参数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 555,
+          "column": 39,
+          "kind": "js_parameter"
+        }
+      ]
+    },
+    {
+      "name": "restingNook",
+      "language": "Swift",
+      "words": [
+        "resting",
+        "nook"
+      ],
+      "kinds": [
+        "局部变量/常量",
+        "属性/常量",
+        "条件/模式绑定"
+      ],
+      "declarationCount": 3,
+      "declarations": [
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 9,
+          "column": 17,
+          "kind": "property"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 16,
+          "column": 16,
+          "kind": "pattern_binding"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 26,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "routineJournal",
+      "language": "Swift",
+      "words": [
+        "routine",
+        "journal"
+      ],
+      "kinds": [
+        "方法/函数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 72,
+          "column": 18,
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "sceneComposition",
+      "language": "Swift",
+      "words": [
+        "scene",
+        "composition"
+      ],
+      "kinds": [
+        "参数",
+        "局部变量/常量",
+        "条件/模式绑定",
+        "闭包参数"
+      ],
+      "declarationCount": 6,
+      "declarations": [
+        {
+          "file": "Yalovy/AppDelegate.swift",
+          "line": 19,
+          "column": 17,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 97,
+          "column": 73,
+          "kind": "closure_parameter"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 272,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/SceneDelegate.swift",
+          "line": 7,
+          "column": 11,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 69,
+          "column": 23,
+          "kind": "pattern_binding"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 80,
+          "column": 48,
+          "kind": "closure_parameter"
+        }
+      ]
+    },
+    {
+      "name": "SceneDelegate",
+      "language": "Swift",
+      "words": [
+        "scene",
+        "delegate"
+      ],
+      "kinds": [
+        "类"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/SceneDelegate.swift",
+          "line": 3,
+          "column": 7,
+          "kind": "class"
+        }
+      ]
+    },
+    {
+      "name": "seasonalChange",
+      "language": "Swift",
+      "words": [
+        "seasonal",
+        "change"
+      ],
+      "kinds": [
+        "参数",
+        "方法/函数",
+        "闭包参数"
+      ],
+      "declarationCount": 6,
+      "declarations": [
+        {
+          "file": "Yalovy/AppDelegate.swift",
+          "line": 18,
+          "column": 36,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/AtureYearsChronology.swift",
+          "line": 8,
+          "column": 9,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 49,
+          "column": 35,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 131,
+          "column": 34,
+          "kind": "closure_parameter"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 233,
+          "column": 24,
+          "kind": "function"
+        },
+        {
+          "file": "Yalovy/HabitTransition.swift",
+          "line": 8,
+          "column": 9,
+          "kind": "parameter"
+        }
+      ]
+    },
+    {
+      "name": "seasonalChronicle",
+      "language": "Swift",
+      "words": [
+        "seasonal",
+        "chronicle"
+      ],
+      "kinds": [
+        "局部变量/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 62,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "seasonalKeepsake",
+      "language": "Swift",
+      "words": [
+        "seasonal",
+        "keepsake"
+      ],
+      "kinds": [
+        "局部变量/常量",
+        "属性/常量",
+        "方法/函数"
+      ],
+      "declarationCount": 3,
+      "declarations": [
+        {
+          "file": "Yalovy/AppDelegate.swift",
+          "line": 60,
+          "column": 16,
+          "kind": "property"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 304,
+          "column": 18,
+          "kind": "function"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 274,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "seasonalPlanner",
+      "language": "Swift",
+      "words": [
+        "seasonal",
+        "planner"
+      ],
+      "kinds": [
+        "局部变量/常量"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/AppDelegate.swift",
+          "line": 23,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 239,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "seasonalPortrait",
+      "language": "Swift",
+      "words": [
+        "seasonal",
+        "portrait"
+      ],
+      "kinds": [
+        "条件/模式绑定"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/SceneDelegate.swift",
+          "line": 13,
+          "column": 19,
+          "kind": "pattern_binding"
+        }
+      ]
+    },
+    {
+      "name": "seniorYearbook",
+      "language": "Swift",
+      "words": [
+        "senior",
+        "yearbook"
+      ],
+      "kinds": [
+        "局部变量/常量",
+        "方法/函数"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/AnnualRetrospective.swift",
+          "line": 17,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 260,
+          "column": 24,
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "sensoryAcuity",
+      "language": "Swift",
+      "words": [
+        "sensory",
+        "acuity"
+      ],
+      "kinds": [
+        "参数",
+        "局部变量/常量"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 198,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 282,
+          "column": 75,
+          "kind": "parameter"
+        }
+      ]
+    },
+    {
+      "name": "shapingSequence",
+      "language": "Swift",
+      "words": [
+        "shaping",
+        "sequence"
+      ],
+      "kinds": [
+        "局部变量/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/AnnualRetrospective.swift",
+          "line": 59,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "silhouetteFraming",
+      "language": "Swift",
+      "words": [
+        "silhouette",
+        "framing"
+      ],
+      "kinds": [
+        "局部变量/常量",
+        "属性/常量"
+      ],
+      "declarationCount": 3,
+      "declarations": [
+        {
+          "file": "Yalovy/AtureYearsChronology.swift",
+          "line": 12,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/HabitTransition.swift",
+          "line": 12,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/OntogenyCurve.swift",
+          "line": 4,
+          "column": 17,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "skeletalAssessment",
+      "language": "Swift",
+      "words": [
+        "skeletal",
+        "assessment"
+      ],
+      "kinds": [
+        "局部变量/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 240,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "SkeletalMilestone",
+      "language": "Swift",
+      "words": [
+        "skeletal",
+        "milestone"
+      ],
+      "kinds": [
+        "类"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/SkeletalMilestone.swift",
+          "line": 3,
+          "column": 13,
+          "kind": "class"
+        }
+      ]
+    },
+    {
+      "name": "skeletalMilestone",
+      "language": "Swift",
+      "words": [
+        "skeletal",
+        "milestone"
+      ],
+      "kinds": [
+        "局部变量/常量",
+        "属性/常量"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 581,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 10,
+          "column": 17,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "skeletalSymmetry",
+      "language": "Swift",
+      "words": [
+        "skeletal",
+        "symmetry"
+      ],
+      "kinds": [
+        "局部变量/常量",
+        "闭包参数"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/FirstWalkChronicle.swift",
+          "line": 65,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 242,
+          "column": 64,
+          "kind": "closure_parameter"
+        }
+      ]
+    },
+    {
+      "name": "skillTempo",
+      "language": "Swift",
+      "words": [
+        "skill",
+        "tempo"
+      ],
+      "kinds": [
+        "局部变量/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/AnnualRetrospective.swift",
+          "line": 27,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "sodiumUptake",
+      "language": "Swift",
+      "words": [
+        "sodium",
+        "uptake"
+      ],
+      "kinds": [
+        "局部变量/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 216,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "speciesRecognition",
+      "language": "Swift",
+      "words": [
+        "species",
+        "recognition"
+      ],
+      "kinds": [
+        "枚举成员"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 484,
+          "column": 14,
+          "kind": "enum_case"
+        }
+      ]
+    },
+    {
+      "name": "springRoutine",
+      "language": "Swift",
+      "words": [
+        "spring",
+        "routine"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/NailPetTouchTolerance.swift",
+          "line": 7,
+          "column": 16,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "startedAt",
+      "language": "JavaScript",
+      "words": [
+        "started",
+        "at"
+      ],
+      "kinds": [
+        "JS 变量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 610,
+          "column": 17,
+          "kind": "js_variable"
+        }
+      ]
+    },
+    {
+      "name": "statureTrajectory",
+      "language": "Swift",
+      "words": [
+        "stature",
+        "trajectory"
+      ],
+      "kinds": [
+        "局部变量/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 54,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "status",
+      "language": "Swift",
+      "words": [
+        "status"
+      ],
+      "kinds": [
+        "闭包参数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 268,
+          "column": 72,
+          "kind": "closure_parameter"
+        }
+      ]
+    },
+    {
+      "name": "sunshineOuting",
+      "language": "Swift",
+      "words": [
+        "sunshine",
+        "outing"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/NailPetTouchTolerance.swift",
+          "line": 11,
+          "column": 16,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "T",
+      "language": "Swift",
+      "words": [
+        "t"
+      ],
+      "kinds": [
+        "泛型参数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 403,
+          "column": 42,
+          "kind": "generic_parameter"
+        }
+      ]
+    },
+    {
+      "name": "targetingPrecision",
+      "language": "Swift",
+      "words": [
+        "targeting",
+        "precision"
+      ],
+      "kinds": [
+        "方法/函数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 252,
+          "column": 24,
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "therapyPlan",
+      "language": "Swift",
+      "words": [
+        "therapy",
+        "plan"
+      ],
+      "kinds": [
+        "参数",
+        "方法/函数"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 377,
+          "column": 18,
+          "kind": "function"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 435,
+          "column": 46,
+          "kind": "parameter"
+        }
+      ]
+    },
+    {
+      "name": "thoracicExpansion",
+      "language": "Swift",
+      "words": [
+        "thoracic",
+        "expansion"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 12,
+          "column": 17,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "trailExploration",
+      "language": "Swift",
+      "words": [
+        "trail",
+        "exploration"
+      ],
+      "kinds": [
+        "方法/函数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 224,
+          "column": 24,
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "twilightCalm",
+      "language": "Swift",
+      "words": [
+        "twilight",
+        "calm"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/NailPetTouchTolerance.swift",
+          "line": 13,
+          "column": 16,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "undercoatCondition",
+      "language": "Swift",
+      "words": [
+        "undercoat",
+        "condition"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/NailPetTouchTolerance.swift",
+          "line": 6,
+          "column": 16,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "vernalWellness",
+      "language": "Swift",
+      "words": [
+        "vernal",
+        "wellness"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/NailPetTouchTolerance.swift",
+          "line": 8,
+          "column": 16,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "vertebrateOsteology",
+      "language": "Swift",
+      "words": [
+        "vertebrate",
+        "osteology"
+      ],
+      "kinds": [
+        "参数",
+        "属性/常量"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 20,
+          "column": 17,
+          "kind": "property"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 282,
+          "column": 36,
+          "kind": "parameter"
+        }
+      ]
+    },
+    {
+      "name": "veterinaryExamination",
+      "language": "Swift",
+      "words": [
+        "veterinary",
+        "examination"
+      ],
+      "kinds": [
+        "局部变量/常量",
+        "方法/函数"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 218,
+          "column": 25,
+          "kind": "function"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 225,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "vetVisitPreparation",
+      "language": "Swift",
+      "words": [
+        "vet",
+        "visit",
+        "preparation"
+      ],
+      "kinds": [
+        "参数"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/NailPetTouchTolerance.swift",
+          "line": 20,
+          "column": 56,
+          "kind": "parameter"
+        }
+      ]
+    },
+    {
+      "name": "weaningAlmanac",
+      "language": "Swift",
+      "words": [
+        "weaning",
+        "almanac"
+      ],
+      "kinds": [
+        "局部变量/常量",
+        "属性/常量"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/FirstWalkChronicle.swift",
+          "line": 9,
+          "column": 17,
+          "kind": "property"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 89,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "wellnessAlmanac",
+      "language": "Swift",
+      "words": [
+        "wellness",
+        "almanac"
+      ],
+      "kinds": [
+        "属性/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 460,
+          "column": 24,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "WellnessAssessment",
+      "language": "Swift",
+      "words": [
+        "wellness",
+        "assessment"
+      ],
+      "kinds": [
+        "枚举"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 482,
+          "column": 18,
+          "kind": "enum"
+        }
+      ]
+    },
+    {
+      "name": "wellnessAssessment",
+      "language": "Swift",
+      "words": [
+        "wellness",
+        "assessment"
+      ],
+      "kinds": [
+        "参数",
+        "局部变量/常量",
+        "属性/常量",
+        "方法/函数",
+        "条件/模式绑定"
+      ],
+      "declarationCount": 9,
+      "declarations": [
+        {
+          "file": "Yalovy/BodyMassCurve.swift",
+          "line": 20,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 126,
+          "column": 17,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 238,
+          "column": 25,
+          "kind": "function"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 367,
+          "column": 21,
+          "kind": "pattern_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 380,
+          "column": 9,
+          "kind": "parameter"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 435,
+          "column": 25,
+          "kind": "function"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 547,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 586,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 28,
+          "column": 17,
+          "kind": "property"
+        }
+      ]
+    },
+    {
+      "name": "wellnessJournal",
+      "language": "Swift",
+      "words": [
+        "wellness",
+        "journal"
+      ],
+      "kinds": [
+        "局部变量/常量",
+        "属性/常量",
+        "循环变量",
+        "方法/函数",
+        "条件/模式绑定"
+      ],
+      "declarationCount": 7,
+      "declarations": [
+        {
+          "file": "Yalovy/BodyMassCurve.swift",
+          "line": 29,
+          "column": 13,
+          "kind": "loop_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 193,
+          "column": 13,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 209,
+          "column": 19,
+          "kind": "pattern_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 244,
+          "column": 17,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 267,
+          "column": 17,
+          "kind": "local_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 580,
+          "column": 24,
+          "kind": "property"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 256,
+          "column": 24,
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "wellnessPlanner",
+      "language": "Swift",
+      "words": [
+        "wellness",
+        "planner"
+      ],
+      "kinds": [
+        "局部变量/常量",
+        "方法/函数"
+      ],
+      "declarationCount": 2,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 206,
+          "column": 18,
+          "kind": "function"
+        },
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 37,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "whiskerCondition",
+      "language": "Swift",
+      "words": [
+        "whisker",
+        "condition"
+      ],
+      "kinds": [
+        "局部变量/常量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 422,
+          "column": 13,
+          "kind": "local_binding"
+        }
+      ]
+    },
+    {
+      "name": "yalovyKeepsakeCatalog",
+      "language": "JavaScript",
+      "words": [
+        "yalovy",
+        "keepsake",
+        "catalog"
+      ],
+      "kinds": [
+        "JS 变量"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 552,
+          "column": 19,
+          "kind": "js_variable"
+        }
+      ]
+    },
+    {
+      "name": "YearlyGrowthMosaic",
+      "language": "Swift",
+      "words": [
+        "yearly",
+        "growth",
+        "mosaic"
+      ],
+      "kinds": [
+        "类"
+      ],
+      "declarationCount": 1,
+      "declarations": [
+        {
+          "file": "Yalovy/YearlyGrowthMosaic.swift",
+          "line": 6,
+          "column": 13,
+          "kind": "class"
+        }
+      ]
+    },
+    {
+      "name": "yearlyGrowthMosaic",
+      "language": "Swift",
+      "words": [
+        "yearly",
+        "growth",
+        "mosaic"
+      ],
+      "kinds": [
+        "条件/模式绑定"
+      ],
+      "declarationCount": 5,
+      "declarations": [
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 330,
+          "column": 31,
+          "kind": "pattern_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 461,
+          "column": 19,
+          "kind": "pattern_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 508,
+          "column": 19,
+          "kind": "pattern_binding"
+        },
+        {
+          "file": "Yalovy/GrowthJournalPigMastication.swift",
+          "line": 525,
+          "column": 19,
+          "kind": "pattern_binding"
+        },
+        {
+          "file": "Yalovy/GrowthYearbook.swift",
+          "line": 186,
+          "column": 19,
+          "kind": "pattern_binding"
+        }
+      ]
+    }
+  ],
+  "sourceFiles": [
+    {
+      "file": "Yalovy/AnnualRetrospective.swift",
+      "lines": 71,
+      "sha256": "793e9b6719aa0ff95b6fe3312c06b3db11b13ee5fa992c2aaed342a73a5d12d3",
+      "uniqueCustomNames": 10
+    },
+    {
+      "file": "Yalovy/AppDelegate.swift",
+      "lines": 61,
+      "sha256": "0286dfff93c4d78ad83a336c0dc57379719e94bbf01688a5d8f6aca53bf91f3f",
+      "uniqueCustomNames": 12
+    },
+    {
+      "file": "Yalovy/AtureYearsChronology.swift",
+      "lines": 40,
+      "sha256": "adf9aab3bee8f0ab4f5af458887a9127fd299f5a171e02cd11ee27d0df5f4f0f",
+      "uniqueCustomNames": 10
+    },
+    {
+      "file": "Yalovy/BodyMassCurve.swift",
+      "lines": 50,
+      "sha256": "62025b012f7fd94015de342a63ca502b574beef637351b1ad0a67c1eae826957",
+      "uniqueCustomNames": 5
+    },
+    {
+      "file": "Yalovy/FirstWalkChronicle.swift",
+      "lines": 83,
+      "sha256": "3ab1119e097f04a6ab7276f7f02834ea58bd65e2154a6a3bf25305196c4fb26f",
+      "uniqueCustomNames": 14
+    },
+    {
+      "file": "Yalovy/GrowthJournalPigMastication.swift",
+      "lines": 656,
+      "sha256": "64a4db81352ba895516be1f40060859c6dbbd2f552ba3c8cc5c3e045b9e6262b",
+      "uniqueCustomNames": 61
+    },
+    {
+      "file": "Yalovy/GrowthYearbook.swift",
+      "lines": 286,
+      "sha256": "d0f37d12e37d65e48b070bd23e54f157c5997d393924f2fda37484c42d62f3af",
+      "uniqueCustomNames": 65
+    },
+    {
+      "file": "Yalovy/HabitTransition.swift",
+      "lines": 40,
+      "sha256": "adf9aab3bee8f0ab4f5af458887a9127fd299f5a171e02cd11ee27d0df5f4f0f",
+      "uniqueCustomNames": 10
+    },
+    {
+      "file": "Yalovy/NailPetTouchTolerance.swift",
+      "lines": 27,
+      "sha256": "8efba5d93701fb46450c03338bb778c001c8b45aa846000f7d89a2b5b16ccfde",
+      "uniqueCustomNames": 17
+    },
+    {
+      "file": "Yalovy/OntogenyCurve.swift",
+      "lines": 58,
+      "sha256": "8f1100bf720d366c9ce86ed7565ac7fe48d0632cf8ba2ef76779fc4d4d51cace",
+      "uniqueCustomNames": 6
+    },
+    {
+      "file": "Yalovy/SceneDelegate.swift",
+      "lines": 21,
+      "sha256": "d0acd5c10fbfeab811086b47d4541a3583feff105dd96656528abf4c04d58610",
+      "uniqueCustomNames": 6
+    },
+    {
+      "file": "Yalovy/SkeletalMilestone.swift",
+      "lines": 51,
+      "sha256": "a4f9286fcf6a919516e7ca5a2e72d5e9ebe00795c111806f9ea337dfca050a4e",
+      "uniqueCustomNames": 8
+    },
+    {
+      "file": "Yalovy/YearlyGrowthMosaic.swift",
+      "lines": 105,
+      "sha256": "897cef9fc86fde0c9c81504f50d8ce8491aa4610dbb54d881909ee9fb644146d",
+      "uniqueCustomNames": 29
+    }
+  ],
+  "fileNameOnly": [
+    "HabitTransition",
+    "NailPetTouchTolerance"
+  ],
+  "frameworkDeclarations": [
+    {
+      "column": 19,
+      "file": "Yalovy/AnnualRetrospective.swift",
+      "kind": "parameter",
+      "line": 7,
+      "name": "frame",
+      "offset": 241,
+      "section": "framework"
+    },
+    {
+      "column": 20,
+      "file": "Yalovy/AnnualRetrospective.swift",
+      "kind": "parameter",
+      "line": 55,
+      "name": "coder",
+      "offset": 2600,
+      "section": "framework"
+    },
+    {
+      "column": 19,
+      "file": "Yalovy/AnnualRetrospective.swift",
+      "kind": "function",
+      "line": 57,
+      "name": "layoutSubviews",
+      "offset": 2643,
+      "section": "framework"
+    },
+    {
+      "column": 10,
+      "file": "Yalovy/AppDelegate.swift",
+      "kind": "function",
+      "line": 6,
+      "name": "application",
+      "offset": 101,
+      "section": "framework"
+    },
+    {
+      "column": 9,
+      "file": "Yalovy/AppDelegate.swift",
+      "kind": "argument_label",
+      "line": 8,
+      "name": "didFinishLaunchingWithOptions",
+      "offset": 165,
+      "section": "framework"
+    },
+    {
+      "column": 10,
+      "file": "Yalovy/AppDelegate.swift",
+      "kind": "function",
+      "line": 16,
+      "name": "application",
+      "offset": 426,
+      "section": "framework"
+    },
+    {
+      "column": 9,
+      "file": "Yalovy/AppDelegate.swift",
+      "kind": "argument_label",
+      "line": 18,
+      "name": "configurationForConnecting",
+      "offset": 490,
+      "section": "framework"
+    },
+    {
+      "column": 9,
+      "file": "Yalovy/AppDelegate.swift",
+      "kind": "argument_label",
+      "line": 19,
+      "name": "options",
+      "offset": 557,
+      "section": "framework"
+    },
+    {
+      "column": 20,
+      "file": "Yalovy/AtureYearsChronology.swift",
+      "kind": "parameter",
+      "line": 39,
+      "name": "coder",
+      "offset": 1755,
+      "section": "framework"
+    },
+    {
+      "column": 19,
+      "file": "Yalovy/BodyMassCurve.swift",
+      "kind": "parameter",
+      "line": 4,
+      "name": "frame",
+      "offset": 71,
+      "section": "framework"
+    },
+    {
+      "column": 20,
+      "file": "Yalovy/BodyMassCurve.swift",
+      "kind": "parameter",
+      "line": 41,
+      "name": "coder",
+      "offset": 1880,
+      "section": "framework"
+    },
+    {
+      "column": 19,
+      "file": "Yalovy/BodyMassCurve.swift",
+      "kind": "function",
+      "line": 43,
+      "name": "layoutSubviews",
+      "offset": 1923,
+      "section": "framework"
+    },
+    {
+      "column": 20,
+      "file": "Yalovy/FirstWalkChronicle.swift",
+      "kind": "parameter",
+      "line": 60,
+      "name": "coder",
+      "offset": 2742,
+      "section": "framework"
+    },
+    {
+      "column": 19,
+      "file": "Yalovy/FirstWalkChronicle.swift",
+      "kind": "function",
+      "line": 62,
+      "name": "layoutSubviews",
+      "offset": 2785,
+      "section": "framework"
+    },
+    {
+      "column": 18,
+      "file": "Yalovy/FirstWalkChronicle.swift",
+      "kind": "property",
+      "line": 76,
+      "name": "isHighlighted",
+      "offset": 3769,
+      "section": "framework"
+    },
+    {
+      "column": 19,
+      "file": "Yalovy/GrowthJournalPigMastication.swift",
+      "kind": "function",
+      "line": 36,
+      "name": "viewDidLoad",
+      "offset": 1446,
+      "section": "framework"
+    },
+    {
+      "column": 19,
+      "file": "Yalovy/GrowthJournalPigMastication.swift",
+      "kind": "function",
+      "line": 49,
+      "name": "viewDidAppear",
+      "offset": 1843,
+      "section": "framework"
+    },
+    {
+      "column": 10,
+      "file": "Yalovy/GrowthJournalPigMastication.swift",
+      "kind": "function",
+      "line": 115,
+      "name": "userContentController",
+      "offset": 4327,
+      "section": "framework"
+    },
+    {
+      "column": 9,
+      "file": "Yalovy/GrowthJournalPigMastication.swift",
+      "kind": "argument_label",
+      "line": 117,
+      "name": "didReceive",
+      "offset": 4408,
+      "section": "framework"
+    },
+    {
+      "column": 10,
+      "file": "Yalovy/GrowthJournalPigMastication.swift",
+      "kind": "function",
+      "line": 650,
+      "name": "userContentController",
+      "offset": 26658,
+      "section": "framework"
+    },
+    {
+      "column": 9,
+      "file": "Yalovy/GrowthJournalPigMastication.swift",
+      "kind": "argument_label",
+      "line": 652,
+      "name": "didReceive",
+      "offset": 26739,
+      "section": "framework"
+    },
+    {
+      "column": 19,
+      "file": "Yalovy/GrowthYearbook.swift",
+      "kind": "function",
+      "line": 33,
+      "name": "viewDidLoad",
+      "offset": 1759,
+      "section": "framework"
+    },
+    {
+      "column": 19,
+      "file": "Yalovy/GrowthYearbook.swift",
+      "kind": "function",
+      "line": 47,
+      "name": "viewDidAppear",
+      "offset": 2297,
+      "section": "framework"
+    },
+    {
+      "column": 35,
+      "file": "Yalovy/GrowthYearbook.swift",
+      "kind": "parameter",
+      "line": 47,
+      "name": "animated",
+      "offset": 2313,
+      "section": "framework"
+    },
+    {
+      "column": 19,
+      "file": "Yalovy/GrowthYearbook.swift",
+      "kind": "function",
+      "line": 52,
+      "name": "viewDidLayoutSubviews",
+      "offset": 2438,
+      "section": "framework"
+    },
+    {
+      "column": 20,
+      "file": "Yalovy/HabitTransition.swift",
+      "kind": "parameter",
+      "line": 39,
+      "name": "coder",
+      "offset": 1755,
+      "section": "framework"
+    },
+    {
+      "column": 19,
+      "file": "Yalovy/OntogenyCurve.swift",
+      "kind": "parameter",
+      "line": 8,
+      "name": "frame",
+      "offset": 249,
+      "section": "framework"
+    },
+    {
+      "column": 20,
+      "file": "Yalovy/OntogenyCurve.swift",
+      "kind": "parameter",
+      "line": 22,
+      "name": "coder",
+      "offset": 713,
+      "section": "framework"
+    },
+    {
+      "column": 19,
+      "file": "Yalovy/OntogenyCurve.swift",
+      "kind": "function",
+      "line": 24,
+      "name": "layoutSubviews",
+      "offset": 756,
+      "section": "framework"
+    },
+    {
+      "column": 9,
+      "file": "Yalovy/SceneDelegate.swift",
+      "kind": "property",
+      "line": 4,
+      "name": "window",
+      "offset": 80,
+      "section": "framework"
+    },
+    {
+      "column": 10,
+      "file": "Yalovy/SceneDelegate.swift",
+      "kind": "function",
+      "line": 6,
+      "name": "scene",
+      "offset": 108,
+      "section": "framework"
+    },
+    {
+      "column": 9,
+      "file": "Yalovy/SceneDelegate.swift",
+      "kind": "argument_label",
+      "line": 8,
+      "name": "willConnectTo",
+      "offset": 160,
+      "section": "framework"
+    },
+    {
+      "column": 9,
+      "file": "Yalovy/SceneDelegate.swift",
+      "kind": "argument_label",
+      "line": 9,
+      "name": "options",
+      "offset": 215,
+      "section": "framework"
+    },
+    {
+      "column": 20,
+      "file": "Yalovy/SkeletalMilestone.swift",
+      "kind": "parameter",
+      "line": 45,
+      "name": "coder",
+      "offset": 2312,
+      "section": "framework"
+    }
+  ]
+}

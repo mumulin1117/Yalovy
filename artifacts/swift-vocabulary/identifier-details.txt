@@ -1,0 +1,953 @@
+Yalovy Swift 自定义命名提取
+提取日期：2026-11-06
+扫描：13 个 Swift 文件，1549 行。
+结果：161 个 Swift 命名 + 14 个内嵌 JavaScript 命名 = 175 个完整命名。
+驼峰拆分后：227 个去重单词，其中 Swift 独立词表 206 个。
+
+提取范围
+SwiftParser/SwiftSyntax 语法提取项目自声明标识符；保留泛型 T、模板类名与原始拼写；系统回调及约定参数单列。内嵌 JavaScript 的函数、变量、参数按声明提取并逐项核对。字符串文案、资源路径、字符串键、编码字符串、注释、SDK 引用及隐式 $0/$1 不作为自定义标识符。
+完整命名按大小写敏感去重；方法重载、同名属性和局部变量合并；单词按驼峰/大写缩略词/数字拆分后转小写去重，保留单字母泛型 t。不包含文件名专用名称。
+已解析目录内所有 .swift 文件，包括没有参与当前编译目标的文件；未修改任何 Swift 源码。
+NailPetTouchTolerance.swift 和 HabitTransition.swift 是仅文件名存在的名称，附录列出，不计入代码标识符总数。
+例如 cranialConformationchment、AtureYearsChronology 原样保留，不自动修正拼写。
+
+完整命名及声明位置（位置为 1 起始行号和列号）
+
+anniversaryMemoir | Swift | 属性/常量 | 声明 1 次
+  拆词：anniversary / memoir
+  Yalovy/FirstWalkChronicle.swift:10:17 [属性/常量]
+
+announceReadinessIssue | JavaScript | JS 函数 | 声明 1 次
+  拆词：announce / readiness / issue
+  Yalovy/GrowthJournalPigMastication.swift:593:20 [JS 函数]
+
+annualKeepsake | Swift | 参数, 属性/常量, 条件/模式绑定 | 声明 7 次
+  拆词：annual / keepsake
+  Yalovy/AppDelegate.swift:33:16 [属性/常量]
+  Yalovy/GrowthJournalPigMastication.swift:117:20 [参数]
+  Yalovy/GrowthJournalPigMastication.swift:320:23 [条件/模式绑定]
+  Yalovy/GrowthJournalPigMastication.swift:472:13 [条件/模式绑定]
+  Yalovy/GrowthJournalPigMastication.swift:652:20 [参数]
+  Yalovy/GrowthYearbook.swift:13:17 [属性/常量]
+  Yalovy/YearlyGrowthMosaic.swift:7:16 [属性/常量]
+
+annualPlanner | Swift | 局部变量/常量 | 声明 2 次
+  拆词：annual / planner
+  Yalovy/GrowthJournalPigMastication.swift:15:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:73:13 [局部变量/常量]
+
+AnnualRetrospective | Swift | 类 | 声明 1 次
+  拆词：annual / retrospective
+  Yalovy/AnnualRetrospective.swift:3:13 [类]
+
+annualRetrospective | Swift | 参数, 属性/常量, 循环变量, 方法/函数 | 声明 5 次
+  拆词：annual / retrospective
+  Yalovy/AppDelegate.swift:8:39 [参数]
+  Yalovy/AppDelegate.swift:43:23 [循环变量]
+  Yalovy/GrowthJournalPigMastication.swift:391:18 [方法/函数]
+  Yalovy/GrowthJournalPigMastication.swift:403:47 [参数]
+  Yalovy/GrowthYearbook.swift:29:17 [属性/常量]
+
+AppDelegate | Swift | 类 | 声明 1 次
+  拆词：app / delegate
+  Yalovy/AppDelegate.swift:5:7 [类]
+
+aquariumClarity | Swift | 属性/常量 | 声明 1 次
+  拆词：aquarium / clarity
+  Yalovy/NailPetTouchTolerance.swift:9:16 [属性/常量]
+
+assimilationRate | Swift | 方法/函数 | 声明 1 次
+  拆词：assimilation / rate
+  Yalovy/SkeletalMilestone.swift:47:10 [方法/函数]
+
+attentionSpan | Swift | 局部变量/常量 | 声明 1 次
+  拆词：attention / span
+  Yalovy/AnnualRetrospective.swift:22:13 [局部变量/常量]
+
+AtureYearsChronology | Swift | 类 | 声明 2 次
+  拆词：ature / years / chronology
+  Yalovy/AtureYearsChronology.swift:3:13 [类]
+  Yalovy/HabitTransition.swift:3:13 [类]
+
+auralCleanliness | Swift | 局部变量/常量 | 声明 1 次
+  拆词：aural / cleanliness
+  Yalovy/GrowthYearbook.swift:86:13 [局部变量/常量]
+
+birthChronology | Swift | 参数, 属性/常量 | 声明 2 次
+  拆词：birth / chronology
+  Yalovy/FirstWalkChronicle.swift:6:17 [属性/常量]
+  Yalovy/FirstWalkChronicle.swift:13:9 [参数]
+
+birthdayKeepsake | Swift | 局部变量/常量, 方法/函数 | 声明 2 次
+  拆词：birthday / keepsake
+  Yalovy/AnnualRetrospective.swift:33:13 [局部变量/常量]
+  Yalovy/GrowthYearbook.swift:271:24 [方法/函数]
+
+blanketWarmth | Swift | 属性/常量 | 声明 1 次
+  拆词：blanket / warmth
+  Yalovy/NailPetTouchTolerance.swift:16:16 [属性/常量]
+
+bodyLengthEvolution | Swift | 方法/函数 | 声明 1 次
+  拆词：body / length / evolution
+  Yalovy/OntogenyCurve.swift:49:10 [方法/函数]
+
+BodyMassCurve | Swift | 类 | 声明 1 次
+  拆词：body / mass / curve
+  Yalovy/BodyMassCurve.swift:3:13 [类]
+
+browserEvent | JavaScript | JS 参数 | 声明 2 次
+  拆词：browser / event
+  Yalovy/GrowthJournalPigMastication.swift:602:53 [JS 参数]
+  Yalovy/GrowthJournalPigMastication.swift:605:66 [JS 参数]
+
+bundledFetch | JavaScript | JS 变量 | 声明 1 次
+  拆词：bundled / fetch
+  Yalovy/GrowthJournalPigMastication.swift:553:19 [JS 变量]
+
+carnivoreMyology | Swift | 方法/函数 | 声明 1 次
+  拆词：carnivore / myology
+  Yalovy/GrowthJournalPigMastication.swift:497:18 [方法/函数]
+
+caudalFlexibility | Swift | 局部变量/常量, 属性/常量 | 声明 3 次
+  拆词：caudal / flexibility
+  Yalovy/GrowthYearbook.swift:8:17 [属性/常量]
+  Yalovy/GrowthYearbook.swift:84:13 [局部变量/常量]
+  Yalovy/SkeletalMilestone.swift:30:13 [局部变量/常量]
+
+cervicalMobility | Swift | 属性/常量 | 声明 1 次
+  拆词：cervical / mobility
+  Yalovy/GrowthYearbook.swift:9:17 [属性/常量]
+
+circumferenceGauge | Swift | 参数, 局部变量/常量, 属性/常量, 条件/模式绑定 | 声明 7 次
+  拆词：circumference / gauge
+  Yalovy/AtureYearsChronology.swift:23:13 [局部变量/常量]
+  Yalovy/GrowthYearbook.swift:61:13 [局部变量/常量]
+  Yalovy/HabitTransition.swift:23:13 [局部变量/常量]
+  Yalovy/SkeletalMilestone.swift:5:17 [属性/常量]
+  Yalovy/SkeletalMilestone.swift:9:33 [参数]
+  Yalovy/SkeletalMilestone.swift:47:50 [参数]
+  Yalovy/YearlyGrowthMosaic.swift:59:19 [条件/模式绑定]
+
+coatCondition | Swift | 局部变量/常量 | 声明 2 次
+  拆词：coat / condition
+  Yalovy/GrowthJournalPigMastication.swift:423:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:585:13 [局部变量/常量]
+
+coatGrain | Swift | 局部变量/常量 | 声明 2 次
+  拆词：coat / grain
+  Yalovy/GrowthJournalPigMastication.swift:88:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:583:13 [局部变量/常量]
+
+coatLuster | Swift | 参数 | 声明 1 次
+  拆词：coat / luster
+  Yalovy/GrowthYearbook.swift:264:27 [参数]
+
+coatPigmentation | Swift | 属性/常量 | 声明 1 次
+  拆词：coat / pigmentation
+  Yalovy/NailPetTouchTolerance.swift:5:16 [属性/常量]
+
+coatPortrait | Swift | 闭包参数 | 声明 1 次
+  拆词：coat / portrait
+  Yalovy/GrowthYearbook.swift:187:75 [闭包参数]
+
+coatSheen | Swift | 参数, 局部变量/常量 | 声明 4 次
+  拆词：coat / sheen
+  Yalovy/AtureYearsChronology.swift:5:9 [参数]
+  Yalovy/GrowthJournalPigMastication.swift:414:13 [局部变量/常量]
+  Yalovy/GrowthYearbook.swift:197:32 [参数]
+  Yalovy/HabitTransition.swift:5:9 [参数]
+
+coatSoftness | Swift | 方法/函数 | 声明 1 次
+  拆词：coat / softness
+  Yalovy/NailPetTouchTolerance.swift:20:17 [方法/函数]
+
+cockatielCognition | Swift | 方法/函数 | 声明 1 次
+  拆词：cockatiel / cognition
+  Yalovy/GrowthYearbook.swift:176:18 [方法/函数]
+
+colorSaturation | Swift | 参数, 局部变量/常量, 属性/常量 | 声明 7 次
+  拆词：color / saturation
+  Yalovy/AtureYearsChronology.swift:9:9 [参数]
+  Yalovy/FirstWalkChronicle.swift:17:9 [参数]
+  Yalovy/HabitTransition.swift:9:9 [参数]
+  Yalovy/OntogenyCurve.swift:5:17 [属性/常量]
+  Yalovy/SkeletalMilestone.swift:7:17 [属性/常量]
+  Yalovy/SkeletalMilestone.swift:9:61 [参数]
+  Yalovy/YearlyGrowthMosaic.swift:67:13 [局部变量/常量]
+
+CompanionAttachment | Swift | 类 | 声明 1 次
+  拆词：companion / attachment
+  Yalovy/GrowthJournalPigMastication.swift:642:21 [类]
+
+companionAttachment | Swift | 参数, 局部变量/常量, 方法/函数 | 声明 5 次
+  拆词：companion / attachment
+  Yalovy/GrowthJournalPigMastication.swift:60:18 [方法/函数]
+  Yalovy/GrowthJournalPigMastication.swift:165:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:308:9 [参数]
+  Yalovy/GrowthJournalPigMastication.swift:645:10 [参数]
+  Yalovy/SceneDelegate.swift:9:17 [参数]
+
+companionBiomechanics | Swift | 属性/常量 | 声明 1 次
+  拆词：companion / biomechanics
+  Yalovy/GrowthJournalPigMastication.swift:14:22 [属性/常量]
+
+continuation | Swift | 闭包参数 | 声明 2 次
+  拆词：continuation
+  Yalovy/GrowthJournalPigMastication.swift:244:67 [闭包参数]
+  Yalovy/GrowthJournalPigMastication.swift:267:67 [闭包参数]
+
+cooperationRoutine | Swift | 属性/常量 | 声明 1 次
+  拆词：cooperation / routine
+  Yalovy/YearlyGrowthMosaic.swift:8:17 [属性/常量]
+
+cranialClearance | Swift | 局部变量/常量 | 声明 1 次
+  拆词：cranial / clearance
+  Yalovy/GrowthYearbook.swift:55:13 [局部变量/常量]
+
+cranialConformation | Swift | 局部变量/常量 | 声明 2 次
+  拆词：cranial / conformation
+  Yalovy/GrowthYearbook.swift:62:13 [局部变量/常量]
+  Yalovy/SkeletalMilestone.swift:13:13 [局部变量/常量]
+
+cranialConformationchment | Swift | 属性/常量 | 声明 1 次
+  拆词：cranial / conformationchment
+  Yalovy/GrowthYearbook.swift:7:17 [属性/常量]
+
+dawnWalk | Swift | 方法/函数 | 声明 1 次
+  拆词：dawn / walk
+  Yalovy/GrowthYearbook.swift:248:24 [方法/函数]
+
+depthClarity | Swift | 局部变量/常量 | 声明 1 次
+  拆词：depth / clarity
+  Yalovy/FirstWalkChronicle.swift:70:13 [局部变量/常量]
+
+dermalObservation | Swift | 局部变量/常量 | 声明 2 次
+  拆词：dermal / observation
+  Yalovy/GrowthJournalPigMastication.swift:440:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:584:13 [局部变量/常量]
+
+domesticAnimalWelfare | Swift | 属性/常量, 方法/函数 | 声明 2 次
+  拆词：domestic / animal / welfare
+  Yalovy/GrowthJournalPigMastication.swift:10:24 [属性/常量]
+  Yalovy/GrowthJournalPigMastication.swift:191:18 [方法/函数]
+
+fallback | JavaScript | JS 变量 | 声明 1 次
+  拆词：fallback
+  Yalovy/GrowthJournalPigMastication.swift:613:21 [JS 变量]
+
+fetchTraits | JavaScript | JS 参数 | 声明 1 次
+  拆词：fetch / traits
+  Yalovy/GrowthJournalPigMastication.swift:555:54 [JS 参数]
+
+firstTrickKeepsake | Swift | 属性/常量 | 声明 1 次
+  拆词：first / trick / keepsake
+  Yalovy/GrowthYearbook.swift:21:17 [属性/常量]
+
+FirstWalkChronicle | Swift | 类 | 声明 1 次
+  拆词：first / walk / chronicle
+  Yalovy/FirstWalkChronicle.swift:3:13 [类]
+
+firstWalkChronicle | Swift | 属性/常量 | 声明 1 次
+  拆词：first / walk / chronicle
+  Yalovy/GrowthYearbook.swift:14:17 [属性/常量]
+
+fitnessBaseline | Swift | 局部变量/常量 | 声明 1 次
+  拆词：fitness / baseline
+  Yalovy/NailPetTouchTolerance.swift:21:13 [局部变量/常量]
+
+foregroundClarity | Swift | 闭包参数 | 声明 2 次
+  拆词：foreground / clarity
+  Yalovy/GrowthYearbook.swift:161:103 [闭包参数]
+  Yalovy/GrowthYearbook.swift:166:106 [闭包参数]
+
+gardenForaging | Swift | 属性/常量 | 声明 1 次
+  拆词：garden / foraging
+  Yalovy/NailPetTouchTolerance.swift:12:16 [属性/常量]
+
+geckoEcdysis | Swift | 局部变量/常量 | 声明 1 次
+  拆词：gecko / ecdysis
+  Yalovy/SceneDelegate.swift:15:13 [局部变量/常量]
+
+granted | Swift | 闭包参数 | 声明 1 次
+  拆词：granted
+  Yalovy/GrowthJournalPigMastication.swift:245:66 [闭包参数]
+
+GrowthAlmanac | Swift | 枚举 | 声明 1 次
+  拆词：growth / almanac
+  Yalovy/YearlyGrowthMosaic.swift:45:6 [枚举]
+
+growthAlmanac | Swift | 参数, 局部变量/常量, 条件/模式绑定 | 声明 11 次
+  拆词：growth / almanac
+  Yalovy/GrowthJournalPigMastication.swift:61:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:116:11 [参数]
+  Yalovy/GrowthJournalPigMastication.swift:148:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:195:17 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:208:19 [条件/模式绑定]
+  Yalovy/GrowthJournalPigMastication.swift:219:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:239:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:260:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:391:40 [参数]
+  Yalovy/GrowthJournalPigMastication.swift:471:13 [条件/模式绑定]
+  Yalovy/GrowthJournalPigMastication.swift:651:11 [参数]
+
+growthChronicle | Swift | 参数, 局部变量/常量, 属性/常量 | 声明 4 次
+  拆词：growth / chronicle
+  Yalovy/GrowthJournalPigMastication.swift:9:24 [属性/常量]
+  Yalovy/GrowthJournalPigMastication.swift:331:21 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:582:13 [局部变量/常量]
+  Yalovy/SceneDelegate.swift:8:23 [参数]
+
+growthJournal | Swift | 局部变量/常量, 属性/常量 | 声明 3 次
+  拆词：growth / journal
+  Yalovy/GrowthYearbook.swift:5:17 [属性/常量]
+  Yalovy/YearlyGrowthMosaic.swift:32:17 [局部变量/常量]
+  Yalovy/YearlyGrowthMosaic.swift:36:13 [局部变量/常量]
+
+GrowthJournalPigMastication | Swift | 类 | 声明 1 次
+  拆词：growth / journal / pig / mastication
+  Yalovy/GrowthJournalPigMastication.swift:7:13 [类]
+
+growthMemoir | Swift | 参数 | 声明 1 次
+  拆词：growth / memoir
+  Yalovy/GrowthJournalPigMastication.swift:418:35 [参数]
+
+growthPortrait | Swift | 参数, 局部变量/常量, 条件/模式绑定 | 声明 6 次
+  拆词：growth / portrait
+  Yalovy/GrowthJournalPigMastication.swift:21:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:149:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:172:19 [条件/模式绑定]
+  Yalovy/GrowthJournalPigMastication.swift:305:9 [参数]
+  Yalovy/GrowthJournalPigMastication.swift:478:13 [局部变量/常量]
+  Yalovy/YearlyGrowthMosaic.swift:64:19 [条件/模式绑定]
+
+growthTrajectory | Swift | 参数, 局部变量/常量, 属性/常量 | 声明 9 次
+  拆词：growth / trajectory
+  Yalovy/AppDelegate.swift:35:17 [属性/常量]
+  Yalovy/GrowthJournalPigMastication.swift:39:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:154:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:307:9 [参数]
+  Yalovy/GrowthJournalPigMastication.swift:378:9 [参数]
+  Yalovy/GrowthJournalPigMastication.swift:517:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:587:13 [局部变量/常量]
+  Yalovy/OntogenyCurve.swift:26:13 [局部变量/常量]
+  Yalovy/OntogenyCurve.swift:51:13 [局部变量/常量]
+
+GrowthYearbook | Swift | 类 | 声明 1 次
+  拆词：growth / yearbook
+  Yalovy/GrowthYearbook.swift:3:13 [类]
+
+growthYearbook | Swift | 参数, 局部变量/常量, 属性/常量 | 声明 3 次
+  拆词：growth / yearbook
+  Yalovy/BodyMassCurve.swift:14:13 [局部变量/常量]
+  Yalovy/FirstWalkChronicle.swift:7:17 [属性/常量]
+  Yalovy/FirstWalkChronicle.swift:14:9 [参数]
+
+harnessFamiliarity | Swift | 属性/常量 | 声明 1 次
+  拆词：harness / familiarity
+  Yalovy/AnnualRetrospective.swift:4:9 [属性/常量]
+
+heightVariance | Swift | 局部变量/常量, 条件/模式绑定 | 声明 3 次
+  拆词：height / variance
+  Yalovy/AnnualRetrospective.swift:61:13 [局部变量/常量]
+  Yalovy/GrowthYearbook.swift:56:13 [局部变量/常量]
+  Yalovy/YearlyGrowthMosaic.swift:60:19 [条件/模式绑定]
+
+herbivoreDigestion | Swift | 方法/函数 | 声明 1 次
+  拆词：herbivore / digestion
+  Yalovy/GrowthJournalPigMastication.swift:507:18 [方法/函数]
+
+householdPetVitality | Swift | 属性/常量 | 声明 1 次
+  拆词：household / pet / vitality
+  Yalovy/GrowthJournalPigMastication.swift:643:14 [属性/常量]
+
+householdRoutine | Swift | 参数, 局部变量/常量 | 声明 3 次
+  拆词：household / routine
+  Yalovy/AppDelegate.swift:7:11 [参数]
+  Yalovy/AppDelegate.swift:17:11 [参数]
+  Yalovy/YearlyGrowthMosaic.swift:25:13 [局部变量/常量]
+
+imageArchive | Swift | 参数, 局部变量/常量, 条件/模式绑定 | 声明 4 次
+  拆词：image / archive
+  Yalovy/GrowthJournalPigMastication.swift:16:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:87:31 [参数]
+  Yalovy/GrowthJournalPigMastication.swift:394:19 [条件/模式绑定]
+  Yalovy/YearlyGrowthMosaic.swift:57:19 [条件/模式绑定]
+
+imageFraming | Swift | 局部变量/常量, 闭包参数 | 声明 5 次
+  拆词：image / framing
+  Yalovy/GrowthJournalPigMastication.swift:30:39 [闭包参数]
+  Yalovy/GrowthJournalPigMastication.swift:89:13 [局部变量/常量]
+  Yalovy/GrowthYearbook.swift:187:61 [闭包参数]
+  Yalovy/YearlyGrowthMosaic.swift:68:54 [闭包参数]
+  Yalovy/YearlyGrowthMosaic.swift:79:49 [闭包参数]
+
+imageResolution | Swift | 局部变量/常量, 属性/常量, 枚举成员 | 声明 5 次
+  拆词：image / resolution
+  Yalovy/AnnualRetrospective.swift:60:13 [局部变量/常量]
+  Yalovy/FirstWalkChronicle.swift:66:13 [局部变量/常量]
+  Yalovy/GrowthYearbook.swift:273:13 [局部变量/常量]
+  Yalovy/YearlyGrowthMosaic.swift:48:10 [枚举成员]
+  Yalovy/YearlyGrowthMosaic.swift:54:16 [属性/常量]
+
+immuneResilience | Swift | 方法/函数, 枚举成员 | 声明 2 次
+  拆词：immune / resilience
+  Yalovy/GrowthJournalPigMastication.swift:403:25 [方法/函数]
+  Yalovy/GrowthJournalPigMastication.swift:483:14 [枚举成员]
+
+ingredientGlossary | Swift | 参数 | 声明 3 次
+  拆词：ingredient / glossary
+  Yalovy/AtureYearsChronology.swift:6:9 [参数]
+  Yalovy/GrowthJournalPigMastication.swift:412:45 [参数]
+  Yalovy/HabitTransition.swift:6:9 [参数]
+
+inhibitionPractice | Swift | 属性/常量 | 声明 1 次
+  拆词：inhibition / practice
+  Yalovy/AnnualRetrospective.swift:5:17 [属性/常量]
+
+issueNote | JavaScript | JS 参数 | 声明 1 次
+  拆词：issue / note
+  Yalovy/GrowthJournalPigMastication.swift:593:43 [JS 参数]
+
+lakeExcursion | Swift | 属性/常量 | 声明 1 次
+  拆词：lake / excursion
+  Yalovy/NailPetTouchTolerance.swift:10:16 [属性/常量]
+
+lengthMeasure | Swift | 参数, 局部变量/常量, 属性/常量 | 声明 7 次
+  拆词：length / measure
+  Yalovy/AtureYearsChronology.swift:7:9 [参数]
+  Yalovy/HabitTransition.swift:7:9 [参数]
+  Yalovy/NailPetTouchTolerance.swift:20:32 [参数]
+  Yalovy/SkeletalMilestone.swift:4:17 [属性/常量]
+  Yalovy/SkeletalMilestone.swift:9:10 [参数]
+  Yalovy/SkeletalMilestone.swift:47:27 [参数]
+  Yalovy/YearlyGrowthMosaic.swift:89:13 [局部变量/常量]
+
+lensDepth | Swift | 局部变量/常量 | 声明 1 次
+  拆词：lens / depth
+  Yalovy/FirstWalkChronicle.swift:69:13 [局部变量/常量]
+
+lightingContrast | Swift | 局部变量/常量 | 声明 2 次
+  拆词：lighting / contrast
+  Yalovy/GrowthYearbook.swift:162:17 [局部变量/常量]
+  Yalovy/GrowthYearbook.swift:167:17 [局部变量/常量]
+
+lumbarStability | Swift | 属性/常量 | 声明 1 次
+  拆词：lumbar / stability
+  Yalovy/GrowthYearbook.swift:31:17 [属性/常量]
+
+markerFluency | Swift | 属性/常量 | 声明 1 次
+  拆词：marker / fluency
+  Yalovy/SkeletalMilestone.swift:6:17 [属性/常量]
+
+maturationPathway | Swift | 局部变量/常量, 闭包参数 | 声明 7 次
+  拆词：maturation / pathway
+  Yalovy/AtureYearsChronology.swift:30:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:44:36 [闭包参数]
+  Yalovy/GrowthJournalPigMastication.swift:543:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:588:13 [局部变量/常量]
+  Yalovy/GrowthYearbook.swift:70:13 [局部变量/常量]
+  Yalovy/GrowthYearbook.swift:155:13 [局部变量/常量]
+  Yalovy/HabitTransition.swift:30:13 [局部变量/常量]
+
+maturityChronicle | Swift | 局部变量/常量, 属性/常量, 方法/函数, 闭包参数 | 声明 4 次
+  拆词：maturity / chronicle
+  Yalovy/AppDelegate.swift:39:10 [方法/函数]
+  Yalovy/GrowthJournalPigMastication.swift:11:17 [属性/常量]
+  Yalovy/GrowthJournalPigMastication.swift:519:13 [局部变量/常量]
+  Yalovy/GrowthYearbook.swift:242:82 [闭包参数]
+
+memoryJournal | Swift | 局部变量/常量, 属性/常量 | 声明 3 次
+  拆词：memory / journal
+  Yalovy/GrowthJournalPigMastication.swift:12:22 [属性/常量]
+  Yalovy/GrowthJournalPigMastication.swift:192:13 [局部变量/常量]
+  Yalovy/YearlyGrowthMosaic.swift:78:13 [局部变量/常量]
+
+MemoryKeepsake | Swift | 类 | 声明 1 次
+  拆词：memory / keepsake
+  Yalovy/AppDelegate.swift:32:13 [类]
+
+memoryKeepsake | Swift | 参数, 局部变量/常量, 属性/常量, 循环变量, 方法/函数, 条件/模式绑定 | 声明 10 次
+  拆词：memory / keepsake
+  Yalovy/AppDelegate.swift:44:42 [循环变量]
+  Yalovy/GrowthJournalPigMastication.swift:74:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:160:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:306:9 [参数]
+  Yalovy/GrowthJournalPigMastication.swift:379:9 [参数]
+  Yalovy/GrowthJournalPigMastication.swift:405:28 [条件/模式绑定]
+  Yalovy/GrowthJournalPigMastication.swift:418:18 [方法/函数]
+  Yalovy/GrowthYearbook.swift:30:17 [属性/常量]
+  Yalovy/YearlyGrowthMosaic.swift:31:26 [循环变量]
+  Yalovy/YearlyGrowthMosaic.swift:91:19 [条件/模式绑定]
+
+memoryRetention | Swift | 属性/常量 | 声明 1 次
+  拆词：memory / retention
+  Yalovy/YearlyGrowthMosaic.swift:53:16 [属性/常量]
+
+monthlyChronology | Swift | 属性/常量 | 声明 1 次
+  拆词：monthly / chronology
+  Yalovy/GrowthYearbook.swift:4:17 [属性/常量]
+
+monthlyPlanner | Swift | 局部变量/常量 | 声明 1 次
+  拆词：monthly / planner
+  Yalovy/GrowthYearbook.swift:234:13 [局部变量/常量]
+
+mosaicLayout | Swift | 循环变量, 方法/函数 | 声明 3 次
+  拆词：mosaic / layout
+  Yalovy/GrowthJournalPigMastication.swift:487:18 [方法/函数]
+  Yalovy/GrowthYearbook.swift:135:18 [方法/函数]
+  Yalovy/YearlyGrowthMosaic.swift:81:21 [循环变量]
+
+motorFluency | Swift | 参数 | 声明 1 次
+  拆词：motor / fluency
+  Yalovy/GrowthYearbook.swift:197:51 [参数]
+
+mountainHiking | Swift | 属性/常量 | 声明 1 次
+  拆词：mountain / hiking
+  Yalovy/NailPetTouchTolerance.swift:14:16 [属性/常量]
+
+multispeciesWellbeing | Swift | 方法/函数 | 声明 1 次
+  拆词：multispecies / wellbeing
+  Yalovy/YearlyGrowthMosaic.swift:13:10 [方法/函数]
+
+muscleMassTrend | Swift | 属性/常量 | 声明 1 次
+  拆词：muscle / mass / trend
+  Yalovy/GrowthYearbook.swift:11:17 [属性/常量]
+
+muzzleCleanliness | Swift | 方法/函数 | 声明 1 次
+  拆词：muzzle / cleanliness
+  Yalovy/GrowthJournalPigMastication.swift:412:25 [方法/函数]
+
+nailTouchTolerance | Swift | 方法/函数 | 声明 1 次
+  拆词：nail / touch / tolerance
+  Yalovy/GrowthYearbook.swift:215:24 [方法/函数]
+
+navigationController | Swift | 条件/模式绑定 | 声明 1 次
+  拆词：navigation / controller
+  Yalovy/GrowthYearbook.swift:208:16 [条件/模式绑定]
+
+nocturnalRhythm | Swift | 属性/常量 | 声明 1 次
+  拆词：nocturnal / rhythm
+  Yalovy/NailPetTouchTolerance.swift:4:16 [属性/常量]
+
+nutrientMatrix | Swift | 局部变量/常量 | 声明 3 次
+  拆词：nutrient / matrix
+  Yalovy/AtureYearsChronology.swift:17:13 [局部变量/常量]
+  Yalovy/BodyMassCurve.swift:25:13 [局部变量/常量]
+  Yalovy/HabitTransition.swift:17:13 [局部变量/常量]
+
+nutritionJournal | Swift | 条件/模式绑定 | 声明 2 次
+  拆词：nutrition / journal
+  Yalovy/GrowthJournalPigMastication.swift:462:13 [条件/模式绑定]
+  Yalovy/GrowthJournalPigMastication.swift:526:13 [条件/模式绑定]
+
+ocularClarity | Swift | 方法/函数 | 声明 1 次
+  拆词：ocular / clarity
+  Yalovy/GrowthYearbook.swift:197:18 [方法/函数]
+
+ocularExamination | Swift | 条件/模式绑定 | 声明 1 次
+  拆词：ocular / examination
+  Yalovy/GrowthJournalPigMastication.swift:442:16 [条件/模式绑定]
+
+omnivoreNutrition | Swift | 属性/常量 | 声明 1 次
+  拆词：omnivore / nutrition
+  Yalovy/GrowthJournalPigMastication.swift:524:24 [属性/常量]
+
+OntogenyCurve | Swift | 类 | 声明 1 次
+  拆词：ontogeny / curve
+  Yalovy/OntogenyCurve.swift:3:13 [类]
+
+ontogenyCurve | Swift | 属性/常量 | 声明 1 次
+  拆词：ontogeny / curve
+  Yalovy/GrowthYearbook.swift:6:17 [属性/常量]
+
+outdoorEnrichment | Swift | 局部变量/常量 | 声明 1 次
+  拆词：outdoor / enrichment
+  Yalovy/GrowthYearbook.swift:277:13 [局部变量/常量]
+
+patienceExercise | Swift | 方法/函数 | 声明 1 次
+  拆词：patience / exercise
+  Yalovy/GrowthYearbook.swift:207:24 [方法/函数]
+
+pawPortrait | Swift | 参数 | 声明 1 次
+  拆词：paw / portrait
+  Yalovy/FirstWalkChronicle.swift:16:9 [参数]
+
+pelvicAlignment | Swift | 方法/函数 | 声明 1 次
+  拆词：pelvic / alignment
+  Yalovy/GrowthYearbook.swift:282:18 [方法/函数]
+
+petAlmanac | Swift | 参数, 局部变量/常量, 条件/模式绑定, 闭包参数 | 声明 12 次
+  拆词：pet / almanac
+  Yalovy/GrowthJournalPigMastication.swift:67:37 [闭包参数]
+  Yalovy/GrowthJournalPigMastication.swift:142:19 [条件/模式绑定]
+  Yalovy/GrowthJournalPigMastication.swift:191:42 [参数]
+  Yalovy/GrowthJournalPigMastication.swift:206:36 [参数]
+  Yalovy/GrowthJournalPigMastication.swift:218:49 [参数]
+  Yalovy/GrowthJournalPigMastication.swift:238:46 [参数]
+  Yalovy/GrowthJournalPigMastication.swift:285:44 [参数]
+  Yalovy/GrowthJournalPigMastication.swift:470:13 [条件/模式绑定]
+  Yalovy/GrowthJournalPigMastication.swift:534:13 [条件/模式绑定]
+  Yalovy/GrowthYearbook.swift:265:13 [局部变量/常量]
+  Yalovy/YearlyGrowthMosaic.swift:20:13 [局部变量/常量]
+  Yalovy/YearlyGrowthMosaic.swift:95:19 [条件/模式绑定]
+
+petChronicle | Swift | 局部变量/常量, 属性/常量 | 声明 2 次
+  拆词：pet / chronicle
+  Yalovy/GrowthJournalPigMastication.swift:8:24 [属性/常量]
+  Yalovy/GrowthJournalPigMastication.swift:398:13 [局部变量/常量]
+
+petDiary | Swift | 局部变量/常量, 方法/函数 | 声明 2 次
+  拆词：pet / diary
+  Yalovy/GrowthYearbook.swift:264:18 [方法/函数]
+  Yalovy/YearlyGrowthMosaic.swift:94:13 [局部变量/常量]
+
+petJournal | Swift | 局部变量/常量, 属性/常量, 循环变量, 方法/函数, 条件/模式绑定, 枚举成员 | 声明 8 次
+  拆词：pet / journal
+  Yalovy/FirstWalkChronicle.swift:4:9 [属性/常量]
+  Yalovy/GrowthJournalPigMastication.swift:87:18 [方法/函数]
+  Yalovy/GrowthJournalPigMastication.swift:220:13 [循环变量]
+  Yalovy/GrowthJournalPigMastication.swift:393:19 [条件/模式绑定]
+  Yalovy/GrowthJournalPigMastication.swift:511:13 [局部变量/常量]
+  Yalovy/YearlyGrowthMosaic.swift:31:14 [循环变量]
+  Yalovy/YearlyGrowthMosaic.swift:46:10 [枚举成员]
+  Yalovy/YearlyGrowthMosaic.swift:97:13 [循环变量]
+
+petJournalAssessment | Swift | 方法/函数 | 声明 1 次
+  拆词：pet / journal / assessment
+  Yalovy/GrowthJournalPigMastication.swift:259:25 [方法/函数]
+
+petJournalStatus | Swift | 方法/函数 | 声明 1 次
+  拆词：pet / journal / status
+  Yalovy/GrowthJournalPigMastication.swift:285:25 [方法/函数]
+
+petMemoir | Swift | 参数, 局部变量/常量, 属性/常量, 方法/函数, 条件/模式绑定, 闭包参数 | 声明 9 次
+  拆词：pet / memoir
+  Yalovy/FirstWalkChronicle.swift:8:17 [属性/常量]
+  Yalovy/FirstWalkChronicle.swift:15:9 [参数]
+  Yalovy/GrowthJournalPigMastication.swift:78:34 [闭包参数]
+  Yalovy/GrowthJournalPigMastication.swift:399:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:413:19 [条件/模式绑定]
+  Yalovy/GrowthJournalPigMastication.swift:419:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:535:13 [条件/模式绑定]
+  Yalovy/GrowthYearbook.swift:264:47 [参数]
+  Yalovy/YearlyGrowthMosaic.swift:56:17 [方法/函数]
+
+petPortrait | Swift | 参数, 属性/常量, 条件/模式绑定, 枚举成员 | 声明 4 次
+  拆词：pet / portrait
+  Yalovy/FirstWalkChronicle.swift:5:17 [属性/常量]
+  Yalovy/YearlyGrowthMosaic.swift:17:19 [条件/模式绑定]
+  Yalovy/YearlyGrowthMosaic.swift:47:10 [枚举成员]
+  Yalovy/YearlyGrowthMosaic.swift:56:29 [参数]
+
+PortraitArchive | Swift | 枚举 | 声明 1 次
+  拆词：portrait / archive
+  Yalovy/YearlyGrowthMosaic.swift:52:6 [枚举]
+
+portraitComposition | Swift | 局部变量/常量, 方法/函数, 条件/模式绑定, 闭包参数 | 声明 4 次
+  拆词：portrait / composition
+  Yalovy/GrowthJournalPigMastication.swift:24:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:97:52 [闭包参数]
+  Yalovy/GrowthYearbook.swift:83:18 [方法/函数]
+  Yalovy/YearlyGrowthMosaic.swift:58:19 [条件/模式绑定]
+
+portraitOrientation | Swift | 局部变量/常量 | 声明 1 次
+  拆词：portrait / orientation
+  Yalovy/GrowthYearbook.swift:178:13 [局部变量/常量]
+
+probeIssue | JavaScript | JS 异常变量 | 声明 1 次
+  拆词：probe / issue
+  Yalovy/GrowthJournalPigMastication.swift:600:22 [JS 异常变量]
+
+puppyPlayfulness | Swift | 属性/常量 | 声明 1 次
+  拆词：puppy / playfulness
+  Yalovy/OntogenyCurve.swift:6:17 [属性/常量]
+
+readinessIssue | JavaScript | JS 异常变量 | 声明 1 次
+  拆词：readiness / issue
+  Yalovy/GrowthJournalPigMastication.swift:631:24 [JS 异常变量]
+
+readinessTimer | JavaScript | JS 变量 | 声明 1 次
+  拆词：readiness / timer
+  Yalovy/GrowthJournalPigMastication.swift:611:17 [JS 变量]
+
+recipeNotebook | Swift | 属性/常量 | 声明 1 次
+  拆词：recipe / notebook
+  Yalovy/NailPetTouchTolerance.swift:15:16 [属性/常量]
+
+rejectionReason | JavaScript | JS 变量 | 声明 1 次
+  拆词：rejection / reason
+  Yalovy/GrowthJournalPigMastication.swift:606:17 [JS 变量]
+
+resourceAddress | JavaScript | JS 变量 | 声明 1 次
+  拆词：resource / address
+  Yalovy/GrowthJournalPigMastication.swift:556:21 [JS 变量]
+
+resourceInput | JavaScript | JS 参数 | 声明 1 次
+  拆词：resource / input
+  Yalovy/GrowthJournalPigMastication.swift:555:39 [JS 参数]
+
+restingNook | Swift | 局部变量/常量, 属性/常量, 条件/模式绑定 | 声明 3 次
+  拆词：resting / nook
+  Yalovy/YearlyGrowthMosaic.swift:9:17 [属性/常量]
+  Yalovy/YearlyGrowthMosaic.swift:16:16 [条件/模式绑定]
+  Yalovy/YearlyGrowthMosaic.swift:26:13 [局部变量/常量]
+
+routineJournal | Swift | 方法/函数 | 声明 1 次
+  拆词：routine / journal
+  Yalovy/GrowthJournalPigMastication.swift:72:18 [方法/函数]
+
+sceneComposition | Swift | 参数, 局部变量/常量, 条件/模式绑定, 闭包参数 | 声明 6 次
+  拆词：scene / composition
+  Yalovy/AppDelegate.swift:19:17 [参数]
+  Yalovy/GrowthJournalPigMastication.swift:97:73 [闭包参数]
+  Yalovy/GrowthYearbook.swift:272:13 [局部变量/常量]
+  Yalovy/SceneDelegate.swift:7:11 [参数]
+  Yalovy/YearlyGrowthMosaic.swift:69:23 [条件/模式绑定]
+  Yalovy/YearlyGrowthMosaic.swift:80:48 [闭包参数]
+
+SceneDelegate | Swift | 类 | 声明 1 次
+  拆词：scene / delegate
+  Yalovy/SceneDelegate.swift:3:7 [类]
+
+seasonalChange | Swift | 参数, 方法/函数, 闭包参数 | 声明 6 次
+  拆词：seasonal / change
+  Yalovy/AppDelegate.swift:18:36 [参数]
+  Yalovy/AtureYearsChronology.swift:8:9 [参数]
+  Yalovy/GrowthJournalPigMastication.swift:49:35 [参数]
+  Yalovy/GrowthJournalPigMastication.swift:131:34 [闭包参数]
+  Yalovy/GrowthYearbook.swift:233:24 [方法/函数]
+  Yalovy/HabitTransition.swift:8:9 [参数]
+
+seasonalChronicle | Swift | 局部变量/常量 | 声明 1 次
+  拆词：seasonal / chronicle
+  Yalovy/GrowthJournalPigMastication.swift:62:13 [局部变量/常量]
+
+seasonalKeepsake | Swift | 局部变量/常量, 属性/常量, 方法/函数 | 声明 3 次
+  拆词：seasonal / keepsake
+  Yalovy/AppDelegate.swift:60:16 [属性/常量]
+  Yalovy/GrowthJournalPigMastication.swift:304:18 [方法/函数]
+  Yalovy/GrowthYearbook.swift:274:13 [局部变量/常量]
+
+seasonalPlanner | Swift | 局部变量/常量 | 声明 2 次
+  拆词：seasonal / planner
+  Yalovy/AppDelegate.swift:23:13 [局部变量/常量]
+  Yalovy/GrowthYearbook.swift:239:13 [局部变量/常量]
+
+seasonalPortrait | Swift | 条件/模式绑定 | 声明 1 次
+  拆词：seasonal / portrait
+  Yalovy/SceneDelegate.swift:13:19 [条件/模式绑定]
+
+seniorYearbook | Swift | 局部变量/常量, 方法/函数 | 声明 2 次
+  拆词：senior / yearbook
+  Yalovy/AnnualRetrospective.swift:17:13 [局部变量/常量]
+  Yalovy/GrowthYearbook.swift:260:24 [方法/函数]
+
+sensoryAcuity | Swift | 参数, 局部变量/常量 | 声明 2 次
+  拆词：sensory / acuity
+  Yalovy/GrowthYearbook.swift:198:13 [局部变量/常量]
+  Yalovy/GrowthYearbook.swift:282:75 [参数]
+
+shapingSequence | Swift | 局部变量/常量 | 声明 1 次
+  拆词：shaping / sequence
+  Yalovy/AnnualRetrospective.swift:59:13 [局部变量/常量]
+
+silhouetteFraming | Swift | 局部变量/常量, 属性/常量 | 声明 3 次
+  拆词：silhouette / framing
+  Yalovy/AtureYearsChronology.swift:12:13 [局部变量/常量]
+  Yalovy/HabitTransition.swift:12:13 [局部变量/常量]
+  Yalovy/OntogenyCurve.swift:4:17 [属性/常量]
+
+skeletalAssessment | Swift | 局部变量/常量 | 声明 1 次
+  拆词：skeletal / assessment
+  Yalovy/GrowthYearbook.swift:240:13 [局部变量/常量]
+
+SkeletalMilestone | Swift | 类 | 声明 1 次
+  拆词：skeletal / milestone
+  Yalovy/SkeletalMilestone.swift:3:13 [类]
+
+skeletalMilestone | Swift | 局部变量/常量, 属性/常量 | 声明 2 次
+  拆词：skeletal / milestone
+  Yalovy/GrowthJournalPigMastication.swift:581:13 [局部变量/常量]
+  Yalovy/GrowthYearbook.swift:10:17 [属性/常量]
+
+skeletalSymmetry | Swift | 局部变量/常量, 闭包参数 | 声明 2 次
+  拆词：skeletal / symmetry
+  Yalovy/FirstWalkChronicle.swift:65:13 [局部变量/常量]
+  Yalovy/GrowthYearbook.swift:242:64 [闭包参数]
+
+skillTempo | Swift | 局部变量/常量 | 声明 1 次
+  拆词：skill / tempo
+  Yalovy/AnnualRetrospective.swift:27:13 [局部变量/常量]
+
+sodiumUptake | Swift | 局部变量/常量 | 声明 1 次
+  拆词：sodium / uptake
+  Yalovy/GrowthYearbook.swift:216:13 [局部变量/常量]
+
+speciesRecognition | Swift | 枚举成员 | 声明 1 次
+  拆词：species / recognition
+  Yalovy/GrowthJournalPigMastication.swift:484:14 [枚举成员]
+
+springRoutine | Swift | 属性/常量 | 声明 1 次
+  拆词：spring / routine
+  Yalovy/NailPetTouchTolerance.swift:7:16 [属性/常量]
+
+startedAt | JavaScript | JS 变量 | 声明 1 次
+  拆词：started / at
+  Yalovy/GrowthJournalPigMastication.swift:610:17 [JS 变量]
+
+statureTrajectory | Swift | 局部变量/常量 | 声明 1 次
+  拆词：stature / trajectory
+  Yalovy/GrowthYearbook.swift:54:13 [局部变量/常量]
+
+status | Swift | 闭包参数 | 声明 1 次
+  拆词：status
+  Yalovy/GrowthJournalPigMastication.swift:268:72 [闭包参数]
+
+sunshineOuting | Swift | 属性/常量 | 声明 1 次
+  拆词：sunshine / outing
+  Yalovy/NailPetTouchTolerance.swift:11:16 [属性/常量]
+
+T | Swift | 泛型参数 | 声明 1 次
+  拆词：t
+  Yalovy/GrowthJournalPigMastication.swift:403:42 [泛型参数]
+
+targetingPrecision | Swift | 方法/函数 | 声明 1 次
+  拆词：targeting / precision
+  Yalovy/GrowthYearbook.swift:252:24 [方法/函数]
+
+therapyPlan | Swift | 参数, 方法/函数 | 声明 2 次
+  拆词：therapy / plan
+  Yalovy/GrowthJournalPigMastication.swift:377:18 [方法/函数]
+  Yalovy/GrowthJournalPigMastication.swift:435:46 [参数]
+
+thoracicExpansion | Swift | 属性/常量 | 声明 1 次
+  拆词：thoracic / expansion
+  Yalovy/GrowthYearbook.swift:12:17 [属性/常量]
+
+trailExploration | Swift | 方法/函数 | 声明 1 次
+  拆词：trail / exploration
+  Yalovy/GrowthYearbook.swift:224:24 [方法/函数]
+
+twilightCalm | Swift | 属性/常量 | 声明 1 次
+  拆词：twilight / calm
+  Yalovy/NailPetTouchTolerance.swift:13:16 [属性/常量]
+
+undercoatCondition | Swift | 属性/常量 | 声明 1 次
+  拆词：undercoat / condition
+  Yalovy/NailPetTouchTolerance.swift:6:16 [属性/常量]
+
+vernalWellness | Swift | 属性/常量 | 声明 1 次
+  拆词：vernal / wellness
+  Yalovy/NailPetTouchTolerance.swift:8:16 [属性/常量]
+
+vertebrateOsteology | Swift | 参数, 属性/常量 | 声明 2 次
+  拆词：vertebrate / osteology
+  Yalovy/GrowthJournalPigMastication.swift:20:17 [属性/常量]
+  Yalovy/GrowthYearbook.swift:282:36 [参数]
+
+veterinaryExamination | Swift | 局部变量/常量, 方法/函数 | 声明 2 次
+  拆词：veterinary / examination
+  Yalovy/GrowthJournalPigMastication.swift:218:25 [方法/函数]
+  Yalovy/GrowthYearbook.swift:225:13 [局部变量/常量]
+
+vetVisitPreparation | Swift | 参数 | 声明 1 次
+  拆词：vet / visit / preparation
+  Yalovy/NailPetTouchTolerance.swift:20:56 [参数]
+
+weaningAlmanac | Swift | 局部变量/常量, 属性/常量 | 声明 2 次
+  拆词：weaning / almanac
+  Yalovy/FirstWalkChronicle.swift:9:17 [属性/常量]
+  Yalovy/GrowthYearbook.swift:89:13 [局部变量/常量]
+
+wellnessAlmanac | Swift | 属性/常量 | 声明 1 次
+  拆词：wellness / almanac
+  Yalovy/GrowthJournalPigMastication.swift:460:24 [属性/常量]
+
+WellnessAssessment | Swift | 枚举 | 声明 1 次
+  拆词：wellness / assessment
+  Yalovy/GrowthJournalPigMastication.swift:482:18 [枚举]
+
+wellnessAssessment | Swift | 参数, 局部变量/常量, 属性/常量, 方法/函数, 条件/模式绑定 | 声明 9 次
+  拆词：wellness / assessment
+  Yalovy/BodyMassCurve.swift:20:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:126:17 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:238:25 [方法/函数]
+  Yalovy/GrowthJournalPigMastication.swift:367:21 [条件/模式绑定]
+  Yalovy/GrowthJournalPigMastication.swift:380:9 [参数]
+  Yalovy/GrowthJournalPigMastication.swift:435:25 [方法/函数]
+  Yalovy/GrowthJournalPigMastication.swift:547:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:586:13 [局部变量/常量]
+  Yalovy/GrowthYearbook.swift:28:17 [属性/常量]
+
+wellnessJournal | Swift | 局部变量/常量, 属性/常量, 循环变量, 方法/函数, 条件/模式绑定 | 声明 7 次
+  拆词：wellness / journal
+  Yalovy/BodyMassCurve.swift:29:13 [循环变量]
+  Yalovy/GrowthJournalPigMastication.swift:193:13 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:209:19 [条件/模式绑定]
+  Yalovy/GrowthJournalPigMastication.swift:244:17 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:267:17 [局部变量/常量]
+  Yalovy/GrowthJournalPigMastication.swift:580:24 [属性/常量]
+  Yalovy/GrowthYearbook.swift:256:24 [方法/函数]
+
+wellnessPlanner | Swift | 局部变量/常量, 方法/函数 | 声明 2 次
+  拆词：wellness / planner
+  Yalovy/GrowthJournalPigMastication.swift:206:18 [方法/函数]
+  Yalovy/YearlyGrowthMosaic.swift:37:13 [局部变量/常量]
+
+whiskerCondition | Swift | 局部变量/常量 | 声明 1 次
+  拆词：whisker / condition
+  Yalovy/GrowthJournalPigMastication.swift:422:13 [局部变量/常量]
+
+yalovyKeepsakeCatalog | JavaScript | JS 变量 | 声明 1 次
+  拆词：yalovy / keepsake / catalog
+  Yalovy/GrowthJournalPigMastication.swift:552:19 [JS 变量]
+
+YearlyGrowthMosaic | Swift | 类 | 声明 1 次
+  拆词：yearly / growth / mosaic
+  Yalovy/YearlyGrowthMosaic.swift:6:13 [类]
+
+yearlyGrowthMosaic | Swift | 条件/模式绑定 | 声明 5 次
+  拆词：yearly / growth / mosaic
+  Yalovy/GrowthJournalPigMastication.swift:330:31 [条件/模式绑定]
+  Yalovy/GrowthJournalPigMastication.swift:461:19 [条件/模式绑定]
+  Yalovy/GrowthJournalPigMastication.swift:508:19 [条件/模式绑定]
+  Yalovy/GrowthJournalPigMastication.swift:525:19 [条件/模式绑定]
+  Yalovy/GrowthYearbook.swift:186:19 [条件/模式绑定]
+
+附录：仅出现在 Swift 文件名的名称
+HabitTransition
+NailPetTouchTolerance
+
+附录：系统回调/覆盖成员/约定参数（不计入自主命名总数）
+animated | Yalovy/GrowthYearbook.swift:47
+application | Yalovy/AppDelegate.swift:6, Yalovy/AppDelegate.swift:16
+coder | Yalovy/AnnualRetrospective.swift:55, Yalovy/AtureYearsChronology.swift:39, Yalovy/BodyMassCurve.swift:41, Yalovy/FirstWalkChronicle.swift:60, Yalovy/HabitTransition.swift:39, Yalovy/OntogenyCurve.swift:22, Yalovy/SkeletalMilestone.swift:45
+configurationForConnecting | Yalovy/AppDelegate.swift:18
+didFinishLaunchingWithOptions | Yalovy/AppDelegate.swift:8
+didReceive | Yalovy/GrowthJournalPigMastication.swift:117, Yalovy/GrowthJournalPigMastication.swift:652
+frame | Yalovy/AnnualRetrospective.swift:7, Yalovy/BodyMassCurve.swift:4, Yalovy/OntogenyCurve.swift:8
+isHighlighted | Yalovy/FirstWalkChronicle.swift:76
+layoutSubviews | Yalovy/AnnualRetrospective.swift:57, Yalovy/BodyMassCurve.swift:43, Yalovy/FirstWalkChronicle.swift:62, Yalovy/OntogenyCurve.swift:24
+options | Yalovy/AppDelegate.swift:19, Yalovy/SceneDelegate.swift:9
+scene | Yalovy/SceneDelegate.swift:6
+userContentController | Yalovy/GrowthJournalPigMastication.swift:115, Yalovy/GrowthJournalPigMastication.swift:650
+viewDidAppear | Yalovy/GrowthJournalPigMastication.swift:49, Yalovy/GrowthYearbook.swift:47
+viewDidLayoutSubviews | Yalovy/GrowthYearbook.swift:52
+viewDidLoad | Yalovy/GrowthJournalPigMastication.swift:36, Yalovy/GrowthYearbook.swift:33
+willConnectTo | Yalovy/SceneDelegate.swift:8
+window | Yalovy/SceneDelegate.swift:4
+
+源文件清单与 SHA-256
+Yalovy/AnnualRetrospective.swift | 71 行 | 10 个自主命名 | 793e9b6719aa0ff95b6fe3312c06b3db11b13ee5fa992c2aaed342a73a5d12d3
+Yalovy/AppDelegate.swift | 61 行 | 12 个自主命名 | 0286dfff93c4d78ad83a336c0dc57379719e94bbf01688a5d8f6aca53bf91f3f
+Yalovy/AtureYearsChronology.swift | 40 行 | 10 个自主命名 | adf9aab3bee8f0ab4f5af458887a9127fd299f5a171e02cd11ee27d0df5f4f0f
+Yalovy/BodyMassCurve.swift | 50 行 | 5 个自主命名 | 62025b012f7fd94015de342a63ca502b574beef637351b1ad0a67c1eae826957
+Yalovy/FirstWalkChronicle.swift | 83 行 | 14 个自主命名 | 3ab1119e097f04a6ab7276f7f02834ea58bd65e2154a6a3bf25305196c4fb26f
+Yalovy/GrowthJournalPigMastication.swift | 656 行 | 61 个自主命名 | 64a4db81352ba895516be1f40060859c6dbbd2f552ba3c8cc5c3e045b9e6262b
+Yalovy/GrowthYearbook.swift | 286 行 | 65 个自主命名 | d0f37d12e37d65e48b070bd23e54f157c5997d393924f2fda37484c42d62f3af
+Yalovy/HabitTransition.swift | 40 行 | 10 个自主命名 | adf9aab3bee8f0ab4f5af458887a9127fd299f5a171e02cd11ee27d0df5f4f0f
+Yalovy/NailPetTouchTolerance.swift | 27 行 | 17 个自主命名 | 8efba5d93701fb46450c03338bb778c001c8b45aa846000f7d89a2b5b16ccfde
+Yalovy/OntogenyCurve.swift | 58 行 | 6 个自主命名 | 8f1100bf720d366c9ce86ed7565ac7fe48d0632cf8ba2ef76779fc4d4d51cace
+Yalovy/SceneDelegate.swift | 21 行 | 6 个自主命名 | d0acd5c10fbfeab811086b47d4541a3583feff105dd96656528abf4c04d58610
+Yalovy/SkeletalMilestone.swift | 51 行 | 8 个自主命名 | a4f9286fcf6a919516e7ca5a2e72d5e9ebe00795c111806f9ea337dfca050a4e
+Yalovy/YearlyGrowthMosaic.swift | 105 行 | 29 个自主命名 | 897cef9fc86fde0c9c81504f50d8ce8491aa4610dbb54d881909ee9fb644146d
