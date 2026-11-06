@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08E467781E8C421ECB64126E /* AnniversaryMemoir.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E033D4D381B47EE5D0376 /* AnniversaryMemoir.swift */; };
+		13A86BC17F821CF735397FC0 /* BirthdayKeepsake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3877159CBB1743C46DEA3727 /* BirthdayKeepsake.swift */; };
 		1A2B3C4D5E6F700100000001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000011 /* AppDelegate.swift */; };
 		1A2B3C4D5E6F700100000002 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000012 /* SceneDelegate.swift */; };
 		1A2B3C4D5E6F700100000006 /* GrowthJournalPigMastication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700100000017 /* GrowthJournalPigMastication.swift */; };
@@ -22,9 +24,18 @@
 		2B3C4D5E6F70010000000106 /* AnnualRetrospective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C4D5E6F70010000000206 /* AnnualRetrospective.swift */; };
 		2B3C4D5E6F70010000000107 /* NailPetTouchTolerance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C4D5E6F70010000000207 /* NailPetTouchTolerance.swift */; };
 		3C4D5E6F70010000000002 /* growthPortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C4D5E6F70010000000012 /* growthPortrait.png */; };
+		426DC3DC1DF49104B4D2643F /* PuppyPlayfulness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16673E7091BF2F388FCF09D8 /* PuppyPlayfulness.swift */; };
+		490FFC0BE2DC01A55BAD83B8 /* SeasonalKeepsake.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD683B1C045262E2BC3A5A3 /* SeasonalKeepsake.swift */; };
+		5E31C5E47C2D247BE11BDDBB /* SunshineOuting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A145D137E67FB1D128975B9 /* SunshineOuting.swift */; };
+		82343BA18FE6AFEC53AFF41A /* GardenForaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = B831FDBBB50FEBFEF9879BAD /* GardenForaging.swift */; };
+		92DBFF5E206D4B879EB631B8 /* MonthlyPlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0A70CBAB3F79FC8075F2C8 /* MonthlyPlanner.swift */; };
+		95ABA3CCE7AC1EAE1ED1825C /* CoatPortrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C052AE679B5849FD78EBF /* CoatPortrait.swift */; };
+		CED18A03B0A7B5631F8C5727 /* PetAlmanac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4DF1D49118E8FD927E5934 /* PetAlmanac.swift */; };
+		E1E38F3A2DFF75F05815E656 /* WellnessPlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EDC5524440B4A866BBACB5 /* WellnessPlanner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16673E7091BF2F388FCF09D8 /* PuppyPlayfulness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppyPlayfulness.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700100000010 /* Yalovy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yalovy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2B3C4D5E6F700100000011 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F700100000012 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +52,17 @@
 		2B3C4D5E6F70010000000205 /* AtureYearsChronology.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtureYearsChronology.swift; sourceTree = "<group>"; };
 		2B3C4D5E6F70010000000206 /* AnnualRetrospective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnualRetrospective.swift; sourceTree = "<group>"; };
 		2B3C4D5E6F70010000000207 /* NailPetTouchTolerance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NailPetTouchTolerance.swift; sourceTree = "<group>"; };
+		3877159CBB1743C46DEA3727 /* BirthdayKeepsake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayKeepsake.swift; sourceTree = "<group>"; };
 		3C4D5E6F70010000000012 /* growthPortrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = growthPortrait.png; sourceTree = "<group>"; };
+		3F0A70CBAB3F79FC8075F2C8 /* MonthlyPlanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyPlanner.swift; sourceTree = "<group>"; };
+		4A145D137E67FB1D128975B9 /* SunshineOuting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunshineOuting.swift; sourceTree = "<group>"; };
+		54EDC5524440B4A866BBACB5 /* WellnessPlanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellnessPlanner.swift; sourceTree = "<group>"; };
+		8F4DF1D49118E8FD927E5934 /* PetAlmanac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAlmanac.swift; sourceTree = "<group>"; };
+		AF22040F4BEB4A64B145F6CA /* Yalovy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Yalovy.entitlements; sourceTree = "<group>"; };
+		B831FDBBB50FEBFEF9879BAD /* GardenForaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenForaging.swift; sourceTree = "<group>"; };
+		BA6E033D4D381B47EE5D0376 /* AnniversaryMemoir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnniversaryMemoir.swift; sourceTree = "<group>"; };
+		D97C052AE679B5849FD78EBF /* CoatPortrait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoatPortrait.swift; sourceTree = "<group>"; };
+		DDD683B1C045262E2BC3A5A3 /* SeasonalKeepsake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonalKeepsake.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +88,7 @@
 		1A2B3C4D5E6F700100000031 /* Yalovy */ = {
 			isa = PBXGroup;
 			children = (
+				F56D5BE1309C6FB5001B0613 /* yalovyui */,
 				1A2B3C4D5E6F700100000011 /* AppDelegate.swift */,
 				1A2B3C4D5E6F700100000012 /* SceneDelegate.swift */,
 				1A2B3C4D5E6F700100000017 /* GrowthJournalPigMastication.swift */,
@@ -82,6 +104,7 @@
 				2B3C4D5E6F70010000000206 /* AnnualRetrospective.swift */,
 				2B3C4D5E6F70010000000207 /* NailPetTouchTolerance.swift */,
 				1A2B3C4D5E6F700100000013 /* Info.plist */,
+				AF22040F4BEB4A64B145F6CA /* Yalovy.entitlements */,
 			);
 			path = Yalovy;
 			sourceTree = "<group>";
@@ -100,6 +123,23 @@
 				3C4D5E6F70010000000012 /* growthPortrait.png */,
 			);
 			path = petJournal;
+			sourceTree = "<group>";
+		};
+		F56D5BE1309C6FB5001B0613 /* yalovyui */ = {
+			isa = PBXGroup;
+			children = (
+				BA6E033D4D381B47EE5D0376 /* AnniversaryMemoir.swift */,
+				3877159CBB1743C46DEA3727 /* BirthdayKeepsake.swift */,
+				D97C052AE679B5849FD78EBF /* CoatPortrait.swift */,
+				B831FDBBB50FEBFEF9879BAD /* GardenForaging.swift */,
+				3F0A70CBAB3F79FC8075F2C8 /* MonthlyPlanner.swift */,
+				8F4DF1D49118E8FD927E5934 /* PetAlmanac.swift */,
+				16673E7091BF2F388FCF09D8 /* PuppyPlayfulness.swift */,
+				DDD683B1C045262E2BC3A5A3 /* SeasonalKeepsake.swift */,
+				4A145D137E67FB1D128975B9 /* SunshineOuting.swift */,
+				54EDC5524440B4A866BBACB5 /* WellnessPlanner.swift */,
+			);
+			path = yalovyui;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +174,11 @@
 				TargetAttributes = {
 					1A2B3C4D5E6F700100000040 = {
 						CreatedOnToolsVersion = 26.3;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -173,6 +218,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08E467781E8C421ECB64126E /* AnniversaryMemoir.swift in Sources */,
+				13A86BC17F821CF735397FC0 /* BirthdayKeepsake.swift in Sources */,
+				95ABA3CCE7AC1EAE1ED1825C /* CoatPortrait.swift in Sources */,
+				82343BA18FE6AFEC53AFF41A /* GardenForaging.swift in Sources */,
+				92DBFF5E206D4B879EB631B8 /* MonthlyPlanner.swift in Sources */,
+				CED18A03B0A7B5631F8C5727 /* PetAlmanac.swift in Sources */,
+				426DC3DC1DF49104B4D2643F /* PuppyPlayfulness.swift in Sources */,
+				490FFC0BE2DC01A55BAD83B8 /* SeasonalKeepsake.swift in Sources */,
+				5E31C5E47C2D247BE11BDDBB /* SunshineOuting.swift in Sources */,
+				E1E38F3A2DFF75F05815E656 /* WellnessPlanner.swift in Sources */,
 				1A2B3C4D5E6F700100000001 /* AppDelegate.swift in Sources */,
 				1A2B3C4D5E6F700100000002 /* SceneDelegate.swift in Sources */,
 				1A2B3C4D5E6F700100000006 /* GrowthJournalPigMastication.swift in Sources */,
@@ -309,10 +364,12 @@
 		1A2B3C4D5E6F7001000000B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APS_ENVIRONMENT = development;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Yalovy/Yalovy.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -324,7 +381,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.petsshareing.yalovy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -341,10 +398,12 @@
 		1A2B3C4D5E6F7001000000B1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APS_ENVIRONMENT = production;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Yalovy/Yalovy.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -356,7 +415,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.petsshareing.yalovy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

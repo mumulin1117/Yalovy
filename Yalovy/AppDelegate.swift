@@ -10,6 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ = householdRoutine
         _ = annualRetrospective
         MemoryKeepsake.annualKeepsake.maturityChronicle()
+        configureYalovyBServices()
         return true
     }
 

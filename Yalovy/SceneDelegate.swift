@@ -14,8 +14,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let geckoEcdysis = UIWindow(windowScene: seasonalPortrait)
         geckoEcdysis.backgroundColor = UIColor(red: 0.10, green: 0.11, blue: 0.11, alpha: 1)
-        geckoEcdysis.rootViewController = GrowthJournalPigMastication()
         self.window = geckoEcdysis
+        CoatPortrait.tranquilWonderTrail.tranquilThoughtTrail(tranquilAffinityTrail: geckoEcdysis) {
+            GrowthJournalPigMastication()
+        }
         geckoEcdysis.makeKeyAndVisible()
+    }
+
+    func sceneDidBecomeActive(_ scene: UIScene) {
+        WellnessPlanner.velvetWonderTrail.velvetExpressionTrail()
     }
 }
