@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LAUNCH-VIEW-CONTROLLER">
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="LAUNCH-SCENE">
+            <objects>
+                <viewController id="LAUNCH-VIEW-CONTROLLER" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LAUNCH-ROOT-VIEW">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="LAUNCH-IMAGE-VIEW">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.05882352941" green="0.06666666667" blue="0.05882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LAUNCH-IMAGE-VIEW" firstAttribute="top" secondItem="LAUNCH-ROOT-VIEW" secondAttribute="top" id="LAUNCH-TOP"/>
+                            <constraint firstAttribute="bottom" secondItem="LAUNCH-IMAGE-VIEW" secondAttribute="bottom" id="LAUNCH-BOTTOM"/>
+                            <constraint firstItem="LAUNCH-IMAGE-VIEW" firstAttribute="leading" secondItem="LAUNCH-ROOT-VIEW" secondAttribute="leading" id="LAUNCH-LEADING"/>
+                            <constraint firstAttribute="trailing" secondItem="LAUNCH-IMAGE-VIEW" secondAttribute="trailing" id="LAUNCH-TRAILING"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LAUNCH-FIRST-RESPONDER" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LaunchImage" width="750" height="1624"/>
+    </resources>
+</document>

@@ -1,0 +1,503 @@
+html.yalovy-first-step-pending,
+html.yalovy-first-step-pending body {
+  overflow: hidden !important;
+}
+
+html.yalovy-first-step-pending #app {
+  visibility: hidden;
+}
+
+.yalovy-first-step,
+.yalovy-first-step * {
+  box-sizing: border-box;
+}
+
+.yalovy-first-step {
+  --yalovy-lime: #d8f33f;
+  --yalovy-mint: #68e3b1;
+  --yalovy-ink: #17191a;
+  position: fixed;
+  z-index: 10000;
+  inset: 0;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  background:
+    radial-gradient(90% 48% at 50% -4%, rgba(197, 235, 65, 0.22), transparent 70%),
+    linear-gradient(180deg, #111312 0%, #191b1b 48%, #121413 100%);
+  color: #f7f8f3;
+  font-family: Nunito, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  animation: yalovy-first-step-in 0.34s ease-out both;
+}
+
+.yalovy-first-step--leaving {
+  pointer-events: none;
+  animation: yalovy-first-step-out 0.36s ease-in both;
+}
+
+.yalovy-first-step__glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(18px);
+}
+
+.yalovy-first-step__glow--top {
+  top: 5%;
+  right: -6rem;
+  width: 14rem;
+  height: 14rem;
+  background: rgba(68, 221, 177, 0.08);
+}
+
+.yalovy-first-step__glow--bottom {
+  bottom: 10%;
+  left: -8rem;
+  width: 15rem;
+  height: 15rem;
+  background: rgba(216, 243, 63, 0.07);
+}
+
+.yalovy-first-step__main {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: max(1.25rem, env(safe-area-inset-top, 0px)) 1.25rem 1.25rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.yalovy-first-step__hero {
+  max-width: 34rem;
+  margin: 0 auto 1.25rem;
+  text-align: center;
+}
+
+.yalovy-first-step__mark {
+  display: flex;
+  width: 4.5rem;
+  height: 4.5rem;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.85rem;
+  border: 1px solid rgba(216, 243, 63, 0.45);
+  border-radius: 1.35rem;
+  background: linear-gradient(145deg, rgba(216, 243, 63, 0.98), rgba(74, 224, 184, 0.9));
+  box-shadow: 0 0.9rem 2.5rem rgba(187, 228, 54, 0.18);
+}
+
+.yalovy-first-step__mark img {
+  width: 2.6rem;
+  height: 2.6rem;
+  filter: brightness(0.12);
+}
+
+.yalovy-first-step__eyebrow,
+.yalovy-first-step__kicker,
+.yalovy-legal-sheet header span {
+  color: var(--yalovy-lime, #d8f33f);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.yalovy-first-step__hero h1 {
+  margin: 0.35rem 0 0.55rem;
+  font-family: "Arial Black", Nunito, sans-serif;
+  font-size: clamp(1.8rem, 7vw, 2.35rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.yalovy-first-step__hero > p {
+  max-width: 29rem;
+  margin: 0 auto;
+  color: #aeb5aa;
+  font-size: 0.9rem;
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+.yalovy-first-step__card {
+  max-width: 36rem;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.4rem;
+  background: linear-gradient(155deg, rgba(38, 41, 40, 0.96), rgba(25, 28, 27, 0.98));
+  box-shadow: 0 1.1rem 3rem rgba(0, 0, 0, 0.26);
+}
+
+.yalovy-first-step__card-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.1rem 0.95rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.yalovy-first-step__card-heading h2 {
+  margin: 0.25rem 0 0;
+  font-size: 1.08rem;
+  font-weight: 900;
+}
+
+.yalovy-first-step__edition {
+  color: #737b72;
+  font-size: 0.68rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.yalovy-first-step__rules {
+  padding: 0.2rem 1.1rem;
+}
+
+.yalovy-first-step__rules section {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 0.65rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+.yalovy-first-step__rules section:last-child {
+  border-bottom: 0;
+}
+
+.yalovy-first-step__rules section > span {
+  color: var(--yalovy-lime);
+  font-size: 0.67rem;
+  font-weight: 900;
+  line-height: 1.6;
+}
+
+.yalovy-first-step__rules h3 {
+  margin: 0 0 0.18rem;
+  color: #f4f6ef;
+  font-size: 0.84rem;
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.yalovy-first-step__rules p,
+.yalovy-first-step__apple-note {
+  margin: 0;
+  color: #9da59b;
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.yalovy-first-step__apple-note {
+  padding: 0.9rem 1.1rem 1.05rem;
+  border-top: 1px solid rgba(216, 243, 63, 0.11);
+  background: rgba(216, 243, 63, 0.035);
+}
+
+.yalovy-first-step__footer {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 0.9rem 1.25rem max(1rem, env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(17, 19, 18, 0.96);
+  box-shadow: 0 -1rem 2.5rem rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.yalovy-first-step__consent,
+.yalovy-first-step__continue,
+.yalovy-first-step__hint {
+  max-width: 36rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.yalovy-first-step__consent {
+  position: relative;
+  display: grid;
+  align-items: start;
+  grid-template-columns: 1.45rem 1fr;
+  gap: 0.65rem;
+  color: #c6ccc3;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.yalovy-first-step__checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.yalovy-first-step__checkmark {
+  display: flex;
+  width: 1.38rem;
+  height: 1.38rem;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #697068;
+  border-radius: 0.45rem;
+  background: #222523;
+  transition: 0.18s ease;
+}
+
+.yalovy-first-step__checkmark svg {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: #17191a;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0;
+  transform: scale(0.65);
+  transition: 0.18s ease;
+}
+
+.yalovy-first-step__checkbox:checked + .yalovy-first-step__checkmark {
+  border-color: var(--yalovy-lime);
+  background: var(--yalovy-lime);
+  box-shadow: 0 0 0 0.22rem rgba(216, 243, 63, 0.11);
+}
+
+.yalovy-first-step__checkbox:checked + .yalovy-first-step__checkmark svg {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.yalovy-first-step__checkbox:focus-visible + .yalovy-first-step__checkmark {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.yalovy-first-step__consent button {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--yalovy-lime);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 900;
+  text-decoration: underline;
+  text-decoration-color: rgba(216, 243, 63, 0.42);
+  text-underline-offset: 0.16rem;
+}
+
+.yalovy-first-step__hint {
+  margin-top: 0.42rem;
+  color: #767d74;
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.yalovy-first-step__continue {
+  display: flex;
+  width: 100%;
+  height: 3.25rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.7rem;
+  padding: 0 1.1rem 0 1.25rem;
+  border: 0;
+  border-radius: 1rem;
+  background: var(--yalovy-lime);
+  color: #17191a;
+  font-size: 0.92rem;
+  font-weight: 950;
+  transition: opacity 0.2s ease, transform 0.16s ease, box-shadow 0.2s ease;
+}
+
+.yalovy-first-step__continue:not(:disabled) {
+  box-shadow: 0 0.65rem 1.8rem rgba(207, 238, 53, 0.2);
+}
+
+.yalovy-first-step__continue:not(:disabled):active {
+  transform: scale(0.985);
+}
+
+.yalovy-first-step__continue:disabled {
+  background: #3b3f3a;
+  color: #747a72;
+  cursor: not-allowed;
+  opacity: 0.74;
+}
+
+.yalovy-legal-layer,
+.yalovy-legal-layer * {
+  box-sizing: border-box;
+}
+
+.yalovy-legal-layer {
+  position: fixed;
+  z-index: 10010;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  opacity: 0;
+  transition: opacity 0.22s ease;
+}
+
+.yalovy-legal-layer[hidden] {
+  display: none;
+}
+
+.yalovy-legal-layer--visible {
+  opacity: 1;
+}
+
+.yalovy-legal-layer__backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.yalovy-legal-sheet {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-height: min(82vh, 48rem);
+  padding: 0.55rem 1.2rem max(1.2rem, env(safe-area-inset-bottom, 0px));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 0;
+  border-radius: 1.45rem 1.45rem 0 0;
+  background: #1c1f1e;
+  color: #f5f7f1;
+  flex-direction: column;
+  font-family: Nunito, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  transform: translateY(100%);
+  transition: transform 0.28s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.yalovy-legal-layer--visible .yalovy-legal-sheet {
+  transform: translateY(0);
+}
+
+.yalovy-legal-sheet__handle {
+  width: 2.6rem;
+  height: 0.28rem;
+  margin: 0 auto 0.75rem;
+  border-radius: 1rem;
+  background: #555b55;
+}
+
+.yalovy-legal-sheet header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.yalovy-legal-sheet header h2 {
+  margin: 0.2rem 0 0;
+  font-size: 1.2rem;
+  font-weight: 950;
+}
+
+.yalovy-legal-sheet__close {
+  display: flex;
+  width: 2.15rem;
+  height: 2.15rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 0.16rem;
+  border: 0;
+  border-radius: 50%;
+  background: #2d312f;
+  color: #dce0d9;
+  font-size: 1.55rem;
+  line-height: 1;
+}
+
+.yalovy-legal-sheet__body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0.95rem 0 0.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.yalovy-legal-sheet__updated {
+  margin: 0 0 1rem;
+  color: #7f877d;
+  font-size: 0.72rem;
+  font-weight: 750;
+}
+
+.yalovy-legal-sheet__body h3 {
+  margin: 0.95rem 0 0.28rem;
+  color: #f2f4ed;
+  font-size: 0.88rem;
+  font-weight: 950;
+}
+
+.yalovy-legal-sheet__body h3:first-of-type {
+  margin-top: 0;
+}
+
+.yalovy-legal-sheet__body p {
+  margin: 0;
+  color: #9fa79d;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.65;
+}
+
+@keyframes yalovy-first-step-in {
+  from { opacity: 0; transform: scale(1.015); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes yalovy-first-step-out {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.985); }
+}
+
+@media (max-height: 700px) {
+  .yalovy-first-step__hero {
+    margin-bottom: 0.85rem;
+  }
+
+  .yalovy-first-step__mark {
+    width: 3.7rem;
+    height: 3.7rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .yalovy-first-step__mark img {
+    width: 2.15rem;
+    height: 2.15rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .yalovy-first-step,
+  .yalovy-first-step--leaving,
+  .yalovy-legal-layer,
+  .yalovy-legal-sheet,
+  .yalovy-first-step__checkmark,
+  .yalovy-first-step__checkmark svg {
+    animation: none;
+    transition: none;
+  }
+}
